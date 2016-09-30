@@ -1,56 +1,84 @@
 \documentclass{article}
-
-\usepackage{booktabs}
+ \usepackage{booktabs} 
 \usepackage{tabularx}
-
-
-\title{SE 3XA3: Development Plan\\Title of Project}
-
-\author{Lab 01, Team 03, Pongthusiastics
-		\\ Adwity Sharma - sharma78
-		\\ Arfa Butt - buttaa3
-		\\ Jie Luo - luoj3
-}
-
-\date{}
-
-\begin{document}
-
+ \title{SE 3XA3: Development Plan\\Title of Project} 
+\author{Lab 01, Team 03, Pongthusiastics 		
+\\ Adwity Sharma - sharma78 		
+\\ Arfa Butt - buttaa3 	
+	\\ Jie Luo - luoj3 }
+ \date{} 
+\begin{document} 
 \begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
+ \caption{Revision History} \label{TblRevisionHistory} 
+\begin{tabularx}{\textwidth}{llX} 
 \toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-\midrule
-September 24th & Jie & Initialized a development plan for Revision 0\\
+ \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\ 
+\midrule 
+September 30th & Jie / Adwity & Completed development plan for Revision 0\\ 
 \bottomrule
-\end{tabularx}
-\end{table}
+ \end{tabularx} 
+\end{table} \newpage \maketitle
 
-\newpage
 
-\maketitle
+\section {Team Meeting Plan} 
 
-In order to redevelop this game...
+When             \\
+	- Wednesday afternoon after 2:30, 3 hour (more or less depending on the need).\\
+Where            \\
+	- HSL (or any other library at Mcmaster) \\
+Frequency        \\
+	- Once a week or more depending on the need\\
+Roles  \\
+	- Team leader for the meetings : Jean Luo\\
+Rules for agenda \\
+	- If anyone cannot attend a prescheduled meeting, they should notify the team at least 3 hours before so the meeting can be rescheduled and must bring food to the next meeting.\\
 
-\section{Team Meeting Plan}
 
-\section{Team Communication Plan}
 
-\section{Team Member Roles}
+\section {Team Communication Plan} 
 
-\section{Git Workflow Plan}
+Git          \\
+	- Used to pull or push files from the repository. And to be notified about any current issue with the on going project by the instructor or the course coordinators.\\
+Facebook     \\
+	- There is an existing xa3 group chat to discuss implementations and impending due dates.                         \\        
+Phones/Texts \\
+	- To contact each other and notify about the meeting place.\\
+Google docs  \\
+	-To work together on documentations. \\
 
-\section{Proof of Concept Demonstration Plan}
+\section  {Team Member Roles}
 
-\section{Technology}
+Arfa Amer Butt  - Expert on technology              \\ 
+Jean Luo       - Team leader, git and Latex expert \\
+Adwity Sharma  -  Documentation expert              \\ 
 
-\section{Coding Style}
 
-\section{Project Schedule}
 
-Provide a pointer to your Gantt Chart.
+\section {Technology}
+Programming language - java \\
+IDE - eclipse\\
+Testing framework - junit testing, integration testing, black box testing, testing through user surveys \\
+Document generation - Latex / google docs for working concurrently / microsoft word to work on rough frameworks \\
+For the game to work one will require a java environment (jre), so that could be a challenge for the intended users - we can create an android friendly version of the game (this part of the implementation may be scheduled after the end of the course because of time restrains). 
 
-\section{Project Review}
+\section {Coding Style}
+Google java style.
 
+\section {Project Schedule}
+https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong/blob/master/ProjectSchedule/GanttChart.pdf 
+
+
+\section {Project Review} 
 \end{document}
+
+
+
+\section  { Git Workflow Plan}
+    We are using centralized gitflow. We created a master branch on GitLab for our submission. When we need to work on the project, we are going to pull or commit files from the master branch. The commits will be identified by Mac IDs. At the end of the semester, this project will be submitted as a milestone.
+
+\section  {Proof of Concept Demonstration Plan}
+Testing will be difficult because it is a game and self testing could turn out to be a challenge - we can change the parameters (values and data) in the model part of the program. For example to see if the counting of score is taking place properly we can program it in the model in such a way that if a user misses the pong in the first turn, we can use assert statements to check if the miss has been recorded as it was implemented to be.
+
+For the implementation of the game we are planning to add a multiplayer option, so that could turn out to be a challenge - multiplayer mode can require the use of threads, we are doing a course called concurrency and are moving forward with the course along with the project so they should complement each other.
+
+The required library is not a challenge.
