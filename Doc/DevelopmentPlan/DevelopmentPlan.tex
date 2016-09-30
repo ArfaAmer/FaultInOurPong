@@ -14,45 +14,71 @@
 \toprule
  \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\ 
 \midrule 
-September 30th & Jie / Adwity & Completed development plan for Revision 0\\ 
+September 24th & Jie  & Created a development plan for Revision 0\\ 
+September 29th & Jie,Adwity,Arfa & Discussed development plan for Revision 0\\ 
+September 30th & Arfa,Adwity & Modified development plan for Revision 0\\ 
+September 30th & Jie  & Modified development plan for Revision 0\\ 
 \bottomrule
  \end{tabularx} 
-\end{table} \newpage \maketitle
+\end{table} 
+\newpage 
+\maketitle
 
 
 \section {Team Meeting Plan} 
 
-When             \\
-	- Wednesday afternoon after 2:30, 3 hour (more or less depending on the need).\\
-Where            \\
-	- HSL (or any other library at Mcmaster) \\
-Frequency        \\
-	- Once a week or more depending on the need\\
-Roles  \\
-	- Team leader for the meetings : Jean Luo\\
-Rules for agenda \\
-	- If anyone cannot attend a prescheduled meeting, they should notify the team at least 3 hours before so the meeting can be rescheduled and must bring food to the next meeting.\\
+Team members will be meeting on a daily basis. Two types of meeting will be utilized: the face-to-face meeting and the on-line meeting. The meetings are scheduled based on team members' course schedules and their availabilities. The on-line meeting plan is listed in the following section, and the face-to-face meeting plan is described below.\\
+
+\begin{tabular}{|p{3cm}|p{8cm}|}
+\hline
+\textbf{Details}    & \textbf{Descriptions}                                                                                                                                                                                                                                                                                                                                                                                                                                \\\hline
+When             & {There should be a face-to-face meeting scheduled on every Wednesday from 2:30 p.m. to 5:30 p.m, roughly three hours in total. The number of hours for meeting could vary, depending on the meeting progress.}                                                                                                                                                                                                                                                      \\\hline
+Where            & The meeting location would be the Health Science Library (or any other library at McMaster University)                                                                                                                                                                                                                                                                                                                                                                                \\\hline
+Frequency        & Once a week or more depending on the need                                                                                                                                                                                                                                                                                                                                                                                                           \\\hline
+Roles            & \begin{tabular}[c]{@{}l@{}}Team leader - Jean Luo\\ Schedule manager - Arfa Butt\\ Note taker - Adwity Sharma\end{tabular}                                                                                                                                                                                                                                                                                                                          \\\hline
+Rules for agenda & If anyone cannot attend a pre-scheduled meeting, he/she should notify the team at least 3 hours before so the meeting can be rescheduled and must bring food to the next meeting. Each team member should be prepared for the meeting, so that during the meeting, each member would show what they have done since the last meeting, any problems encountered during the project work, and any plans that should be finished before next meeting.  \\ \hline
+\end{tabular}
+
 
 
 
 \section {Team Communication Plan} 
 
-Git          \\
-	- Used to pull or push files from the repository. And to be notified about any current issue with the on going project by the instructor or the course coordinators.\\
-Facebook     \\
-	- There is an existing xa3 group chat to discuss implementations and impending due dates.                         \\        
-Phones/Texts \\
-	- To contact each other and notify about the meeting place.\\
-Google docs  \\
-	-To work together on documentations. \\
+In addition to meeting face-to-face, team members also agreed to share their personal contact for on-line meeting. Several on-line applications will be utilized for contacts, discussions, and file-sharing. 
+
+\begin{tabular}{|p{3cm}|p{8cm}|}
+\hline
+\textbf{Tools}    & \textbf{Descriptions}                                                                                                                                                                                                                                                                                                                                                                                                                                \\\hline
+Git        & It will be used to pull or push files from the repository; it will also be used to get notifications about any current issue with the on going project by the instructor or the course coordinators. \\\hline
+Facebook    & The xa3 group chat will occur; will be used to discuss any implementation problems and administrative details regarding the project. \\\hline
+Phones/texts   & They will be used to contact between team members; they will be mainly used as emergency contact. \\\hline
+Google Docs   & It will be used to work together on documentations, before transferring them into the Latex format. \\\hline
+\end{tabular}
+
+
 
 \section  {Team Member Roles}
 
-Arfa Amer Butt  - Expert on technology              \\ 
-Jean Luo       - Team leader, git and Latex expert \\
-Adwity Sharma  -  Documentation expert              \\ 
+Each team member is assigned at least one roles for this project. The team leader will be in charge of the project as a whole, including guiding the members in the progress of development, delegating tasks to members properly, and maintaining healthy group dynamics. An expert on technology will be focusing on the software development of the project, and he/she will be helping other team members on programming problems/issues. A documentation expert will be managing the tasks on documentations, and ensuring the good quality of the documentations at submissions.\\
 
+\begin{tabular}{|p{3cm}|p{8cm}|}
+\hline
+\textbf{Members}    & \textbf{Roles}                                                                                                                                                                                                                                                                                                                                                                                                                                \\\hline
+Arfa Amer Butt       & Expert on technology \\\hline
+Jean Luo   & Team leader, Git and Latex expert \\\hline
+Adwity Sharma   & Documentation expert \\\hline
+\end{tabular}
 
+\section  { Git Workflow Plan}
+
+The centralized flow plan will be used on Git. A master branch is created on GitLab for file sharing and submissions. When working on the project, each team members will be pulling or committing files from the master branch. The commits will be identified by Mac IDs and commit messages. Labels are considered as tags for the submissions. At the end of the semester, this project will be submitted as a milestone.\\
+
+\section  {Proof of Concept Demonstration Plan}
+Testing will be difficult because it is a game and self testing could turn out to be a challenge - we can change the parameters (values and data) in the model part of the program. For example to see if the counting of score is taking place properly we can program it in the model in such a way that if a user misses the pong in the first turn, we can use assert statements to check if the miss has been recorded as it was implemented to be.\\
+
+For the implementation of the game we are planning to add a multiplayer option, so that could turn out to be a challenge - multiplayer mode can require the use of threads, we are doing a course called concurrency and are moving forward with the course along with the project so they should complement each other.\\
+
+The required library is not a challenge.
 
 \section {Technology}
 Programming language - java \\
@@ -62,23 +88,17 @@ Document generation - Latex / google docs for working concurrently / microsoft w
 For the game to work one will require a java environment (jre), so that could be a challenge for the intended users - we can create an android friendly version of the game (this part of the implementation may be scheduled after the end of the course because of time restrains). 
 
 \section {Coding Style}
-Google java style.
+The Google Java Style will be the guide for this project. To be precise, the codes will adhere the Google Java Style in terms of its the format, class structures, naming conventions, and any other features pointed out in the guide.\\
+
+The more detailed information on the Google Java Style Guide can be found here: https://google.github.io/styleguide/javaguide.html . \\
+
 
 \section {Project Schedule}
-https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong/blob/master/ProjectSchedule/GanttChart.pdf 
+
+The project schedule can be found here: \\
+https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong/blob/master/ProjectSchedule/GanttChart.pdf . 
 
 
 \section {Project Review} 
+
 \end{document}
-
-
-
-\section  { Git Workflow Plan}
-    We are using centralized gitflow. We created a master branch on GitLab for our submission. When we need to work on the project, we are going to pull or commit files from the master branch. The commits will be identified by Mac IDs. At the end of the semester, this project will be submitted as a milestone.
-
-\section  {Proof of Concept Demonstration Plan}
-Testing will be difficult because it is a game and self testing could turn out to be a challenge - we can change the parameters (values and data) in the model part of the program. For example to see if the counting of score is taking place properly we can program it in the model in such a way that if a user misses the pong in the first turn, we can use assert statements to check if the miss has been recorded as it was implemented to be.
-
-For the implementation of the game we are planning to add a multiplayer option, so that could turn out to be a challenge - multiplayer mode can require the use of threads, we are doing a course called concurrency and are moving forward with the course along with the project so they should complement each other.
-
-The required library is not a challenge.
