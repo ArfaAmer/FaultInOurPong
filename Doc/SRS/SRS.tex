@@ -1,0 +1,509 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{SE 3XA3: Systems Requirements Specification: Revision 0} 
+\author{Team 03, Pongthusiastics 		
+\\ Adwity Sharma - sharma78 		
+\\ Arfa Butt - buttaa3 	
+	\\ Jie Luo - luoj3 }
+ \date{} 
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+	
+	\section{Project Drivers}
+	\subsection{The Purpose of the Project}
+	We have overtaken this project to improve the electronic version of ping pong game we found in an open source projects in git website. The use of computer and any other electronics for entertainment has been growing for several years now. The electronic version of the ping pong game used to be automatically installed with the installation of new windows. But for some years now Microsoft has stopped adding this game to the windows operating system. While, there are variations of this game available for download in the app store, there is still a market for a multi-player ping pong game for entertainment purposes. The game can also be enjoyed individually. It provides the players with a slightly challenging game that does not require any tools other than a computer that has a java running environment. This game can be played among friends to relieve themselves of boredom. This project will also provide the users with a game that can be played by people of any age group. 
+	
+	\subsection{The Stakeholders}
+	\subsubsection{The Client}
+	An external entity is regarded the client for this project. This entity is interested in the redevelopment of the project. Though this project is very open ended and can be developed in endless manners, there still are some restrictions that has been applied on the manner of development. This restrictions, in regards to the development has been applied by the 3XA3 team, and thus can be looked upon as the client figure.			
+	\subsubsection{The Customers}
+	Any person with an access to a computer that has a java running environment can be considered as a costumer for this project. As this game does not have restrictions in terms of age, gender or any other socio-economic factor, everyone can be considered as the customer of this project.
+	\subsubsection{Other Stakeholders}
+	We are also the stakeholders for this project, as the development of this project and its result would be a great effect upon us. The general public can also be considered as the stakeholders as through them we are to gain customer base for our game.
+	
+	\subsection{Mandated Constraints}
+	Description: The project is being developed in java language in eclipse and is run in java running environments.
+Rationale: Java running environments such as eclipse are available online for free for users and thus can be downloaded by any user intending to play the game.
+Fit Criterion: There shall be a link provided with the release of this game to download a java running environment, for users that do not have it already.\\
+
+
+\noindent Description: The project is provided online, in an open source environment, for anyone who wants to use it. Internet connection would be required to download the game the first time the user wants to use it.
+Rationale: The user should be connected to the internet that can assure the downloading of the game.
+Fit Criterion: As the game only needs to be downloaded once for the user it isn’t very hard to accomplish. It only needs to be downloaded once and can be enjoyed for as long as the user intends to use it.
+	
+	\subsection{Naming Conventions and Terminology}
+\begin{tabular}{|p{3cm}|p{8cm}|}
+\hline
+\textbf{Terms}    & \textbf{Definitions}                                                                                                                                                                                                                                                                                                                                                                                                                                \\\hline
+Users &                                                                                                                                                                                            Players of the game \\\hline
+The Project  & The pong game that is being reconstructed. \\\hline
+Product       & The game that is being developed.
+ \\\hline
+Java            & Java programming language.
+ \\\hline
+Clients          & 	The group for whom who the project is being developed for.
+ \\\hline
+Git        & The GitLab website.
+ \\\hline
+Windows       & Microsoft windows.
+ \\\hline
+Customer         & Anyone who would like to use this game.
+ \\\hline
+3XA3 team        & Professor, course coordinators, teaching assistant and any other personnel responsible for running of the 3XA3 course.
+ \\\hline
+\end{tabular}
+
+
+	\subsection{Relevant Facts and Assumptions}
+Facts:
+There will be approximately 1000 lines of codes for this game by the time this game is completed. The original of the game that is being reconstructed can be found in https://github.com/mihneadb/Pong.\\  
+
+
+\noindent Assumptions:
+It is assumed that the user will have some access to the internet to download the codes that will be used to run this game when the user wishes to play this game for the first time. It is also assumed that the person will either have access to a java running environment or be willing to download a java running environment. Since internet is readily accessible this should not be much of a trifle.
+
+	
+	\section{Functional Requirements}
+
+	\subsection{The Scope of the Work and the Product}
+The developers would rewrite the code into a structured design. By doing this, the work for future maintenance would be easier.
+	\subsubsection{The Context of the Work}
+The software application to be developed will follow the same game rules as the original Pong game application. The interface of the new application would be better than the original game. The winning and losing would be better indicated on the screen.
+	\subsubsection{Work Partitioning}
+	The Pong project will be following the V-Model development process. The project will start with developing a problem statement for the new project. It can help teammates clarify the objective of the work, such as what to improve on the Pong game, and how much we can improve. Teammates then would like to create a development plan for the Pong game, to make sure each development process is on track and on time. A requirement specification plan is then created to further break down the project into small tasks. This include specifying the requirements for the new software, stating the personnel that is related to this Pong project, and clarifying any concerns and issue related to it. Verification and Validation Plan would be created in the following, to give team members and other stakeholders a vague idea of what the final product would be. Design Specification Document would be formulated for better clarifications before application implementation. Team-mates would be coding following all the documents mentioned, and Verification and Validation Plan will test the program when it is completed.\\
+
+\noindent The team of three will be working on the redevelopment of the project. Each team member will be assigned different tasks to work on the project. A Gantt Chart will be used to keep track of working activities for each member in the team, that means each member would have to make a mark on the Gantt Chart when they complete a task. \\
+
+	\subsubsection{Individual Product Use Cases}
+	Case: User performs mouse click on the Start button
+
+Result: The program would start the game and the game scene would be displayed.\\
+
+Case: User performs mouse click on the Restart button
+
+Result: The program would reset the game results and it would display the initial game scene.\\
+
+Case: User performs mouse click on the Save button
+
+Result:  The program would save the player's’ record, but the game continues. \\
+
+Case: User performs mouse click on the Tutorial button
+
+Result: The program would display a description of the game and teach the user how to play it.\\
+
+Case: User performs mouse click on the Close button
+
+Result: The program game would stop, the window of the application would be closed, and the current game result would not be saved.\\
+
+Case: User taps on UP, DOWN, LEFT, RIGHT on the keyboard.
+
+Result: The player would be able to move his/her game board.\\
+
+
+	\subsection{Functional Requirements}
+	\begin{itemize}
+		\item Requirement number: FR1  
+		
+		The user should have the ability to start a new game.  
+		 
+		Rationale: The user should be able to start a new game in order to play the game.
+		
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR2  
+		
+		 The user should have the ability to load a previously saved game.
+
+		Rationale: The user must be able to load his/her previously saved game in order to continue the game.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR3
+
+		The user should have the ability to save the current game.
+
+		Rationale: The user must be able to save their current game in order to continue it at a later time.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR4
+
+		The user should be able to open up a list of top 20 high scores (name and score). 
+
+		Rationale: The user must be able to open up the high scores list, so that they can see what rank they are on. This will also build healthy competition among the players.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR5
+
+		The user should be able to open up the tutorial page, which will give instructions to the user on how to play the game.
+
+		Rationale: If the user is playing the game for the first time, they must be able to view the instructions to the game before they can play it.
+
+		Priority: Medium
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR6
+
+		The user should have the option to play a single-player mode, with the computer. The list of high scores will be kept for this mode.
+
+		Rationale: The user must choose which type of mode of the game they want to play, before they can play the game. This type of mode is for users who want to play alone, or want to beat a certain high score.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR7
+
+		The user should have the option to play a single-player mode, with the computer, with obstacles added to the playing field. 
+
+		Rationale: The user must choose which type of mode of the game they want to play, before they can play the game. This type of mode is for users who want to play the single-player mode, but with a little added difficulty.
+
+		Priority: Medium
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR8
+
+		The user should have the option to play a multiplayer mode, with another user.
+
+		Rationale: The user must choose which type of mode of the game they want to play, before they can play the game. This type of game is for users who want to play with a friend, as opposed to playing alone.
+
+		Priority: Low
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR9
+
+		The user should have the ability to change the speed of the ball.
+
+		Rationale: The user must be able to change the speed of the ball to make the game easier or harder for them to play.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR10
+
+		At the start of a single-player game, the player should have 3 lives.
+
+		Rationale: The user must have 3 lives at the start of the game, as that is the standard that we have decided to keep for the game.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR11
+
+		At the start of every new game, the scores of the player, or both players in the case of multi-player mode, will be set to 0.
+
+		Rationale: The user(s) must have a score of 0 at the beginning of each new game, as that is the moment from which the player(s) will start to accumulate points.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR12
+
+		The user should be able to move their paddle left and right.
+
+		Rationale: The user must be able to move their paddle left and right in order to play the game.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR13
+
+		The scores of each player should increase by 1 whenever the opponent misses a hit.
+
+		Rationale: The scores must increase by 1, every time the opponent misses a hit, to keep track of the player(s) points.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR14
+
+		In single-player mode, whenever the player misses a hit, their life should decrease by 1.
+
+		Rationale: The number of lives of the player should decrease by 1, each time the player misses the ball, to keep track of the number of lives the player has left. This is to make sure that the player does not go over 3 lives.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR15
+
+		The user should have the ability to pause the current game.
+
+		Rationale: The user must be able to pause the current game so that if they need a short break, they can take one without it affecting the progress of their current game.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR16
+
+		The user should have the ability to resume the current game (if the game is paused).
+
+		Rationale: The user must be able to resume the current game so that if the game is paused, it can be resumed from the point where the player left the game.
+
+		Priority: High
+	
+		History: Created October 11, 2016
+
+		\item Requirement number: FR17
+
+		The user should have the ability to restart the current game.
+
+		Rationale: The user must be able to restart the current game so that if they are not satisfied with their game, and would like to play the exact same mode again, they may do so by just resetting the game.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR18
+
+		In single-player mode, when the player misses the ball 3 times, i.e. the player has run out of all 3 lives, the game will end.
+
+		Rationale: The standard for this game has been set so that each player gets 3 lives, therefore the game needs to end once the player has used up all 3 of their lives.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR19
+
+		In multi-player mode, when one of the players has reached 5 points, the game will end.
+
+		Rationale: The game needs to end when one of the players in the multi-player mode has reached 5 points as that is the standard that we have set.
+
+		Priority: Low
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR20
+	
+		Once a game ends, the user should be taken back to the main menu page.
+
+		Rationale: The user must be taken back to the main menu page so that they can choose which mode of game they want to play, or if they want to access the high scores list.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		\item Requirement number: FR21
+
+		In single-player mode if the player made it into the high scores list then, at the end of the game before the user is taken back to the main menu, (s)he will be prompted to enter their name so that they could be added into the list.
+
+		Rationale: The user must be prompted for their name if they break one of the high scores, so that the list of high scores is kept up to date.
+
+		Priority: High
+
+		History: Created October 11, 2016
+
+		
+		
+	\end{itemize}
+	\section{Nonfunctional Requirements}
+	\subsection{Look and Feel Requirements}
+	Presently the game looks very simple and dull. It is important to make the game look better. The starting of the game does not have any signal of its start or its end. Also, it does not have anything that recommends it to the user. The elements and components of the game are also void of colours, so there should be added some elements to add to the aesthetics of the game. Also the game has a very informal and raw look because of lack of a certain border to the window of the game, this also shall be worked on. The game will have a more refined look and it’s too laid back aspects shall be worked upon to improve the game. We could add sounds when the ball hits the board in the game, but this factor might be added in a later period of time.
+	\subsection{Usability and Humanity Requirements}
+	\subsubsection{Ease of Use Requirements}
+   	The game can be played by anyone with hands, as most of the control are limited to the use of mouse and keyboard.
+ 	\subsubsection{Ease of Learning Requirements}
+   	The game is easy enough to play. Some practice on the part of the users might be required to play and excel at this game.
+ 	\subsubsection{Accessibility Requirements}
+	The game can be accessed and executed on majority of computing devices. It is required to have access to internet to download the code for the game, when playing it first time. As mentioned before, we do require a java running environment to run the game.
+
+\subsection{Performance Requirements}
+\subsubsection{Speed requirement}
+   	There has to be some space in the user’s computer to download the game and a java running environment. The game should be played in a fast computer as it would decrease the entertainment factor if it is lagging.
+\subsubsection{Safety critical requirement}
+   	If over played the game might cause the user to encounter some strain in the user’s eyes. But, this is true for any object that requires an electronic screen to play. There aren’t any other health concerns.
+\subsubsection{Precision requirement}
+   	It is important that the game is precise in terms of compliance of the commands sent by the keyboard to the screen. Also, it is equally important to make sure that while the game is going on the position of the ping pong ball is kept into account and any disturbance in hitting of the ball or any other irregularity is immediately noticed.
+\subsubsection{Reliability and availability requirement}
+   	The game shall be made available at all times to anyone who has access to the internet and can be played at any time by the users who have already downloaded a copy of the game in their computers.
+\subsubsection{Capacity requirement}
+   	The game can be played by two players at once or individually. There is no limitations to the number of copies of the game that can be created or distributed.
+\subsection{Operational and Environmental Requirements}
+\subsubsection{Expected Physical Environment}
+\begin{itemize}
+	\item Requirement number: NFR1
+
+	The application should be able to run on computer whenever the computer functions properly.
+
+	Rationale: The program should be able to run when the computer is running; otherwise the program would be considered failure.
+
+	Priority: High
+	
+	History: Created October 11, 2016
+\end{itemize}
+\subsection{Expected Technological Environment}
+\begin{itemize}
+	\item Requirement number: NFR2
+
+	The application should be able to run on computer with Java version 1.7 or higher installed
+
+	Rationale: The application is developed under Java version 1.7 environment, so the user should be able to run it under the same environment. 
+
+	Priority: High
+
+	History: Created October 11, 2016
+\end{itemize}
+\subsubsection{Partner Application}
+\begin{itemize}
+	\item Requirement number: NFR3
+
+	The application should be able to run on any Java IDE with Java version 1.7 or higher
+
+	Rationale: The application is developed on a Java IDE with version 1.7 environment, so the user should be able to run it under the same environment. 
+
+	Priority: High
+
+	History: Created October 11, 2016
+\end{itemize}
+\subsection{Maintainability and Support Requirements}
+\subsubsection{Maintenance Requirement}
+\begin{itemize}
+	\item Requirement number: NFR4
+
+	The application should be under minimal maintenance.
+
+	Rationale: Most of bugs occurs during the gaming process should be discovered during or after testing, and they should be corrected and fixed.
+
+	Priority: High
+
+	History: Created October 11, 2016
+\end{itemize}
+\subsubsection{Supportability Requirement}
+\begin{itemize}
+	\item Requirement number :NFR5
+	
+	 The application should run on the majority of users’ computers.
+
+	Rationale: Most of the potential players should be able to play the Pong game. 
+	
+	Priority: High    
+
+	History: Created October 11, 2016    
+\end{itemize}
+\subsubsection{Portability Requirement}
+\begin{itemize}
+	\item Requirement number: NFR6
+
+	The application should have their file size less than 50 MB.
+
+	Rationale: This game should be easy to transfer between users for easy access. Players could use any storage devices to transfer files.
+
+	Priority: High
+
+	History: Created October 11, 2016
+\end{itemize}
+\subsection{Security Requirements}
+\subsubsection{Confidentiality}
+None applicable to this project.
+\subsubsection{File Integrity Requirement}
+\begin{itemize}
+	\item Requirement number :NFR7   
+	
+	The files for the application should have the extension .JAVA.
+
+	Rationale: Files need to be recognized as java files before executions.
+	
+	Priority: High     
+	 
+	History: Created October 11, 2016  
+\end{itemize}
+\subsubsection{Audit Requirement}
+None applicable to this project.
+\subsection{Cultural Requirements}
+\begin{itemize}
+	\item Requirement number :NFR8 
+	
+	The language that shall be used in this game is English.
+
+	Rationale: English is the language that all students and faculty members of McMaster University are expected to understand.
+
+	Priority: High
+	
+	History: Created October 11, 2016
+
+	\item Requirement number: NFR9
+
+	The program shall not contain any imagery or language that can be viewed as offensive to users by mocking, insulting, or appropriating their culture, race, or religion.
+
+	Rationale: User satisfaction will be affected if the material and contents of this game are perceived as offensive to the consumers.
+
+	Priority: Medium
+
+	History: Created October 11, 2016
+\end{itemize}
+\subsection{Legal Requirements}
+\begin{itemize}
+	\item Requirement number :NFR10   
+	
+	The program will adhere to the MIT Open License.
+
+	Rationale: The program will adhere to the MIT License as it is the standard that is set for this project.
+	
+	Priority: Medium   
+	
+	History: Created October 11, 2016   
+\end{itemize}
+\section{Project Issues}
+\subsection{Open Issues}
+So far there aren’t any open issues.
+\subsection{Off-the-Shelf Solutions}
+The game that this project is attempting to reconstruct would act as an initial model for this project that we have overtaken. There are also other similar games available and the way certain parts are executed can provide a model for us to base our design on. There are also guidance and directions available in java tutorial sites for any programming problems that are likely to occur during the development of this game.  
+\subsection{New Problems}
+\subsubsection{Problems in the Current Environment}
+None applicable in the project.
+\subsubsection{Existing User}
+Is there a way to clear user record?
+\subsubsection{Limitations in Implementation Environment} 
+Is it possible to run on every device that has Java?
+\subsection{Tasks}
+Tasks Deadline
+
+Model Development October 14
+
+View Development October 14
+
+Control Development October 17
+
+Project Revision October 31
+
+Project Improvement November 19
+\subsection{Migration to the New Product}
+None applicable in the project.
+\subsection{Risks}
+There are no risks associated with this project.
+\subsection{User Documentation and Training}
+The user documents will be created as per the SE 3XA3 guidelines.
+There will be an in-game tutorial that will display the instructions on how to play the game. Other than that, no further training should be required..
+\subsection{Waiting Room}
+There are many factors in the game that has to be improved upon, as has been discussed throughout various parts in the document. The improvement of functionality of the game is to be looked forward towards. The addition of sound to the game can also be added to this.
+\subsection{Ideas for Solutions}
+Proper documentations for the game must be made. The coding for the game should be well commented and easy to follow. Other then this, for the current period there isn’t any other ideas for solutions. This section would be updated at a later period. 
+\section{Appendix}
+\subsection{Symbolic Parameters}
+Section 1.4 provides a list of terms and its definition of any symbols that are used throughout the document.
+\end{document}
