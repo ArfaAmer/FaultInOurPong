@@ -1,5 +1,4 @@
 
-
 import java.awt.*;
 import javax.swing.*;
 
@@ -40,14 +39,14 @@ public class Pong_viewAndController extends JFrame{
 		exit.setAlignmentX(Component.CENTER_ALIGNMENT);
 		buttonPanel.add(exit);
 		
-		JPanel west = new JPanel(new GridBagLayout());
-        west.add(buttonPanel);
+		//JPanel west = new JPanel(new GridBagLayout());
+      //  west.add(buttonPanel);
 		
 		Game game = new Game();
 		
-		//game_interface.add(buttonPanel);
+		game_interface.add(buttonPanel);
 		game_interface.add(game);
-		add(west,BorderLayout.WEST);
+		//add(west,BorderLayout.WEST);
 		add(game_interface);
 		setLocationRelativeTo(null);
 		
