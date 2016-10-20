@@ -17,29 +17,26 @@ public class View extends JFrame{
 	private JButton tutorial = new JButton("Tutorial");
 	private JButton exit = new JButton("Exit");
 	
+	private JButton single = new JButton("Single Player Mode");
+	private JButton sObstacle = new JButton("Advanced Single Player Mode");
+	private JButton multi = new JButton("Multiplayer Mode");
+	
+	JPanel buttonPanel = new JPanel();
+	
 	public View(){
 		super("FaultInOurPong");
 		this.setSize(700,500);
 		this.setResizable(false);
 		
-		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new BoxLayout(buttonPanel,BoxLayout.Y_AXIS));
 		
-		load.setMaximumSize(start.getPreferredSize());
-		highScores.setMaximumSize(start.getPreferredSize());
-		tutorial.setMaximumSize(start.getPreferredSize());
-		exit.setMaximumSize(start.getPreferredSize());
-		
-		start.setAlignmentY(CENTER_ALIGNMENT);
-		start.setAlignmentX(CENTER_ALIGNMENT);
-		load.setAlignmentY(CENTER_ALIGNMENT);
-		load.setAlignmentX(CENTER_ALIGNMENT);
-		highScores.setAlignmentY(CENTER_ALIGNMENT);
-		highScores.setAlignmentX(CENTER_ALIGNMENT);
-		tutorial.setAlignmentY(CENTER_ALIGNMENT);
-		tutorial.setAlignmentX(CENTER_ALIGNMENT);
-		exit.setAlignmentY(CENTER_ALIGNMENT);
-		exit.setAlignmentX(CENTER_ALIGNMENT);
+		buttonPanel.add(Box.createVerticalGlue());
+		addButton(start);
+		addButton(load);
+		addButton(highScores);
+		addButton(tutorial);
+		addButton(exit);
+		buttonPanel.add(Box.createVerticalGlue());
 		
 		start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -47,17 +44,29 @@ public class View extends JFrame{
 			}
 		});
 		
-		buttonPanel.add(Box.createVerticalGlue());
-		buttonPanel.add(start);
-		buttonPanel.add(Box.createVerticalStrut(20));
-		buttonPanel.add(load);
-		buttonPanel.add(Box.createVerticalStrut(20));
-		buttonPanel.add(highScores);
-		buttonPanel.add(Box.createVerticalStrut(20));
-		buttonPanel.add(tutorial);
-		buttonPanel.add(Box.createVerticalStrut(20));
-		buttonPanel.add(exit);
-		buttonPanel.add(Box.createVerticalGlue());
+		load.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				load();
+			}
+		});
+		
+		highScores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				highScores();
+			}
+		});
+		
+		tutorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tutorial();
+			}
+		});
+		
+		exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		
 		add(buttonPanel);
 		
@@ -66,11 +75,52 @@ public class View extends JFrame{
 		this.setVisible(true);
 	}
 	
+	public void addButton(JButton x) {
+		x.setMaximumSize(sObstacle.getPreferredSize());
+		x.setAlignmentY(CENTER_ALIGNMENT);
+		x.setAlignmentX(CENTER_ALIGNMENT);
+		buttonPanel.add(x);
+		buttonPanel.add(Box.createVerticalStrut(20));
+	}
+	
 	public void start() {
-		//getContentPane().removeAll();
-		//repaint();
+		buttonPanel.removeAll();
+		this.getContentPane().removeAll();
+		this.repaint();
+		
+		buttonPanel.setLayout(new BoxLayout(buttonPanel,BoxLayout.Y_AXIS));
+		
+		buttonPanel.add(Box.createVerticalGlue());
+		addButton(single);
+		addButton(sObstacle);
+		buttonPanel.add(Box.createVerticalGlue());
+		
+		add(buttonPanel);
+		this.setVisible(true);
+		
+		single.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				single();
+			}
+		});
+
+	}
+	
+	public void single() {
 		Pong_viewAndController view_controller = new Pong_viewAndController(this);
 		this.setVisible(false);
+	}
+	
+	public void load() {
+		
+	}
+	
+	public void highScores() {
+		
+	}
+	
+	public void tutorial() {
+		
 	}
 	
 	public static void main(String[] args) {
