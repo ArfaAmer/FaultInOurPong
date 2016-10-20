@@ -5,7 +5,7 @@ public class Pong_viewAndController extends JFrame{
 	private JButton resume = new JButton("Resume");
 	private JButton save = new JButton("Save");
 	private JButton exit = new JButton("Exit");
-	public Pong_viewAndController(JFrame frame){
+	public Pong_viewAndController(){
 		super("FaultInOurPong");
 		this.setSize(700,500);
 		this.setResizable(false);
