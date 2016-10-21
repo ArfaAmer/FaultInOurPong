@@ -107,7 +107,7 @@ public class View extends JFrame{
 	}
 	
 	public void single() {
-		Pong_viewAndController view_controller = new Pong_viewAndController(this);
+		Pong_viewAndController view_controller = new Pong_viewAndController();
 		this.setVisible(false);
 	}
 	
