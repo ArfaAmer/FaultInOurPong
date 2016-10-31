@@ -3,6 +3,12 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{soul}
+
 \title{SE 3XA3: Systems Requirements Specification: Revision 0} 
 \author{Team 03, Pongthusiastics 		
 \\ Adwity Sharma - sharma78 		
@@ -13,6 +19,23 @@
 \maketitle
 \newpage
 \tableofcontents
+
+\listoftables
+\listoffigures
+\begin{table}[h]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+October 7, 2016 & 1.0 & Created the SRS document \\
+October 11, 2016 & 1.1 & Completed SRS Rev-0 for deadline submission\\
+October 24, 2016 & 1.2 & Uploaded diagrams \\
+October 31, 2016 & 1.3 & Updated requirements \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \newpage
 	
 	\section{Project Drivers}
@@ -37,7 +60,7 @@ Fit Criterion: There shall be a link provided with the release of this game to d
 Rationale: The user should be connected to the internet that can assure the downloading of the game.
 Fit Criterion: As the game only needs to be downloaded once for the user it isn’t very hard to accomplish. It only needs to be downloaded once and can be enjoyed for as long as the user intends to use it.
 	
-	\subsection{Naming Conventions and Terminology}
+\subsection{Naming Conventions and Terminology}
 \begin{tabular}{|p{3cm}|p{8cm}|}
 \hline
 \textbf{Terms}    & \textbf{Definitions}                                                                                                                                                                                                                                                                                                                                                                                                                                \\\hline
@@ -73,14 +96,25 @@ It is assumed that the user will have some access to the internet to download th
 
 	\subsection{The Scope of the Work and the Product}
 The developers would rewrite the code into a structured design. By doing this, the work for future maintenance would be easier.
+
+\begin{figure}[h]
+  \includegraphics[scale=0.7]{ContextDiagram.png}
+  \caption{Context Diagram for the Game}
+\end{figure}
+
 	\subsubsection{The Context of the Work}
 The software application to be developed will follow the same game rules as the original Pong game application. The interface of the new application would be better than the original game. The winning and losing would be better indicated on the screen.
 	\subsubsection{Work Partitioning}
-	The Pong project will be following the V-Model development process. The project will start with developing a problem statement for the new project. It can help teammates clarify the objective of the work, such as what to improve on the Pong game, and how much we can improve. Teammates then would like to create a development plan for the Pong game, to make sure each development process is on track and on time. A requirement specification plan is then created to further break down the project into small tasks. This include specifying the requirements for the new software, stating the personnel that is related to this Pong project, and clarifying any concerns and issue related to it. Verification and Validation Plan would be created in the following, to give team members and other stakeholders a vague idea of what the final product would be. Design Specification Document would be formulated for better clarifications before application implementation. Team-mates would be coding following all the documents mentioned, and Verification and Validation Plan will test the program when it is completed.\\
+	The Pong project will be following a model similar to the \st{V-Model} Water Flow development process. The project will start with developing a problem statement for the new project. It can help team-mates clarify the objective of the work, such as what to improve on the Pong game, and how much we can improve. Team-mates then would like to create a development plan for the Pong game, to make sure each development process is on track and on time. A requirement specification plan is then created to further break down the project into small tasks. This include specifying the requirements for the new software, stating the personnel that is related to this Pong project, and clarifying any concerns and issue related to it. Verification and Validation Plan would be created in the following, to give team members and other stakeholders a vague idea of what the final product would be. Design Specification Document would be formulated for better clarifications before application implementation. Team-mates would be coding following all the documents mentioned, and Verification and Validation Plan will test the program when it is completed.\\
 
 \noindent The team of three will be working on the redevelopment of the project. Each team member will be assigned different tasks to work on the project. A Gantt Chart will be used to keep track of working activities for each member in the team, that means each member would have to make a mark on the Gantt Chart when they complete a task. \\
 
-	\subsubsection{Individual Product Use Cases}
+\begin{figure}[h]
+  \includegraphics[scale=0.6]{ProjectFlow.png}
+  \caption{Project Flow for the Redevelopment Process}
+\end{figure}
+
+\subsubsection{Individual Product Use Cases}
 	Case: User performs mouse click on the Start button
 
 Result: The program would start the game and the game scene would be displayed.\\
@@ -91,7 +125,7 @@ Result: The program would reset the game results and it would display the initia
 
 Case: User performs mouse click on the Save button
 
-Result:  The program would save the player's’ record, but the game continues. \\
+Result:  The program would save the players’ record, but the game continues. \\
 
 Case: User performs mouse click on the Tutorial button
 
