@@ -12,7 +12,7 @@ import javax.swing.*;
 public class Game extends JPanel implements KeyListener, ActionListener {
 	
 	private int height, width; 				// the height and width of the screen 
-	private Timer t = new Timer(1, this);   // the 't' variable makes sure that there is a initial delay before the same starts off
+	private Timer t = new Timer(5, this);   // the 't' variable makes sure that there is a initial delay before the same starts off
 	private boolean first; 					//game state (starting/playing)
 	
 	private HashSet<String> keys = new HashSet<String>();
@@ -21,7 +21,7 @@ public class Game extends JPanel implements KeyListener, ActionListener {
 	private final int SPEED = 1;			//the speed of the paddles
 	private int padH = 10, padW = 40;		// paddle width/height
 	private int bottomPadX, topPadX;		// these represent the top and the bottom paddles in the game
-	private int inset = 10;					// this helps determine the distance between the paddle 
+	private int inset = 30;					// this helps determine the distance between the paddle 
 											// - and the top and bottom screen boundaries 
 	
 	// ball
