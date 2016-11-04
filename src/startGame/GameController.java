@@ -4,8 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.HashSet;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
@@ -18,6 +21,7 @@ public class GameController{
 	private GameModel m;
 	private Welcome w;
 	private Mode mode;
+	private Tutorial tut;
 	
 	private HashSet<String> keys = new HashSet<String>();
 
@@ -27,7 +31,7 @@ public class GameController{
 	
 	private int velX=1, velY=1;
 	private int padWidth = 80, padHeight = 10;
-	private int bottomPadX, topPadX;
+	private int bottomPadX, bottomPadY, topPadX, topPadY;
 	private int ballX, ballY, ballSize=20;
 	private int scoreTop, scoreBottom;
 	private int inset;
@@ -44,15 +48,18 @@ public class GameController{
 		mode = this.v.getmode();
 		mode.addListener(new ModeListener());
 		
-		//game = this.v.getGame();
-		//game.addListener(new GameListener());
+		ImageIcon image = new ImageIcon("./Resources/tutorial.png");
+		v.tutorialPage(image);
+		tut = v.getTutorial();
+		tut.addListener(new TutorialListener());
 		
 		gameFrame = this.v.getGameFrame();
 		gameDisplay = this.v.getGame();
-		//gameDisplay.addListener(new GameListener());
 		gameDisplay.addKeyListener(new GameListener());
 		gameDisplay.setFocusable(true);
 		gameDisplay.setFocusTraversalKeysEnabled(false);
+		
+		
 		
 	}
 	
@@ -67,8 +74,39 @@ public class GameController{
 				mode.setVisible(true);
 				w.setVisible(false);
 				
-			} 
-//			else if()
+			}else if(source==w.load()){
+				//TODO
+				try{
+					FileReader fr = new FileReader("./Resources/userData.txt");
+					BufferedReader br = new BufferedReader(fr);
+					
+					System.out.println("can load data");
+					
+					br.close();
+				}catch(Exception exp){
+					v.cannotLoadMessage();
+				}
+			}else if(source==w.highScores()){
+				//TODO
+				try{
+					FileReader fr = new FileReader("./Resources/gameScore.txt");
+					BufferedReader br = new BufferedReader(fr);
+					
+					System.out.println("can display high score");
+					
+					br.close();
+				}catch(Exception exp){
+					v.noFileAvailMessage();
+				}
+			}else if(source==w.tutorial()){
+				//TODO
+				
+				w.setVisible(false);
+				tut.setVisible(true);
+				
+			}else if(source==w.exit()){
+				System.exit(0);
+			}
 			
 		}
 		
@@ -76,7 +114,6 @@ public class GameController{
 	
 	class ModeListener implements ActionListener{
 		
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -88,81 +125,71 @@ public class GameController{
 				
 			} 
 		}
+	}
+	
+	class TutorialListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			Object source = e.getSource();
+			
+			if(source == tut.getBack()){
+				tut.setVisible(false);
+				w.setVisible(true);
+			}
+		}
 		
 	}
 	
 	class GameListener implements ActionListener, KeyListener{
 
 		GameListener(){
-			bottomPadX = gameDisplay.getBottom();
+
 			frameWidth = v.getFrameWidth();
 			frameHeight = v.getFrameHeight();
+			
+			ballX = gameDisplay.getBallX();
+			ballY = gameDisplay.getBallY();
 			
 			t = new Timer(5,this);  
 			t.setInitialDelay(1000);			// sets initial delay for the movement of the ball
 			t.start();
 
+			bottomPadX = gameDisplay.getBottomX();
+			bottomPadY = gameDisplay.getBottomY();
+//TODO: MODEL FOR THE PADDLE
+System.out.println("x: "+bottomPadX);
+System.out.println("y: "+bottomPadY);
 		}
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
 			// X-direction
-			if(ballX< 0 || ballX > frameWidth-ballSize){
+			if(ballX< 0 || ballX > frameWidth-1.5*ballSize){
 				velX = -velX;
 			}
 			
 			// Y-direction
 			if(ballY < 0){
-System.out.println("touch top border");
 				velY = -velY;
 				++scoreBottom;
-			} else if(ballY+ballSize>frameHeight){
-System.out.println("touch bottom border");
+				gameDisplay.setBottomScore(scoreBottom);
+			} else if(ballY+2.5*ballSize>frameHeight){
 				velY = -velY;
 				++scoreTop;
-			} else if(ballY+ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
-System.out.println("touch bottom pad");
-				velY = -velY;
-			} else if(ballY+ballSize<=ballSize+inset+padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
-System.out.println("touch top pad");
-				velY = -velY;
-			}
-			
-/*			
-			// side walls
-			if (ballX < 0 || ballX > frameWidth - ballSize) {	// making sure ball is horizontally within the frame (left&right)
-				velX = -velX;								// reverse the ball position if trying to go out
-			}
-			// top / down walls
-			if (ballY < 0) {								// similarly, for vertical position
-				velY = -velY;								// reverse the ball position vertically 
-				++ scoreBottom;
-				System.out.println("bottom: "+scoreBottom);
-				gameDisplay.setBottomScore(scoreBottom);
-			}
-			
-			if (ballY + ballSize > frameHeight - ballSize) {	// similarly, for the vertical position of bottom paddle
-				velY = -velY;
-				++ scoreTop;				// points are incremented if the paddle is missed by opponent
-System.out.println("top: "+scoreTop);
 				gameDisplay.setTopScore(scoreTop);
+			} else if(ballY+2.5*ballSize>frameHeight-inset-2*padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
+				velY = -velY;
+			} else if(ballY<=inset+2*padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
+				velY = -velY;
 			}
-			// bottom pad
-			if (ballY + ballSize>= frameHeight - padHeight - inset && velY > 0)	// similar to the previous parts
-				if (ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth)
-					velY = -velY;
-
-			// top pad
-			if (ballY <= padHeight + inset && velY < 0)
-				if (ballX + ballSize >= topPadX && ballX <= topPadX + padWidth)
-					velY = -velY;
-*/
+			
 			ballX += velX;
 			ballY += velY;
 			
 			gameDisplay.setBall(ballX,ballY);
-			
 			
 			// pressed keys
 			if (keys.size() == 1) {
@@ -240,6 +267,8 @@ System.out.println("top: "+scoreTop);
 	}
 	
 	
-	
+	public void display(){
+		v.display();
+	}
 	
 }

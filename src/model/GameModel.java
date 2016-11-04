@@ -20,6 +20,11 @@ public class GameModel {
 		return b1;
 	}
 	
+	public void setBall(int x, int y){
+		b1.setPositionX(x);
+		b1.setPositionY(y);
+	}
+	
 	public Paddle getPlayerPaddle(){
 		return p_player;
 	}

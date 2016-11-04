@@ -14,7 +14,7 @@ public class PongGame {
 		GameModel model = new GameModel(1,1,2,2,2,2);
 		GameController controller = new GameController(view, model);
 		
-		view.display();
+		controller.display();
 
 	}
 }

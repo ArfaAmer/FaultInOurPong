@@ -1,6 +1,6 @@
 package view;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class GameView{
 	
@@ -17,7 +17,6 @@ public class GameView{
 		welcome = new Welcome();
 		mode = new Mode();
 		ponggame = new PongGameDisplay();
-		tutorial = new Tutorial();
 		
 		createGame();
 	}
@@ -43,6 +42,8 @@ public class GameView{
 		return tutorial;
 	}
 	
+	
+	//TODO: ADD PANEL FOR OPTIONS IN THE GAME	
 	public void createGame(){
 		gameFrame = new JFrame("FaultInOurPong");
 		gameFrame.setContentPane(ponggame);	
@@ -64,5 +65,19 @@ public class GameView{
 		return gameFrame.getHeight();
 	}
 	
+	// TODO: display a dialogue after successfully saving game records (high score)
 	
+	public void noFileAvailMessage(){
+		JFrame errorFrame = new JFrame("Error");
+		JOptionPane.showMessageDialog(errorFrame, "No record available!");
+	}
+	
+	public void cannotLoadMessage(){
+		JFrame errorFrame = new JFrame("Error");
+		JOptionPane.showMessageDialog(errorFrame, "The record is either damaged or not available, please start a new game!");
+	}
+	
+	public void tutorialPage(ImageIcon img){
+		tutorial = new Tutorial(img);
+	}
 }

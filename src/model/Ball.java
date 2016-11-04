@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * This class is the model of the ball object.
+ * It contains all the information for a ball.
+ * @author Pongthusiastics
+ */
+
 public class Ball {
 
 	private int positionX;

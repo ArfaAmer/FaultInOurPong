@@ -78,19 +78,7 @@ public class PongGameDisplay extends JPanel{
 		g2d.drawString(scoreB, 10, frameHeight / 2);						// printing the score of the bottom paddle in the screen
 		g2d.drawString(scoreT, frameWidth - 50, frameHeight / 2);			// printing the score of the top paddle in the screen
 	}
-	
-	
-/*	
-	public void addListener(ActionListener listener){
-		//ballX = 40;
-		//ballY = 40;
 		
-		//System.out.println("keylistener");
-		repaint();
-	}
-*/	
-
-	
 	public void setBall(int x, int y){
 		ballX = x;
 		ballY = y;
@@ -104,8 +92,12 @@ public class PongGameDisplay extends JPanel{
 		topPadX = x;
 	}
 	
-	public int getBottom(){
+	public int getBottomX(){
 		return bottomPadX;
+	}
+	
+	public int getBottomY(){
+		return bottomPadY;
 	}
 	
 	public void setTopScore(int s){
@@ -116,4 +108,11 @@ public class PongGameDisplay extends JPanel{
 		scoreBottom = s;
 	}
 	
+	public int getBallX(){
+		return ballX;
+	}
+	
+	public int getBallY(){
+		return ballY;
+	}
 }

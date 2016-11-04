@@ -42,6 +42,22 @@ public class Welcome extends JFrame {
 		return start;
 	}
 	
+	public JButton load(){
+		return load;
+	}
+	
+	public JButton highScores(){
+		return highScores;
+	}
+	
+	public JButton tutorial(){
+		return tutorial;
+	}
+	
+	public JButton exit(){
+		return exit;
+	}
+	
 	public void addButton(JButton x) {
 		x.setMaximumSize(start.getPreferredSize());
 		x.setAlignmentY(CENTER_ALIGNMENT);
