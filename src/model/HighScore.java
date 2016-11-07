@@ -16,13 +16,13 @@ public class HighScore {
 
 	ArrayList<String> arylist = new ArrayList<String>();
 
-	static ArrayList<String> user = new ArrayList<String>();
-	static ArrayList<String> score = new ArrayList<String>();
-	static ArrayList<Integer> scoreInt = new ArrayList<Integer>();
+	 ArrayList<String> user = new ArrayList<String>();
+	 ArrayList<String> score = new ArrayList<String>();
+	 ArrayList<Integer> scoreInt = new ArrayList<Integer>();
 
-	static int x;
+	 int x;
 
-	public static String[] readFrom() throws IOException {
+	public String[] readFrom() throws IOException {
 
 		String fileName = "highScore.txt";
 
@@ -55,7 +55,7 @@ public class HighScore {
 
 	}
 
-	public static void writeTo() {
+	public void writeTo() {
 		try {
 			String filename = "highScore.txt";
 		
@@ -74,7 +74,7 @@ public class HighScore {
 		}
 	}
 
-	public static void creatingArrays() throws IOException {
+	public void creatingArrays() throws IOException {
 		String[] newArr = readFrom();
 		for (int i = 0; i < newArr.length; i++) {
 			if (i % 2 == 0) {
@@ -112,7 +112,7 @@ public class HighScore {
 		return scoreInt.get(scoreInt.size());
 	}
 
-	public static boolean isHigh(int compare) {
+	public boolean isHigh(int compare) {
 		if (compare > x) {
 			return true;
 		} else {
@@ -120,7 +120,7 @@ public class HighScore {
 		}
 	}
 
-	public static void sortInt() {
+	public void sortInt() {
 
 		for (int i = 0; i < scoreInt.size(); i++) {
 			for (int j = 0; j < scoreInt.size() - 1; j++) {
