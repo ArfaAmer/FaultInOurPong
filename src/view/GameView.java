@@ -9,11 +9,17 @@ public class GameView{
 	private PongGameDisplay ponggame;
 	private Tutorial tutorial;
 	
+	private final int FRAMEWIDTH = 700;
+	private final int FRAMEHEIGHT = 500;
+	
 	private JFrame gameFrame;
 	
 	
 	public GameView(){
-		
+		/*
+		 * Pass in different windows to this view interface
+		 * - will wait for further invocation
+		 */
 		welcome = new Welcome();
 		mode = new Mode();
 		ponggame = new PongGameDisplay();
@@ -47,7 +53,7 @@ public class GameView{
 	public void createGame(){
 		gameFrame = new JFrame("FaultInOurPong");
 		gameFrame.setContentPane(ponggame);	
-		gameFrame.setSize(700,500);
+		gameFrame.setSize(FRAMEWIDTH,FRAMEHEIGHT);
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,14 +61,6 @@ public class GameView{
 	
 	public JFrame getGameFrame(){
 		return gameFrame;
-	}
-	
-	public int getFrameWidth(){
-		return gameFrame.getWidth();
-	}
-	
-	public int getFrameHeight(){
-		return gameFrame.getHeight();
 	}
 	
 	// TODO: display a dialogue after successfully saving game records (high score)
@@ -79,5 +77,13 @@ public class GameView{
 	
 	public void tutorialPage(ImageIcon img){
 		tutorial = new Tutorial(img);
+	}
+	
+	public int getFrameWidth(){
+		return FRAMEWIDTH;
+	}
+	
+	public int getFrameHeight(){
+		return FRAMEHEIGHT;
 	}
 }

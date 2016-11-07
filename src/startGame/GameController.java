@@ -42,6 +42,9 @@ public class GameController{
 		this.v = v;
 		this.m = m;
 		
+		/*
+		 * Setups for the View
+		 */
 		w = this.v.getWelcome();
 		w.addListener(new WelcomepageListener());
 		
@@ -59,10 +62,20 @@ public class GameController{
 		gameDisplay.setFocusable(true);
 		gameDisplay.setFocusTraversalKeysEnabled(false);
 		
+		/*
+		 * Setups for the Model
+		 */
+		frameWidth = v.getFrameWidth();
+		frameHeight = v.getFrameHeight();
+		
+		
 		
 		
 	}
 	
+	/*
+	 * Actionlistener for the welcome page
+	 */
 	class WelcomepageListener implements ActionListener{
 
 		@Override
@@ -70,11 +83,13 @@ public class GameController{
 			// TODO Auto-generated method stub
 			Object source = e.getSource();
 			
+			// If clicked the start button
 			if(source==w.getStart()){
 				mode.setVisible(true);
 				w.setVisible(false);
 				
 			}else if(source==w.load()){
+			// If clicked the load button
 				//TODO
 				try{
 					FileReader fr = new FileReader("./Resources/userData.txt");
@@ -87,6 +102,7 @@ public class GameController{
 					v.cannotLoadMessage();
 				}
 			}else if(source==w.highScores()){
+			// If clicked the high score button
 				//TODO
 				try{
 					FileReader fr = new FileReader("./Resources/gameScore.txt");
@@ -99,12 +115,14 @@ public class GameController{
 					v.noFileAvailMessage();
 				}
 			}else if(source==w.tutorial()){
+			// If clicked the tutorial button
 				//TODO
 				
 				w.setVisible(false);
 				tut.setVisible(true);
 				
 			}else if(source==w.exit()){
+			// If clicked the exit button
 				System.exit(0);
 			}
 			
@@ -112,6 +130,9 @@ public class GameController{
 		
 	}
 	
+	/*
+	 * Actionlistener for the Single-Mode page
+	 */
 	class ModeListener implements ActionListener{
 		
 		@Override
@@ -120,13 +141,18 @@ public class GameController{
 			Object source = e.getSource();
 			
 			if(source == mode.getSingle()){
+			// If clicked the basic single mode button
 				mode.setVisible(false);
 				gameFrame.setVisible(true);
+				t.start();
 				
 			} 
 		}
 	}
 	
+	/*
+	 * Actionlistener for the tutorial page
+	 */
 	class TutorialListener implements ActionListener{
 
 		@Override
@@ -135,6 +161,7 @@ public class GameController{
 			Object source = e.getSource();
 			
 			if(source == tut.getBack()){
+			// If clicked the back button
 				tut.setVisible(false);
 				w.setVisible(true);
 			}
@@ -145,22 +172,19 @@ public class GameController{
 	class GameListener implements ActionListener, KeyListener{
 
 		GameListener(){
-
-			frameWidth = v.getFrameWidth();
-			frameHeight = v.getFrameHeight();
+			
 			
 			ballX = gameDisplay.getBallX();
 			ballY = gameDisplay.getBallY();
 			
 			t = new Timer(5,this);  
 			t.setInitialDelay(1000);			// sets initial delay for the movement of the ball
-			t.start();
 
 			bottomPadX = gameDisplay.getBottomX();
 			bottomPadY = gameDisplay.getBottomY();
-//TODO: MODEL FOR THE PADDLE
-System.out.println("x: "+bottomPadX);
-System.out.println("y: "+bottomPadY);
+
+			//TODO: MODEL FOR THE PADDLE
+
 		}
 		
 		@Override
@@ -168,40 +192,77 @@ System.out.println("y: "+bottomPadY);
 			
 			// X-direction
 			if(ballX< 0 || ballX > frameWidth-1.5*ballSize){
-				velX = -velX;
+				/*
+				 * If the ball is trying to go beyond the left/right border of the frame, 
+				 * reverse the direction.
+				 */
+				velX = -velX;			
 			}
 			
 			// Y-direction
 			if(ballY < 0){
+				/*
+				 * If the ball is trying to go up above the frame, 
+				 * - reverse the direction
+				 * - user gets points because the ball hits the border of the computer side
+				 */
 				velY = -velY;
 				++scoreBottom;
 				gameDisplay.setBottomScore(scoreBottom);
 			} else if(ballY+2.5*ballSize>frameHeight){
+				/*
+				 * If the ball is trying to go down beyond the frame
+				 * - reverse the direction
+				 * - the computer gets points
+				 */
 				velY = -velY;
 				++scoreTop;
 				gameDisplay.setTopScore(scoreTop);
 			} else if(ballY+2.5*ballSize>frameHeight-inset-2*padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
+				/*
+				 * If the ball is touching the bottom paddle
+				 * - reverse the direction
+				 */
 				velY = -velY;
 			} else if(ballY<=inset+2*padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
+				/*
+				 * If the ball is touching the top paddle
+				 * - reverse the direction
+				 */
 				velY = -velY;
 			}
 			
+			/*
+			 * Update the ball position by velocity 
+			 */
 			ballX += velX;
 			ballY += velY;
 			
 			gameDisplay.setBall(ballX,ballY);
 			
-			// pressed keys
+			/*
+			 * Detect the key pressed by the user on the keyboard
+			 */
 			if (keys.size() == 1) {
-				if (keys.contains("LEFT")) {							// left key is pressed
+				if (keys.contains("LEFT")) {						
+					/*
+					 * If the user presses LEFT
+					 * - update the position of the user paddle
+					 * - display the change on the screen
+					 */
 					if(bottomPadX>0) {
 						//TODO: SPEED
 						bottomPadX-=3;
 						gameDisplay.setBottom(bottomPadX);
 					}
 				}
-				else if (keys.contains("RIGHT")) {						// right key is pressed
+				else if (keys.contains("RIGHT")) {	
 					if(bottomPadX < frameWidth - padWidth){
+						/*
+						 * If the user presses RIGHT
+						 * - update the position of the user paddle
+						 * - display the change on the screen
+						 */
 						//TODO: SPEED
 						bottomPadX+=3;
 						gameDisplay.setBottom(bottomPadX);
@@ -209,11 +270,18 @@ System.out.println("y: "+bottomPadY);
 				}
 			}
 			
-			// AI
+			/*
+			 * Create actions for the AI paddles
+			 */
 			double delta = ballX - topPadX;
 			if (delta > 0) {		
 				
 				if(topPadX < frameWidth - padWidth){
+					/*
+					 * If the AI paddle is trying to reach the right wall
+					 * - move the paddle to the right
+					 * - display the movement on the screen
+					 */
 					topPadX +=1;
 					gameDisplay.setTop(topPadX);
 				}
@@ -221,6 +289,11 @@ System.out.println("y: "+bottomPadY);
 			else if (delta < 0) {			
 				
 				if(topPadX>0){
+					/*
+					 * If the AI paddle is trying to reach the left wall
+					 * - move the paddle to the left
+					 * - display the movement on the screen
+					 */
 					topPadX -=1;
 					gameDisplay.setTop(topPadX);
 				}
@@ -243,7 +316,6 @@ System.out.println("y: "+bottomPadY);
 				keys.add("RIGHT");
 				break;
 			}
-			//gameDisplay.repaint();
 		}
 
 		@Override

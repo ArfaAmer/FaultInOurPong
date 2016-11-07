@@ -9,9 +9,7 @@ public class Player {
 	// Variable declaration for storing the player score
 	private int score;
 	
-	/**
-	 *  Constructor for the player - set the score to be 0 initially
-	 */
+
 	public Player(){
 		score = LIFE;
 		//TODO: POSITION X, POSITION Y
@@ -19,21 +17,21 @@ public class Player {
 	}
 	
 	/**
-	 *  Decrease number of life of the player
+	 *  @brief decreases number of life of the player
 	 */
 	public void decrementLife(){
 		score--;
 	}
 	
 	/**
-	 *  Increase score for a player
+	 *  @brief increases score for a player
 	 */
 	public void incrementScore(){
 		score++;
 	}
 	
 	/**
-	 * Get the score of a player
+	 * @brief gets the score of a player
 	 * @return playerScore - return the score of the player 
 	 */
 	public int getScore(){
@@ -41,7 +39,7 @@ public class Player {
 	}
 	
 	/**
-	 * Check whether the player loses the game or not
+	 * @brief checks whether the player loses the game or not
 	 * @return - boolean indicating losing or not
 	 */
 	public boolean checkLoss(){

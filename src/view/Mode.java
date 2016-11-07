@@ -19,11 +19,18 @@ public class Mode extends JFrame{
 	private JPanel buttonPanel;
 	
 	public Mode(){
+		/*
+		 * - Set the header of the window
+		 * - Set the size of the window
+		 */
 		super("FaultInOurPong");
 		this.setSize(700,500);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		
+		 
+		/*
+		 * Add buttons on the window 
+		 */
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(new BoxLayout(buttonPanel,BoxLayout.Y_AXIS));
 		
