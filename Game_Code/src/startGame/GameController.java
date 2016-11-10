@@ -26,15 +26,20 @@ public class GameController{
 	private HashSet<String> keys = new HashSet<String>();
 
 	private JFrame gameFrame;
-	private int frameWidth, frameHeight;
+	private int frameWidth=700, frameHeight=500;
 	private PongGameDisplay gameDisplay;
 	
 	private int velX=1, velY=1;
 	private int padWidth = 80, padHeight = 10;
 	private int bottomPadX, bottomPadY, topPadX, topPadY;
-	private int ballX, ballY, ballSize=20;
+	private Ball b;
+	private Paddle paddle_player, paddle_ai;
+	private int ballX, ballY, ballSize;
 	private int scoreTop, scoreBottom;
 	private int inset;
+	
+	private Player player;
+	private Player ai;
 
 	private Timer t;
 	
@@ -42,7 +47,36 @@ public class GameController{
 		this.v = v;
 		this.m = m;
 		
-		/*
+		/**
+		 * Setups for ball in the Model
+		 */
+		b = this.m.getBall();
+		ballSize = b.getSize();
+		ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
+		ballY = frameHeight / 2 - ballSize / 2;
+		b.setPositionX(ballX);
+		b.setPositionY(ballY);
+		
+		/**
+		 * Setups for the paddles in the Model
+		 */
+		bottomPadX = frameWidth / 2 - padWidth / 2;	// setups for the paddles positions - in the middle of the screen
+		topPadX = bottomPadX;	
+		paddle_player = this.m.getPlayerPaddle();
+		paddle_player.setPositionX(bottomPadX);
+		paddle_player.setPositionY(bottomPadY);
+		
+		paddle_ai = this.m.getComputerPaddle();
+		
+		/**
+		 * Setups for the players in the Model
+		 */
+		player = this.m.getPlayer();
+		ai = this.m.getComputer();
+		scoreBottom = player.getScore();
+		scoreTop = ai.getScore();
+		
+		/**
 		 * Setups for the View
 		 */
 		w = this.v.getWelcome();
@@ -62,18 +96,13 @@ public class GameController{
 		gameDisplay.setFocusable(true);
 		gameDisplay.setFocusTraversalKeysEnabled(false);
 		
-		/*
-		 * Setups for the Model
-		 */
-		frameWidth = v.getFrameWidth();
-		frameHeight = v.getFrameHeight();
 		
-		
+
 		
 		
 	}
 	
-	/*
+	/**
 	 * Actionlistener for the welcome page
 	 */
 	class WelcomepageListener implements ActionListener{
@@ -130,7 +159,7 @@ public class GameController{
 		
 	}
 	
-	/*
+	/**
 	 * Actionlistener for the Single-Mode page
 	 */
 	class ModeListener implements ActionListener{
@@ -150,14 +179,13 @@ public class GameController{
 		}
 	}
 	
-	/*
+	/**
 	 * Actionlistener for the tutorial page
 	 */
 	class TutorialListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			Object source = e.getSource();
 			
 			if(source == tut.getBack()){
@@ -169,27 +197,22 @@ public class GameController{
 		
 	}
 	
+	/**
+	 * ActionListener for the game
+	 */
 	class GameListener implements ActionListener, KeyListener{
 
 		GameListener(){
-			
-			
-			ballX = gameDisplay.getBallX();
-			ballY = gameDisplay.getBallY();
-			
 			t = new Timer(5,this);  
 			t.setInitialDelay(1000);			// sets initial delay for the movement of the ball
-
-			bottomPadX = gameDisplay.getBottomX();
-			bottomPadY = gameDisplay.getBottomY();
-
-			//TODO: MODEL FOR THE PADDLE
-
 		}
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			/**
+			 * Update the velocity/direction of the Ball
+			 */
 			// X-direction
 			if(ballX< 0 || ballX > frameWidth-1.5*ballSize){
 				/*
@@ -205,19 +228,35 @@ public class GameController{
 				 * If the ball is trying to go up above the frame, 
 				 * - reverse the direction
 				 * - user gets points because the ball hits the border of the computer side
+				 * - check game over or not
 				 */
 				velY = -velY;
-				++scoreBottom;
-				gameDisplay.setBottomScore(scoreBottom);
+				--scoreTop;
+				checkGameOver();
+				
+				/*
+				 * Update model and view
+				 */
+				gameDisplay.setTopScore(scoreTop);
+				player.decrementLife();
+				
 			} else if(ballY+2.5*ballSize>frameHeight){
 				/*
 				 * If the ball is trying to go down beyond the frame
 				 * - reverse the direction
 				 * - the computer gets points
+				 * - check game over or not
 				 */
 				velY = -velY;
-				++scoreTop;
-				gameDisplay.setTopScore(scoreTop);
+				--scoreBottom;
+				checkGameOver();
+				
+				/*
+				 * Update model and view
+				 */
+				gameDisplay.setBottomScore(scoreBottom);
+				ai.decrementLife();
+				
 			} else if(ballY+2.5*ballSize>frameHeight-inset-2*padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/*
 				 * If the ball is touching the bottom paddle
@@ -232,15 +271,20 @@ public class GameController{
 				velY = -velY;
 			}
 			
-			/*
+			/**
 			 * Update the ball position by velocity 
 			 */
 			ballX += velX;
 			ballY += velY;
 			
-			gameDisplay.setBall(ballX,ballY);
-			
 			/*
+			 * Update the view and model
+			 */
+			gameDisplay.setBall(ballX,ballY);
+			b.setPositionX(ballX);
+			b.setPositionY(ballY);
+			
+			/**
 			 * Detect the key pressed by the user on the keyboard
 			 */
 			if (keys.size() == 1) {
@@ -253,7 +297,12 @@ public class GameController{
 					if(bottomPadX>0) {
 						//TODO: SPEED
 						bottomPadX-=3;
+						
+						/*
+						 * Update the view and model
+						 */
 						gameDisplay.setBottom(bottomPadX);
+						paddle_player.setPositionX(bottomPadX);
 					}
 				}
 				else if (keys.contains("RIGHT")) {	
@@ -265,12 +314,17 @@ public class GameController{
 						 */
 						//TODO: SPEED
 						bottomPadX+=3;
+						
+						/*
+						 * Update the view and model
+						 */
 						gameDisplay.setBottom(bottomPadX);
+						paddle_player.setPositionX(bottomPadX);
 					} 
 				}
 			}
 			
-			/*
+			/**
 			 * Create actions for the AI paddles
 			 */
 			double delta = ballX - topPadX;
@@ -283,7 +337,12 @@ public class GameController{
 					 * - display the movement on the screen
 					 */
 					topPadX +=1;
+					
+					/*
+					 * Update the view and the model
+					 */
 					gameDisplay.setTop(topPadX);
+					paddle_ai.setPositionX(topPadX);
 				}
 			}
 			else if (delta < 0) {			
@@ -295,7 +354,12 @@ public class GameController{
 					 * - display the movement on the screen
 					 */
 					topPadX -=1;
+					
+					/*
+					 * Update the view and the model
+					 */
 					gameDisplay.setTop(topPadX);
+					paddle_ai.setPositionX(topPadX);
 				}
 			}
 		
@@ -341,6 +405,17 @@ public class GameController{
 	
 	public void display(){
 		v.display();
+	}
+	
+	public void checkGameOver(){
+		if(scoreBottom==0){
+			v.gameOver(0);
+		} else if(scoreTop==0){
+			v.gameOver(1);
+		}
+		
+		//TODO: SAVE RECORD
+		
 	}
 	
 }

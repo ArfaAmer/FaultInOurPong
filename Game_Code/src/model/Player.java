@@ -12,8 +12,6 @@ public class Player {
 
 	public Player(){
 		score = LIFE;
-		//TODO: POSITION X, POSITION Y
-		
 	}
 	
 	/**

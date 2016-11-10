@@ -40,10 +40,10 @@ public class GameModel {
 	 * @param compX is the x-position of the user's paddle
 	 * @param compY is the y-position of the user's paddle
 	 */
-	public GameModel(int ballX, int ballY, int playerX, int playerY, int compX, int compY){
-		b1 = new Ball(ballX, ballY);
-		p_player = new Paddle(playerX, playerY);
-		p_computer = new Paddle(compX, compY);
+	public GameModel(){
+		b1 = new Ball();
+		p_player = new Paddle();
+		p_computer = new Paddle();
 		
 		//TODO
 		player = new Player();

@@ -13,9 +13,9 @@ public class Paddle {
 	private int speed;
 	
 	
-	public Paddle(int x, int y){
-		positionX = x;
-		positionY = y;
+	public Paddle(){
+		positionX = 0;
+		positionY = 0;
 	}
 	
 	/**

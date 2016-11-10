@@ -30,18 +30,15 @@ public class PongGameDisplay extends JPanel{
 	
 
 	
-	public PongGameDisplay(){
+	public PongGameDisplay(int life){
 		first = true;
 		ballSize = 20;
 		padW = 80;
 		padH = 10;
 		inset = 10;
 		
-		scoreTop=0;
-		scoreBottom=0;
-		
-	
-		
+		scoreTop=life;
+		scoreBottom=life;
 	}
 	
 	@Override

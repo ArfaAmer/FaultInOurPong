@@ -36,9 +36,9 @@ public class Ball {
 	 * @param y
 	 *            is the y-position
 	 */
-	public Ball(int x, int y) {
-		positionX = x;
-		positionY = y;
+	public Ball() {
+		positionX = 0;
+		positionY = 0;
 	}
 
 	/**

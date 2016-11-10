@@ -11,6 +11,7 @@ public class GameView{
 	
 	private final int FRAMEWIDTH = 700;
 	private final int FRAMEHEIGHT = 500;
+	private final int LIFE=3;
 	
 	private JFrame gameFrame;
 	
@@ -22,7 +23,7 @@ public class GameView{
 		 */
 		welcome = new Welcome();
 		mode = new Mode();
-		ponggame = new PongGameDisplay();
+		ponggame = new PongGameDisplay(LIFE);
 		
 		createGame();
 	}
@@ -73,6 +74,21 @@ public class GameView{
 	public void cannotLoadMessage(){
 		JFrame errorFrame = new JFrame("Error");
 		JOptionPane.showMessageDialog(errorFrame, "The record is either damaged or not available, please start a new game!");
+	}
+	
+	public void gameOver(int whichplayer){
+		
+		if(whichplayer==0){
+			JFrame overFrame = new JFrame("Game Over");
+			JOptionPane.showMessageDialog(overFrame, "The game is over! The computer wins!");
+		}
+		else{
+			JFrame overFrame = new JFrame("Game Over");
+			JOptionPane.showMessageDialog(overFrame, "The game is over! The player wins!");
+		}
+		gameFrame.setVisible(false);
+		welcome.setVisible(true);
+		
 	}
 	
 	public void tutorialPage(ImageIcon img){

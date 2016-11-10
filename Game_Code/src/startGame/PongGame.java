@@ -14,7 +14,7 @@ public class PongGame {
 		 * Initialize the model, view, and controller for the game
 		 */
 		GameView view = new GameView();
-		GameModel model = new GameModel(1,1,2,2,2,2);
+		GameModel model = new GameModel();
 		GameController controller = new GameController(view, model);
 		
 		/*
