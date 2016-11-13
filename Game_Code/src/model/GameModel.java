@@ -5,7 +5,7 @@ package model;
  * @file GameModel.java
  * @title GameModel
  * @author Pongthusiastics
- * @date 4/11/2016
+ * @date 13/11/2016
  * @brief This class represents a ball on the pong game
  * @details This class saves the information of a ball, including its position,
  *          size and the speed.
@@ -15,7 +15,7 @@ public class GameModel {
 	/**
 	 * The ball object for the game
 	 */
-	private Ball b1;
+	private Ball b, bomb;
 	/**
 	 * The two paddle in the game, one for the player and the other for the computer
 	 */
@@ -24,28 +24,31 @@ public class GameModel {
 	 * The two players in the game, one for the user and the other for the computer
 	 */
 	private Player player, computer;
-	
+/*	
 	private int ballX, ballY;
 	private int playerX, playerY;
 	private int compX, compY;
-	
+*/	
 	
 	/**
 	 * @brief Constructor for the game Model
 	 * @details Contains all the data and models for the game, including the player, paddle, and the ball.
-	 * @param ballX is the x-position of the ball
-	 * @param ballY is the y-position of the ball
-	 * @param playerX is the x-position of the user's paddle
-	 * @param playerY is the y-position of the user's paddle
-	 * @param compX is the x-position of the user's paddle
-	 * @param compY is the y-position of the user's paddle
 	 */
 	public GameModel(){
-		b1 = new Ball();
+		/**
+		 * Declara variables/instances for the model
+		 * - regular ball
+		 * - bomb
+		 * - paddle for the player
+		 * - paddle for the computer
+		 * - score and life for the player
+		 * - score and life for the ai
+		 */
+		b = new Ball();
+		bomb = new Ball();
 		p_player = new Paddle();
 		p_computer = new Paddle();
-		
-		//TODO
+	
 		player = new Player();
 		computer = new Player();
 	}
@@ -56,17 +59,35 @@ public class GameModel {
 	 * @param y is the y position of the ball
 	 */
 	public void setBall(int x, int y){
-		b1.setPositionX(x);
-		b1.setPositionY(y);
+		b.setPositionX(x);
+		b.setPositionY(y);
+	}
+	
+	/**
+	 * @brief sets the x and y positions of a bomb
+	 * @param x is the x position of the bomb
+	 * @param y is the y position of the bomb
+	 */
+	public void setBomb(int x, int y){
+		b.setPositionX(x);
+		b.setPositionY(y);
 	}
 	
 	
 	/**
 	 * @brief gets the Ball object
-	 * @return b1
+	 * @return b is the ball object
 	 */
 	public Ball getBall(){
-		return b1;
+		return b;
+	}
+	
+	/**
+	 * @brief gets the bomb object
+	 * @return bomb is the bomb object
+	 */
+	public Ball getBomb(){
+		return bomb;
 	}
 	
 	/**

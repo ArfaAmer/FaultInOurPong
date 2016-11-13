@@ -1,41 +1,63 @@
 package model;
 
+/**
+ * @file Paddle.java
+ * @title Paddle
+ * @author Pongthusiastics
+ * @date 13/11/2016
+ * @brief This class defines a paddle
+ * @details This class saves the information of a paddle, including its position, height, width, and inset between the paddle and the screen.
+ */
 public class Paddle {
 
+	/**
+	 * The position of a paddle
+	 * - horizontal position x
+	 * - vertical position y
+	 */
 	private int positionX;
 	private int positionY;
 	
+	/**
+	 * The property of a paddle
+	 * - the length of a paddle
+	 * - the width of a paddle
+	 * - the inset between a paddle and the screen frame
+	 */
 	private final int HEIGHT = 10;
-	private final int WIDTH = 40;
+	private final int WIDTH = 80;
 	private final int INSET = 10;
 	
 	//TODO 
 	private int speed;
 	
-	
+	/**
+	 * @brief Constructor for a paddle
+	 * @details Constructor initialize the starting position of a paddle.
+	 */
 	public Paddle(){
 		positionX = 0;
 		positionY = 0;
 	}
 	
 	/**
-	 * @brief sets the x-position of the paddle
-	 * @param x is the x position of the paddle
+	 * @brief sets the x-position of the paddle.
+	 * @param x is the x position of the paddle.
 	 */
 	public void setPositionX(int x){
 		positionX = x;
 	}
 	
 	/**
-	 * @brief sets the y-position of the paddle
-	 * @param y is the y position of the paddle
+	 * @brief sets the y-position of the paddle.
+	 * @param y is the y position of the paddle.
 	 */
 	public void setPositionY(int y){
 		positionY = y;
 	}
 
 	/**
-	 * @brief returns the x position of the paddle
+	 * @brief returns the x position of the paddle.
 	 * @return positionX
 	 */
 	public int getPositionX(){
@@ -43,7 +65,7 @@ public class Paddle {
 	}
 	
 	/**
-	 * @brief returns the y position of the paddle
+	 * @brief returns the y position of the paddle.
 	 * @return positionY
 	 */
 	public int getPositionY(){
@@ -51,7 +73,7 @@ public class Paddle {
 	}
 	
 	/**
-	 * @brief returns the width of the paddle
+	 * @brief returns the width of the paddle.
 	 * @return WIDTH
 	 */
 	public int getWidth(){
@@ -59,7 +81,7 @@ public class Paddle {
 	}
 	
 	/**
-	 * @brief returns the height of the paddle
+	 * @brief returns the height of the paddle.
 	 * @return HEIGHT
 	 */
 	public int getHeight(){
@@ -67,7 +89,7 @@ public class Paddle {
 	}
 	
 	/**
-	 * @brief returns the inset between the paddle and the screen
+	 * @brief returns the inset between the paddle and the screen.
 	 * @return INSET
 	 */
 	public int getInset(){

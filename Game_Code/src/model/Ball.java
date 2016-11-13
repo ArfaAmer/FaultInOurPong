@@ -4,7 +4,7 @@ package model;
  * @file Ball.java
  * @title Ball
  * @author Pongthusiastics
- * @date 4/11/2016
+ * @date 13/11/2016
  * @brief This class represents a ball on the pong game
  * @details This class saves the information of a ball, including its position,
  *          size and the speed.
@@ -13,12 +13,9 @@ package model;
 public class Ball {
 
 	/**
-	 * The X position of a ball on the screen
+	 * The X and Y position of a ball on the screen
 	 */
 	private int positionX;
-	/**
-	 * The Y position of a ball on the screen
-	 */
 	private int positionY;
 	/**
 	 * The size of a ball
@@ -31,10 +28,6 @@ public class Ball {
 	/**
 	 * @brief Constructor for Ball
 	 * @details Constructor accepts the x and y position of the ball
-	 * @param x
-	 *            is the x-position
-	 * @param y
-	 *            is the y-position
 	 */
 	public Ball() {
 		positionX = 0;
