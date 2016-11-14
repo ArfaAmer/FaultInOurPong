@@ -36,7 +36,8 @@
 November 9, 2016 & 1.0 & Created Module Guide \\
 November 11, 2016 & 2.0 & Divided sections between group members \\
 November 13, 2016 & 3.0 & Created format for Module Guide and added sections 2 and 4 \\
-November 13, 2016 & 4.0 & Final version with all sections and subsections added \\
+November 13, 2016 & 4.0 & Sections 1, 3 and 6 added \\
+November 14, 2016 & 5.0 & Final version with all sections added\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -44,7 +45,21 @@ November 13, 2016 & 4.0 & Final version with all sections and subsections added 
 \clearpage
 	
 	\section{Introduction}
-	The purpose of this report is to verify that the software has been tested properly and that it was implemented correctly.
+	This document indicates the Module Guides for the implementation of the “Fault in Our Pong” project. This document is intended to facilitate the design and maintenance of the project.   
+Design follows the following rules:
+\begin{enumerate}
+	\item MVC model: MVC model has been implemented in rigorously in the project. The design has been separated in model, view and control classes. The model class is responsible for managing the data, logic and rules of application of the project. View is responsible for the output representation of the information. Control is responsible for the implementations of commands from users and manipulates the model.
+	\item Each data structure is implemented in only one model.
+	\item If any other program requires the data structure implemented in a module, it calls on that particular module to access the data.
+	\item The implementations that are likely to change are stored in separate modules.
+\end{enumerate}
+
+	The major purpose of this document is to provide a detailed information for the concerned parties about how and why a certain implementation has been carried out. The potential readers of the document are as follows:
+New project members: If new project members are added to the project then this document, along with the document about the MIS implementation, would help the new members understand how and why the functionalities have been implemented. It will also help them understand the features that must be preserved.
+ 
+	Designers: This document provides the designers with a means of communication about the module specifications. It also helps determine if the requirements have been met. It can also show the flexibility and feasibility of various modules. 
+Maintainers: It is important for the people responsible for maintaining the modules to understand the hierarchical structure of the modules. This document helps people responsible for updating this project to understand the way the implementation has been done for the project. 
+	The rest of the document is arranged as follows. The second section (2.1 and 2.2) of this document provides details about anticipated and unlikely changes of the document. The third section contains the breakdown of the module hierarchy, per the likely changes. The forth section shows the connections between the software requirements and the modules. The fifth section shows a detailed breakdown of the module description. The sixth section includes the tractability matrix. The seventh section describes the use hierarchy between various modules. 
 	
 	\section{Anticipated and Unlikely Changes}
 	\subsection{Anticipated Changes}
@@ -62,6 +77,14 @@ November 13, 2016 & 4.0 & Final version with all sections and subsections added 
 	\paragraph{UC4:}	Execution environment. (Must be java-based)
 
 	\section{Module Hierarchy}
+	This section provides an overview of the module design. Modules are summarized in a hierarchy decomposed by secrets in Table 2. The modules listed below, which are leaves in the hierarchy tree, are the modules that will actually be implemented.
+	\paragraph{M1} Hardware hiding modules
+	\paragraph{M2} Input control module
+	\paragraph{M3} Output control module
+	\paragraph{M4} Game input and output control module
+	\paragraph{M5} Game frame control module
+	\paragraph{M6} Player details controlling module
+	\paragraph{} M1 is not a required module in our project, because the implementation is software based.
 
 \begin{table}[h!]
 \centering
@@ -71,18 +94,15 @@ November 13, 2016 & 4.0 & Final version with all sections and subsections added 
 \midrule
 {Hardware-Hiding Module} & ~ \\
 \midrule
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Paddle control module\\
+& Ball control module\\
+& Start and end of game control module\\
+& Input control module\\
+& Output control module\\
 \midrule
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} & High score controlling module\\
+& Game frame controlling module\\
+& Player details controlling module\\
 \bottomrule
 \end{tabular}
 \caption{Module Hierarchy}
@@ -93,9 +113,15 @@ November 13, 2016 & 4.0 & Final version with all sections and subsections added 
 	The design of the system is intended to satisfy the requirements developed in the SRS. In this stage, the system is decomposed into modules. The connection between requirements and modules is listed in Table 3.
 
 	\section{Module Decomposition}
-	\subsection{Hardware Hiding Modules}
+	\subsection{Hardware Hiding Modules (M1)}
+	\paragraph{Secrets: } The data structure and algorithm used to implement the virtual hardware.
+	\paragraph{Services } Serves as a virtual hardware used by the rest of the system. This module provides the interface between the hardware and the software. So, the system can use it to display outputs or to accept inputs.
+	\paragraph{Implemented By: } Windows
 
 	\subsection{Behavior-Hiding Module}
+	\paragraph{Secrets: } The contents of the required behaviours.
+	\paragraph{Services }Includes programs that provide externally visible behaviour of the system as specified in the software requirements specification (SRS) documents. This module serves as a communication layer between the hardware-hiding module and the software decision module. The programs in this module will need to change if there are changes in the SRS.
+	\paragraph{Implemented By: } -
 
 	\subsection{Software Decision Module}
 
@@ -107,15 +133,26 @@ November 13, 2016 & 4.0 & Final version with all sections and subsections added 
 \toprule
 \textbf{Requirements} & \textbf{Modules}\\
 \midrule
-{R1} & M1, M, M \\
-{R2} & M1, M, M \\
-{R3} & M1, M, M \\
-{R4} & M1, M, M \\
-{R5} & M1, M, M \\
-{R6} & M1, M, M \\
-{R7} & M1, M, M \\
-{R8} & M1, M, M \\
-{R9} & M1, M, M \\
+{R1} & M2, M4, M5 \\
+{R2} & M1, M2, M3, M4, M5 \\
+{R3} & M1, M2, M4, M5 \\
+{R4} & M1, M3, M5, M6 \\
+{R5} & M2, M3, M5 \\
+{R6} & M2, M3, M4, M5, M6 \\
+{R7} & M2, M3, M4, M5, M6 \\
+{R9} & M1, M3, M4, M5 \\
+{R10} & M1, M4, M6\\
+{R11} & M1, M3, M4, M6\\
+{R12} & M1, M2, M3, M5\\
+{R13} & M1, M3, M4, M6\\
+{R14} & M1, M3, M4, M6\\
+{R15} & M1, M4, M5\\
+{R16} & M1, M4, M5\\
+{R17} & M1, M2, M3, M4, M5\\
+{R18} & M1, M3, M4, M6\\
+{R20} & M1, M4, M5\\
+{R21} & M1, M2, M4, M5, M6\\
+{R22} & M3, M4, M5\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -127,15 +164,12 @@ November 13, 2016 & 4.0 & Final version with all sections and subsections added 
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-{AC1} & M1, M, M \\
-{AC2} & M1, M, M \\
-{AC3} & M1, M, M \\
-{AC4} & M1, M, M \\
-{AC5} & M1, M, M \\
-{AC6} & M1, M, M \\
-{AC7} & M1, M, M \\
-{AC8} & M1, M, M \\
-{AC9} & M1, M, M \\
+{AC1} & M1 \\
+{AC2} & M2, M4 \\
+{AC3} & M4, M6 \\
+{AC4} & M4,  M6 \\
+{AC5} & M2, M3, M4 \\
+{AC6} & M3, M4, M5 \\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
