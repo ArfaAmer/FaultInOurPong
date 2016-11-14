@@ -1,0 +1,403 @@
+\hypertarget{classview_1_1_pong_game_display}{}\section{view.\+Pong\+Game\+Display Class Reference}
+\label{classview_1_1_pong_game_display}\index{view.\+Pong\+Game\+Display@{view.\+Pong\+Game\+Display}}
+Inheritance diagram for view.\+Pong\+Game\+Display\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classview_1_1_pong_game_display}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classview_1_1_pong_game_display_a1d578a032b81c4025ba91e6366672e07}{Pong\+Game\+Display} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{classview_1_1_pong_game_display}{Pong\+Game\+Display}. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_ac6afa3842b0a26be46dd0b7d202d887d}{set\+Ball} (int x, int y)
+\begin{DoxyCompactList}\small\item\em sets the positions of the ball \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_a295d4a14e718454eb223a5bb06141d53}{set\+Ball\+Size} (int s)
+\begin{DoxyCompactList}\small\item\em sets the size of the ball \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_aeaaff1c8033efd2d7f3242ab3b6c7e9e}{set\+Bottom} (int x)
+\begin{DoxyCompactList}\small\item\em sets x-\/position for the player paddle \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_a8b9caa56b471453556b7380ee6d37340}{set\+Top} (int x)
+\begin{DoxyCompactList}\small\item\em sets x-\/position for the ai paddle \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_ab5d2d9429f7d666fea097c2ea3118893}{get\+BottomX} ()
+\begin{DoxyCompactList}\small\item\em gets the x-\/position of the player paddle \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_afa4d22c9959dc02057a1b56fef3f33cd}{get\+BottomY} ()
+\begin{DoxyCompactList}\small\item\em gets the y-\/position of the player paddle \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_a04bcc8b60d85f38178d2cd817e3fbd39}{set\+Top\+Score} (int s)
+\begin{DoxyCompactList}\small\item\em sets the score for ai \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_aa1ef677f1bae92a51750732099b1609a}{set\+Bottom\+Score} (int s)
+\begin{DoxyCompactList}\small\item\em sets the score for player \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a83584a112f5bd8877e1bbb1d74dfa080}{get\+BallX} ()
+\begin{DoxyCompactList}\small\item\em gets the x-\/position of the ball \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a940198a68c987548b182d18069ba5885}{get\+BallY} ()
+\begin{DoxyCompactList}\small\item\em gets the y-\/position of the ball \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_ac42d38f9ed29e2ab2bec6c7da46f1c0e}{set\+Paddle\+Width} (int w)
+\begin{DoxyCompactList}\small\item\em sets the width of the paddle \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc5}{set\+Paddle\+Height} (int h)
+\begin{DoxyCompactList}\small\item\em sets the height of the paddle \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_ac40ce3811b6118c530980d38aa48ec64}{set\+Inset} (int i)
+\begin{DoxyCompactList}\small\item\em sets the distance between frame and the paddle \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_pong_game_display_a0fedbf41897932915b12f67542cb7695}{set\+Advance} ()
+\begin{DoxyCompactList}\small\item\em sets the game mode to be advanced \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classview_1_1_pong_game_display_a0e3a18dfc9bbd76c97439a618a3330ac}{paint\+Component} (Graphics g)
+\begin{DoxyCompactList}\small\item\em draws shapes on the screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_aacbf5c26433ea74107021b461af657c1}{frame\+Width}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_a1263ea81d63ff3e12b37fee42225a22e}{frame\+Height}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_a14bdd6ada555582531723e7c11784251}{score\+Top}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_aa1f518edcfa598a7ba036567eadf3ae0}{ballX}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_a195949e482e01530f0c8c876bbf88e6a}{bottom\+PadX}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_a808ad12c167de880ca74e5ad56ea5f43}{top\+PadX}
+\item 
+boolean \hyperlink{classview_1_1_pong_game_display_aeb378cbf5a0a37e9105c9748910f3513}{first}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_ae26155e2cdf4f47b164377b7ee3ba3e4}{ball\+Size}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_a9617cc99b5e08dc62ac3272a0934d576}{padW}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_ac202bb5082c22fb3f40ddff2ccc797b5}{inset}
+\item 
+int \hyperlink{classview_1_1_pong_game_display_a38f4635d73ef3c3986ad8a351b6f7a69}{game\+Mode}
+\item 
+final int \hyperlink{classview_1_1_pong_game_display_a8d4dbbd4e9ba52b12ba951899c7fe02d}{S\+I\+N\+G\+LE} =0
+\item 
+final int \hyperlink{classview_1_1_pong_game_display_a3aa7541f41ee227f6f7c3acf0bd35871}{A\+D\+V\+A\+N\+CE} =1
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classview_1_1_pong_game_display_a1d578a032b81c4025ba91e6366672e07}{}\label{classview_1_1_pong_game_display_a1d578a032b81c4025ba91e6366672e07} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!Pong\+Game\+Display@{Pong\+Game\+Display}}
+\index{Pong\+Game\+Display@{Pong\+Game\+Display}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{Pong\+Game\+Display()}{PongGameDisplay()}}
+{\footnotesize\ttfamily view.\+Pong\+Game\+Display.\+Pong\+Game\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \hyperlink{classview_1_1_pong_game_display}{Pong\+Game\+Display}. 
+
+Constructor by default set the game to single mode 
+
+\subsection{Member Function Documentation}
+\hypertarget{classview_1_1_pong_game_display_a83584a112f5bd8877e1bbb1d74dfa080}{}\label{classview_1_1_pong_game_display_a83584a112f5bd8877e1bbb1d74dfa080} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BallX@{get\+BallX}}
+\index{get\+BallX@{get\+BallX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Ball\+X()}{getBallX()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+BallX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the x-\/position of the ball 
+
+\begin{DoxyReturn}{Returns}
+ballX 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a940198a68c987548b182d18069ba5885}{}\label{classview_1_1_pong_game_display_a940198a68c987548b182d18069ba5885} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BallY@{get\+BallY}}
+\index{get\+BallY@{get\+BallY}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Ball\+Y()}{getBallY()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+BallY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the y-\/position of the ball 
+
+\begin{DoxyReturn}{Returns}
+ballY 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_ab5d2d9429f7d666fea097c2ea3118893}{}\label{classview_1_1_pong_game_display_ab5d2d9429f7d666fea097c2ea3118893} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BottomX@{get\+BottomX}}
+\index{get\+BottomX@{get\+BottomX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Bottom\+X()}{getBottomX()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+BottomX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the x-\/position of the player paddle 
+
+\begin{DoxyReturn}{Returns}
+bottom\+PadX 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_afa4d22c9959dc02057a1b56fef3f33cd}{}\label{classview_1_1_pong_game_display_afa4d22c9959dc02057a1b56fef3f33cd} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BottomY@{get\+BottomY}}
+\index{get\+BottomY@{get\+BottomY}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Bottom\+Y()}{getBottomY()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+BottomY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the y-\/position of the player paddle 
+
+\begin{DoxyReturn}{Returns}
+bottom\+PadY 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a0e3a18dfc9bbd76c97439a618a3330ac}{}\label{classview_1_1_pong_game_display_a0e3a18dfc9bbd76c97439a618a3330ac} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!paint\+Component@{paint\+Component}}
+\index{paint\+Component@{paint\+Component}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{paint\+Component()}{paintComponent()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+paint\+Component (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+draws shapes on the screen 
+
+when the game is started, by default draws the ball and paddles in the middle, otherwise, draws objects by passed in values. Initial positioning
+\begin{DoxyItemize}
+\item ball at the center of the screen
+\item paddle in the middle of the frame width
+\end{DoxyItemize}
+
+Draw rectangles by passed in values
+
+Draw the ball by passed in values
+
+Draw scores on the screen by passed in values\hypertarget{classview_1_1_pong_game_display_a0fedbf41897932915b12f67542cb7695}{}\label{classview_1_1_pong_game_display_a0fedbf41897932915b12f67542cb7695} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Advance@{set\+Advance}}
+\index{set\+Advance@{set\+Advance}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Advance()}{setAdvance()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sets the game mode to be advanced 
+
+set the flag to advance \hypertarget{classview_1_1_pong_game_display_ac6afa3842b0a26be46dd0b7d202d887d}{}\label{classview_1_1_pong_game_display_ac6afa3842b0a26be46dd0b7d202d887d} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Ball@{set\+Ball}}
+\index{set\+Ball@{set\+Ball}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Ball()}{setBall()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Ball (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+sets the positions of the ball 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the x-\/position of the ball \\
+\hline
+{\em y} & is the y-\/position of the ball \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_a295d4a14e718454eb223a5bb06141d53}{}\label{classview_1_1_pong_game_display_a295d4a14e718454eb223a5bb06141d53} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Ball\+Size@{set\+Ball\+Size}}
+\index{set\+Ball\+Size@{set\+Ball\+Size}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Ball\+Size()}{setBallSize()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Ball\+Size (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+sets the size of the ball 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the ball size \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_aeaaff1c8033efd2d7f3242ab3b6c7e9e}{}\label{classview_1_1_pong_game_display_aeaaff1c8033efd2d7f3242ab3b6c7e9e} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Bottom@{set\+Bottom}}
+\index{set\+Bottom@{set\+Bottom}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Bottom()}{setBottom()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Bottom (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+sets x-\/position for the player paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the x-\/position \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_aa1ef677f1bae92a51750732099b1609a}{}\label{classview_1_1_pong_game_display_aa1ef677f1bae92a51750732099b1609a} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Bottom\+Score@{set\+Bottom\+Score}}
+\index{set\+Bottom\+Score@{set\+Bottom\+Score}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Bottom\+Score()}{setBottomScore()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Bottom\+Score (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+sets the score for player 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the score \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_ac40ce3811b6118c530980d38aa48ec64}{}\label{classview_1_1_pong_game_display_ac40ce3811b6118c530980d38aa48ec64} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Inset@{set\+Inset}}
+\index{set\+Inset@{set\+Inset}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Inset()}{setInset()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Inset (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+sets the distance between frame and the paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the inset \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc5}{}\label{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc5} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Paddle\+Height@{set\+Paddle\+Height}}
+\index{set\+Paddle\+Height@{set\+Paddle\+Height}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Paddle\+Height()}{setPaddleHeight()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Paddle\+Height (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+sets the height of the paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & is the height \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_ac42d38f9ed29e2ab2bec6c7da46f1c0e}{}\label{classview_1_1_pong_game_display_ac42d38f9ed29e2ab2bec6c7da46f1c0e} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Paddle\+Width@{set\+Paddle\+Width}}
+\index{set\+Paddle\+Width@{set\+Paddle\+Width}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Paddle\+Width()}{setPaddleWidth()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Paddle\+Width (\begin{DoxyParamCaption}\item[{int}]{w }\end{DoxyParamCaption})}
+
+
+
+sets the width of the paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & is the width \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_a8b9caa56b471453556b7380ee6d37340}{}\label{classview_1_1_pong_game_display_a8b9caa56b471453556b7380ee6d37340} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Top@{set\+Top}}
+\index{set\+Top@{set\+Top}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Top()}{setTop()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Top (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+sets x-\/position for the ai paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the x-\/position \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_pong_game_display_a04bcc8b60d85f38178d2cd817e3fbd39}{}\label{classview_1_1_pong_game_display_a04bcc8b60d85f38178d2cd817e3fbd39} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Top\+Score@{set\+Top\+Score}}
+\index{set\+Top\+Score@{set\+Top\+Score}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{set\+Top\+Score()}{setTopScore()}}
+{\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Top\+Score (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+sets the score for ai 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the score \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classview_1_1_pong_game_display_a3aa7541f41ee227f6f7c3acf0bd35871}{}\label{classview_1_1_pong_game_display_a3aa7541f41ee227f6f7c3acf0bd35871} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!A\+D\+V\+A\+N\+CE@{A\+D\+V\+A\+N\+CE}}
+\index{A\+D\+V\+A\+N\+CE@{A\+D\+V\+A\+N\+CE}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{A\+D\+V\+A\+N\+CE}{ADVANCE}}
+{\footnotesize\ttfamily final int view.\+Pong\+Game\+Display.\+A\+D\+V\+A\+N\+CE =1\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_ae26155e2cdf4f47b164377b7ee3ba3e4}{}\label{classview_1_1_pong_game_display_ae26155e2cdf4f47b164377b7ee3ba3e4} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!ball\+Size@{ball\+Size}}
+\index{ball\+Size@{ball\+Size}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{ball\+Size}{ballSize}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+ball\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_aa1f518edcfa598a7ba036567eadf3ae0}{}\label{classview_1_1_pong_game_display_aa1f518edcfa598a7ba036567eadf3ae0} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!ballX@{ballX}}
+\index{ballX@{ballX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{ballX}{ballX}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+ballX\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_a195949e482e01530f0c8c876bbf88e6a}{}\label{classview_1_1_pong_game_display_a195949e482e01530f0c8c876bbf88e6a} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!bottom\+PadX@{bottom\+PadX}}
+\index{bottom\+PadX@{bottom\+PadX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{bottom\+PadX}{bottomPadX}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+bottom\+PadX\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_aeb378cbf5a0a37e9105c9748910f3513}{}\label{classview_1_1_pong_game_display_aeb378cbf5a0a37e9105c9748910f3513} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!first@{first}}
+\index{first@{first}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily boolean view.\+Pong\+Game\+Display.\+first\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_a1263ea81d63ff3e12b37fee42225a22e}{}\label{classview_1_1_pong_game_display_a1263ea81d63ff3e12b37fee42225a22e} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!frame\+Height@{frame\+Height}}
+\index{frame\+Height@{frame\+Height}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{frame\+Height}{frameHeight}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+frame\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_aacbf5c26433ea74107021b461af657c1}{}\label{classview_1_1_pong_game_display_aacbf5c26433ea74107021b461af657c1} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!frame\+Width@{frame\+Width}}
+\index{frame\+Width@{frame\+Width}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{frame\+Width}{frameWidth}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+frame\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable declarations for the display
+\begin{DoxyItemize}
+\item frame dimension
+\item ball information
+\item bomb information
+\item player scores
+\item paddle information 
+\end{DoxyItemize}\hypertarget{classview_1_1_pong_game_display_a38f4635d73ef3c3986ad8a351b6f7a69}{}\label{classview_1_1_pong_game_display_a38f4635d73ef3c3986ad8a351b6f7a69} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!game\+Mode@{game\+Mode}}
+\index{game\+Mode@{game\+Mode}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{game\+Mode}{gameMode}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+game\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_ac202bb5082c22fb3f40ddff2ccc797b5}{}\label{classview_1_1_pong_game_display_ac202bb5082c22fb3f40ddff2ccc797b5} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!inset@{inset}}
+\index{inset@{inset}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{inset}{inset}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+inset\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_a9617cc99b5e08dc62ac3272a0934d576}{}\label{classview_1_1_pong_game_display_a9617cc99b5e08dc62ac3272a0934d576} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!padW@{padW}}
+\index{padW@{padW}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{padW}{padW}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+padW\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_a14bdd6ada555582531723e7c11784251}{}\label{classview_1_1_pong_game_display_a14bdd6ada555582531723e7c11784251} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!score\+Top@{score\+Top}}
+\index{score\+Top@{score\+Top}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{score\+Top}{scoreTop}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+score\+Top\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_a8d4dbbd4e9ba52b12ba951899c7fe02d}{}\label{classview_1_1_pong_game_display_a8d4dbbd4e9ba52b12ba951899c7fe02d} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!S\+I\+N\+G\+LE@{S\+I\+N\+G\+LE}}
+\index{S\+I\+N\+G\+LE@{S\+I\+N\+G\+LE}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{S\+I\+N\+G\+LE}{SINGLE}}
+{\footnotesize\ttfamily final int view.\+Pong\+Game\+Display.\+S\+I\+N\+G\+LE =0\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_pong_game_display_a808ad12c167de880ca74e5ad56ea5f43}{}\label{classview_1_1_pong_game_display_a808ad12c167de880ca74e5ad56ea5f43} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!top\+PadX@{top\+PadX}}
+\index{top\+PadX@{top\+PadX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{top\+PadX}{topPadX}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+top\+PadX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/view/\hyperlink{_pong_game_display_8java}{Pong\+Game\+Display.\+java}\end{DoxyCompactItemize}

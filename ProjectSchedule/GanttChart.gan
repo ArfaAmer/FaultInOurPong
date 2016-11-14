@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="FaultInOurPong" company="Pongthusiastics" webLink="https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong.git" view-date="2016-09-11" view-index="0" gantt-divider-location="582" resource-divider-location="300" version="2.8.1" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="FaultInOurPong" company="Pongthusiastics" webLink="https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong.git" view-date="2016-11-04" view-index="0" gantt-divider-location="405" resource-divider-location="300" version="2.8.1" locale="zh_CN">
     <description><![CDATA[This project is dedicated towards the improvement of the ping pong game found in the following link : https://github.com/mihneadb/Pong]]></description>
-    <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="名称" width="237" order="0"/>
-        <field id="tpd5" name="结束日期" width="183" order="1"/>
-        <field id="tpd4" name="开始日期" width="143" order="2"/>
-        <timeline><![CDATA[8,15,13]]></timeline>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="名称" width="161" order="0"/>
+        <field id="tpd5" name="结束日期" width="126" order="1"/>
+        <field id="tpd4" name="开始日期" width="99" order="2"/>
+        <timeline><![CDATA[15,13,8]]></timeline>
         <option id="color.recent"><![CDATA[#000000 #990099 #ff9999 #009966 #ccffcc #0066ff #ff9900 #ffff66 #cc0000]]></option>
     </view>
     <view id="resource-table">
@@ -73,13 +73,21 @@
             <task id="202" name="Document Modification" color="#8cb6ce" meeting="false" start="2016-10-11" duration="25" complete="0" expand="true"/>
         </task>
         <task id="104" name="Proof of Concept Demonstration" color="#8cb6ce" meeting="true" start="2016-10-17" duration="0" complete="0" expand="true"/>
-        <task id="217" name="MVC - View Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="19" complete="0" expand="true">
+        <task id="327" name="FR 3" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+        <task id="217" name="MVC - View Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="27" complete="0" expand="true">
             <task id="269" name="FR 1" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
             <task id="271" name="FR 2" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
             <task id="273" name="FR 4" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
             <task id="275" name="FR 5" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
             <task id="277" name="FR 6" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
             <task id="279" name="FR 7" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
+            <task id="337" name="FR 15" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="340" name="FR 16" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="342" name="FR 17" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="344" name="FR 18" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="354" name="FR 20" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="356" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="364" name="FR 22" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
             <task id="223" name="NFR 1" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
             <task id="224" name="NFR 3" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
             <task id="286" name="NFR 4" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
@@ -87,16 +95,29 @@
             <task id="293" name="NFR 8" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
             <task id="299" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         </task>
-        <task id="220" name="MVC - Model Development" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true">
+        <task id="220" name="MVC - Model Development" color="#8cb6ce" meeting="false" start="2016-10-31" duration="13" complete="0" expand="true">
+            <task id="358" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="368" name="NFR 2" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
             <task id="297" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         </task>
-        <task id="222" name="MVC - Controller Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="19" complete="0" expand="true">
+        <task id="222" name="MVC - Controller Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="27" complete="0" expand="true">
             <task id="229" name="FR 1" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
             <task id="232" name="FR 4" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
+            <task id="330" name="FR 5" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="333" name="FR 6" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="335" name="FR 7" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
             <task id="234" name="FR 10" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
             <task id="236" name="FR 12" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
             <task id="281" name="FR 13" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
             <task id="284" name="FR 14" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="346" name="FR 15" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="348" name="FR 16" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="350" name="FR 17" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="352" name="FR 18" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="360" name="FR 20" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="362" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="366" name="FR 22" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+            <task id="370" name="NFR 2" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
             <task id="289" name="NFR 7" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
             <task id="291" name="NFR 8" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
             <task id="295" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
@@ -117,6 +138,21 @@
             </task>
         </task>
         <task id="112" name="Design Document Revision 0" color="#8cb6ce" meeting="true" start="2016-11-01" duration="0" complete="0" expand="true"/>
+        <task id="302" name="Design Document Development" meeting="false" start="2016-11-07" duration="6" complete="0" expand="true">
+            <task id="300" name="Brain storming" color="#8cb6ce" meeting="false" start="2016-11-07" duration="4" complete="0" expand="true"/>
+            <task id="303" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
+                <task id="305" name="MG" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
+                    <task id="308" name="Introduction and Overview" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+                    <task id="313" name="Module hierarchy" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+                    <task id="314" name="Traceability" color="#8cb6ce" meeting="false" start="2016-11-14" duration="1" complete="0" expand="true"/>
+                </task>
+                <task id="306" name="MIS" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
+                    <task id="316" name="Revision History" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true"/>
+                    <task id="319" name="Input and Output" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true"/>
+                </task>
+                <task id="307" name="Gantt Chart Update" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
         <task id="13" name="Revision 0 Demonstration" color="#8cb6ce" meeting="true" start="2016-11-14" duration="0" complete="0" expand="true"/>
         <task id="40" name="Final Demonstration Revision 1" color="#8cb6ce" meeting="true" start="2016-11-28" duration="0" complete="0" expand="true"/>
         <task id="15" name="Peer Evaluation" color="#8cb6ce" meeting="true" start="2016-11-28" duration="0" complete="0" expand="true"/>
@@ -150,6 +186,20 @@
         <allocation task-id="248" resource-id="0" function="2" responsible="false" load="10.0"/>
         <allocation task-id="249" resource-id="0" function="2" responsible="true" load="10.0"/>
         <allocation task-id="263" resource-id="0" function="2" responsible="true" load="10.0"/>
+        <allocation task-id="316" resource-id="0" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="308" resource-id="0" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="300" resource-id="0" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="269" resource-id="0" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="275" resource-id="0" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="337" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="344" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="364" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="358" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="335" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="281" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="346" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="360" resource-id="0" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="370" resource-id="0" function="2" responsible="true" load="5.0"/>
         <allocation task-id="3" resource-id="1" function="Default:0" responsible="true" load="33.0"/>
         <allocation task-id="8" resource-id="1" function="Default:0" responsible="true" load="33.33"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="33.33"/>
@@ -172,6 +222,21 @@
         <allocation task-id="248" resource-id="1" function="4" responsible="false" load="10.0"/>
         <allocation task-id="259" resource-id="1" function="4" responsible="true" load="10.0"/>
         <allocation task-id="265" resource-id="1" function="4" responsible="true" load="10.0"/>
+        <allocation task-id="316" resource-id="1" function="4" responsible="false" load="5.0"/>
+        <allocation task-id="313" resource-id="1" function="4" responsible="false" load="10.0"/>
+        <allocation task-id="300" resource-id="1" function="4" responsible="false" load="5.0"/>
+        <allocation task-id="271" resource-id="1" function="4" responsible="false" load="5.0"/>
+        <allocation task-id="277" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="340" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="354" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="368" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="232" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="330" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="234" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="284" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="348" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="362" resource-id="1" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="295" resource-id="1" function="4" responsible="true" load="5.0"/>
         <allocation task-id="3" resource-id="2" function="Default:0" responsible="false" load="34.0"/>
         <allocation task-id="8" resource-id="2" function="Default:0" responsible="true" load="33.34"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="33.34"/>
@@ -194,21 +259,27 @@
         <allocation task-id="224" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="225" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="229" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
-        <allocation task-id="232" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
-        <allocation task-id="234" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="236" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="247" resource-id="2" function="Default:1" responsible="true" load="10.0"/>
         <allocation task-id="248" resource-id="2" function="Default:1" responsible="true" load="10.0"/>
         <allocation task-id="261" resource-id="2" function="Default:1" responsible="true" load="10.0"/>
         <allocation task-id="268" resource-id="2" function="Default:1" responsible="true" load="10.0"/>
-        <allocation task-id="281" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
-        <allocation task-id="284" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="286" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
-        <allocation task-id="289" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="291" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
-        <allocation task-id="295" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
-        <allocation task-id="297" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
         <allocation task-id="299" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="307" resource-id="2" function="Default:1" responsible="true" load="10.0"/>
+        <allocation task-id="319" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="314" resource-id="2" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="300" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="333" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="273" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="279" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="342" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="356" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="297" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="352" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="366" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="289" resource-id="2" function="Default:1" responsible="true" load="5.0"/>
     </allocations>
     <vacations/>
     <previous/>

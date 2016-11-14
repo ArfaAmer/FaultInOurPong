@@ -1,0 +1,104 @@
+\hypertarget{classmodel_1_1_player}{}\section{model.\+Player Class Reference}
+\label{classmodel_1_1_player}\index{model.\+Player@{model.\+Player}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodel_1_1_player_a6922d8b0b084510c84540a3497504ed3}{Player} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the player. \end{DoxyCompactList}\item 
+void \hyperlink{classmodel_1_1_player_a5551dad23bcab60638b37c8f54dd6796}{decrement\+Life} ()
+\begin{DoxyCompactList}\small\item\em loses score if the ball touches his/her border. \end{DoxyCompactList}\item 
+int \hyperlink{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d}{get\+Score} ()
+\begin{DoxyCompactList}\small\item\em gets the score of a player \end{DoxyCompactList}\item 
+boolean \hyperlink{classmodel_1_1_player_a1027595469ab5de940ba2f6cbb29e5ef}{check\+Loss} ()
+\begin{DoxyCompactList}\small\item\em checks whether the player loses the game or not \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{classmodel_1_1_player_a59153913ee338710aa1a33b68e5d0dbd}{L\+I\+FE} = 3
+\item 
+final int \hyperlink{classmodel_1_1_player_ad422bd3896f6c86c74fe49be0cae6759}{N\+O\+L\+I\+FE} = 0
+\item 
+int \hyperlink{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2}{score}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmodel_1_1_player_a6922d8b0b084510c84540a3497504ed3}{}\label{classmodel_1_1_player_a6922d8b0b084510c84540a3497504ed3} 
+\index{model\+::\+Player@{model\+::\+Player}!Player@{Player}}
+\index{Player@{Player}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily model.\+Player.\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the player. 
+
+sets the current life is the full life (3). 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmodel_1_1_player_a1027595469ab5de940ba2f6cbb29e5ef}{}\label{classmodel_1_1_player_a1027595469ab5de940ba2f6cbb29e5ef} 
+\index{model\+::\+Player@{model\+::\+Player}!check\+Loss@{check\+Loss}}
+\index{check\+Loss@{check\+Loss}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{check\+Loss()}{checkLoss()}}
+{\footnotesize\ttfamily boolean model.\+Player.\+check\+Loss (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks whether the player loses the game or not 
+
+\begin{DoxyReturn}{Returns}
+a boolean that is used to indicate whether the player is losing or not 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_player_a5551dad23bcab60638b37c8f54dd6796}{}\label{classmodel_1_1_player_a5551dad23bcab60638b37c8f54dd6796} 
+\index{model\+::\+Player@{model\+::\+Player}!decrement\+Life@{decrement\+Life}}
+\index{decrement\+Life@{decrement\+Life}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{decrement\+Life()}{decrementLife()}}
+{\footnotesize\ttfamily void model.\+Player.\+decrement\+Life (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+loses score if the ball touches his/her border. 
+
+decreases the number of life by 1. \hypertarget{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d}{}\label{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d} 
+\index{model\+::\+Player@{model\+::\+Player}!get\+Score@{get\+Score}}
+\index{get\+Score@{get\+Score}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{get\+Score()}{getScore()}}
+{\footnotesize\ttfamily int model.\+Player.\+get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the score of a player 
+
+\begin{DoxyReturn}{Returns}
+player\+Score returns the score of the player . 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodel_1_1_player_a59153913ee338710aa1a33b68e5d0dbd}{}\label{classmodel_1_1_player_a59153913ee338710aa1a33b68e5d0dbd} 
+\index{model\+::\+Player@{model\+::\+Player}!L\+I\+FE@{L\+I\+FE}}
+\index{L\+I\+FE@{L\+I\+FE}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{L\+I\+FE}{LIFE}}
+{\footnotesize\ttfamily final int model.\+Player.\+L\+I\+FE = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+Defines constant number of life of a player
+\begin{DoxyItemize}
+\item the player has 3 lives in total
+\item the player loses if the number of life is 0 
+\end{DoxyItemize}\hypertarget{classmodel_1_1_player_ad422bd3896f6c86c74fe49be0cae6759}{}\label{classmodel_1_1_player_ad422bd3896f6c86c74fe49be0cae6759} 
+\index{model\+::\+Player@{model\+::\+Player}!N\+O\+L\+I\+FE@{N\+O\+L\+I\+FE}}
+\index{N\+O\+L\+I\+FE@{N\+O\+L\+I\+FE}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{N\+O\+L\+I\+FE}{NOLIFE}}
+{\footnotesize\ttfamily final int model.\+Player.\+N\+O\+L\+I\+FE = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2}{}\label{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2} 
+\index{model\+::\+Player@{model\+::\+Player}!score@{score}}
+\index{score@{score}!model\+::\+Player@{model\+::\+Player}}
+\subsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily int model.\+Player.\+score\hspace{0.3cm}{\ttfamily [private]}}
+
+Defines the current number of life of the player. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\hyperlink{_player_8java}{Player.\+java}\end{DoxyCompactItemize}

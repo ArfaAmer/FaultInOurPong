@@ -1,0 +1,36 @@
+\hypertarget{_pong_game_8java}{}\section{src/start\+Game/\+Pong\+Game.java File Reference}
+\label{_pong_game_8java}\index{src/start\+Game/\+Pong\+Game.\+java@{src/start\+Game/\+Pong\+Game.\+java}}
+
+
+This class starts the game.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classstart_game_1_1_pong_game}{start\+Game.\+Pong\+Game}
+\end{DoxyCompactItemize}
+\subsection*{Packages}
+\begin{DoxyCompactItemize}
+\item 
+package \hyperlink{namespacestart_game}{start\+Game}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class starts the game. 
+
+Pong\+Game \begin{DoxyAuthor}{Author}
+Pongthusiastics 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+13/11/2016
+\end{DoxyDate}
+This class instantiates a model, view, and controller using the M\+VC model, and starts the game. 
+\begin{DoxyCode}
+GameView \hyperlink{namespaceview}{view} = \textcolor{keyword}{new} GameView();
+GameModel \hyperlink{namespacemodel}{model} = \textcolor{keyword}{new} GameModel();
+GameController controller = \textcolor{keyword}{new} GameController(view, model);
+controller.display();
+\end{DoxyCode}
+ 
