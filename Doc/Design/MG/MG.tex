@@ -1,0 +1,207 @@
+\documentclass[12pt,letterpaper]{article}
+% Use packages
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[normalem]{ulem}
+\usepackage{mdframed}
+\newmdenv[linecolor=black]{reqbox}
+
+% Make title
+\title{SE 3XA3 Module Guide: Revision 0} 
+\author{Team 03, Pongthusiastics 		
+\\ Adwity Sharma - sharma78 		
+\\ Arfa Butt - buttaa3 	
+	\\ Jie Luo - luoj3 }
+ \date{\today} 
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+
+\listoftables
+\listoffigures
+\begin{table}[h]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+November 9, 2016 & 1.0 & Created Module Guide \\
+November 11, 2016 & 2.0 & Divided sections between group members \\
+November 13, 2016 & 3.0 & Created format for Module Guide and added sections 2 and 4 \\
+November 13, 2016 & 4.0 & Sections 1, 3 and 6 added \\
+November 14, 2016 & 5.0 & Final version with all sections added\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+	
+	\section{Introduction}
+	This document indicates the Module Guides for the implementation of the “Fault in Our Pong” project. This document is intended to facilitate the design and maintenance of the project.   
+Design follows the following rules:
+\begin{enumerate}
+	\item MVC model: MVC model has been implemented in rigorously in the project. The design has been separated in model, view and control classes. The model class is responsible for managing the data, logic and rules of application of the project. View is responsible for the output representation of the information. Control is responsible for the implementations of commands from users and manipulates the model.
+	\item Each data structure is implemented in only one model.
+	\item If any other program requires the data structure implemented in a module, it calls on that particular module to access the data.
+	\item The implementations that are likely to change are stored in separate modules.
+\end{enumerate}
+
+	The major purpose of this document is to provide a detailed information for the concerned parties about how and why a certain implementation has been carried out. The potential readers of the document are as follows:
+New project members: If new project members are added to the project then this document, along with the document about the MIS implementation, would help the new members understand how and why the functionalities have been implemented. It will also help them understand the features that must be preserved.
+ 
+	Designers: This document provides the designers with a means of communication about the module specifications. It also helps determine if the requirements have been met. It can also show the flexibility and feasibility of various modules. 
+Maintainers: It is important for the people responsible for maintaining the modules to understand the hierarchical structure of the modules. This document helps people responsible for updating this project to understand the way the implementation has been done for the project. 
+	The rest of the document is arranged as follows. The second section (2.1 and 2.2) of this document provides details about anticipated and unlikely changes of the document. The third section contains the breakdown of the module hierarchy, per the likely changes. The forth section shows the connections between the software requirements and the modules. The fifth section shows a detailed breakdown of the module description. The sixth section includes the tractability matrix. The seventh section describes the use hierarchy between various modules. 
+	
+	\section{Anticipated and Unlikely Changes}
+	\subsection{Anticipated Changes}
+	\paragraph{AC1:}	The specific hardware on which the game is running.
+	\paragraph{AC2:}	The format of the input data. (left and right keys can be changed to different keys inside the GameController class without it affecting the rest of the project)
+	\paragraph{AC3:}	The constraints on the input parameters.
+	\paragraph{AC4:}	Game features. (Number of people added on the highscores list, number of lives given to the user)
+	\paragraph{AC5:}	Additional features. (Advanced single player mode with obstacles added, different speeds of the ball)
+	\paragraph{AC6:}	Magnitude of game controls and media (size of the buttons, ball etc.).
+	
+	\subsection{Unlikely Changes}
+	\paragraph{UC1:}	Input and output devices. (Input: mouse clicks and keyboard presses, Output: screen/console)
+	\paragraph{UC2:}	There will always be a source of input data external to the software.
+	\paragraph{UC3:}	Game mechanics. (Formulas to calculate when ball should change direction) 
+	\paragraph{UC4:}	Execution environment. (Must be java-based)
+
+	\section{Module Hierarchy}
+	This section provides an overview of the module design. Modules are summarized in a hierarchy decomposed by secrets in Table 2. The modules listed below, which are leaves in the hierarchy tree, are the modules that will actually be implemented.
+	\paragraph{M1} Hardware hiding modules
+	\paragraph{M2} Input control module
+	\paragraph{M3} Output control module
+	\paragraph{M4} Game frame control module
+	\paragraph{M5} Player details controlling module
+	\paragraph{} M1 is not a required module in our project, because the implementation is software based.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+{Hardware-Hiding Module} & ~ \\
+\midrule
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Paddle control module\\
+& Ball control module\\
+& Start and end of game control module\\
+& Input control module\\
+& Output control module\\
+& High score controlling module\\
+\midrule
+\multirow{3}{0.3\textwidth}{Software Decision Module} & Game frame controlling module\\
+& Player details controlling module\\
+\bottomrule
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+
+	\section{Connection Between Requirements and Design}
+	The design of the system is intended to satisfy the requirements developed in the SRS. In this stage, the system is decomposed into modules. The connection between requirements and modules is listed in Table 3.
+
+	\section{Module Decomposition}
+	\subsection{Hardware Hiding Modules (M1)}
+	\paragraph{Secrets: } The data structure and algorithm used to implement the virtual hardware.
+	\paragraph{Services: } Serves as a virtual hardware used by the rest of the system. This module provides the interface between the hardware and the software. So, the system can use it to display outputs or to accept inputs.
+	\paragraph{Implemented By: } Windows
+
+	\subsection{Behavior-Hiding Module}
+	\paragraph{Secrets: } The contents of the required behaviours.
+	\paragraph{Services: }Includes programs that provide externally visible behaviour of the system as specified in the software requirements specification (SRS) documents. This module serves as a communication layer between the hardware-hiding module and the software decision module. The programs in this module will need to change if there are changes in the SRS.
+	\paragraph{Implemented By: } -
+
+	\subsubsection{Input Control Module M2}
+	\paragraph{Secrets: } The structure and forms of the input data.
+	\paragraph{Services: } Converts the input data provided by the user into a command for the movement and other optional services within the game. 
+	\paragraph{Implemented By: } The classes within the model folder that takes in account of the various stages and input control factors of the game, such as various speed levels.
+
+	\subsubsection{Output Control Module M3}
+	\paragraph{Secrets: } The structure and forms of the output data.
+	\paragraph{Services: } Based on the input data provided by the user it controls the movement and other services, based on users’ choice for the game. This module is used to hide the implementation of the various outputs that the users get during the game. 
+	\paragraph{Implemented By: } The classes within the view folder that takes in account of the various output of the game, such as the movement of the paddle in the game frame based on the keyboard keys movement by the user. 
+
+	
+	\subsection{Software Decision Module}
+
+	\subsubsection{Game Frame Control Module M4}
+	\paragraph{Secrets: } The structure and format of the game frame control.
+	\paragraph{Services: }This module controls the outer frame of the ping pong game, such as the frame size, the switching between one frame to another etc. 
+	\paragraph{Implemented By: } The game view class within the view folder.
+
+	\subsubsection{Player Details Controlling Module M5}
+	\paragraph{Secrets: } The structure and format of the player object implementation.
+	\paragraph{Services: } This module controls the information and details about each user and provides the user with the services and details associated with the player class while they are playing the game.
+	\paragraph{Implemented By: } The player class within the model folder.
+
+	\section{Traceability Matrix}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Requirements} & \textbf{Modules}\\
+\midrule
+{R1} & M2, M4, M5 \\
+{R2} & M1, M2, M3, M4, M5 \\
+{R3} & M1, M2, M4, M5 \\
+{R4} & M1, M3, M5, M6 \\
+{R5} & M2, M3, M5 \\
+{R6} & M2, M3, M4, M5, M6 \\
+{R7} & M2, M3, M4, M5, M6 \\
+{R9} & M1, M3, M4, M5 \\
+{R10} & M1, M4, M6\\
+{R11} & M1, M3, M4, M6\\
+{R12} & M1, M2, M3, M5\\
+{R13} & M1, M3, M4, M6\\
+{R14} & M1, M3, M4, M6\\
+{R15} & M1, M4, M5\\
+{R16} & M1, M4, M5\\
+{R17} & M1, M2, M3, M4, M5\\
+{R18} & M1, M3, M4, M6\\
+{R20} & M1, M4, M5\\
+{R21} & M1, M2, M4, M5, M6\\
+{R22} & M3, M4, M5\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
+\end{table}
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{AC} & \textbf{Modules}\\
+\midrule
+{AC1} & M1 \\
+{AC2} & M2, M4 \\
+{AC3} & M4, M6 \\
+{AC4} & M4,  M6 \\
+{AC5} & M2, M3, M4 \\
+{AC6} & M3, M4, M5 \\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Anticipated Changes and Modules}
+\label{TblACT}
+\end{table}
+\clearpage
+	\section{Use Hierarchy Between Modules}
+\paragraph GameModel.java class uses ball.java, paddle.java and player.java.
+\paragraph GameView.java uses welcome.java, mode.java, pongGameDisplay.java and tutorial.java.
+\paragraph Tutorial.java uses ImageIcon.img.
+\paragraph GameController.java uses GameView.java, GameModel.java, Welcome.java, mode.java, highScore.java and Tutorial.java.
+\paragraph StartGame.java uses GameView.java, GameModel.java and GameController.java.
+
+
+\end{document}
