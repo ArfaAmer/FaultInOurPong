@@ -1,0 +1,148 @@
+\documentclass[12pt,letterpaper]{article}
+% Use packages
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[normalem]{ulem}
+\usepackage{mdframed}
+\newmdenv[linecolor=black]{reqbox}
+
+% Make title
+\title{SE 3XA3 Module Guide: Revision 0} 
+\author{Team 03, Pongthusiastics 		
+\\ Adwity Sharma - sharma78 		
+\\ Arfa Butt - buttaa3 	
+	\\ Jie Luo - luoj3 }
+ \date{\today} 
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+
+\listoftables
+\listoffigures
+\begin{table}[h]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+November 9, 2016 & 1.0 & Created Module Guide \\
+November 11, 2016 & 2.0 & Divided sections between group members \\
+November 13, 2016 & 3.0 & Created format for Module Guide and added sections 2 and 4 \\
+November 13, 2016 & 4.0 & Final version with all sections and subsections added \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+	
+	\section{Introduction}
+	The purpose of this report is to verify that the software has been tested properly and that it was implemented correctly.
+	
+	\section{Anticipated and Unlikely Changes}
+	\subsection{Anticipated Changes}
+	\paragraph{AC1:}	The specific hardware on which the game is running.
+	\paragraph{AC2:}	The format of the input data. (left and right keys can be changed to different keys inside the GameController class without it affecting the rest of the project)
+	\paragraph{AC3:}	The constraints on the input parameters.
+	\paragraph{AC4:}	Game features. (Number of people added on the highscores list, number of lives given to the user)
+	\paragraph{AC5:}	Additional features. (Advanced single player mode with obstacles added, different speeds of the ball)
+	\paragraph{AC6:}	Magnitude of game controls and media (size of the buttons, ball etc.).
+	
+	\subsection{Unlikely Changes}
+	\paragraph{UC1:}	Input and output devices. (Input: mouse clicks and keyboard presses, Output: screen/console)
+	\paragraph{UC2:}	There will always be a source of input data external to the software.
+	\paragraph{UC3:}	Game mechanics. (Formulas to calculate when ball should change direction) 
+	\paragraph{UC4:}	Execution environment. (Must be java-based)
+
+	\section{Module Hierarchy}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+{Hardware-Hiding Module} & ~ \\
+\midrule
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
+& ?\\
+& ?\\
+& ?\\
+& ?\\
+& ?\\
+& ?\\ 
+& ?\\
+\midrule
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
+& ?\\
+& ?\\
+\bottomrule
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+
+	\section{Connection Between Requirements and Design}
+	The design of the system is intended to satisfy the requirements developed in the SRS. In this stage, the system is decomposed into modules. The connection between requirements and modules is listed in Table 3.
+
+	\section{Module Decomposition}
+	\subsection{Hardware Hiding Modules}
+
+	\subsection{Behavior-Hiding Module}
+
+	\subsection{Software Decision Module}
+
+	\section{Traceability Matrix}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Requirements} & \textbf{Modules}\\
+\midrule
+{R1} & M1, M, M \\
+{R2} & M1, M, M \\
+{R3} & M1, M, M \\
+{R4} & M1, M, M \\
+{R5} & M1, M, M \\
+{R6} & M1, M, M \\
+{R7} & M1, M, M \\
+{R8} & M1, M, M \\
+{R9} & M1, M, M \\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
+\end{table}
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{AC} & \textbf{Modules}\\
+\midrule
+{AC1} & M1, M, M \\
+{AC2} & M1, M, M \\
+{AC3} & M1, M, M \\
+{AC4} & M1, M, M \\
+{AC5} & M1, M, M \\
+{AC6} & M1, M, M \\
+{AC7} & M1, M, M \\
+{AC8} & M1, M, M \\
+{AC9} & M1, M, M \\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Anticipated Changes and Modules}
+\label{TblACT}
+\end{table}
+
+	\section{Use Hierarchy Between Modules}
+
+
+\end{document}
