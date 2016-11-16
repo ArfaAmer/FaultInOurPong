@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="FaultInOurPong" company="Pongthusiastics" webLink="https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong.git" view-date="2016-11-04" view-index="0" gantt-divider-location="405" resource-divider-location="300" version="2.8.1" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="FaultInOurPong" company="Pongthusiastics" webLink="https://gitlab.cas.mcmaster.ca/Group3/FaultInOurPong.git" view-date="2016-10-16" view-index="0" gantt-divider-location="405" resource-divider-location="300" version="2.8.1" locale="en_CA">
     <description><![CDATA[This project is dedicated towards the improvement of the ping pong game found in the following link : https://github.com/mihneadb/Pong]]></description>
-    <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="名称" width="161" order="0"/>
-        <field id="tpd5" name="结束日期" width="126" order="1"/>
-        <field id="tpd4" name="开始日期" width="99" order="2"/>
-        <timeline><![CDATA[15,13,8]]></timeline>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="161" order="0"/>
+        <field id="tpd5" name="End date" width="126" order="1"/>
+        <field id="tpd4" name="Begin date" width="99" order="2"/>
+        <timeline><![CDATA[15,8,13]]></timeline>
         <option id="color.recent"><![CDATA[#000000 #990099 #ff9999 #009966 #ccffcc #0066ff #ff9900 #ffff66 #cc0000]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="名称" width="154" order="0"/>
-        <field id="1" name="默认角色" width="142" order="1"/>
+        <field id="0" name="Name" width="154" order="0"/>
+        <field id="1" name="Default role" width="142" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -37,120 +37,120 @@
         </taskproperties>
         <task id="152" name="Team Formation" color="#8cb6ce" meeting="true" start="2016-09-15" duration="0" complete="0" expand="true"/>
         <task id="68" name="Project Approval" color="#8cb6ce" meeting="true" start="2016-09-22" duration="0" complete="0" expand="true"/>
-        <task id="144" name="Search for Available Projects" meeting="false" start="2016-09-15" duration="6" complete="0" expand="true">
-            <task id="145" name="Project Selection" color="#8cb6ce" meeting="false" start="2016-09-15" duration="3" complete="0" expand="true"/>
-            <task id="149" name="Project Approval" color="#8cb6ce" meeting="false" start="2016-09-19" duration="1" complete="0" expand="true"/>
-            <task id="147" name="Project Reselection" color="#8cb6ce" meeting="false" start="2016-09-19" duration="4" complete="0" expand="true"/>
-            <task id="151" name="Project Approval" color="#8cb6ce" meeting="false" start="2016-09-22" duration="1" complete="0" expand="true"/>
+        <task id="144" name="Search for Available Projects" meeting="false" start="2016-09-15" duration="6" complete="100" expand="true">
+            <task id="145" name="Project Selection" color="#8cb6ce" meeting="false" start="2016-09-15" duration="3" complete="100" expand="true"/>
+            <task id="149" name="Project Approval" color="#8cb6ce" meeting="false" start="2016-09-19" duration="1" complete="100" expand="true"/>
+            <task id="147" name="Project Reselection" color="#8cb6ce" meeting="false" start="2016-09-19" duration="4" complete="100" expand="true"/>
+            <task id="151" name="Project Approval" color="#8cb6ce" meeting="false" start="2016-09-22" duration="1" complete="100" expand="true"/>
         </task>
         <task id="35" name="Problem Statement" color="#8cb6ce" meeting="true" start="2016-09-23" duration="0" complete="0" expand="true"/>
-        <task id="180" name="Problem Statement Development" color="#000000" meeting="false" start="2016-09-16" duration="6" complete="0" expand="true">
-            <task id="181" name="Brain Storming" color="#8cb6ce" meeting="false" start="2016-09-16" duration="5" complete="0" expand="true"/>
-            <task id="183" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-09-22" duration="2" complete="0" expand="true">
-                <task id="185" name="Introduction and Importance" color="#8cb6ce" meeting="false" start="2016-09-22" duration="1" complete="0" expand="true"/>
-                <task id="187" name="Context of the Problem" color="#8cb6ce" meeting="false" start="2016-09-23" duration="1" complete="0" expand="true"/>
+        <task id="180" name="Problem Statement Development" color="#000000" meeting="false" start="2016-09-16" duration="6" complete="100" expand="true">
+            <task id="181" name="Brain Storming" color="#8cb6ce" meeting="false" start="2016-09-16" duration="5" complete="100" expand="true"/>
+            <task id="183" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-09-22" duration="2" complete="100" expand="true">
+                <task id="185" name="Introduction and Importance" color="#8cb6ce" meeting="false" start="2016-09-22" duration="1" complete="100" expand="true"/>
+                <task id="187" name="Context of the Problem" color="#8cb6ce" meeting="false" start="2016-09-23" duration="1" complete="100" expand="true"/>
             </task>
         </task>
         <task id="91" name="Development Plan" color="#8cb6ce" meeting="true" start="2016-09-30" duration="0" complete="0" expand="true"/>
-        <task id="189" name="Development Plan Development" color="#8cb6ce" meeting="false" start="2016-09-20" duration="9" complete="0" expand="true">
-            <task id="191" name="Discussions for the team" color="#8cb6ce" meeting="false" start="2016-09-20" duration="4" complete="0" expand="true"/>
-            <task id="193" name="Meeting Schedules and Roles" color="#8cb6ce" meeting="false" start="2016-09-23" duration="2" complete="0" expand="true"/>
-            <task id="194" name="Project Discussions and Plans" color="#8cb6ce" meeting="false" start="2016-09-26" duration="3" complete="0" expand="true"/>
-            <task id="197" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-09-28" duration="3" complete="0" expand="true"/>
+        <task id="189" name="Development Plan Development" color="#8cb6ce" meeting="false" start="2016-09-20" duration="9" complete="100" expand="true">
+            <task id="191" name="Discussions for the team" color="#8cb6ce" meeting="false" start="2016-09-20" duration="4" complete="100" expand="true"/>
+            <task id="193" name="Meeting Schedules and Roles" color="#8cb6ce" meeting="false" start="2016-09-23" duration="2" complete="100" expand="true"/>
+            <task id="194" name="Project Discussions and Plans" color="#8cb6ce" meeting="false" start="2016-09-26" duration="3" complete="100" expand="true"/>
+            <task id="197" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-09-28" duration="3" complete="100" expand="true"/>
         </task>
         <task id="3" name="Requirement Document Revision 0" color="#8cb6ce" meeting="true" start="2016-10-11" duration="0" complete="0" expand="true"/>
-        <task id="199" name="SRS Development Revision 0" color="#8cb6ce" meeting="false" start="2016-09-23" duration="37" complete="0" expand="true">
-            <task id="203" name="Discussions" color="#8cb6ce" meeting="false" start="2016-09-23" duration="8" complete="0" expand="true">
-                <task id="206" name="Functional Requirements" color="#8cb6ce" meeting="false" start="2016-09-23" duration="5" complete="0" expand="true"/>
-                <task id="207" name="Non-functional Requirements" color="#8cb6ce" meeting="false" start="2016-09-23" duration="5" complete="0" expand="true"/>
-                <task id="208" name="Project Issues" color="#8cb6ce" meeting="false" start="2016-09-29" duration="4" complete="0" expand="true"/>
+        <task id="199" name="SRS Development Revision 0" color="#8cb6ce" meeting="false" start="2016-09-23" duration="37" complete="78" expand="true">
+            <task id="203" name="Discussions" color="#8cb6ce" meeting="false" start="2016-09-23" duration="8" complete="94" expand="true">
+                <task id="206" name="Functional Requirements" color="#8cb6ce" meeting="false" start="2016-09-23" duration="5" complete="100" expand="true"/>
+                <task id="207" name="Non-functional Requirements" color="#8cb6ce" meeting="false" start="2016-09-23" duration="5" complete="100" expand="true"/>
+                <task id="208" name="Project Issues" color="#8cb6ce" meeting="false" start="2016-09-29" duration="4" complete="81" expand="true"/>
             </task>
-            <task id="201" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-10-04" duration="6" complete="0" expand="true">
-                <task id="214" name="Functional Requirements" color="#8cb6ce" meeting="false" start="2016-10-04" duration="5" complete="0" expand="true"/>
-                <task id="215" name="Non-functional Requirements" color="#8cb6ce" meeting="false" start="2016-10-04" duration="5" complete="0" expand="true"/>
-                <task id="216" name="Project Drivers and Issues" color="#8cb6ce" meeting="false" start="2016-10-10" duration="2" complete="0" expand="true"/>
+            <task id="201" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-10-04" duration="6" complete="87" expand="true">
+                <task id="214" name="Functional Requirements" color="#8cb6ce" meeting="false" start="2016-10-04" duration="5" complete="85" expand="true"/>
+                <task id="215" name="Non-functional Requirements" color="#8cb6ce" meeting="false" start="2016-10-04" duration="5" complete="85" expand="true"/>
+                <task id="216" name="Project Drivers and Issues" color="#8cb6ce" meeting="false" start="2016-10-10" duration="2" complete="100" expand="true"/>
             </task>
-            <task id="202" name="Document Modification" color="#8cb6ce" meeting="false" start="2016-10-11" duration="25" complete="0" expand="true"/>
+            <task id="202" name="Document Modification" color="#8cb6ce" meeting="false" start="2016-10-11" duration="25" complete="72" expand="true"/>
         </task>
         <task id="104" name="Proof of Concept Demonstration" color="#8cb6ce" meeting="true" start="2016-10-17" duration="0" complete="0" expand="true"/>
-        <task id="327" name="FR 3" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-        <task id="217" name="MVC - View Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="27" complete="0" expand="true">
-            <task id="269" name="FR 1" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="271" name="FR 2" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="273" name="FR 4" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="275" name="FR 5" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="277" name="FR 6" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="279" name="FR 7" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="337" name="FR 15" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="340" name="FR 16" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="342" name="FR 17" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="344" name="FR 18" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="354" name="FR 20" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="356" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="364" name="FR 22" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
+        <task id="327" name="FR 3" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="100" expand="true"/>
+        <task id="217" name="MVC - View Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="27" complete="77" expand="true">
+            <task id="269" name="FR 1" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true"/>
+            <task id="271" name="FR 2" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true"/>
+            <task id="273" name="FR 4" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="80" expand="true"/>
+            <task id="275" name="FR 5" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true"/>
+            <task id="277" name="FR 6" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true"/>
+            <task id="279" name="FR 7" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="89" expand="true"/>
+            <task id="337" name="FR 15" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="100" expand="true"/>
+            <task id="340" name="FR 16" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="87" expand="true"/>
+            <task id="342" name="FR 17" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="85" expand="true"/>
+            <task id="344" name="FR 18" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="81" expand="true"/>
+            <task id="354" name="FR 20" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="75" expand="true"/>
+            <task id="356" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="73" expand="true"/>
+            <task id="364" name="FR 22" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="79" expand="true"/>
             <task id="223" name="NFR 1" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
             <task id="224" name="NFR 3" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
-            <task id="286" name="NFR 4" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="286" name="NFR 4" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="90" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
             <task id="225" name="NFR 6" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
-            <task id="293" name="NFR 8" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true"/>
-            <task id="299" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="293" name="NFR 8" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="79" expand="true"/>
+            <task id="299" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="80" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         </task>
-        <task id="220" name="MVC - Model Development" color="#8cb6ce" meeting="false" start="2016-10-31" duration="13" complete="0" expand="true">
-            <task id="358" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="368" name="NFR 2" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="297" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="220" name="MVC - Model Development" color="#8cb6ce" meeting="false" start="2016-10-31" duration="13" complete="72" expand="true">
+            <task id="358" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="68" expand="true"/>
+            <task id="368" name="NFR 2" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="72" expand="true"/>
+            <task id="297" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="79" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         </task>
-        <task id="222" name="MVC - Controller Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="27" complete="0" expand="true">
-            <task id="229" name="FR 1" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
-            <task id="232" name="FR 4" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
-            <task id="330" name="FR 5" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="333" name="FR 6" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="335" name="FR 7" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="234" name="FR 10" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
-            <task id="236" name="FR 12" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="0" expand="true"/>
-            <task id="281" name="FR 13" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="284" name="FR 14" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="346" name="FR 15" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="348" name="FR 16" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="350" name="FR 17" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="352" name="FR 18" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="360" name="FR 20" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="362" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="366" name="FR 22" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="370" name="NFR 2" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="0" expand="true"/>
-            <task id="289" name="NFR 7" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="291" name="NFR 8" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-            <task id="295" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="222" name="MVC - Controller Development" color="#8cb6ce" meeting="false" start="2016-10-11" duration="27" complete="87" expand="true">
+            <task id="229" name="FR 1" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="100" expand="true"/>
+            <task id="232" name="FR 4" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="100" expand="true"/>
+            <task id="330" name="FR 5" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="74" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="333" name="FR 6" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="63" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="335" name="FR 7" color="#8cb6ce" meeting="false" start="2016-11-08" duration="7" complete="77" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="234" name="FR 10" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="100" expand="true"/>
+            <task id="236" name="FR 12" color="#8cb6ce" meeting="false" start="2016-10-11" duration="4" complete="100" expand="true"/>
+            <task id="281" name="FR 13" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="284" name="FR 14" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="346" name="FR 15" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="91" expand="true"/>
+            <task id="348" name="FR 16" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="91" expand="true"/>
+            <task id="350" name="FR 17" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="89" expand="true"/>
+            <task id="352" name="FR 18" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="87" expand="true"/>
+            <task id="360" name="FR 20" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="78" expand="true"/>
+            <task id="362" name="FR 21" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="81" expand="true"/>
+            <task id="366" name="FR 22" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="87" expand="true"/>
+            <task id="370" name="NFR 2" color="#8cb6ce" meeting="false" start="2016-11-07" duration="8" complete="78" expand="true"/>
+            <task id="289" name="NFR 7" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="291" name="NFR 8" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            <task id="295" name="NFR 19" color="#8cb6ce" meeting="false" start="2016-10-31" duration="5" complete="100" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         </task>
         <task id="8" name="Test Plan Revision 0" color="#8cb6ce" meeting="true" start="2016-10-31" duration="0" complete="0" expand="true"/>
-        <task id="244" name="Test Plan Development Revision 0" color="#8cb6ce" meeting="false" start="2016-10-24" duration="6" complete="0" expand="true">
-            <task id="245" name="Group Discussion" color="#8cb6ce" meeting="false" start="2016-10-24" duration="5" complete="0" expand="true">
-                <task id="247" name="Plan for Testing" color="#8cb6ce" meeting="false" start="2016-10-24" duration="4" complete="0" expand="true"/>
-                <task id="248" name="Proof of concept" color="#8cb6ce" meeting="false" start="2016-10-27" duration="2" complete="0" expand="true"/>
+        <task id="244" name="Test Plan Development Revision 0" color="#8cb6ce" meeting="false" start="2016-10-24" duration="6" complete="100" expand="true">
+            <task id="245" name="Group Discussion" color="#8cb6ce" meeting="false" start="2016-10-24" duration="5" complete="100" expand="true">
+                <task id="247" name="Plan for Testing" color="#8cb6ce" meeting="false" start="2016-10-24" duration="4" complete="100" expand="true"/>
+                <task id="248" name="Proof of concept" color="#8cb6ce" meeting="false" start="2016-10-27" duration="2" complete="100" expand="true"/>
             </task>
-            <task id="246" name="Document Formation" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true">
-                <task id="249" name="General Information" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true"/>
-                <task id="259" name="Testing Approach" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true"/>
-                <task id="261" name="Test Description" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true"/>
-                <task id="263" name="Proof of Concept" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true"/>
-                <task id="265" name="Unit Testing Plan" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true"/>
-                <task id="268" name="Appendix" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="0" expand="true"/>
+            <task id="246" name="Document Formation" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true">
+                <task id="249" name="General Information" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true"/>
+                <task id="259" name="Testing Approach" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true"/>
+                <task id="261" name="Test Description" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true"/>
+                <task id="263" name="Proof of Concept" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true"/>
+                <task id="265" name="Unit Testing Plan" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true"/>
+                <task id="268" name="Appendix" color="#8cb6ce" meeting="false" start="2016-10-28" duration="2" complete="100" expand="true"/>
             </task>
         </task>
         <task id="112" name="Design Document Revision 0" color="#8cb6ce" meeting="true" start="2016-11-01" duration="0" complete="0" expand="true"/>
-        <task id="302" name="Design Document Development" meeting="false" start="2016-11-07" duration="6" complete="0" expand="true">
-            <task id="300" name="Brain storming" color="#8cb6ce" meeting="false" start="2016-11-07" duration="4" complete="0" expand="true"/>
-            <task id="303" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
-                <task id="305" name="MG" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
-                    <task id="308" name="Introduction and Overview" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
-                    <task id="313" name="Module hierarchy" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
-                    <task id="314" name="Traceability" color="#8cb6ce" meeting="false" start="2016-11-14" duration="1" complete="0" expand="true"/>
+        <task id="302" name="Design Document Development" meeting="false" start="2016-11-07" duration="6" complete="96" expand="true">
+            <task id="300" name="Brain storming" color="#8cb6ce" meeting="false" start="2016-11-07" duration="4" complete="100" expand="true"/>
+            <task id="303" name="Document Formation" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="90" expand="true">
+                <task id="305" name="MG" meeting="false" start="2016-11-11" duration="2" complete="100" expand="true">
+                    <task id="308" name="Introduction and Overview" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="100" expand="true"/>
+                    <task id="313" name="Module hierarchy" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="100" expand="true"/>
+                    <task id="314" name="Traceability" color="#8cb6ce" meeting="false" start="2016-11-14" duration="1" complete="100" expand="true"/>
                 </task>
-                <task id="306" name="MIS" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
-                    <task id="316" name="Revision History" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true"/>
-                    <task id="319" name="Input and Output" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true"/>
+                <task id="306" name="MIS" meeting="false" start="2016-11-11" duration="2" complete="76" expand="true">
+                    <task id="316" name="Revision History" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="88" expand="true"/>
+                    <task id="319" name="Input and Output" color="#8cb6ce" meeting="false" start="2016-11-11" duration="2" complete="65" expand="true"/>
                 </task>
-                <task id="307" name="Gantt Chart Update" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+                <task id="307" name="Gantt Chart Update" color="#8cb6ce" meeting="false" start="2016-11-11" duration="1" complete="100" expand="true"/>
             </task>
         </task>
         <task id="13" name="Revision 0 Demonstration" color="#8cb6ce" meeting="true" start="2016-11-14" duration="0" complete="0" expand="true"/>
