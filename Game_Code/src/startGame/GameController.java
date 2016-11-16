@@ -78,8 +78,9 @@ public class GameController{
 	private Player ai;
 
 	private Timer t;
-	
-	private Timer record;
+	private long startTime;
+	private long endTime;
+	private double timeElapsed;
 
 	public GameController(GameView v, GameModel m){
 		this.v = v;
@@ -164,6 +165,13 @@ public class GameController{
 		gameDisplay.setFocusable(true);
 		gameDisplay.setFocusTraversalKeysEnabled(false);
 
+		/**
+		 * Initialize the start time and end time for a player
+		 */
+		startTime = 0;
+		endTime = 0;
+		timeElapsed = 0;
+		
 	}
 
 	/**
@@ -265,7 +273,11 @@ public class GameController{
 				mode.setVisible(false);				// Start the game with single mode
 				gameFrame.setVisible(true);
 				t.start();
+				startTime = System.currentTimeMillis();
 			} 
+			//else if(source==mode.getAdvance()){
+				//TODO: the obstacle mode
+			//}
 		}
 	}
 
@@ -554,19 +566,48 @@ public class GameController{
 	 * @brief checks whether the game ends
 	 * @details check the number of life for both the player and the ai is 0.
      */
-	public void checkGameOver(){
+	private void checkGameOver(){
 		
 		/**
 		 * - If the number of life for the ai is 0, the player wins
 		 * - If the number of life for the player is 0, the ai wins.
+		 * - Calculate the time a player has played, if breaks the record, save the record.
 		 */
 		if(scoreBottom==0){
+			getElapsedTime();
 			v.gameOver(0);
-		} else if(scoreTop==0){
+			resetGame();
+			
+			
+		} else if(scoreTop==0){			
+			getElapsedTime();
 			v.gameOver(1);
+			resetGame();
+			
+			
 		}
 		//TODO: SAVE RECORD
 
 	}
+	
+	private void getElapsedTime(){
+		endTime = System.currentTimeMillis();
+		timeElapsed = (endTime-startTime)/1000.0;
+		
+		System.out.println(timeElapsed);
+	}
+	
+	private void resetGame(){
+		scoreTop = 0;
+		scoreBottom = 0;
+		
+		
+		
+		
+	}
+	
+	
+
+	
 
 }
