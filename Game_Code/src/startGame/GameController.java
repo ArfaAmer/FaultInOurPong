@@ -693,7 +693,8 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
 			try {
-				displayScore = new HighScore(timeElapsed);
+				displayScore = new HighScore(timeElapsed, w);
+				w.setVisible(false);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -705,7 +706,8 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
 			try {
-				displayScore = new HighScore(timeElapsed);
+				displayScore = new HighScore(timeElapsed, w);
+				w.setVisible(false);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
