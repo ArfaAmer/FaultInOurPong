@@ -1,5 +1,12 @@
 package view;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.PrintWriter;
+
 import javax.swing.*;
 
 /**
@@ -11,7 +18,7 @@ import javax.swing.*;
  * @details This class import all different windows for display.
  */
 public class GameView{
-	
+
 	/**
 	 * Variable declarations to store different pages
 	 * - welcome page
@@ -24,13 +31,23 @@ public class GameView{
 	private PongGameDisplay ponggame;
 	private Tutorial tutorial;
 	private JFrame gameFrame;
-	
+
 	/**
 	 * Constant declarations for the view
 	 */
-	private final int FRAMEWIDTH = 700;
-	private final int FRAMEHEIGHT = 500;
+	private final int FRAMEWIDTH = 700; //700
+	private final int FRAMEHEIGHT = 500; //500
 	
+	/**
+	 * Set up buttons on the game panel
+	 */
+	private JButton pause;
+	private JButton resume;
+	private JButton save;
+	private JButton exit;
+	private JPanel gameOptions;
+	
+
 	/**
 	 * @brief Constructor for the view
 	 * @details declares all other windows
@@ -43,10 +60,10 @@ public class GameView{
 		welcome = new Welcome();
 		mode = new Mode();
 		ponggame = new PongGameDisplay();
-		
+
 		createGame();
 	}
-	
+
 	/**
 	 * @brief displays the welcome page.
 	 * @details sets the visibility of the window to be true.
@@ -54,7 +71,7 @@ public class GameView{
 	public void display(){
 		welcome.setVisible(true);
 	}
-	
+
 	/**
 	 * @brief gets welcome page window
 	 * @return welcome page object
@@ -62,7 +79,7 @@ public class GameView{
 	public Welcome getWelcome(){
 		return welcome;
 	}
-	
+
 	/**
 	 * @brief gets game mode page window
 	 * @return game mode page object
@@ -70,7 +87,7 @@ public class GameView{
 	public Mode getmode(){
 		return mode;
 	}
-	
+
 	/**
 	 * @brief gets game window
 	 * @return game window object
@@ -78,7 +95,7 @@ public class GameView{
 	public PongGameDisplay getGame(){
 		return ponggame;
 	}
-	
+
 	/**
 	 * @brief gets tutorial page window
 	 * @return tutorial page object
@@ -87,24 +104,80 @@ public class GameView{
 		return tutorial;
 	}
 	
-	
-	//TODO: ADD PANEL FOR OPTIONS IN THE GAME	
 	/**
 	 * @brief create the game for display
 	 * @details create a frame under set dimension for the game
 	 */
 	public void createGame(){
 		gameFrame = new JFrame("FaultInOurPong");
-		gameFrame.setContentPane(ponggame);	
+		gameFrame.setLayout(new BorderLayout());
+
+
+		gameOptions = new JPanel();
+		gameOptions.setLayout(new BoxLayout(gameOptions, BoxLayout.Y_AXIS));
+		pause = new JButton("Pause Game");
+		resume = new JButton("Resume Game");
+		save = new JButton("Save Game");
+		exit = new JButton("Exit to Main Page");
+
+		gameOptions.add(Box.createVerticalGlue());
+		addButton(gameOptions, pause, exit);
+		addButton(gameOptions, resume, exit);
+		addButton(gameOptions, save, exit);
+		addButton(gameOptions, exit, exit);
+		gameOptions.add(Box.createVerticalGlue());
+
+		gameOptions.setFocusable(false);
+		gameFrame.add(gameOptions, BorderLayout.LINE_START);
 		
-		
-		
+		ponggame.setBorder(BorderFactory.createLineBorder(Color.black));
+		ponggame.setFocusable(true);
+		gameFrame.add(ponggame, BorderLayout.CENTER);
 		gameFrame.setSize(FRAMEWIDTH,FRAMEHEIGHT);
-		gameFrame.setResizable(false);
+		gameFrame.setResizable(true);
 		gameFrame.setLocationRelativeTo(null);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
+	public JButton getPause(){
+		return pause;
+	}
 	
+	public JButton getResume(){
+		return resume;
+	}
+	
+	public JButton getSave(){
+		return save;
+	}
+	
+	public JButton getExit(){
+		return exit;
+	}
+	
+/*	
+	public void addListener(ActionListener listener){
+		pause.addActionListener(listener);
+		resume.addActionListener(listener);
+		save.addActionListener(listener);
+		exit.addActionListener(listener);
+	}
+*/	
+	public JPanel getGameOptionPanel(){
+		return gameOptions;
+	}
+	
+
+	public void addButton(JPanel panel, JButton button, JButton prefer) {
+		button.setAlignmentX(Component.CENTER_ALIGNMENT);
+		button.setAlignmentY(Component.CENTER_ALIGNMENT);
+		button.setMaximumSize(prefer.getPreferredSize());
+System.out.println(prefer.getPreferredSize());
+		panel.add(button);
+		panel.add(Box.createVerticalStrut(20));
+	}
+
+
 	/**
 	 * @brief gets game object
 	 * @return game object
@@ -112,7 +185,7 @@ public class GameView{
 	public JFrame getGameFrame(){
 		return gameFrame;
 	}
-	
+
 	// TODO: display a dialogue after successfully saving game records (high score)
 	/**
 	 * @brief display message for error loading game record
@@ -122,7 +195,7 @@ public class GameView{
 		JFrame errorFrame = new JFrame("Error");
 		JOptionPane.showMessageDialog(errorFrame, "No record available!");
 	}
-	
+
 	/**
 	 * @brief display message for error loading game 
 	 * @details create a frame for display
@@ -131,13 +204,13 @@ public class GameView{
 		JFrame errorFrame = new JFrame("Error");
 		JOptionPane.showMessageDialog(errorFrame, "The record is either damaged or not available, please start a new game!");
 	}
-	
+
 	/**
 	 * @brief display message for game over
 	 * @param whichplayer is the indicator for the player
 	 */
 	public void gameOver(int whichplayer){
-		
+
 		/**
 		 * - If the computer wins, display winning message for the computer
 		 * - If the player wins, display winning message for the player
@@ -152,9 +225,9 @@ public class GameView{
 		}
 		gameFrame.setVisible(false);
 		welcome.setVisible(true);
-		
+
 	}
-	
+
 	/**
 	 * @brief create tutorial page
 	 * @param img is the image for display
@@ -162,7 +235,7 @@ public class GameView{
 	public void tutorialPage(ImageIcon img){
 		tutorial = new Tutorial(img);
 	}
-	
+
 	/**
 	 * @brief gets width of the window
 	 * @return FRAMEWIDTH
@@ -170,7 +243,7 @@ public class GameView{
 	public int getFrameWidth(){
 		return FRAMEWIDTH;
 	}
-	
+
 	/**
 	 * @brief gets height of the window
 	 * @return FRAMEHEIGHT

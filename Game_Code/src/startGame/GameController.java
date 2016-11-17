@@ -9,7 +9,9 @@ import java.io.FileReader;
 import java.util.HashSet;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import model.*;
@@ -82,6 +84,14 @@ public class GameController{
 	private long endTime;
 	private double timeElapsed;
 
+	
+	private JButton pause;
+	private JButton resume;
+	private JButton save;
+	private JButton exit;
+	
+	
+	
 	public GameController(GameView v, GameModel m){
 		this.v = v;
 		this.m = m;
@@ -164,6 +174,47 @@ public class GameController{
 		gameDisplay.addKeyListener(new GameListener());
 		gameDisplay.setFocusable(true);
 		gameDisplay.setFocusTraversalKeysEnabled(false);
+		
+		
+		pause = this.v.getPause();
+		resume = this.v.getResume();
+		save = this.v.getSave();
+		exit = this.v.getExit();
+		pause.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				t.stop();
+			}
+		});
+
+		resume.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				t.start();
+
+			}
+		});
+
+		save.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO ADD SAVE METHOD
+/*				try{
+					PrintWriter writer = new PrintWriter("SavedGame.txt");
+					writer.println("The first line");		//first line = lives left
+					writer.println("The second line");		//second line = time played
+					writer.close();
+				} catch (Exception e1) {
+				}*/
+			}
+		});
+
+		exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				w.setVisible(true);					//show WelcomePage
+				t.stop();
+				gameFrame.dispose();				//close current JFrame(current game)
+			}
+		});
+		
+		
 
 		/**
 		 * Initialize the start time and end time for a player
@@ -203,6 +254,7 @@ public class GameController{
 			 * - Do actions depending on the action performed
 			 */
 			if(source==w.getStart()){					// If clicked the start button
+				resetGame();
 				mode.setVisible(true);					// Open the game mode page
 				w.setVisible(false);
 			}else if(source==w.load()){					// If clicked the load button
@@ -272,6 +324,7 @@ public class GameController{
 			if(source == mode.getSingle()){			// If clicked the basic single mode button
 				mode.setVisible(false);				// Start the game with single mode
 				gameFrame.setVisible(true);
+				
 				t.start();
 				startTime = System.currentTimeMillis();
 			} 
@@ -329,6 +382,8 @@ public class GameController{
 		GameListener(){
 			t = new Timer(5,this);  
 			t.setInitialDelay(1000);
+			
+			resetGame();
 		}
 
 		/** 
@@ -344,7 +399,7 @@ public class GameController{
 			 * - x direction
 			 * - y direction
 			 */
-			if(ballX< 0 || ballX > frameWidth-1.5*ballSize){
+			if(ballX< 0 || ballX > frameWidth-8.5*ballSize){
 				/**
 				 * - X-direction
 				 * - If the ball is trying to go beyond the left/right border of the frame, 
@@ -388,13 +443,13 @@ public class GameController{
 				gameDisplay.setBottomScore(scoreBottom);
 				ai.decrementLife();
 
-			} else if(ballY+2.5*ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
+			} else if(ballY+2.5*ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + 3*ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/**
 				 * If the ball is touching the bottom paddle
 				 * - reverse the direction
 				 */
 				velY = -velY;
-			} else if(ballY<=inset+padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
+			} else if(ballY<=inset+padHeight && velY < 0 && ballX + 2.5*ballSize >= topPadX && ballX <= topPadX + padWidth){
 				/**
 				 * If the ball is touching the top paddle
 				 * - reverse the direction
@@ -554,6 +609,8 @@ public class GameController{
 
 	}
 
+
+	
 	/** 
 	 * @brief sets the display
 	 * @details opens a window
@@ -594,12 +651,20 @@ public class GameController{
 		endTime = System.currentTimeMillis();
 		timeElapsed = (endTime-startTime)/1000.0;
 		
+		
+		
 System.out.println(timeElapsed);
 	}
 	
 	private void resetGame(){
 		player.resetScore();
 		ai.resetScore();
+		
+		scoreTop = player.getScore();		
+		scoreBottom = player.getScore();
+		
+		gameDisplay.setBottomScore(scoreBottom);
+		gameDisplay.setTopScore(scoreTop);
 	}
 	
 	
