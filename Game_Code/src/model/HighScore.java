@@ -163,16 +163,16 @@ public class HighScore {
 		creatingArrays();
 		sortInt();
 		//writeTo();
-		highScoreFrame(true, main);
+		highScoreFrame(main);
 	}
 
-	public static void highScoreFrame(Boolean page, JFrame main) {
+	public static void highScoreFrame(JFrame main) {
 
 		String[] columnNames = { "User Name", "Time" };
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
-		if(page) {
+		
 			JButton back = new JButton("Back");
 			frame.add(back, BorderLayout.PAGE_START);
 			back.addActionListener(new ActionListener() {
@@ -184,7 +184,7 @@ public class HighScore {
 					
 				}
 			});
-		}
+		
 		
 		Object rowData[][] = {
 				{ user.get(0),scoreInt.get(0)},
@@ -213,10 +213,14 @@ public class HighScore {
 		frame.add(scrollPane, BorderLayout.CENTER);
 		frame.setSize(300, 150);
 		frame.setVisible(true);
+		
+		user = new ArrayList<String>();
+		score = new ArrayList<String>();
+		scoreInt = new ArrayList<Double>();
 
 	}
 
-	public HighScore(double nameScore) throws IOException {
+	public HighScore(double nameScore, JFrame main) throws IOException {
 
 		readFrom();
 		creatingArrays();
@@ -237,7 +241,7 @@ public class HighScore {
 		    controls.add(username);
 		    panel.add(controls, BorderLayout.CENTER);
 
-		    JOptionPane.showMessageDialog(frame, panel, "add user name", JOptionPane.QUESTION_MESSAGE);
+		    JOptionPane.showMessageDialog(frame, panel, "Highscores: Add name", JOptionPane.QUESTION_MESSAGE);
 
 			user.add(username.getText());
 			scoreInt.add(nameScored);
@@ -245,7 +249,7 @@ public class HighScore {
 			user.remove(user.size() - 1);
 			scoreInt.remove(scoreInt.size() - 1);
 			writeTo();
-			highScoreFrame(false, frame);
+			highScoreFrame(main);
 
 		}
 
