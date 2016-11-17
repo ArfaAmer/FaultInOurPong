@@ -254,7 +254,6 @@ public class GameController{
 					gameFrame.setVisible(true);
 					t.start();
 					startTime = System.currentTimeMillis();
-					System.out.println("can load data");
 
 					br.close();
 				}catch(Exception exp){
@@ -403,7 +402,6 @@ public class GameController{
 				 */
 				gameDisplay.setTopScore(scoreTop);
 				ai.decrementLife();
-				System.out.println("computer lost life " + scoreTop + " " + ai.getScore());
 				
 				/**
 				 * Check whether the game ends.
@@ -425,7 +423,6 @@ public class GameController{
 				 */
 				gameDisplay.setBottomScore(scoreBottom);
 				player.decrementLife();
-				System.out.println("player lost life " + scoreBottom + " " + player.getScore());
 				
 				/**
 				 * Check whether the game ends
