@@ -63,24 +63,25 @@ public class GameController{
 	private final int SINGLE = 0;
 	private final int ADVANCE = 1;
 	private int gameMode;
-	
+
 	private Ball bomb;
 	private int bombX, bombY, bombSize;
-	
+	private int bombVelX=1, bombVelY=1;
+
 	private Player player;
 	private Player ai;
 	private Timer t;
 	private long startTime;
 	private long endTime;
 	private double timeElapsed;
-	
+
 	private JButton pause;
 	private JButton resume;
 	private JButton save;
 	private JButton exit;
-	
-	
-	
+
+
+
 	public GameController(GameView v, GameModel m){
 		this.v = v;
 		this.m = m;
@@ -99,7 +100,7 @@ public class GameController{
 		ballY = frameHeight / 2 - ballSize / 2;
 		b.setPositionX(ballX);
 		b.setPositionY(ballY);
-		
+
 		/**
 		 * Setups for the bomb in the Model
 		 */
@@ -145,21 +146,22 @@ public class GameController{
 		v.tutorialPage(image);
 		tut = v.getTutorial();
 		tut.addListener(new TutorialListener());
+
 		gameFrame = this.v.getGameFrame();								// Game page
 		gameDisplay = this.v.getGame();
-		
+
 		gameDisplay.setTopScore(scoreTop);
 		gameDisplay.setBottomScore(scoreBottom);
 		gameDisplay.setBallSize(ballSize);
 		gameDisplay.setPaddleHeight(padHeight);
 		gameDisplay.setPaddleWidth(padWidth);
 		gameDisplay.setInset(inset);
-		
+
 		gameDisplay.addKeyListener(new GameListener());
 		gameDisplay.setFocusable(true);
 		gameDisplay.setFocusTraversalKeysEnabled(false);
-		
-		
+
+
 		pause = this.v.getPause();
 		resume = this.v.getResume();
 		save = this.v.getSave();
@@ -176,15 +178,15 @@ public class GameController{
 		});
 		save.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TODO ADD SAVE METHOD
+
 				try{
-				    PrintWriter writer = new PrintWriter("./Resources/userData.txt");
-				    getElapsedTime();
-				    writer.println(scoreBottom);		//first line = lives left
-				    writer.println(timeElapsed);		//second line = time played
-				    writer.close();
+					PrintWriter writer = new PrintWriter("./Resources/userData.txt");
+					getElapsedTime();
+					writer.println(scoreBottom);		//first line = lives left
+					writer.println(timeElapsed);		//second line = time played
+					writer.close();
 				} catch (Exception e1) {
-				 }
+				}
 			}
 		});
 		exit.addActionListener(new ActionListener() {
@@ -194,15 +196,15 @@ public class GameController{
 				gameFrame.dispose();				//close current JFrame(current game)
 			}
 		});
-		
-		
+
+
 		/**
 		 * Initialize the start time and end time for a player
 		 */
 		startTime = 0;
 		endTime = 0;
 		timeElapsed = 0;
-		
+
 	}
 	/**
 	 * @author Pongthusiastics
@@ -219,14 +221,14 @@ public class GameController{
 		 * 			- redirect to view tutorial
 		 * 			- exit the program
 		 * @param e is the action performed on the button
-	     */
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			/**
 			 * Save the action performed into a variable
 			 */
 			Object source = e.getSource();
-			
+
 			/**
 			 * - Check for the button pressed
 			 * - Do actions depending on the action performed
@@ -236,7 +238,7 @@ public class GameController{
 				mode.setVisible(true);					// Open the game mode page
 				w.setVisible(false);
 			}else if(source==w.load()){					// If clicked the load button
-				
+
 				//TODO
 				try{									// Read data from a saved record
 					FileReader fr = new FileReader("./Resources/userData.txt");
@@ -245,13 +247,13 @@ public class GameController{
 					scoreBottom = player.getScore();
 					gameDisplay.setBottomScore(scoreBottom);
 					timeElapsed = Double.valueOf((br.readLine()));	//read second line to be time
-					
+
 					w.setVisible(false);
 					gameFrame.setVisible(true);
 					t.start();
 					startTime = System.currentTimeMillis();
 					System.out.println("can load data");
-					
+
 					br.close();
 				}catch(Exception exp){
 					v.cannotLoadMessage();
@@ -286,10 +288,10 @@ public class GameController{
 		 * @details - redirect to game with easy level
 		 * 			- redirect to game with obstacles
 		 * @param e is the action performed on the button
-	     */
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+
 			/**
 			 * Save the action performed into a variable
 			 */
@@ -301,16 +303,21 @@ public class GameController{
 			if(source == mode.getSingle()){			// If clicked the basic single mode button
 				mode.setVisible(false);				// Start the game with single mode
 				gameFrame.setVisible(true);
-				
+
 				t.start();
 				startTime = System.currentTimeMillis();
 			} 
-			//else if(source==mode.getAdvance()){
-				//TODO: the obstacle mode
-			//}
+			else if(source==mode.getAdvance()){
+				mode.setVisible(false);
+				gameDisplay.setAdvance();
+				gameFrame.setVisible(true);
+
+				t.start();
+				startTime = System.currentTimeMillis();
+			}
 		}
 	}
-	
+
 	/**
 	 * @author Pongthusiastics
 	 * @date 13/11/2016
@@ -321,10 +328,10 @@ public class GameController{
 		/** 
 		 * @brief opens the tutorial window with game instruction displayed.
 		 * @param e is the action performed on the button
-	     */
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+
 			/**
 			 * Save the action performed into a variable
 			 */
@@ -349,18 +356,18 @@ public class GameController{
 		/** 
 		 * @brief Constructor for the action listener class
 		 * @details Set up a timer to start the game
-	     */
+		 */
 		GameListener(){
 			t = new Timer(5,this);  
 			t.setInitialDelay(1000);
-			
+
 			resetGame();
 		}
 		/** 
 		 * @brief update the ball, paddles, and player information
 		 * @details update the ball positions, paddle positions, key pressed actions, and player score.
 		 * @param e is the action performed on the keyboard
-	     */
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			/**
@@ -387,12 +394,18 @@ public class GameController{
 				 */
 				velY = -velY;
 				--scoreTop;
-				checkGameOver();
+				
 				/**
 				 * Update model and view
 				 */
 				gameDisplay.setTopScore(scoreTop);
 				player.decrementLife();
+				
+				/**
+				 * Check whether the game ends.
+				 */
+				checkGameOver();
+				
 			} else if(ballY+2.5*ballSize>frameHeight){
 				/**
 				 * If the ball is trying to go down beyond the frame
@@ -402,12 +415,18 @@ public class GameController{
 				 */
 				velY = -velY;
 				--scoreBottom;
-				checkGameOver();
+				
 				/**
 				 * Update model and view
 				 */
 				gameDisplay.setBottomScore(scoreBottom);
 				ai.decrementLife();
+				
+				/**
+				 * Check whether the game ends
+				 */
+				checkGameOver();
+				
 			} else if(ballY+2.5*ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + 3*ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/**
 				 * If the ball is touching the bottom paddle
@@ -421,7 +440,7 @@ public class GameController{
 				 */
 				velY = -velY;
 			}
-			
+
 			/**
 			 * Update the ball position by velocity 
 			 */
@@ -433,6 +452,98 @@ public class GameController{
 			gameDisplay.setBall(ballX,ballY);
 			b.setPositionX(ballX);
 			b.setPositionY(ballY);
+			
+			/**
+			 * Advance mode actions
+			 */
+			long currentTime = System.currentTimeMillis();
+			if((currentTime-startTime)/1000>2){
+				gameDisplay.timeForBomb();
+				
+				/**
+				 * Update the velocity/direction of the Ball
+				 * - x direction
+				 * - y direction
+				 */
+				if(bombX< 0 || bombX > frameWidth-8.5*bombSize){
+					/**
+					 * - X-direction
+					 * - If the ball is trying to go beyond the left/right border of the frame, 
+					 * reverse the direction.
+					 */
+					bombVelX = -bombVelX;			
+				}
+				if(bombY < 0){
+					/**
+					 * - Y-direction
+					 * 
+					 * If the ball is trying to go up above the frame, 
+					 * - reverse the direction
+					 * - user gets points because the ball hits the border of the computer side
+					 * - check game over or not
+					 */
+					bombVelY = -bombVelY;
+
+				} else if(bombY+2.5*bombSize>frameHeight){
+					/**
+					 * If the ball is trying to go down beyond the frame
+					 * - reverse the direction
+					 * - the computer gets points
+					 * - check game over or not
+					 */
+					bombVelY = -bombVelY;
+				} else if(bombY+2.5*bombSize>frameHeight-inset-padHeight && velY > 0 && bombX + 3*bombSize >= bottomPadX && bombX <= bottomPadX + padWidth){
+					/**
+					 * If the ball is touching the bottom paddle
+					 * - reverse the direction
+					 */
+					bombVelY = -bombVelY;
+					
+					//TODO
+					--scoreBottom;
+					/**
+					 * Update model and view
+					 */
+					gameDisplay.setBottomScore(scoreBottom);
+					player.decrementLife();	
+					checkGameOver();
+
+									
+				} else if(bombY<=inset+padHeight && velY < 0 && bombX + 2.5*bombSize >= topPadX && bombX <= topPadX + padWidth){
+					/**
+					 * If the ball is touching the top paddle
+					 * - reverse the direction
+					 */
+					bombVelY = -bombVelY;
+					//TODO
+					--scoreTop;
+					
+					/**
+					 * Update model and view
+					 */
+					gameDisplay.setTopScore(scoreTop);
+					ai.decrementLife();
+					checkGameOver();
+
+					
+				}
+				
+				/**
+				 * Update the ball position by velocity 
+				 */
+				bombX += bombVelX;
+				bombY += bombVelY;
+
+				/**
+				 * Update the view and model
+				 */
+				gameDisplay.setBomb(bombX,bombY);
+				bomb.setPositionX(bombX);
+				bomb.setPositionY(bombY);
+				
+			}
+			
+			
 			/**
 			 * Detect the key pressed by the user on the keyboard
 			 */
@@ -510,14 +621,14 @@ public class GameController{
 		/** 
 		 * @brief detect which key is pressed on the keyboard
 		 * @param e is the action performed on keyboard
-	     */
+		 */
 		@Override
 		public void keyPressed(KeyEvent e) {
 			/**
 			 * Declare a variable to store the mouse click event
 			 */
 			int code = e.getKeyCode();				
-			
+
 			/**
 			 * - Detect which key is pressed and perform corresponding actions
 			 * - Save the action into a hashString
@@ -534,14 +645,14 @@ public class GameController{
 		/** 
 		 * @brief detects which key is released
 		 * @param e is the action performed on keyboard
-	     */
+		 */
 		@Override
 		public void keyReleased(KeyEvent e) {
 			/**
 			 * Declare a variable to store the mouse click event
 			 */
 			int code = e.getKeyCode();				
-			
+
 			/**
 			 * - Detect which key is pressed and perform corresponding actions
 			 * - Delete the action from the hashString
@@ -558,20 +669,20 @@ public class GameController{
 		@Override
 		public void keyTyped(KeyEvent e) {}
 	}
-	
+
 	/** 
 	 * @brief sets the display
 	 * @details opens a window
-     */
+	 */
 	public void display(){
 		v.display();
 	}
 	/** 
 	 * @brief checks whether the game ends
 	 * @details check the number of life for both the player and the ai is 0.
-     */
+	 */
 	private void checkGameOver(){
-		
+
 		/**
 		 * - If the number of life for the ai is 0, the player wins
 		 * - If the number of life for the player is 0, the ai wins.
@@ -581,37 +692,39 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
 			resetGame();
-			
-			
+
+
 		} else if(scoreTop==0){			
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
 			resetGame();
-			
-			
+
+
 		}
 	}
-	
+
 	private void getElapsedTime(){
 		endTime = System.currentTimeMillis();
 		timeElapsed = timeElapsed + (endTime-startTime)/1000.0;
-		
-		
-		
-		System.out.println(timeElapsed);
+
+
+
+//System.out.println(timeElapsed);
 	}
-	
+
 	private void resetGame(){
 		player.resetScore();
 		ai.resetScore();
-		
+
 		scoreTop = player.getScore();		
 		scoreBottom = player.getScore();
-		
+
 		gameDisplay.setBottomScore(scoreBottom);
 		gameDisplay.setTopScore(scoreTop);
+		
+		gameDisplay.noBomb();
 	}
-	
-	
-	
+
+
+
 }

@@ -93,4 +93,7 @@ public class Mode extends JFrame{
 		return single;
 	}
 	
+	public JButton getAdvance(){
+		return sObstacle;
+	}
 }

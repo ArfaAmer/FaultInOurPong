@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -31,6 +32,7 @@ public class PongGameDisplay extends JPanel{
 	private int scoreTop, scoreBottom;
 	
 	private int ballX, ballY;
+	private int bombX, bombY;
 	private int bottomPadX, bottomPadY;
 	private int topPadX, topPadY;
 	private boolean first;
@@ -41,6 +43,7 @@ public class PongGameDisplay extends JPanel{
 	private int gameMode;
 	private final int SINGLE=0;
 	private final int ADVANCE=1;
+	private boolean startBomb;
 	
 	/**
 	 * @brief Constructor for PongGameDisplay
@@ -49,6 +52,7 @@ public class PongGameDisplay extends JPanel{
 	public PongGameDisplay(){
 		first = true;
 		gameMode = SINGLE;
+		startBomb=false;
 	}
 	
 	/**
@@ -89,9 +93,19 @@ public class PongGameDisplay extends JPanel{
 		/**
 		 * Draw the ball by passed in values
 		 */
-		// ball
 		Ellipse2D ball = new Ellipse2D.Double(ballX, ballY, 20, 20);  // creating the ball object for the game
 		g2d.fill(ball);
+		
+		/**
+		 * Draw the bomb if the mode is the advance mode
+		 */
+		if(gameMode == ADVANCE && startBomb==true){
+			
+			Ellipse2D bomb = new Ellipse2D.Double(bombX, bombY, 20, 20); 
+			g2d.setPaint(new Color(255,0,0));
+			g2d.fill(bomb);
+		}
+		
 		
 		/**
 		 * Draw scores on the screen by passed in values
@@ -112,6 +126,20 @@ public class PongGameDisplay extends JPanel{
 		ballX = x;
 		ballY = y;
 	}
+	
+	public void setBomb(int x, int y){
+		bombX = x;
+		bombY = y;
+	}
+	
+	public void timeForBomb(){
+		startBomb = true;
+	}
+	
+	public void noBomb(){
+		startBomb = false;
+	}
+	
 	
 	/**
 	 * @brief sets the size of the ball

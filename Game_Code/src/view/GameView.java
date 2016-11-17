@@ -35,8 +35,8 @@ public class GameView{
 	/**
 	 * Constant declarations for the view
 	 */
-	private final int FRAMEWIDTH = 700; //700
-	private final int FRAMEHEIGHT = 500; //500
+	private final int FRAMEWIDTH = 700; 
+	private final int FRAMEHEIGHT = 500;
 	
 	/**
 	 * Set up buttons on the game panel
@@ -154,15 +154,7 @@ public class GameView{
 	public JButton getExit(){
 		return exit;
 	}
-	
-/*	
-	public void addListener(ActionListener listener){
-		pause.addActionListener(listener);
-		resume.addActionListener(listener);
-		save.addActionListener(listener);
-		exit.addActionListener(listener);
-	}
-*/	
+		
 	public JPanel getGameOptionPanel(){
 		return gameOptions;
 	}
@@ -172,7 +164,6 @@ public class GameView{
 		button.setAlignmentX(Component.CENTER_ALIGNMENT);
 		button.setAlignmentY(Component.CENTER_ALIGNMENT);
 		button.setMaximumSize(prefer.getPreferredSize());
-System.out.println(prefer.getPreferredSize());
 		panel.add(button);
 		panel.add(Box.createVerticalStrut(20));
 	}
