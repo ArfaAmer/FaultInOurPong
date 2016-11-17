@@ -303,6 +303,7 @@ public class GameController{
 			 */
 			if(source == mode.getSingle()){			// If clicked the basic single mode button
 				mode.setVisible(false);				// Start the game with single mode
+				gameMode = SINGLE;
 				gameFrame.setVisible(true);
 
 				t.start();
@@ -310,6 +311,7 @@ public class GameController{
 			} 
 			else if(source==mode.getAdvance()){
 				mode.setVisible(false);
+				gameMode = ADVANCE;
 				gameDisplay.setAdvance();
 				gameFrame.setVisible(true);
 
@@ -400,7 +402,8 @@ public class GameController{
 				 * Update model and view
 				 */
 				gameDisplay.setTopScore(scoreTop);
-				player.decrementLife();
+				ai.decrementLife();
+				System.out.println("computer lost life " + scoreTop + " " + ai.getScore());
 				
 				/**
 				 * Check whether the game ends.
@@ -421,7 +424,8 @@ public class GameController{
 				 * Update model and view
 				 */
 				gameDisplay.setBottomScore(scoreBottom);
-				ai.decrementLife();
+				player.decrementLife();
+				System.out.println("player lost life " + scoreBottom + " " + player.getScore());
 				
 				/**
 				 * Check whether the game ends
@@ -453,7 +457,7 @@ public class GameController{
 			gameDisplay.setBall(ballX,ballY);
 			b.setPositionX(ballX);
 			b.setPositionY(ballY);
-			
+			if(gameMode==ADVANCE){
 			/**
 			 * Advance mode actions
 			 */
@@ -543,7 +547,7 @@ public class GameController{
 				bomb.setPositionY(bombY);
 				
 			}
-			
+			}
 			
 			/**
 			 * Detect the key pressed by the user on the keyboard
@@ -692,25 +696,31 @@ public class GameController{
 		if(scoreBottom==0){
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
-			try {
-				displayScore = new HighScore(timeElapsed, w);
-				w.setVisible(false);
+			if(gameMode == 0) {
+				try {
+		
+					displayScore = new HighScore(timeElapsed, w);
+					w.setVisible(false);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
 			resetGame();
 
 
 		} else if(scoreTop==0){			
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
-			try {
-				displayScore = new HighScore(timeElapsed, w);
-				w.setVisible(false);
-			} catch (IOException e) {
+			if(gameMode == 0) {
+					try {
+			
+						displayScore = new HighScore(timeElapsed, w);
+						w.setVisible(false);
+				} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+					e.printStackTrace();
+				}
 			}
 			resetGame();
 
@@ -720,6 +730,7 @@ public class GameController{
 
 	private void getElapsedTime(){
 		endTime = System.currentTimeMillis();
+		t.stop();
 		timeElapsed = timeElapsed + (endTime-startTime)/1000.0;
 	}
 
