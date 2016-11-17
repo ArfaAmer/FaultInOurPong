@@ -119,7 +119,7 @@ public class GameController{
 		padWidth = paddle_player.getWidth();			// Obtain paddle dimensions
 		padHeight = paddle_player.getHeight();
 		inset = paddle_player.getInset();
-		bottomPadX = frameWidth / 2 - padWidth / 2;	
+		bottomPadX = frameWidth /2 - padWidth /2;	
 		topPadX = bottomPadX;	
 		paddle_player.setPositionX(bottomPadX);
 		paddle_player.setPositionY(bottomPadY);
@@ -454,7 +454,7 @@ public class GameController{
 					}
 				}
 				else if (keys.contains("RIGHT")) {	
-					if(bottomPadX < frameWidth - padWidth){
+					if(bottomPadX < frameWidth - 2.75*padWidth){
 						/**
 						 * If the user presses RIGHT
 						 * - update the position of the user paddle
@@ -475,7 +475,7 @@ public class GameController{
 			 */
 			double delta = ballX - topPadX;
 			if (delta > 0) {								// If the AI paddle is trying to reach the right wall
-				if(topPadX < frameWidth - padWidth){
+				if(topPadX < frameWidth - 2.75*padWidth){
 					/**
 					 * - Move the paddle to the right
 					 * - Display the movement on the screen
@@ -599,7 +599,7 @@ public class GameController{
 		
 		
 		
-System.out.println(timeElapsed);
+		System.out.println(timeElapsed);
 	}
 	
 	private void resetGame(){
