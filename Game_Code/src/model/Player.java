@@ -48,6 +48,10 @@ public class Player {
 		return score;
 	}
 	
+	public void setScore(int x){
+		score = x;
+	}
+	
 	/**
 	 * @brief checks whether the player loses the game or not
 	 * @return a boolean that is used to indicate whether the player is losing or not
