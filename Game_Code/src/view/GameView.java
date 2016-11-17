@@ -96,6 +96,9 @@ public class GameView{
 	public void createGame(){
 		gameFrame = new JFrame("FaultInOurPong");
 		gameFrame.setContentPane(ponggame);	
+		
+		
+		
 		gameFrame.setSize(FRAMEWIDTH,FRAMEHEIGHT);
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);

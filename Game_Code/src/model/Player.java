@@ -56,4 +56,8 @@ public class Player {
 		if(score==NOLIFE){ return true;}
 		else{ return false; }
 	}
+	
+	public void resetScore(){
+		score = LIFE;
+	}
 }

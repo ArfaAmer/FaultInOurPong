@@ -388,13 +388,13 @@ public class GameController{
 				gameDisplay.setBottomScore(scoreBottom);
 				ai.decrementLife();
 
-			} else if(ballY+2.5*ballSize>frameHeight-inset-2*padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
+			} else if(ballY+2.5*ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/**
 				 * If the ball is touching the bottom paddle
 				 * - reverse the direction
 				 */
 				velY = -velY;
-			} else if(ballY<=inset+2*padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
+			} else if(ballY<=inset+padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
 				/**
 				 * If the ball is touching the top paddle
 				 * - reverse the direction
@@ -594,16 +594,12 @@ public class GameController{
 		endTime = System.currentTimeMillis();
 		timeElapsed = (endTime-startTime)/1000.0;
 		
-		System.out.println(timeElapsed);
+System.out.println(timeElapsed);
 	}
 	
 	private void resetGame(){
-		scoreTop = 0;
-		scoreBottom = 0;
-		
-		
-		
-		
+		player.resetScore();
+		ai.resetScore();
 	}
 	
 	
