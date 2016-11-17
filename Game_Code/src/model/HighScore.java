@@ -211,7 +211,8 @@ public class HighScore {
 
 		JScrollPane scrollPane = new JScrollPane(table);
 		frame.add(scrollPane, BorderLayout.CENTER);
-		frame.setSize(300, 150);
+		frame.setSize(300, 500);
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		
 		user = new ArrayList<String>();
