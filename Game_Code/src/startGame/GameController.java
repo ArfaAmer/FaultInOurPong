@@ -1,22 +1,19 @@
 package startGame;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.HashSet;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
 import model.*;
 import view.*;
-
 /**
  * @file GameController.java
  * @title GameController
@@ -26,13 +23,11 @@ import view.*;
  * @details This class cooperates with model and view and give direction to the game.
  */
 public class GameController{
-
 	/**
 	 * Import model and view to the controller (this interface).
 	 */
 	private GameView v;
 	private GameModel m;
-
 	/**
 	 * Variable declarations for storing the game view windows
 	 * - welcome page
@@ -42,12 +37,10 @@ public class GameController{
 	private Welcome w;
 	private Mode mode;
 	private Tutorial tut;
-
 	/**
 	 * Declare a variable for storing the key pressed records
 	 */
 	private HashSet<String> keys = new HashSet<String>();
-
 	/**
 	 * Variable declarations for the game
 	 * - frame dimension
@@ -59,7 +52,6 @@ public class GameController{
 	private JFrame gameFrame;
 	private int frameWidth, frameHeight;
 	private PongGameDisplay gameDisplay;
-
 	private int velX=1, velY=1;
 	private int padWidth, padHeight;
 	private int bottomPadX, bottomPadY, topPadX, topPadY;
@@ -68,7 +60,6 @@ public class GameController{
 	private int ballX, ballY, ballSize;
 	private int scoreTop, scoreBottom;
 	private int inset;
-
 	private final int SINGLE = 0;
 	private final int ADVANCE = 1;
 	private int gameMode;
@@ -78,12 +69,10 @@ public class GameController{
 	
 	private Player player;
 	private Player ai;
-
 	private Timer t;
 	private long startTime;
 	private long endTime;
 	private double timeElapsed;
-
 	
 	private JButton pause;
 	private JButton resume;
@@ -96,13 +85,11 @@ public class GameController{
 		this.v = v;
 		this.m = m;
 		gameMode = SINGLE;
-
 		/**
 		 * Obtain the window frame dimentions
 		 */
 		frameWidth = this.v.getFrameWidth();
 		frameHeight = this.v.getFrameHeight();
-
 		/**
 		 * Setups for ball in the Model
 		 */
@@ -122,7 +109,6 @@ public class GameController{
 		bombY = frameHeight / 2 - bombSize / 2;
 		bomb.setPositionX(bombX);
 		bomb.setPositionY(bombY);
-
 		/**
 		 * Setups for the paddles in the Model
 		 * - obtain paddle dimensions
@@ -138,7 +124,6 @@ public class GameController{
 		paddle_player.setPositionX(bottomPadX);
 		paddle_player.setPositionY(bottomPadY);
 		paddle_ai = this.m.getComputerPaddle();			// Paddle setup for the ai
-
 		/**
 		 * Setups for the players in the Model
 		 * - initialize number of life for the player and the ai
@@ -147,7 +132,6 @@ public class GameController{
 		ai = this.m.getComputer();
 		scoreBottom = player.getScore();
 		scoreTop = ai.getScore();
-
 		/**
 		 * Setups for the View
 		 * - obtain windows from the view
@@ -185,27 +169,24 @@ public class GameController{
 				t.stop();
 			}
 		});
-
 		resume.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				t.start();
-
 			}
 		});
-
 		save.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO ADD SAVE METHOD
-/*				try{
-					PrintWriter writer = new PrintWriter("SavedGame.txt");
-					writer.println("The first line");		//first line = lives left
-					writer.println("The second line");		//second line = time played
-					writer.close();
+				try{
+				    PrintWriter writer = new PrintWriter("./Resources/userData.txt");
+				    getElapsedTime();
+				    writer.println(scoreBottom);		//first line = lives left
+				    writer.println(timeElapsed);		//second line = time played
+				    writer.close();
 				} catch (Exception e1) {
-				}*/
+				 }
 			}
 		});
-
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				w.setVisible(true);					//show WelcomePage
@@ -215,7 +196,6 @@ public class GameController{
 		});
 		
 		
-
 		/**
 		 * Initialize the start time and end time for a player
 		 */
@@ -224,7 +204,6 @@ public class GameController{
 		timeElapsed = 0;
 		
 	}
-
 	/**
 	 * @author Pongthusiastics
 	 * @date 13/11/2016
@@ -232,7 +211,6 @@ public class GameController{
 	 * @details detects which button is pressed by the user and do the corresponding actions
 	 */
 	class WelcomepageListener implements ActionListener{
-
 		/** 
 		 * @brief	detects the actions on the buttons and defines actions to do
 		 * @details	- redirect to game mode page
@@ -263,22 +241,27 @@ public class GameController{
 				try{									// Read data from a saved record
 					FileReader fr = new FileReader("./Resources/userData.txt");
 					BufferedReader br = new BufferedReader(fr);
-
+					player.setScore(Integer.parseInt(br.readLine()));	//read first line to be lives
+					scoreBottom = player.getScore();
+					gameDisplay.setBottomScore(scoreBottom);
+					timeElapsed = Double.valueOf((br.readLine()));	//read second line to be time
+					
+					w.setVisible(false);
+					gameFrame.setVisible(true);
+					t.start();
+					startTime = System.currentTimeMillis();
 					System.out.println("can load data");
-
+					
 					br.close();
 				}catch(Exception exp){
 					v.cannotLoadMessage();
 				}
 			}else if(source==w.highScores()){			// If clicked the high score button
-
 				//TODO
 				try{									// Open and display the record
 					FileReader fr = new FileReader("./Resources/gameScore.txt");
 					BufferedReader br = new BufferedReader(fr);
-
 					System.out.println("can display high score");
-
 					br.close();
 				}catch(Exception exp){
 					v.noFileAvailMessage();
@@ -286,15 +269,11 @@ public class GameController{
 			}else if(source==w.tutorial()){				// If clicked the tutorial button
 				w.setVisible(false);					// Open the tutorial page
 				tut.setVisible(true);
-
 			}else if(source==w.exit()){					// If clicked the exit button
 				System.exit(0);							// Terminate the program
 			}
-
 		}
-
 	}
-
 	/**
 	 * @author Pongthusiastics
 	 * @date 13/11/2016
@@ -302,7 +281,6 @@ public class GameController{
 	 * @details detects which button is pressed by the user and do the corresponding actions
 	 */
 	class ModeListener implements ActionListener{
-
 		/** 
 		 * @brief	detects the actions on the buttons and defines actions to do
 		 * @details - redirect to game with easy level
@@ -316,7 +294,6 @@ public class GameController{
 			 * Save the action performed into a variable
 			 */
 			Object source = e.getSource();
-
 			/**
 			 * - Check for the button pressed
 			 * - Do actions depending on the action performed
@@ -333,7 +310,6 @@ public class GameController{
 			//}
 		}
 	}
-
 	
 	/**
 	 * @author Pongthusiastics
@@ -342,7 +318,6 @@ public class GameController{
 	 * @details detects which button is pressed by the user and do the corresponding actions
 	 */
 	class TutorialListener implements ActionListener{
-
 		/** 
 		 * @brief opens the tutorial window with game instruction displayed.
 		 * @param e is the action performed on the button
@@ -354,7 +329,6 @@ public class GameController{
 			 * Save the action performed into a variable
 			 */
 			Object source = e.getSource();
-
 			/**
 			 * - Detect for the button pressed
 			 * - Do actions depending on the action performed
@@ -364,9 +338,7 @@ public class GameController{
 				w.setVisible(true);
 			}
 		}
-
 	}
-
 	/**
 	 * @author Pongthusiastics
 	 * @date 13/11/2016
@@ -374,7 +346,6 @@ public class GameController{
 	 * @details detects direction key pressed on keyboard, pass the changes to the view for display, and check for winning/losing.
 	 */
 	class GameListener implements ActionListener, KeyListener{
-
 		/** 
 		 * @brief Constructor for the action listener class
 		 * @details Set up a timer to start the game
@@ -385,7 +356,6 @@ public class GameController{
 			
 			resetGame();
 		}
-
 		/** 
 		 * @brief update the ball, paddles, and player information
 		 * @details update the ball positions, paddle positions, key pressed actions, and player score.
@@ -393,7 +363,6 @@ public class GameController{
 	     */
 		@Override
 		public void actionPerformed(ActionEvent e) {
-
 			/**
 			 * Update the velocity/direction of the Ball
 			 * - x direction
@@ -419,13 +388,11 @@ public class GameController{
 				velY = -velY;
 				--scoreTop;
 				checkGameOver();
-
 				/**
 				 * Update model and view
 				 */
 				gameDisplay.setTopScore(scoreTop);
 				player.decrementLife();
-
 			} else if(ballY+2.5*ballSize>frameHeight){
 				/**
 				 * If the ball is trying to go down beyond the frame
@@ -436,13 +403,11 @@ public class GameController{
 				velY = -velY;
 				--scoreBottom;
 				checkGameOver();
-
 				/**
 				 * Update model and view
 				 */
 				gameDisplay.setBottomScore(scoreBottom);
 				ai.decrementLife();
-
 			} else if(ballY+2.5*ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + 3*ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/**
 				 * If the ball is touching the bottom paddle
@@ -462,14 +427,12 @@ public class GameController{
 			 */
 			ballX += velX;
 			ballY += velY;
-
 			/**
 			 * Update the view and model
 			 */
 			gameDisplay.setBall(ballX,ballY);
 			b.setPositionX(ballX);
 			b.setPositionY(ballY);
-
 			/**
 			 * Detect the key pressed by the user on the keyboard
 			 */
@@ -483,7 +446,6 @@ public class GameController{
 					if(bottomPadX>0) {
 						//TODO: SPEED
 						bottomPadX-=3;
-
 						/**
 						 * Update the view and model
 						 */
@@ -500,7 +462,6 @@ public class GameController{
 						 */
 						//TODO: SPEED
 						bottomPadX+=3;
-
 						/**
 						 * Update the view and model
 						 */
@@ -509,7 +470,6 @@ public class GameController{
 					} 
 				}
 			}
-
 			/**
 			 * Create actions for the AI paddles
 			 */
@@ -521,7 +481,6 @@ public class GameController{
 					 * - Display the movement on the screen
 					 */
 					topPadX +=1;
-
 					/**
 					 * Update the view and the model
 					 */
@@ -536,7 +495,6 @@ public class GameController{
 					 * - Display the movement on the screen
 					 */
 					topPadX -=1;
-
 					/**
 					 * Update the view and the model
 					 */
@@ -544,20 +502,17 @@ public class GameController{
 					paddle_ai.setPositionX(topPadX);
 				}
 			}
-
 			/**
 			 * Send message to the view to update view.
 			 */
 			gameDisplay.repaint();
 		}
-
 		/** 
 		 * @brief detect which key is pressed on the keyboard
 		 * @param e is the action performed on keyboard
 	     */
 		@Override
 		public void keyPressed(KeyEvent e) {
-
 			/**
 			 * Declare a variable to store the mouse click event
 			 */
@@ -571,20 +526,17 @@ public class GameController{
 			case KeyEvent.VK_LEFT:
 				keys.add("LEFT");
 				break;
-
 			case KeyEvent.VK_RIGHT:			// RIGHT is pressed
 				keys.add("RIGHT");
 				break;
 			}
 		}
-
 		/** 
 		 * @brief detects which key is released
 		 * @param e is the action performed on keyboard
 	     */
 		@Override
 		public void keyReleased(KeyEvent e) {
-
 			/**
 			 * Declare a variable to store the mouse click event
 			 */
@@ -603,13 +555,9 @@ public class GameController{
 				break;
 			}
 		}
-
 		@Override
 		public void keyTyped(KeyEvent e) {}
-
 	}
-
-
 	
 	/** 
 	 * @brief sets the display
@@ -618,7 +566,6 @@ public class GameController{
 	public void display(){
 		v.display();
 	}
-
 	/** 
 	 * @brief checks whether the game ends
 	 * @details check the number of life for both the player and the ai is 0.
@@ -644,12 +591,11 @@ public class GameController{
 			
 		}
 		//TODO: SAVE RECORD
-
 	}
 	
 	private void getElapsedTime(){
 		endTime = System.currentTimeMillis();
-		timeElapsed = (endTime-startTime)/1000.0;
+		timeElapsed = timeElapsed + (endTime-startTime)/1000.0;
 		
 		
 		
@@ -668,7 +614,5 @@ System.out.println(timeElapsed);
 	}
 	
 	
-
 	
-
 }
