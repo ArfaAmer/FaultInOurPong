@@ -151,11 +151,6 @@ public class HighScore {
 			}
 		}
 		// random text
-
-		for (int i = 0; i < scoreInt.size(); i++) {
-			System.out.println(user.get(i) + " " + scoreInt.get(i));
-
-		}
 	}
 	
 	public static void highScorePage(JFrame main) throws IOException {
