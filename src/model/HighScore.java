@@ -1,28 +1,31 @@
-import java.awt.List;
-import java.io.BufferedReader;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class HighScore {
 
 	ArrayList<String> arylist = new ArrayList<String>();
 
-	 ArrayList<String> user = new ArrayList<String>();
-	 ArrayList<String> score = new ArrayList<String>();
-	 ArrayList<Integer> scoreInt = new ArrayList<Integer>();
+	static ArrayList<String> user = new ArrayList<String>();
+	static ArrayList<String> score = new ArrayList<String>();
+	static ArrayList<Integer> scoreInt = new ArrayList<Integer>();
 
-	 int x;
+	static int x;
 
-	public String[] readFrom() throws IOException {
+	public static String[] readFrom() throws IOException {
 
 		String fileName = "highScore.txt";
 
@@ -55,26 +58,26 @@ public class HighScore {
 
 	}
 
-	public void writeTo() {
+	public static void writeTo() {
 		try {
 			String filename = "highScore.txt";
-		
-			
+
 			FileWriter fw = new FileWriter(filename, true);
 			PrintWriter pw = new PrintWriter(filename);
 			pw.print(" ");
-			
-			for(int i =0; i < user.size();i++){
-				fw.write(user.get(i)+ " " + scoreInt.get(i) + "\n");
+
+			for (int i = 0; i < user.size(); i++) {
+				fw.write(user.get(i) + " " + scoreInt.get(i) + "\n");
+
 			}
-//			fw.write(a + "\n");
+			// fw.write(a + "\n");
 			fw.close();
 		} catch (IOException ioe) {
 			System.err.println("IOException: " + ioe.getMessage());
 		}
 	}
 
-	public void creatingArrays() throws IOException {
+	public static void creatingArrays() throws IOException {
 		String[] newArr = readFrom();
 		for (int i = 0; i < newArr.length; i++) {
 			if (i % 2 == 0) {
@@ -101,10 +104,10 @@ public class HighScore {
 
 		}
 
-//		for (int i = 0; i < score.size(); i++) {
-//			System.out.println(scoreInt.get(i));
-//
-//		}
+		// for (int i = 0; i < score.size(); i++) {
+		// System.out.println(scoreInt.get(i));
+		//
+		// }
 	}
 
 	public int returnLowest() {
@@ -112,7 +115,7 @@ public class HighScore {
 		return scoreInt.get(scoreInt.size());
 	}
 
-	public boolean isHigh(int compare) {
+	public static boolean isHigh(int compare) {
 		if (compare > x) {
 			return true;
 		} else {
@@ -120,7 +123,7 @@ public class HighScore {
 		}
 	}
 
-	public void sortInt() {
+	public static void sortInt() {
 
 		for (int i = 0; i < scoreInt.size(); i++) {
 			for (int j = 0; j < scoreInt.size() - 1; j++) {
@@ -140,35 +143,83 @@ public class HighScore {
 				}
 			}
 		}
+		// random text
 
 		for (int i = 0; i < scoreInt.size(); i++) {
 			System.out.println(user.get(i) + " " + scoreInt.get(i));
+
 		}
 	}
 
-	public HighScore(String nameUser, int nameScore) throws IOException {
+	public static void highScoreFrame() {
+
+		String[] columnNames = { "User Name", "Time" };
+		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		Object rowData[][] = {
+				{ user.get(0),scoreInt.get(0)},
+				{ user.get(1),scoreInt.get(1)},
+				{ user.get(2),scoreInt.get(2)},
+				{ user.get(3),scoreInt.get(3)},
+				{ user.get(4),scoreInt.get(4)},
+				{ user.get(5),scoreInt.get(5)},
+				{ user.get(6),scoreInt.get(6)},
+				{ user.get(7),scoreInt.get(7)},
+				{ user.get(8),scoreInt.get(8)},
+				{ user.get(9),scoreInt.get(9)},
+				{ user.get(10),scoreInt.get(10)},
+				{ user.get(11),scoreInt.get(11)},
+				{ user.get(12),scoreInt.get(12)},
+				{ user.get(13),scoreInt.get(13)},
+				{ user.get(14),scoreInt.get(14)},
+				{ user.get(15),scoreInt.get(15)},
+				{ user.get(16),scoreInt.get(16)},
+				{ user.get(17),scoreInt.get(17)},
+				{ user.get(18),scoreInt.get(18)},
+				{ user.get(19),scoreInt.get(19)}};
+		JTable table = new JTable(rowData, columnNames);
+
+		JScrollPane scrollPane = new JScrollPane(table);
+		frame.add(scrollPane, BorderLayout.CENTER);
+		frame.setSize(300, 150);
+		frame.setVisible(true);
+
+	}
+
+	public HighScore(int nameScore) throws IOException {
 
 		readFrom();
 		creatingArrays();
 		sortInt();
-		
-		String name = nameUser;
+
 		int nameScored = nameScore;
-		if(isHigh(nameScored)){
-		
-			user.add(name);
+		if (isHigh(nameScored)) {
+
+			JPanel panel = new JPanel(new BorderLayout(5, 5));
+
+			JFrame frame = new JFrame();
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
+		    JPanel label = new JPanel(new GridLayout(0, 1, 2, 2));
+		    label.add(new JLabel("User Name", SwingConstants.RIGHT));
+		    JPanel controls = new JPanel(new GridLayout(0, 1, 2, 2));
+		    JTextField username = new JTextField();
+		    controls.add(username);
+		    panel.add(controls, BorderLayout.CENTER);
+
+		    JOptionPane.showMessageDialog(frame, panel, "add user name", JOptionPane.QUESTION_MESSAGE);
+
+			user.add(username.getText());
 			scoreInt.add(nameScored);
 			sortInt();
-			user.remove(user.size()-1);
-			scoreInt.remove(scoreInt.size()-1);
+			user.remove(user.size() - 1);
+			scoreInt.remove(scoreInt.size() - 1);
 			writeTo();
+			highScoreFrame();
 
 		}
-		
-		
-		
-		
-		
+
 	}
 
 }
