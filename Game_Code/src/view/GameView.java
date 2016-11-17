@@ -209,7 +209,7 @@ System.out.println(prefer.getPreferredSize());
 	 * @brief display message for game over
 	 * @param whichplayer is the indicator for the player
 	 */
-	public void gameOver(int whichplayer){
+	public void gameOver(int whichplayer, double time){
 
 		/**
 		 * - If the computer wins, display winning message for the computer
@@ -217,11 +217,13 @@ System.out.println(prefer.getPreferredSize());
 		 */
 		if(whichplayer==0){
 			JFrame overFrame = new JFrame("Game Over");
-			JOptionPane.showMessageDialog(overFrame, "The game is over! The computer wins!");
+			JOptionPane.showMessageDialog(overFrame, "The game is over! The computer wins!\n"
+					+ "     Your time = " + time);
 		}
 		else{
 			JFrame overFrame = new JFrame("Game Over");
-			JOptionPane.showMessageDialog(overFrame, "The game is over! The player wins!");
+			JOptionPane.showMessageDialog(overFrame, "The game is over! The player wins!\n"
+					+ "     Your time = " + time);
 		}
 		gameFrame.setVisible(false);
 		welcome.setVisible(true);
