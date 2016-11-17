@@ -579,18 +579,17 @@ public class GameController{
 		 */
 		if(scoreBottom==0){
 			getElapsedTime();
-			v.gameOver(0);
+			v.gameOver(0, timeElapsed);
 			resetGame();
 			
 			
 		} else if(scoreTop==0){			
 			getElapsedTime();
-			v.gameOver(1);
+			v.gameOver(1, timeElapsed);
 			resetGame();
 			
 			
 		}
-		//TODO: SAVE RECORD
 	}
 	
 	private void getElapsedTime(){
