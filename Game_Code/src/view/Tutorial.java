@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
@@ -31,6 +32,7 @@ public class Tutorial extends JFrame{
 		 * Setups for the window 
 		 */
 		super("FaultInOurPong - Tutorial");
+		this.setLayout(new GridBagLayout());
 		this.setSize(700,500);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -40,7 +42,8 @@ public class Tutorial extends JFrame{
 		 */
 		this.add(new JLabel(img));
 		back = new JButton("Back");
-		//this.add(back);
+		this.add(back);
+		
 		
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
