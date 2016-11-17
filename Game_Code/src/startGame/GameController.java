@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashSet;
 import javax.swing.ImageIcon;
@@ -71,6 +72,7 @@ public class GameController{
 	private Player player;
 	private Player ai;
 	private Timer t;
+	private HighScore displayScore;
 	private long startTime;
 	private long endTime;
 	private double timeElapsed;
@@ -261,10 +263,9 @@ public class GameController{
 			}else if(source==w.highScores()){			// If clicked the high score button
 				//TODO
 				try{									// Open and display the record
-					FileReader fr = new FileReader("./Resources/gameScore.txt");
-					BufferedReader br = new BufferedReader(fr);
-					System.out.println("can display high score");
-					br.close();
+					displayScore.highScorePage(w);
+					w.setVisible(false);
+					
 				}catch(Exception exp){
 					v.noFileAvailMessage();
 				}
@@ -691,12 +692,24 @@ public class GameController{
 		if(scoreBottom==0){
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
+			try {
+				displayScore = new HighScore(timeElapsed);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			resetGame();
 
 
 		} else if(scoreTop==0){			
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
+			try {
+				displayScore = new HighScore(timeElapsed);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			resetGame();
 
 
@@ -706,10 +719,6 @@ public class GameController{
 	private void getElapsedTime(){
 		endTime = System.currentTimeMillis();
 		timeElapsed = timeElapsed + (endTime-startTime)/1000.0;
-
-
-
-//System.out.println(timeElapsed);
 	}
 
 	private void resetGame(){
