@@ -127,15 +127,28 @@ public class PongGameDisplay extends JPanel{
 		ballY = y;
 	}
 	
+	/**
+	 * @brief sets the positions of the bomb
+	 * @param x is the x-position of the bomb
+	 * @param y is the y-position of the bomb
+	 */
 	public void setBomb(int x, int y){
 		bombX = x;
 		bombY = y;
 	}
 	
+	/**
+	 * @brief defines the game mode contains a bomb
+	 * @details set the flag for the advance to be true
+	 */
 	public void timeForBomb(){
 		startBomb = true;
 	}
 	
+	/**
+	 * @brief defines the game mode does not contain a bomb
+	 * @details set the flag for the advance to be false
+	 */
 	public void noBomb(){
 		startBomb = false;
 	}

@@ -241,7 +241,6 @@ public class GameController{
 				w.setVisible(false);
 			}else if(source==w.load()){					// If clicked the load button
 
-				//TODO
 				try{									// Read data from a saved record
 					FileReader fr = new FileReader("./Resources/userData.txt");
 					BufferedReader br = new BufferedReader(fr);
@@ -254,6 +253,7 @@ public class GameController{
 					gameFrame.setVisible(true);
 					t.start();
 					startTime = System.currentTimeMillis();
+					System.out.println("can load data");
 
 					br.close();
 				}catch(Exception exp){
@@ -302,7 +302,6 @@ public class GameController{
 			 */
 			if(source == mode.getSingle()){			// If clicked the basic single mode button
 				mode.setVisible(false);				// Start the game with single mode
-				gameMode = SINGLE;
 				gameFrame.setVisible(true);
 
 				t.start();
@@ -310,7 +309,6 @@ public class GameController{
 			} 
 			else if(source==mode.getAdvance()){
 				mode.setVisible(false);
-				gameMode = ADVANCE;
 				gameDisplay.setAdvance();
 				gameFrame.setVisible(true);
 
@@ -401,7 +399,7 @@ public class GameController{
 				 * Update model and view
 				 */
 				gameDisplay.setTopScore(scoreTop);
-				ai.decrementLife();
+				player.decrementLife();
 				
 				/**
 				 * Check whether the game ends.
@@ -422,7 +420,7 @@ public class GameController{
 				 * Update model and view
 				 */
 				gameDisplay.setBottomScore(scoreBottom);
-				player.decrementLife();
+				ai.decrementLife();
 				
 				/**
 				 * Check whether the game ends
@@ -454,7 +452,7 @@ public class GameController{
 			gameDisplay.setBall(ballX,ballY);
 			b.setPositionX(ballX);
 			b.setPositionY(ballY);
-			if(gameMode==ADVANCE){
+			
 			/**
 			 * Advance mode actions
 			 */
@@ -500,8 +498,6 @@ public class GameController{
 					 * - reverse the direction
 					 */
 					bombVelY = -bombVelY;
-					
-					//TODO
 					--scoreBottom;
 					/**
 					 * Update model and view
@@ -517,7 +513,6 @@ public class GameController{
 					 * - reverse the direction
 					 */
 					bombVelY = -bombVelY;
-					//TODO
 					--scoreTop;
 					
 					/**
@@ -527,7 +522,6 @@ public class GameController{
 					ai.decrementLife();
 					checkGameOver();
 
-					
 				}
 				
 				/**
@@ -544,7 +538,7 @@ public class GameController{
 				bomb.setPositionY(bombY);
 				
 			}
-			}
+			
 			
 			/**
 			 * Detect the key pressed by the user on the keyboard
@@ -693,31 +687,23 @@ public class GameController{
 		if(scoreBottom==0){
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
-			if(gameMode == 0) {
-				try {
-		
-					displayScore = new HighScore(timeElapsed, w);
-					w.setVisible(false);
+			try {
+				displayScore = new HighScore(timeElapsed, w);
+				w.setVisible(false);
 			} catch (IOException e) {
-			// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
 			resetGame();
 
 
 		} else if(scoreTop==0){			
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
-			if(gameMode == 0) {
-					try {
-			
-						displayScore = new HighScore(timeElapsed, w);
-						w.setVisible(false);
-				} catch (IOException e) {
-				// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			try {
+				displayScore = new HighScore(timeElapsed, w);
+				w.setVisible(false);
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 			resetGame();
 
@@ -725,22 +711,37 @@ public class GameController{
 		}
 	}
 
+	/** 
+	 * @brief obtains the time the user plays.
+	 * @details calculates the time elapsed and save it into a variable.
+	 */
 	private void getElapsedTime(){
 		endTime = System.currentTimeMillis();
-		t.stop();
 		timeElapsed = timeElapsed + (endTime-startTime)/1000.0;
 	}
 
+	/** 
+	 * @brief resets to initial when the player exits a game.
+	 * @details re-initializes the variables in the game model and update the variables in view and model.
+	 */
 	private void resetGame(){
+		/**
+		 * Reset player scores/lives in the model.
+		 */
 		player.resetScore();
 		ai.resetScore();
 
+		/**
+		 * Re-obtain scores/lives from the model
+		 */
 		scoreTop = player.getScore();		
 		scoreBottom = player.getScore();
 
+		/**
+		 * Reset scores in the view
+		 */
 		gameDisplay.setBottomScore(scoreBottom);
 		gameDisplay.setTopScore(scoreTop);
-		
 		gameDisplay.noBomb();
 	}
 
