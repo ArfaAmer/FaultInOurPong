@@ -99,7 +99,9 @@ public class GameController{
 		b = this.m.getBall();
 		ballSize = b.getSize();
 		ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
+System.out.println("x position: "+ballX);
 		ballY = frameHeight / 2 - ballSize / 2;
+System.out.println("y position: "+ ballY);
 		b.setPositionX(ballX);
 		b.setPositionY(ballY);
 
@@ -161,8 +163,7 @@ public class GameController{
 
 		gameDisplay.addKeyListener(new GameListener());
 		gameDisplay.setFocusable(true);
-		gameDisplay.setFocusTraversalKeysEnabled(false);
-
+		gameDisplay.setFocusTraversalKeysEnabled(true);
 
 		pause = this.v.getPause();
 		resume = this.v.getResume();
@@ -173,11 +174,13 @@ public class GameController{
 				t.stop();
 			}
 		});
+		pause.setFocusable(false);
 		resume.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				t.start();
 			}
 		});
+		resume.setFocusable(false);
 		save.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -191,6 +194,7 @@ public class GameController{
 				}
 			}
 		});
+		save.setFocusable(false);
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				w.setVisible(true);					//show WelcomePage
@@ -198,6 +202,7 @@ public class GameController{
 				gameFrame.dispose();				//close current JFrame(current game)
 			}
 		});
+		exit.setFocusable(false);
 
 
 		/**
@@ -260,7 +265,7 @@ public class GameController{
 					v.cannotLoadMessage();
 				}
 			}else if(source==w.highScores()){			// If clicked the high score button
-				//TODO
+
 				try{									// Open and display the record
 					displayScore.highScorePage(w);
 					w.setVisible(false);
@@ -304,6 +309,8 @@ public class GameController{
 				mode.setVisible(false);				// Start the game with single mode
 				gameFrame.setVisible(true);
 
+frameHeight=gameDisplay.getHeight();
+frameWidth=gameDisplay.getWidth();
 				t.start();
 				startTime = System.currentTimeMillis();
 			} 
@@ -375,7 +382,7 @@ public class GameController{
 			 * - x direction
 			 * - y direction
 			 */
-			if(ballX< 0 || ballX > frameWidth-8.5*ballSize){
+			if(ballX< 0 || ballX > frameWidth-ballSize){
 				/**
 				 * - X-direction
 				 * - If the ball is trying to go beyond the left/right border of the frame, 
@@ -406,7 +413,7 @@ public class GameController{
 				 */
 				checkGameOver();
 				
-			} else if(ballY+2.5*ballSize>frameHeight){
+			} else if(ballY+ballSize>frameHeight){
 				/**
 				 * If the ball is trying to go down beyond the frame
 				 * - reverse the direction
@@ -427,13 +434,13 @@ public class GameController{
 				 */
 				checkGameOver();
 				
-			} else if(ballY+2.5*ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + 3*ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
+			} else if(ballY+ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/**
 				 * If the ball is touching the bottom paddle
 				 * - reverse the direction
 				 */
 				velY = -velY;
-			} else if(ballY<=inset+padHeight && velY < 0 && ballX + 2.5*ballSize >= topPadX && ballX <= topPadX + padWidth){
+			} else if(ballY<=inset+padHeight && velY < 0 && ballX + ballSize >= topPadX && ballX <= topPadX + padWidth){
 				/**
 				 * If the ball is touching the top paddle
 				 * - reverse the direction
@@ -484,7 +491,7 @@ public class GameController{
 					 */
 					bombVelY = -bombVelY;
 
-				} else if(bombY+2.5*bombSize>frameHeight){
+				} else if(bombY+bombSize>frameHeight){
 					/**
 					 * If the ball is trying to go down beyond the frame
 					 * - reverse the direction
@@ -492,7 +499,7 @@ public class GameController{
 					 * - check game over or not
 					 */
 					bombVelY = -bombVelY;
-				} else if(bombY+2.5*bombSize>frameHeight-inset-padHeight && velY > 0 && bombX + 3*bombSize >= bottomPadX && bombX <= bottomPadX + padWidth){
+				} else if(bombY+bombSize>frameHeight-inset-padHeight && velY > 0 && bombX + bombSize >= bottomPadX && bombX <= bottomPadX + padWidth){
 					/**
 					 * If the ball is touching the bottom paddle
 					 * - reverse the direction
@@ -507,7 +514,7 @@ public class GameController{
 					checkGameOver();
 
 									
-				} else if(bombY<=inset+padHeight && velY < 0 && bombX + 2.5*bombSize >= topPadX && bombX <= topPadX + padWidth){
+				} else if(bombY<=inset+padHeight && velY < 0 && bombX + bombSize >= topPadX && bombX <= topPadX + padWidth){
 					/**
 					 * If the ball is touching the top paddle
 					 * - reverse the direction
@@ -552,7 +559,7 @@ public class GameController{
 					 */
 					if(bottomPadX>0) {
 						//TODO: SPEED
-						bottomPadX-=3;
+						bottomPadX-=2;
 						/**
 						 * Update the view and model
 						 */
@@ -561,14 +568,14 @@ public class GameController{
 					}
 				}
 				else if (keys.contains("RIGHT")) {	
-					if(bottomPadX < frameWidth - 2.75*padWidth){
+					if(bottomPadX < frameWidth - padWidth){
 						/**
 						 * If the user presses RIGHT
 						 * - update the position of the user paddle
 						 * - display the change on the screen
 						 */
 						//TODO: SPEED
-						bottomPadX+=3;
+						bottomPadX+=2;
 						/**
 						 * Update the view and model
 						 */
@@ -582,7 +589,7 @@ public class GameController{
 			 */
 			double delta = ballX - topPadX;
 			if (delta > 0) {								// If the AI paddle is trying to reach the right wall
-				if(topPadX < frameWidth - 2.75*padWidth){
+				if(topPadX < frameWidth - padWidth){
 					/**
 					 * - Move the paddle to the right
 					 * - Display the movement on the screen

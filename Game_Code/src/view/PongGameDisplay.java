@@ -75,7 +75,9 @@ public class PongGameDisplay extends JPanel{
 			bottomPadX = frameWidth / 2 - padW / 2;	// setups for the paddles positions - in the middle of the screen
 			topPadX = bottomPadX;
 			ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
+System.out.println("constructor ball x: "+ ballX);
 			ballY = frameHeight / 2 - ballSize / 2;
+System.out.println("constructor ball y: "+ ballY);
 			first = false;						// setup completed
 		}
 		
@@ -95,6 +97,8 @@ public class PongGameDisplay extends JPanel{
 		 */
 		Ellipse2D ball = new Ellipse2D.Double(ballX, ballY, 20, 20);  // creating the ball object for the game
 		g2d.fill(ball);
+
+//g2d.drawLine(340, 240, 700,500);		
 		
 		/**
 		 * Draw the bomb if the mode is the advance mode

@@ -1,7 +1,9 @@
 shapp 50.0
 Mouse 42.219
+ 32.88
 bob 26.596
 Sam 22.781
+hello 12.624
 gig 12.255
 John 12.235
 gh 12.156
@@ -16,5 +18,3 @@ sally 0.0
 cow 0.0
 bernie 0.0
 arfa 0.0
-h 0.0
-ann 0.0

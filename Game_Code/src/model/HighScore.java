@@ -153,7 +153,7 @@ public class HighScore {
 		// random text
 	}
 	
-	public static void highScorePage(JFrame main) throws IOException {
+	public void highScorePage(JFrame main) throws IOException {
 		//readFrom();
 		creatingArrays();
 		sortInt();
