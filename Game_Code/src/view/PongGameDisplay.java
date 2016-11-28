@@ -75,9 +75,7 @@ public class PongGameDisplay extends JPanel{
 			bottomPadX = frameWidth / 2 - padW / 2;	// setups for the paddles positions - in the middle of the screen
 			topPadX = bottomPadX;
 			ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
-System.out.println("constructor ball x: "+ ballX);
 			ballY = frameHeight / 2 - ballSize / 2;
-System.out.println("constructor ball y: "+ ballY);
 			first = false;						// setup completed
 		}
 		
@@ -98,7 +96,6 @@ System.out.println("constructor ball y: "+ ballY);
 		Ellipse2D ball = new Ellipse2D.Double(ballX, ballY, 20, 20);  // creating the ball object for the game
 		g2d.fill(ball);
 
-//g2d.drawLine(340, 240, 700,500);		
 		
 		/**
 		 * Draw the bomb if the mode is the advance mode
@@ -115,8 +112,8 @@ System.out.println("constructor ball y: "+ ballY);
 		 * Draw scores on the screen by passed in values
 		 */
 		// scores
-		String scoreB = "Bottom: " + scoreBottom; 	// saving the score of the bottom paddle
-		String scoreT = "Top: " + scoreTop;			// saving the score of the top paddle 
+		String scoreB = "Player: " + scoreBottom; 	// saving the score of the bottom paddle
+		String scoreT = "Ai: " + scoreTop;			// saving the score of the top paddle 
 		g2d.drawString(scoreB, 10, frameHeight / 2);						// printing the score of the bottom paddle in the screen
 		g2d.drawString(scoreT, frameWidth - 50, frameHeight / 2);			// printing the score of the top paddle in the screen
 	}
