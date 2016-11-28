@@ -87,7 +87,17 @@ public class GameController{
 	public GameController(GameView v, GameModel m){
 		this.v = v;
 		this.m = m;
+		
+		/**
+		 * Set default game mode to be single
+		 */
 		gameMode = SINGLE;
+		
+		/**
+		 * Set up velocities
+		 */
+		setSpeed();
+	
 		/**
 		 * Obtain the window frame dimentions
 		 */
@@ -99,9 +109,7 @@ public class GameController{
 		b = this.m.getBall();
 		ballSize = b.getSize();
 		ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
-System.out.println("x position: "+ballX);
 		ballY = frameHeight / 2 - ballSize / 2;
-System.out.println("y position: "+ ballY);
 		b.setPositionX(ballX);
 		b.setPositionY(ballY);
 
@@ -309,8 +317,14 @@ System.out.println("y position: "+ ballY);
 				mode.setVisible(false);				// Start the game with single mode
 				gameFrame.setVisible(true);
 
-frameHeight=gameDisplay.getHeight();
-frameWidth=gameDisplay.getWidth();
+                frameHeight=gameDisplay.getHeight();
+				frameWidth=gameDisplay.getWidth();
+
+				ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
+				ballY = frameHeight / 2 - ballSize / 2;
+				gameDisplay.setBall(ballX, ballY);
+				gameDisplay.setBomb(bombX, bombY);
+				
 				t.start();
 				startTime = System.currentTimeMillis();
 			} 
@@ -318,6 +332,17 @@ frameWidth=gameDisplay.getWidth();
 				mode.setVisible(false);
 				gameDisplay.setAdvance();
 				gameFrame.setVisible(true);
+				
+				frameHeight=gameDisplay.getHeight();
+				frameWidth=gameDisplay.getWidth();
+
+				ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
+				ballY = frameHeight / 2 - ballSize / 2;
+				gameDisplay.setBall(ballX, ballY);
+
+				bombX = frameWidth / 2 - bombSize / 2;	// setups for the ball positions - in the middle of the screen
+				bombY = frameHeight / 2 - bombSize / 2;
+				gameDisplay.setBomb(bombX, bombY);
 
 				t.start();
 				startTime = System.currentTimeMillis();
@@ -463,87 +488,88 @@ frameWidth=gameDisplay.getWidth();
 			/**
 			 * Advance mode actions
 			 */
-			long currentTime = System.currentTimeMillis();
-			if((currentTime-startTime)/1000>2){
-				gameDisplay.timeForBomb();
-				
-				/**
-				 * Update the velocity/direction of the Ball
-				 * - x direction
-				 * - y direction
-				 */
-				if(bombX< 0 || bombX > frameWidth-8.5*bombSize){
+			if(gameMode==ADVANCE){
+				long currentTime = System.currentTimeMillis();
+				if((currentTime-startTime)/1000>2){
+					gameDisplay.timeForBomb();
+
 					/**
-					 * - X-direction
-					 * - If the ball is trying to go beyond the left/right border of the frame, 
-					 * reverse the direction.
+					 * Update the velocity/direction of the Ball
+					 * - x direction
+					 * - y direction
 					 */
-					bombVelX = -bombVelX;			
+					if(bombX< 0 || bombX > frameWidth-bombSize){
+						/**
+						 * - X-direction
+						 * - If the bomb is trying to go beyond the left/right border of the frame, 
+						 * reverse the direction.
+						 */
+						bombVelX = -bombVelX;			
+					}
+					if(bombY < 0){
+						/**
+						 * - Y-direction
+						 * 
+						 * If the bomb is trying to go up above the frame, 
+						 * - reverse the direction
+						 */
+						bombVelY = -bombVelY;
+
+
+					} else if(bombY+bombSize>frameHeight){
+						/**
+						 * If the bomb is trying to go down beyond the frame
+						 * - reverse the direction
+						 */
+						bombVelY = -bombVelY;
+
+					} else if(bombY+bombSize>frameHeight-inset-padHeight && bombVelY > 0 && bombX + bombSize >= bottomPadX && bombX <= bottomPadX + padWidth){
+						/**
+						 * If the bomb is touching the bottom paddle
+						 * - reverse the direction
+						 * 
+						 */
+						bombVelY = -bombVelY;
+						--scoreBottom;
+						/**
+						 * Update model and view
+						 */
+						gameDisplay.setBottomScore(scoreBottom);
+						player.decrementLife();	
+						checkGameOver();
+
+
+					} else if(bombY<=inset+padHeight && velY < 0 && bombX + bombSize >= topPadX && bombX <= topPadX + padWidth){
+						/**
+						 * If the ball is touching the top paddle
+						 * - reverse the direction
+						 */
+						bombVelY = -bombVelY;
+						--scoreTop;
+
+						/**
+						 * Update model and view
+						 */
+						gameDisplay.setTopScore(scoreTop);
+						ai.decrementLife();
+						checkGameOver();
+
+					}
+
+					/**
+					 * Update the ball position by velocity 
+					 */
+					bombX += bombVelX;
+					bombY += bombVelY;
+
+					/**
+					 * Update the view and model
+					 */
+					gameDisplay.setBomb(bombX,bombY);
+					bomb.setPositionX(bombX);
+					bomb.setPositionY(bombY);
+
 				}
-				if(bombY < 0){
-					/**
-					 * - Y-direction
-					 * 
-					 * If the ball is trying to go up above the frame, 
-					 * - reverse the direction
-					 * - user gets points because the ball hits the border of the computer side
-					 * - check game over or not
-					 */
-					bombVelY = -bombVelY;
-
-				} else if(bombY+bombSize>frameHeight){
-					/**
-					 * If the ball is trying to go down beyond the frame
-					 * - reverse the direction
-					 * - the computer gets points
-					 * - check game over or not
-					 */
-					bombVelY = -bombVelY;
-				} else if(bombY+bombSize>frameHeight-inset-padHeight && velY > 0 && bombX + bombSize >= bottomPadX && bombX <= bottomPadX + padWidth){
-					/**
-					 * If the ball is touching the bottom paddle
-					 * - reverse the direction
-					 */
-					bombVelY = -bombVelY;
-					--scoreBottom;
-					/**
-					 * Update model and view
-					 */
-					gameDisplay.setBottomScore(scoreBottom);
-					player.decrementLife();	
-					checkGameOver();
-
-									
-				} else if(bombY<=inset+padHeight && velY < 0 && bombX + bombSize >= topPadX && bombX <= topPadX + padWidth){
-					/**
-					 * If the ball is touching the top paddle
-					 * - reverse the direction
-					 */
-					bombVelY = -bombVelY;
-					--scoreTop;
-					
-					/**
-					 * Update model and view
-					 */
-					gameDisplay.setTopScore(scoreTop);
-					ai.decrementLife();
-					checkGameOver();
-
-				}
-				
-				/**
-				 * Update the ball position by velocity 
-				 */
-				bombX += bombVelX;
-				bombY += bombVelY;
-
-				/**
-				 * Update the view and model
-				 */
-				gameDisplay.setBomb(bombX,bombY);
-				bomb.setPositionX(bombX);
-				bomb.setPositionY(bombY);
-				
 			}
 			
 			
@@ -558,7 +584,6 @@ frameWidth=gameDisplay.getWidth();
 					 * - display the change on the screen
 					 */
 					if(bottomPadX>0) {
-						//TODO: SPEED
 						bottomPadX-=2;
 						/**
 						 * Update the view and model
@@ -574,7 +599,6 @@ frameWidth=gameDisplay.getWidth();
 						 * - update the position of the user paddle
 						 * - display the change on the screen
 						 */
-						//TODO: SPEED
 						bottomPadX+=2;
 						/**
 						 * Update the view and model
@@ -737,6 +761,28 @@ frameWidth=gameDisplay.getWidth();
 		 */
 		player.resetScore();
 		ai.resetScore();
+		
+		/**
+		 * Reset the game mode
+		 */
+		gameMode = SINGLE;
+		
+		/**
+		 * Reset ball and bomb position
+		 */
+		ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
+		ballY = frameHeight / 2 - ballSize / 2;
+		gameDisplay.setBall(ballX, ballY);
+
+		bombX = frameWidth / 2 - bombSize / 2;	// setups for the ball positions - in the middle of the screen
+		bombY = frameHeight / 2 - bombSize / 2;
+		gameDisplay.setBomb(bombX, bombY);
+		
+		/**
+		 * Reset the ball and bomb speed
+		 */
+		setSpeed();
+		
 
 		/**
 		 * Re-obtain scores/lives from the model
@@ -752,6 +798,21 @@ frameWidth=gameDisplay.getWidth();
 		gameDisplay.noBomb();
 	}
 
+    /**
+	 * @brief resets speed to ball and bomb
+	 * @details re-initialize by randomized values
+	 */
+	private void setSpeed(){
+		/**
+		 * Randomize the velocity for bomb
+		 */
+		int randomDirection =  (int)Math.random() * 2;
+		if(randomDirection==0) bombVelX = 1;
+		else bombVelX = -1;
+		randomDirection = (int)Math.random() * 2;
+		if(randomDirection==0) bombVelY = 1;
+		else bombVelY = -1;
+	}
 
 
 }
