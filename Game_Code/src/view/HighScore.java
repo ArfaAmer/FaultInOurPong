@@ -88,19 +88,28 @@ public class HighScore {
 		}
 	}
 
-	public static void sortInt() throws IOException {
+	public static int findRank() throws IOException {
 		
 		String[] temp;
+		Boolean x = false;
+		int j=0;
+		
 		for (int i = 0; i < 20; i++) {
-			if(Double.parseDouble(userData[19][1]) > Double.parseDouble(userData[i][1])) {
+			if (x && Double.parseDouble(userData[19][1]) > Double.parseDouble(userData[i][1])) {
 				temp = userData[i];
 				userData[i] = userData[19];
 				userData[19] = temp;
 			}
+			else if(Double.parseDouble(userData[19][1]) > Double.parseDouble(userData[i][1]) && !x) {
+				temp = userData[i];
+				userData[i] = userData[19];
+				userData[19] = temp;
+				j = i;
+				x = true;
+			}
+			
 		}
-		for (int i=0; i<20; i++) {
-			System.out.println(userData[i][0] + "  " + userData[i][1]);
-		}
+		return j;
 	}
 	
 	public static void highScorePage(JFrame main) throws IOException {
@@ -133,7 +142,7 @@ public class HighScore {
 
 		JScrollPane scrollPane = new JScrollPane(table);
 		TableColumnModel tcm = table.getColumnModel();
-		tcm.getColumn(0).setPreferredWidth(10);
+		tcm.getColumn(0).setPreferredWidth(20);
 		tcm.getColumn(1).setPreferredWidth(130);
 		
 		frame.add(scrollPane, BorderLayout.CENTER);
@@ -145,38 +154,37 @@ public class HighScore {
 	public void checkHighScore(double nameScore, JFrame main) throws IOException {
 		
 		double nameScored = nameScore;
-		if (isHigh(nameScored)) {
 
-			JPanel panel = new JPanel(new BorderLayout(5, 5));
+			JPanel panel = new JPanel();
 
 			JFrame frame = new JFrame();
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-		    JPanel label = new JPanel(new GridLayout(0, 1, 2, 2));
-		    label.add(new JLabel("User Name", SwingConstants.RIGHT));
-		    JPanel controls = new JPanel(new GridLayout(0, 1, 2, 2));
-		    JTextField username = new JTextField();
-		    controls.add(username);
-		    panel.add(controls, BorderLayout.CENTER);
-
-		    JOptionPane.showMessageDialog(frame, panel, "Highscores: Add name", JOptionPane.QUESTION_MESSAGE);
-
-			userData[19][0] = username.getText();
 			userData[19][1] = Double.toString(nameScored);
-			
-			sortInt();
+			userData[19][0] = "";
+		    int i = findRank();
+		    String title = "Congratulations! You made rank " + i+1;
+
+		    String[] options = {"OK"};
+		    JLabel lbl = new JLabel("Enter name");
+		    JTextField username = new JTextField(15);
+		    panel.add(lbl);
+		    panel.add(username);		    
+		    
+		    int selOpt = JOptionPane.showOptionDialog(frame, panel, title, 
+		    		JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+		    
+		    
+		    if(selOpt == 0) {
+		    	userData[i][0] = username.getText();
+		    }
+		    
+		    else {
+		    	userData[i][0] = "No name";
+		    }
+
 			writeTo();
 			highScorePage(main);
-
-		}
-
-	}
-	
-	public static void main(String[] args) throws HeadlessException, IOException{
-		
-		HighScore hs = new HighScore();
-		hs.highScorePage(new JFrame());
-		hs.checkHighScore(32., new JFrame());
 
 	}
 }
