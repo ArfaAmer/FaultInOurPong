@@ -737,25 +737,28 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
 			try {
-				displayScore.checkHighScore(timeElapsed, w);
-				w.setVisible(false);
+				if (displayScore.isHigh(timeElapsed)) {
+					displayScore.checkHighScore(timeElapsed, w);
+					w.setVisible(false);
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			resetGame();
-
 
 		} else if(scoreTop==0){			
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
 			try {
-				displayScore.checkHighScore(timeElapsed, w);
-				w.setVisible(false);
+				if (displayScore.isHigh(timeElapsed)) {
+					displayScore.checkHighScore(timeElapsed, w);
+					w.setVisible(false);
+				}
+
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			resetGame();
-
 
 		}
 	}
