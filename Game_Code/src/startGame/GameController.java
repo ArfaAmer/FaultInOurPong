@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.HashSet;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -67,8 +68,9 @@ public class GameController{
 
 	private Ball bomb;
 	private int bombX, bombY, bombSize;
-	private int bombVelX=1, bombVelY=1;
-
+//	private int bombVelX=1, bombVelY=1;
+	private int bombVelX, bombVelY;
+	
 	private Player player;
 	private Player ai;
 	private Timer t;
@@ -97,7 +99,8 @@ public class GameController{
 		 * Set up velocities
 		 */
 		setSpeed();
-	
+		
+		
 		/**
 		 * Obtain the window frame dimentions
 		 */
@@ -197,6 +200,8 @@ public class GameController{
 					getElapsedTime();
 					writer.println(scoreBottom);		//first line = lives left
 					writer.println(timeElapsed);		//second line = time played
+					writer.println(ballX);
+					writer.println(ballY);
 					writer.close();
 				} catch (Exception e1) {
 				}
@@ -243,6 +248,12 @@ public class GameController{
 			 * Save the action performed into a variable
 			 */
 			Object source = e.getSource();
+			try {
+				displayScore = new HighScore();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 
 			/**
 			 * - Check for the button pressed
@@ -257,10 +268,15 @@ public class GameController{
 				try{									// Read data from a saved record
 					FileReader fr = new FileReader("./Resources/userData.txt");
 					BufferedReader br = new BufferedReader(fr);
+					frameHeight = gameDisplay.getHeight();
+					frameWidth = gameDisplay.getWidth();
 					player.setScore(Integer.parseInt(br.readLine()));	//read first line to be lives
 					scoreBottom = player.getScore();
 					gameDisplay.setBottomScore(scoreBottom);
 					timeElapsed = Double.valueOf((br.readLine()));	//read second line to be time
+					/*ballX = Integer.valueOf(br.readLine());
+					ballY = Integer.valueOf(br.readLine());
+					gameDisplay.setBall(ballX, ballY);*/
 
 					w.setVisible(false);
 					gameFrame.setVisible(true);
@@ -275,9 +291,10 @@ public class GameController{
 			}else if(source==w.highScores()){			// If clicked the high score button
 
 				try{									// Open and display the record
+					
 					displayScore.highScorePage(w);
 					w.setVisible(false);
-					
+
 				}catch(Exception exp){
 					v.noFileAvailMessage();
 				}
@@ -317,22 +334,23 @@ public class GameController{
 				mode.setVisible(false);				// Start the game with single mode
 				gameFrame.setVisible(true);
 
-                frameHeight=gameDisplay.getHeight();
+				frameHeight=gameDisplay.getHeight();
 				frameWidth=gameDisplay.getWidth();
 
 				ballX = frameWidth / 2 - ballSize / 2;	// setups for the ball positions - in the middle of the screen
 				ballY = frameHeight / 2 - ballSize / 2;
 				gameDisplay.setBall(ballX, ballY);
 				gameDisplay.setBomb(bombX, bombY);
-				
+
 				t.start();
 				startTime = System.currentTimeMillis();
 			} 
 			else if(source==mode.getAdvance()){
+				gameMode = ADVANCE;
 				mode.setVisible(false);
 				gameDisplay.setAdvance();
 				gameFrame.setVisible(true);
-				
+
 				frameHeight=gameDisplay.getHeight();
 				frameWidth=gameDisplay.getWidth();
 
@@ -426,18 +444,18 @@ public class GameController{
 				 */
 				velY = -velY;
 				--scoreTop;
-				
+
 				/**
 				 * Update model and view
 				 */
 				gameDisplay.setTopScore(scoreTop);
 				player.decrementLife();
-				
+
 				/**
 				 * Check whether the game ends.
 				 */
 				checkGameOver();
-				
+
 			} else if(ballY+ballSize>frameHeight){
 				/**
 				 * If the ball is trying to go down beyond the frame
@@ -447,18 +465,18 @@ public class GameController{
 				 */
 				velY = -velY;
 				--scoreBottom;
-				
+
 				/**
 				 * Update model and view
 				 */
 				gameDisplay.setBottomScore(scoreBottom);
 				ai.decrementLife();
-				
+
 				/**
 				 * Check whether the game ends
 				 */
 				checkGameOver();
-				
+
 			} else if(ballY+ballSize>frameHeight-inset-padHeight && velY > 0 && ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padWidth){
 				/**
 				 * If the ball is touching the bottom paddle
@@ -484,7 +502,7 @@ public class GameController{
 			gameDisplay.setBall(ballX,ballY);
 			b.setPositionX(ballX);
 			b.setPositionY(ballY);
-			
+
 			/**
 			 * Advance mode actions
 			 */
@@ -571,8 +589,7 @@ public class GameController{
 
 				}
 			}
-			
-			
+
 			/**
 			 * Detect the key pressed by the user on the keyboard
 			 */
@@ -624,7 +641,7 @@ public class GameController{
 					 */
 					gameDisplay.setTop(topPadX);
 					paddle_ai.setPositionX(topPadX);
-				}
+				}	
 			}
 			else if (delta < 0) {							// If the AI paddle is trying to reach the left wall
 				if(topPadX>0){
@@ -640,6 +657,7 @@ public class GameController{
 					paddle_ai.setPositionX(topPadX);
 				}
 			}
+			
 			/**
 			 * Send message to the view to update view.
 			 */
@@ -719,7 +737,7 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
 			try {
-				displayScore = new HighScore(timeElapsed, w);
+				displayScore.checkHighScore(timeElapsed, w);
 				w.setVisible(false);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -731,7 +749,7 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
 			try {
-				displayScore = new HighScore(timeElapsed, w);
+				displayScore.checkHighScore(timeElapsed, w);
 				w.setVisible(false);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -747,8 +765,11 @@ public class GameController{
 	 * @details calculates the time elapsed and save it into a variable.
 	 */
 	private void getElapsedTime(){
+		t.stop();
 		endTime = System.currentTimeMillis();
 		timeElapsed = timeElapsed + (endTime-startTime)/1000.0;
+		DecimalFormat df = new DecimalFormat("#.###");
+		df.format(timeElapsed);
 	}
 
 	/** 
@@ -761,7 +782,7 @@ public class GameController{
 		 */
 		player.resetScore();
 		ai.resetScore();
-		
+
 		/**
 		 * Reset the game mode
 		 */
@@ -778,12 +799,19 @@ public class GameController{
 		bombY = frameHeight / 2 - bombSize / 2;
 		gameDisplay.setBomb(bombX, bombY);
 		
+		bottomPadX = frameWidth /2 - padWidth /2;	
+		topPadX = bottomPadX;	
+		paddle_player.setPositionX(bottomPadX);
+		paddle_player.setPositionY(bottomPadY);
+		paddle_ai = this.m.getComputerPaddle();
+		gameDisplay.setBottomPaddle(bottomPadX, bottomPadY);
+		gameDisplay.setTopPaddle(topPadX, topPadY);
+		
 		/**
 		 * Reset the ball and bomb speed
 		 */
 		setSpeed();
 		
-
 		/**
 		 * Re-obtain scores/lives from the model
 		 */
@@ -797,8 +825,8 @@ public class GameController{
 		gameDisplay.setTopScore(scoreTop);
 		gameDisplay.noBomb();
 	}
-
-    /**
+	
+	/**
 	 * @brief resets speed to ball and bomb
 	 * @details re-initialize by randomized values
 	 */
@@ -813,6 +841,7 @@ public class GameController{
 		if(randomDirection==0) bombVelY = 1;
 		else bombVelY = -1;
 	}
+
 
 
 }
