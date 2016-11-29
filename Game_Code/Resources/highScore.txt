@@ -1,20 +1,20 @@
-shapp 50.0
-Mouse 42.219
- 32.88
-bob 26.596
-Sam 22.781
-hello 12.624
-gig 12.255
-John 12.235
-gh 12.156
-Adwity 12.148
-joe 12.099
-adwity 2.0
-Blake 1.0
-user1 1.0
-user1 0.0
-Arfa 0.0
-sally 0.0
-cow 0.0
-bernie 0.0
-arfa 0.0
+Omar/144.593
+Spencer Smith/110.967
+Kevin/65.277
+adf/54.092
+shapp /50.000
+Amer/46.153
+Mouse /42.219
+Navya/35.331
+sally /32.880
+Jean Luo /32.000
+Adwity Sharma/32.000
+Arfa/28.505
+bob /26.596
+Sam /22.781
+French Fries/21.127
+Hermione/17.578
+Go /16.730
+Harry Potter/15.475
+Ron/12.902
+hello /12.624
