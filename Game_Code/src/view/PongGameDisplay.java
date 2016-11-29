@@ -95,7 +95,6 @@ public class PongGameDisplay extends JPanel{
 		 */
 		Ellipse2D ball = new Ellipse2D.Double(ballX, ballY, 20, 20);  // creating the ball object for the game
 		g2d.fill(ball);
-
 		
 		/**
 		 * Draw the bomb if the mode is the advance mode
@@ -126,6 +125,16 @@ public class PongGameDisplay extends JPanel{
 	public void setBall(int x, int y){
 		ballX = x;
 		ballY = y;
+	}
+	
+	public void setBottomPaddle(int x, int y) {
+		bottomPadX = x;
+		bottomPadY = y;
+	}
+	
+	public void setTopPaddle(int x, int y) {
+		topPadX = x;
+		topPadY = y;
 	}
 	
 	/**
