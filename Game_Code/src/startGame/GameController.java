@@ -41,7 +41,7 @@ public class GameController{
 	/**
 	 * Declare a variable for storing the key pressed records
 	 */
-	public HashSet<String> keys = new HashSet<String>();
+	private HashSet<String> keys = new HashSet<String>();
 	/**
 	 * Variable declarations for the game
 	 * - frame dimension

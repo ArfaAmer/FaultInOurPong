@@ -110,7 +110,6 @@ public class PongGameDisplay extends JPanel{
 		/**
 		 * Draw scores on the screen by passed in values
 		 */
-		// scores
 		String scoreB = "Player: " + scoreBottom; 	// saving the score of the bottom paddle
 		String scoreT = "Ai: " + scoreTop;			// saving the score of the top paddle 
 		g2d.drawString(scoreB, 10, frameHeight / 2);						// printing the score of the bottom paddle in the screen
@@ -127,11 +126,21 @@ public class PongGameDisplay extends JPanel{
 		ballY = y;
 	}
 	
+	/**
+	 * @brief sets the positions of the player paddle
+	 * @param x is the x-position of the player paddle
+	 * @param y is the y-position of the player paddle
+	 */
 	public void setBottomPaddle(int x, int y) {
 		bottomPadX = x;
 		bottomPadY = y;
 	}
 	
+	/**
+	 * @brief sets the positions of the AI paddle
+	 * @param x is the x-position of the AI paddle
+	 * @param y is the y-position of the AI paddle
+	 */
 	public void setTopPaddle(int x, int y) {
 		topPadX = x;
 		topPadY = y;
@@ -163,6 +172,14 @@ public class PongGameDisplay extends JPanel{
 		startBomb = false;
 	}
 	
+	/**
+	 * @brief checks if it should start displaying the bomb
+	 * @return startBomb
+	 */
+	public boolean bombTime(){
+		return startBomb;
+	}
+	
 	
 	/**
 	 * @brief sets the size of the ball
@@ -170,6 +187,14 @@ public class PongGameDisplay extends JPanel{
 	 */
 	public void setBallSize(int s){
 		ballSize = s;
+	}
+	
+	/**
+	 * @brief gets the size of the ball
+	 * @return ballSize
+	 */
+	public int getBallSize(){
+		return ballSize;
 	}
 	
 	/**
@@ -213,11 +238,24 @@ public class PongGameDisplay extends JPanel{
 	}
 	
 	/**
+	 * @brief gets the score of AI
+	 * @return scoreTop
+	 */
+	public int getTopScore(){
+		return scoreTop;
+	}
+	
+	
+	/**
 	 * @brief sets the score for player
 	 * @param s is the score
 	 */
 	public void setBottomScore(int s){
 		scoreBottom = s;
+	}
+	
+	public int getBottomScore(){
+		return scoreBottom;
 	}
 	
 	/**
@@ -234,6 +272,22 @@ public class PongGameDisplay extends JPanel{
 	 */
 	public int getBallY(){
 		return ballY;
+	}
+	
+	/**
+	 * @brief gets the x-position of the bomb
+	 * @return bombX
+	 */
+	public int getBombX(){
+		return bombX;
+	}
+	
+	/**
+	 * @brief gets the y-position of the bomb
+	 * @return bombY
+	 */
+	public int getBombY(){
+		return bombY;
 	}
 	
 	/**
@@ -266,5 +320,13 @@ public class PongGameDisplay extends JPanel{
 	 */
 	public void setAdvance(){
 		gameMode = ADVANCE;
+	}
+	
+	/**
+	 * @brief gets the mode of the game
+	 * @return gameMode
+	 */
+	public int getMode(){
+		return gameMode;
 	}
 }
