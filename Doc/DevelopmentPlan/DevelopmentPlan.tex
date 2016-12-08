@@ -1,6 +1,8 @@
 \documentclass{article}
  \usepackage{booktabs} 
 \usepackage{tabularx}
+\usepackage{indentfirst}
+\usepackage{color}
  \title{SE 3XA3: Development Plan\\Title of Project} 
 \author{Lab 01, Team 03, Pongthusiastics 		
 \\ Adwity Sharma - sharma78 		
@@ -18,6 +20,7 @@ September 24th & Jie  & Created a development plan for Revision 0\\
 September 29th & Jie,Adwity,Arfa & Discussed development plan for Revision 0\\ 
 September 30th & Arfa,Adwity & Modified development plan for Revision 0\\ 
 September 30th & Jie  & Modified development plan for Revision 0\\ 
+December 7th & Arfa & Updated document for Revision 1\\
 \bottomrule
  \end{tabularx} 
 \end{table} 
@@ -44,14 +47,14 @@ Rules for agenda & If anyone cannot attend a pre-scheduled meeting, he/she shoul
 
 \section {Team Communication Plan} 
 
-In addition to meeting face-to-face, team members also agreed to share their personal contact for on-line meeting. Several on-line applications will be utilized for contacts, discussions, and file-sharing. 
+In addition to meeting face-to-face, team members also agreed to share their personal contact for on-line meeting. Several on-line applications will be utilized for contacts, discussions, and file-sharing.\\ 
 
 \begin{tabular}{|p{3cm}|p{8cm}|}
 \hline
 \textbf{Tools}    & \textbf{Descriptions}                                                                                                                                                                                                                                                                                                                                                                                                                                \\\hline
 Git        & It will be used to pull or push files from the repository; it will also be used to get notifications about any current issue with the on going project by the instructor or the course coordinators. \\\hline
-Facebook    & The xa3 group chat will occur; will be used to discuss any implementation problems and administrative details regarding the project. \\\hline
-Phones/texts   & They will be used to contact between team members; they will be mainly used as emergency contact. \\\hline
+Facebook    & The xa3 group chat \textcolor{red}{will be used} to discuss any implementation problems and administrative details regarding the project. \\\hline
+Phones/texts   & They will be used to contact team members; they will be mainly used as emergency contact. \\\hline
 Google Docs   & It will be used to work together on documentations, before transferring them into the Latex format. \\\hline
 \end{tabular}
 
@@ -59,7 +62,7 @@ Google Docs   & It will be used to work together on documentations, before trans
 
 \section  {Team Member Roles}
 
-Each team member is assigned at least one roles for this project. The team leader will be in charge of the project as a whole, including guiding the members in the progress of development, delegating tasks to members properly, and maintaining healthy group dynamics. An expert on technology will be focusing on the software development of the project, and he/she will be helping other team members on programming problems/issues. A documentation expert will be managing the tasks on documentations, and ensuring the good quality of the documentations at submissions.\\
+Each team member is assigned at least one role for this project. The team leader will be in charge of the project as a whole, including guiding the members in the progress of development, delegating tasks to members properly, and maintaining healthy group dynamics. An expert on technology will be focusing on the software development of the project, and he/she will be helping other team members on programming problems/issues. A documentation expert will be managing the tasks on documentations, and ensuring the good quality of the documentations at submission.\\
 
 \begin{tabular}{|p{3cm}|p{8cm}|}
 \hline
@@ -77,9 +80,18 @@ The centralized flow plan will be used on Git. A master branch is created on Git
 
 Testing will be difficult because it is a game and self testing could turn out to be a challenge - we can change the parameters (values and data) in the model part of the program. For example to see if the counting of score is taking place properly we can program it in the model in such a way that if a user misses the pong in the first turn, we can use assert statements to check if the miss has been recorded as it was implemented to be.\\
 
-For the implementation of the game we are planning to add a multi-player option, so that could turn out to be a challenge - multi-player mode can require the use of threads, we are doing a course called concurrency and are moving forward with the course along with the project so they should complement each other.\\
+For the implementation of the game we are planning to add a \textcolor{red}{bomb-mode option, so that could turn out to be a challenge - bomb-mode will require the implementation of two balls and keeping track of them at the same time might prove challenging. 
+Since we are also planning on adding an in-game options panel, implementing the use of a mouse listener (for the in-game options) and a key listener (for the actual game) together could prove difficult.}\\
 
-The required library is not a challenge.
+\textcolor{red}{No external library is being used so that will not be an issue.}\\
+
+\textcolor{red}{For the proof of concept demonstration, we will provide a prototype of the ping pong game, with two working modes; Single player and Advanced player with the bomb. The movements of the paddles and the in-game options will be implemented 
+and will be controlled by the user through the following commands:
+\begin{itemize}
+\item User's paddle will move left and right through the 'left' and 'right' keys on the keyboard, respectively.
+\item User will choose to pause, resume, save and exit the game by pressing on the corresponding button with their mouse.
+\end{itemize}
+Basic features and commands of the game will be demonstrated, while detailed testing will be done at a later date.}
 
 \section {Technology}
 
@@ -90,9 +102,10 @@ Programming language       & Java\\\hline
 IDE      & Eclipse Java IDE\\\hline
 Testing framework       & Junit testing, integration testing, black box testing, and testing through user surveys \\\hline
 Document generation   & Latex, Google docs for working concurrently, Microsoft word to work on rough \\\hline
-\end{tabular}
+\end{tabular}\bigskip
 
-For the game to work one will require a Java environment (JRE), which could be a challenge for the intended users. Team members will try to create an android friendly version of the game (this part of the implementation may be scheduled after the end of the course because of time restrains). \\
+For the game to work one will require a Java environment (JRE), which could be a challenge for the intended users. Team members will try to create an android friendly version of the game\textcolor{red}{. However because of time constrains, this part of 
+the implementation will be scheduled after the end of the course.} \\
 
 \section {Coding Style}
 The Google Java Style will be the guide for this project. To be precise, the codes will adhere the Google Java Style in terms of its the format, class structures, naming conventions, and any other features pointed out in the guide.\\
