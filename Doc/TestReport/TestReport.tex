@@ -1,0 +1,197 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Test Report\\Fault in our Pong}
+\author{Team 03, Pongthusiastics 		
+	\\ Adwity Sharma - sharma78 		
+	\\ Arfa Butt - buttaa3 	
+	\\ Jie Luo - luoj3 }  
+\date{\today}
+
+\input{../Comments}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Date 1 & 1.0 & Notes\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Functional Requirements Evaluation}
+\paragraph\ {Description of Tests: The purpose of these tests is to ensure that the functional requirements that were detailed previously. It also confirms the satisfaction of testing criteria set in test report. The test names are the same as the one used in the test report document. Our project passed all the functional requirements detailed below, hence our project is functionally adequate, in the fields that are tested below.  }
+
+\subsection {Mode Selection}
+\subsubSection {Open new game}
+\paragraph {Test Name: FS-NG-1: New game}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: When user chooses new game, a new page with the options for selecting a new game opens.}
+ 
+\paragraph {Test Name: FS-NG-2: Single Player Mode chosen}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: In single player mode game against AI is started.}
+
+\paragraph {Test Name: FS-NG-3: Advanced Single Player Mode chosen}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: An advanced single player mode is chosen with an obstacle added when advanced player mode is selected.  There is a red ball that has to be avoided when in the obstacle mode.}
+
+\paragraph {Test Name: FS-NG-5: Back button to go back to the menu page}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: There is a back button that takes us back to the menu page.}
+
+\subsubsection {Load Game}
+\paragraph {Test Name: FS-LG-1: Load a saved game instead of starting a new one}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: The last saved game opens instead of starting a new one when the load game is pressed.}
+
+\paragraph {Test Name: FS-LG-2: Game loaded is same as the game state that was saved the last time}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: The game loaded is same as the game state that was saved the last time. The number of lives and the ball and paddle position is retrained from the previous game.}
+
+\subsubsection {High Score} 
+\paragraph {Test Name: FS-HS-1: Open high scores page when option is chosen from the menu page}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: When high scores page is chosen from the options we are directed to a display page containing user name and score of twenty highest scoring players.}
+
+\paragraph {Test Name: FS-HS-2: Add a new high score and check if it is added at the right place in the high scores list}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: When new high score is made there is a pop up window that allows the user to add in a user name and it is added at the right place in the high scores list.}
+ 
+\subsubsection {Tutorial} 
+\paragraph {Test Name: FS-TU-1: Open tutorial page when option is chosen from the menu page}
+\paragraph {Test Method: Running the game}
+\paragraph {Result:  When the tutorial option is chosen from the main menu a tutorial page is opened. }
+
+\paragraph {Test Name: FS-TU-2: Back button to go back to the menu page}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: when we press the back button we are taken back to the menu page.}
+
+\subsubsection { Game State}
+\paragraph {Test Name: FS-GS-1: Paddle movement}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: When the game is opened left key is pressed the paddle moves left on the console.}
+
+\paragraph {Test Name: FS-GS-2: Paddle movement}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: When the game is opened right key is pressed the paddle moves right on the console.}
+
+\paragraph {Test Name: FS-GS-3: Increment scores}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: The score is determined by the time the game is played. Playing the game for longer increases the score.}
+
+\paragraph {Test Name: FS-GS-4: Decrease lives (in single player mode)}
+\paragraph {Test Method: Running the game}
+\paragraph {Result: The program is run, in the single player mode game a turn is missed and the player’s lives decreased by 1.}
+
+
+
+\section{Nonfunctional Requirements Evaluation}
+\paragraph {Our project passed all the nonfunctional requirements detailed below, hence our project is adequate, in the fields that are tested below.}
+\subsection	{Usability}
+\paragraph {Test Name: FN-1: This testing is done to ensure that the re-designing of the game has made the game better than it was originally.}
+\paragraph {Test Method: Survey}
+\paragraph {Result: A survey was conducted; the users were asked if the redesigned version of the game was better than the original version of the game. All the users that took part in the survey answered that the redesigned game is better than the original game. Hence, this test has been completed successfully.}
+
+\paragraph {Test Name: FN-2: Test to conﬁrm that the game runs in all major operating systems such as Windows, Mac OX, Linux etc.}
+\paragraph {Test Method: Running the game in various operating systems}
+\paragraph {Result: The game was run in various operating systems and it compiled and run in each of the platform.}
+
+\subsection	{Spelling and Grammar}
+\paragraph {Test Name: FN-3: Making sure that the game does not have any grammar or spelling errors.}
+\paragraph {Test Method: Proofreading documents and the game display}
+\paragraph {Result: The folders within the game and the documents relating to it were checked for grammar and spelling errors during revision 1 to ensure the competence of this test.}
+
+\subsection	{Hardware requirement}
+\paragraph {Test Name: FN-4: Making sure that the speed of game doesn’t change in diﬀerent machines.}
+\paragraph {Test Method: Running the game in various computers and finding the speed of the ball in each machine.}
+\paragraph {Result: The game does not have tangible speed difference when it runs if various computers.}
+
+\subsection	{ Entertainment}
+\paragraph {Test Name: FN-5: This testing is done to determine if the game is entertaining enough for the user.}
+\paragraph {Test Method: Survey}
+\paragraph {Result: Users rated the game as entertaining and more than 50 percent of the users were willing to play the game again.}
+
+\subsection	{Challenge}
+\paragraph {Test Name: FN-6: Test done to determine if the game is challenging enough for the user.}
+\paragraph {Test method: Survey}
+\paragraph {Result: The testing group played the game and around 60 percent of the users rated the game as easy and 40 percent of the users rated the game as medium. A medium means that the game isn’t too hard but isn’t so easy that it gets boring. }
+
+\subsection	{ Controls}
+\paragraph {Test Name: FN-7: Test done to determine if the game controls are intuitive.}
+\paragraph {Test method: survey}
+\paragraph {Result: The testing group was asked if it is easy to play and run the game. All the participates of the survey replied this question with very easy.}
+
+\subsection {Robustness and Performance}
+\paragraph {Test Name: FN-8: Test done to estimate Robustness and Performance.}
+\paragraph {Test Method: Manually browsing through the various states in the game}
+\paragraph {Result: The game was loaded and played 15 times. In this duration the game didn’t crash a single time and the level of performance was never undermined.}
+
+	
+\section{Comparison to Existing Implementation}	
+	The nonfunctional requirement evaluation (FN-1) was done to ensure that the reconstruction of the game made it better among the user than it was originally. The users were asked if the redesigned version of the game was better than the original version of the game. All the users that took part in the survey answered that the redesigned game is better than the original game. Hence, this test ensured that the redesigned version of the game is better than the original. 
+
+\section{Unit Testing}
+	Junit was used to conduct the Unit testing. After rigorously testing the software, the various units that were tested yielded expected results. A full detail on the test cases that were performed can be viewed by accessing the j-unit test files that is compiled under the source folder with other java implementation code for this project.
+
+\section{Changes Due to Testing}
+During the testing phase of the project, the survey showed that due to lack of portability many of the users were not as willing to play or download our game. When we did the survey, we had not created a java jar file. This led us to problem as people without a java running environment did not want to download a java running environment just to play the game. Thus, after the survey data were evaluated our team decided to create a jar file to increase the portability of the project.
+
+\section{Automated Testing}
+\paragraph {Test Name: PC-1: Checking to see that the game sets score correctly.}
+\paragraph {Method: A new game state was created and the score at the beginning of the game is returned for both the user and the player. Then the results are evaluated to see that it matches the expected result. The unit test units: testSetTopScore() and testSetButtomScore() were used to perform this test.}
+\paragraph {Initial input:  10}
+\paragraph {Output: 10}
+\paragraph {Result: Pass.}
+
+\paragraph {Test name: PC-4: Checking to see that the position of the ball is set properly.}
+\paragraph {Method: A new game state is created and the position of the ball at the beginning of the game is returned and compared with the expected position of the ball.}
+\paragraph {Initial input: position of the ball from the game.}
+\paragraph {Output: (x,y) = (20,20)}
+\paragraph {Result: Pass.}
+
+\paragraph {Test name: PC-5: Checking to see that the potion of the paddle is set properly.}
+\paragraph {Method: A new game state is created and the position of the paddle at the beginning of the game is returned and compared with the expected position of the paddle. }
+\paragraph {Initial input: position of the paddle from the game.}
+\paragraph {Output: (x,y) = (20,20)}
+\paragraph {Result: Pass.}
+
+		
+\section{Trace to Requirements}
+		
+\section{Trace to Modules}		
+
+\section{Code Coverage Metrics}
+Our group has managed to produce roughly 70 percent code coverage. Through j-unit test we have covered most of the modules in testing units. Also survey has helped us test most of the nonfunctional requirements.
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\end{document}
