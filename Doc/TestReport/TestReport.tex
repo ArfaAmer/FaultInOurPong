@@ -1,0 +1,245 @@
+\documentclass{article}
+\usepackage{tabularx} 
+\usepackage{booktabs} 
+\usepackage{comment}
+\title{SE 3XA3: Test Report\\Fault in our Pong}
+\author{Team 03, Pongthusiastics 
+\\ Adwity Sharma - sharma78 
+\\ Arfa Butt - buttaa3 
+\\ Jie Luo - luoj3 } 
+\date{\today}
+\begin{document} 
+\newpage 
+\maketitle
+\pagenumbering{arabic}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\begin{table}[h] 
+\caption{\bf Revision History} 
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X} 
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\ 
+\midrule 7 December, 2016 & 1.0 & Created test report \\ 
+\bottomrule \end{tabularx} \end{table}
+ \newpage
+
+\section{Functional Requirements Evaluation}
+Description of Tests: The purpose of these tests is to ensure that the functional requirements that were detailed previously. It also confirms the satisfaction of testing criteria set in test report. The test names are the same as the one used in the test report document. Our project passed all the functional requirements detailed below, hence our project is functionally adequate, in the fields that are tested below. 
+
+\subsection {Mode Selection}
+\subsubsection {Open new game}
+Test Name: FS-NG-1: New game \par
+Test Method: Running the game \par
+Result: When user chooses new game, a new page with the options for selecting a new game opens. \par
+
+\vspace{5mm}
+
+Test Name: FS-NG-2: Single Player Mode chosen \par
+Test Method: Running the game \par
+Result: In single player mode game against AI is started. \par
+
+\vspace{5mm}
+
+Test Name: FS-NG-3: Advanced Single Player Mode chosen \par
+Test Method: Running the game \par
+Result: An advanced single player mode is chosen with an obstacle added when advanced player mode is selected. There is a red ball that has to be avoided when in the obstacle mode. \par
+
+\vspace{5mm}
+
+Test Name: FS-NG-5: Back button to go back to the menu page \par
+Test Method: Running the game \par
+Result: There is a back button that takes us back to the menu page. \par
+
+\vspace{5mm}
+
+
+\subsection {Load Game}
+Test Name: FS-LG-1: Load a saved game instead of starting a new one \par
+Test Method: Running the game \par
+Result: The last saved game opens instead of starting a new one when the load game is pressed. \par
+
+\vspace{5mm}
+
+
+Test Name: FS-LG-2: Game loaded is same as the game state that was saved the last time \par
+Test Method: Running the game \par
+Result: The game loaded is same as the game state that was saved the last time. The number of lives and the ball and paddle position is retrained from the previous game. \par
+
+\vspace{5mm}
+
+
+\subsection {High Score} 
+Test Name: FS-HS-1: Open high scores page when option is chosen from the menu page \par
+Test Method: Running the game \par
+Result: When high scores page is chosen from the options we are directed to a display page containing user name and score of twenty highest scoring players. \par
+
+\vspace{5mm}
+
+
+Test Name: FS-HS-2: Add a new high score and check if it is added at the right place in the high scores list \par
+Test Method: Running the game \par
+Result: When new high score is made there is a pop up window that allows the user to add in a user name and it is added at the right place in the high scores list. \par
+
+\vspace{5mm}
+
+
+\subsection {Tutorial} 
+Test Name: FS-TU-1: Open tutorial page when option is chosen from the menu page \par
+Test Method: Running the game \par
+Result: When the tutorial option is chosen from the main menu a tutorial page is opened. \par
+
+\vspace{5mm}
+
+
+Test Name: FS-TU-2: Back button to go back to the menu page \par
+Test Method: Running the game \par
+Result: when we press the back button we are taken back to the menu page. \par
+
+\vspace{5mm}
+
+
+\subsection { Game State}
+Test Name: FS-GS-1: Paddle movement \par
+Test Method: Running the game \par
+Result: When the game is opened left key is pressed the paddle moves left on the console. \par
+
+\vspace{5mm}
+
+
+Test Name: FS-GS-2: Paddle movement \par
+Test Method: Running the game \par
+Result: When the game is opened right key is pressed the paddle moves right on the console. \par
+
+\vspace{5mm}
+
+
+Test Name: FS-GS-3: Increment scores \par
+Test Method: Running the game \par
+Result: The score is determined by the time the game is played. Playing the game for longer increases the score. \par
+
+\vspace{5mm}
+
+
+Test Name: FS-GS-4: Decrease lives (in single player mode) \par
+Test Method: Running the game \par
+Result: The program is run, in the single player mode game a turn is missed and the player’s lives decreased by 1. \par
+
+\vspace{5mm}
+
+
+
+
+\section{Nonfunctional Requirements Evaluation}
+Our project passed all the nonfunctional requirements detailed below, hence our project is adequate, in the fields that are tested below.
+
+\subsection {Usability}
+Test Name: FN-1: This testing is done to ensure that the re-designing of the game has made the game better than it was originally. \par
+Test Method: Survey \par
+Result: A survey was conducted; the users were asked if the redesigned version of the game was better than the original version of the game. All the users that took part in the survey answered that the redesigned game is better than the original game. Hence, this test has been completed successfully. \par
+
+\vspace{5mm}
+
+
+Test Name: FN-2: Test to conﬁrm that the game runs in all major operating systems such as Windows, Mac OX, Linux etc. \par
+Test Method: Running the game in various operating systems \par
+Result: The game was run in various operating systems and it compiled and run in each of the platform. \par
+
+\vspace{5mm}
+
+
+\subsection {Spelling and Grammar}
+Test Name: FN-3: Making sure that the game does not have any grammar or spelling errors. \par
+Test Method: Proofreading documents and the game display \par
+Result: The folders within the game and the documents relating to it were checked for grammar and spelling errors during revision 1 to ensure the competence of this test. \par
+
+\vspace{5mm}
+
+
+\subsection {Hardware requirement}
+Test Name: FN-4: Making sure that the speed of game doesn’t change in diﬀerent machines. \par
+Test Method: Running the game in various computers and finding the speed of the ball in each machine. \par
+Result: The game does not have tangible speed difference when it runs if various computers. \par
+
+\vspace{5mm}
+
+
+\subsection { Entertainment}
+Test Name: FN-5: This testing is done to determine if the game is entertaining enough for the user. \par
+Test Method: Survey \par
+Result: Users rated the game as entertaining and more than 50 percent of the users were willing to play the game again. \par
+
+\vspace{5mm}
+
+
+\subsection {Challenge}
+Test Name: FN-6: Test done to determine if the game is challenging enough for the user. \par
+Test method: Survey \par
+Result: The testing group played the game and around 60 percent of the users rated the game as easy and 40 percent of the users rated the game as medium. A medium means that the game isn’t too hard but isn’t so easy that it gets boring. \par
+
+\vspace{5mm}
+
+
+\subsection { Controls}
+Test Name: FN-7: Test done to determine if the game controls are intuitive. \par
+Test method: survey \par
+Result: The testing group was asked if it is easy to play and run the game. All the participates of the survey replied this question with very easy. \par
+
+\vspace{5mm}
+
+
+\subsection {Robustness and Performance}
+Test Name: FN-8: Test done to estimate Robustness and Performance. \par
+Test Method: Manually browsing through the various states in the game \par
+Result: The game was loaded and played 15 times. In this duration the game didn’t crash a single time and the level of performance was never undermined. \par
+
+\vspace{5mm}
+
+
+\section{Comparison to Existing Implementation} 
+The nonfunctional requirement evaluation (FN-1) was done to ensure that the reconstruction of the game made it better among the user than it was originally. The users were asked if the redesigned version of the game was better than the original version of the game. All the users that took part in the survey answered that the redesigned game is better than the original game. Hence, this test ensured that the redesigned version of the game is better than the original. 
+
+\section{Unit Testing}
+Junit was used to conduct the Unit testing. After rigorously testing the software, the various units that were tested yielded expected results. A full detail on the test cases that were performed can be viewed by accessing the j-unit test files that is compiled under the source folder with other java implementation code for this project.
+
+\section{Changes Due to Testing}
+During the testing phase of the project, the survey showed that due to lack of portability many of the users were not as willing to play or download our game. When we did the survey, we had not created a java jar file. This led us to problem as people without a java running environment did not want to download a java running environment just to play the game. Thus, after the survey data were evaluated our team decided to create a jar file to increase the portability of the project.
+
+\section{Automated Testing}
+Test Name: PC-1: Checking to see that the game sets score correctly. \par
+Method: A new game state was created and the score at the beginning of the game is returned for both the user and the player. Then the results are evaluated to see that it matches the expected result. The unit test units: testSetTopScore() and testSetButtomScore() were used to perform this test. \par
+Initial input: 10 \par
+Output: 10 \par
+Result: Pass. \par
+
+\vspace{5mm}
+
+
+Test name: PC-4: Checking to see that the position of the ball is set properly. \par
+Method: A new game state is created and the position of the ball at the beginning of the game is returned and compared with the expected position of the ball. \par
+Initial input: position of the ball from the game. \par
+Output: (x,y) = (20,20) \par
+Result: Pass. \par
+
+\vspace{5mm}
+
+
+Test name: PC-5: Checking to see that the potion of the paddle is set properly. \par
+Method: A new game state is created and the position of the paddle at the beginning of the game is returned and compared with the expected position of the paddle. \par
+Initial input: position of the paddle from the game. \par
+Output: (x,y) = (20,20) \par
+Result: Pass. \par
+
+\vspace{5mm}
+
+
+\section{Trace to Requirements}
+\section{Trace to Modules} 
+
+\section{Code Coverage Metrics}
+Our group has managed to produce roughly 70 percent code coverage. Through j-unit test we have covered most of the modules in testing units. Also survey has helped us test most of the nonfunctional requirements.
+
+\end{document}
+
+
