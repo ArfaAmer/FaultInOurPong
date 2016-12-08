@@ -2,15 +2,15 @@
 
   \item {A\+D\+V\+A\+N\+CE}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {add\+Button}
     \subitem {view\+::\+Game\+View}, \hyperpage{28}
-    \subitem {view\+::\+Mode}, \hyperpage{35}
-    \subitem {view\+::\+Welcome}, \hyperpage{53}
+    \subitem {view\+::\+Mode}, \hyperpage{37}
+    \subitem {view\+::\+Welcome}, \hyperpage{58}
   \item {add\+Listener}
-    \subitem {view\+::\+Mode}, \hyperpage{35}
-    \subitem {view\+::\+Tutorial}, \hyperpage{51}
-    \subitem {view\+::\+Welcome}, \hyperpage{53}
+    \subitem {view\+::\+Mode}, \hyperpage{37}
+    \subitem {view\+::\+Tutorial}, \hyperpage{56}
+    \subitem {view\+::\+Welcome}, \hyperpage{58}
   \item {ai}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
 
@@ -20,27 +20,29 @@
     \subitem {model\+::\+Game\+Model}, \hyperpage{26}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
   \item {back}
-    \subitem {view\+::\+Tutorial}, \hyperpage{52}
+    \subitem {view\+::\+Tutorial}, \hyperpage{57}
   \item {Ball}
     \subitem {model\+::\+Ball}, \hyperpage{13}
   \item {ball\+Size}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {ballX}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {bomb}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
+  \item {bomb\+Time}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
   \item {bomb\+VelX}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
   \item {bombX}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {bottom\+PadX}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {button\+Panel}
-    \subitem {view\+::\+Mode}, \hyperpage{36}
-    \subitem {view\+::\+Welcome}, \hyperpage{55}
+    \subitem {view\+::\+Mode}, \hyperpage{38}
+    \subitem {view\+::\+Welcome}, \hyperpage{60}
 
   \indexspace
 
@@ -51,14 +53,14 @@
   \item {check\+High\+Score}
     \subitem {view\+::\+High\+Score}, \hyperpage{34}
   \item {check\+Loss}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{42}
   \item {create\+Game}
     \subitem {view\+::\+Game\+View}, \hyperpage{28}
 
   \indexspace
 
   \item {decrement\+Life}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{42}
   \item {display}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{18}
     \subitem {view\+::\+Game\+View}, \hyperpage{29}
@@ -68,11 +70,11 @@
   \indexspace
 
   \item {end\+Time}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
   \item {exit}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{20}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
     \subitem {view\+::\+Game\+View}, \hyperpage{32}
-    \subitem {view\+::\+Welcome}, \hyperpage{53}, \hyperpage{55}
+    \subitem {view\+::\+Welcome}, \hyperpage{58}, \hyperpage{60}
 
   \indexspace
 
@@ -83,12 +85,12 @@
   \item {find\+Rank}
     \subitem {view\+::\+High\+Score}, \hyperpage{34}
   \item {first}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {frame\+Height}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {frame\+Width}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
 
   \indexspace
 
@@ -101,7 +103,7 @@
     \subitem {view\+::\+Game\+View}, \hyperpage{32}
   \item {game\+Mode}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{54}
   \item {Game\+Model}
     \subitem {model\+::\+Game\+Model}, \hyperpage{24}
   \item {game\+Options}
@@ -111,27 +113,35 @@
   \item {Game\+View}
     \subitem {view\+::\+Game\+View}, \hyperpage{28}
   \item {get\+Advance}
-    \subitem {view\+::\+Mode}, \hyperpage{36}
+    \subitem {view\+::\+Mode}, \hyperpage{37}
   \item {get\+Back}
-    \subitem {view\+::\+Tutorial}, \hyperpage{52}
+    \subitem {view\+::\+Tutorial}, \hyperpage{56}
   \item {get\+Ball}
     \subitem {model\+::\+Game\+Model}, \hyperpage{25}
+  \item {get\+Ball\+Size}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
   \item {get\+BallX}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{44}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
   \item {get\+BallY}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{44}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
   \item {get\+Bomb}
     \subitem {model\+::\+Game\+Model}, \hyperpage{25}
+  \item {get\+BombX}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
+  \item {get\+BombY}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
+  \item {get\+Bottom\+Score}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
   \item {get\+BottomX}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{45}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
   \item {get\+BottomY}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{45}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
   \item {get\+Computer}
     \subitem {model\+::\+Game\+Model}, \hyperpage{25}
   \item {get\+Computer\+Paddle}
     \subitem {model\+::\+Game\+Model}, \hyperpage{25}
   \item {get\+Elapsed\+Time}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{18}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{19}
   \item {get\+Exit}
     \subitem {view\+::\+Game\+View}, \hyperpage{29}
   \item {get\+Frame\+Height}
@@ -145,9 +155,11 @@
   \item {get\+Game\+Option\+Panel}
     \subitem {view\+::\+Game\+View}, \hyperpage{30}
   \item {get\+Height}
-    \subitem {model\+::\+Paddle}, \hyperpage{37}
+    \subitem {model\+::\+Paddle}, \hyperpage{39}
   \item {get\+Inset}
-    \subitem {model\+::\+Paddle}, \hyperpage{37}
+    \subitem {model\+::\+Paddle}, \hyperpage{39}
+  \item {get\+Mode}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
   \item {get\+Pause}
     \subitem {view\+::\+Game\+View}, \hyperpage{30}
   \item {get\+Player}
@@ -156,32 +168,34 @@
     \subitem {model\+::\+Game\+Model}, \hyperpage{25}
   \item {get\+PositionX}
     \subitem {model\+::\+Ball}, \hyperpage{14}
-    \subitem {model\+::\+Paddle}, \hyperpage{38}
+    \subitem {model\+::\+Paddle}, \hyperpage{39}
   \item {get\+PositionY}
     \subitem {model\+::\+Ball}, \hyperpage{14}
-    \subitem {model\+::\+Paddle}, \hyperpage{38}
+    \subitem {model\+::\+Paddle}, \hyperpage{39}
   \item {get\+Resume}
     \subitem {view\+::\+Game\+View}, \hyperpage{31}
   \item {get\+Save}
     \subitem {view\+::\+Game\+View}, \hyperpage{31}
   \item {get\+Score}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{43}
   \item {get\+Single}
-    \subitem {view\+::\+Mode}, \hyperpage{36}
+    \subitem {view\+::\+Mode}, \hyperpage{37}
   \item {get\+Size}
     \subitem {model\+::\+Ball}, \hyperpage{14}
   \item {get\+Start}
-    \subitem {view\+::\+Welcome}, \hyperpage{54}
+    \subitem {view\+::\+Welcome}, \hyperpage{59}
+  \item {get\+Top\+Score}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
   \item {get\+Tutorial}
     \subitem {view\+::\+Game\+View}, \hyperpage{31}
   \item {get\+VelX}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{18}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{19}
   \item {get\+VelY}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{19}
   \item {get\+Welcome}
     \subitem {view\+::\+Game\+View}, \hyperpage{31}
   \item {get\+Width}
-    \subitem {model\+::\+Paddle}, \hyperpage{38}
+    \subitem {model\+::\+Paddle}, \hyperpage{40}
   \item {getbomb\+VelX}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{18}
   \item {getbomb\+VelY}
@@ -192,23 +206,23 @@
   \indexspace
 
   \item {H\+E\+I\+G\+HT}
-    \subitem {model\+::\+Paddle}, \hyperpage{39}
+    \subitem {model\+::\+Paddle}, \hyperpage{41}
   \item {High\+Score}
     \subitem {view\+::\+High\+Score}, \hyperpage{34}
   \item {high\+Score\+Page}
-    \subitem {view\+::\+High\+Score}, \hyperpage{34}
+    \subitem {view\+::\+High\+Score}, \hyperpage{35}
   \item {high\+Scores}
-    \subitem {view\+::\+Welcome}, \hyperpage{54, 55}
+    \subitem {view\+::\+Welcome}, \hyperpage{59, 60}
 
   \indexspace
 
   \item {I\+N\+S\+ET}
-    \subitem {model\+::\+Paddle}, \hyperpage{39}
+    \subitem {model\+::\+Paddle}, \hyperpage{41}
   \item {inset}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{55}
   \item {is\+High}
-    \subitem {view\+::\+High\+Score}, \hyperpage{34}
+    \subitem {view\+::\+High\+Score}, \hyperpage{35}
 
   \indexspace
 
@@ -218,26 +232,26 @@
   \indexspace
 
   \item {L\+I\+FE}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{43}
   \item {load}
-    \subitem {view\+::\+Welcome}, \hyperpage{54, 55}
+    \subitem {view\+::\+Welcome}, \hyperpage{59, 60}
 
   \indexspace
 
   \item {m}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
   \item {main}
-    \subitem {start\+Game\+::\+Pong\+Game}, \hyperpage{42}
+    \subitem {start\+Game\+::\+Pong\+Game}, \hyperpage{44}
   \item {Mode}
-    \subitem {view\+::\+Mode}, \hyperpage{35}
+    \subitem {view\+::\+Mode}, \hyperpage{37}
   \item {mode}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{21}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
     \subitem {view\+::\+Game\+View}, \hyperpage{32}
   \item {model}, \hyperpage{11}
   \item {model.\+Ball}, \hyperpage{13}
   \item {model.\+Game\+Model}, \hyperpage{24}
-  \item {model.\+Paddle}, \hyperpage{37}
-  \item {model.\+Player}, \hyperpage{40}
+  \item {model.\+Paddle}, \hyperpage{38}
+  \item {model.\+Player}, \hyperpage{42}
   \item {model\+::\+Ball}
     \subitem {Ball}, \hyperpage{13}
     \subitem {get\+PositionX}, \hyperpage{14}
@@ -247,8 +261,7 @@
     \subitem {positionY}, \hyperpage{15}
     \subitem {S\+I\+ZE}, \hyperpage{15}
     \subitem {set\+PositionX}, \hyperpage{14}
-    \subitem {set\+PositionY}, \hyperpage{14}
-    \subitem {speed}, \hyperpage{15}
+    \subitem {set\+PositionY}, \hyperpage{15}
   \item {model\+::\+Game\+Model}
     \subitem {b}, \hyperpage{26}
     \subitem {Game\+Model}, \hyperpage{24}
@@ -259,41 +272,41 @@
     \subitem {get\+Player}, \hyperpage{25}
     \subitem {get\+Player\+Paddle}, \hyperpage{25}
     \subitem {p\+\_\+player}, \hyperpage{26}
-    \subitem {player}, \hyperpage{26}
+    \subitem {player}, \hyperpage{27}
     \subitem {set\+Ball}, \hyperpage{26}
     \subitem {set\+Bomb}, \hyperpage{26}
   \item {model\+::\+Paddle}
-    \subitem {get\+Height}, \hyperpage{37}
-    \subitem {get\+Inset}, \hyperpage{37}
-    \subitem {get\+PositionX}, \hyperpage{38}
-    \subitem {get\+PositionY}, \hyperpage{38}
-    \subitem {get\+Width}, \hyperpage{38}
-    \subitem {H\+E\+I\+G\+HT}, \hyperpage{39}
-    \subitem {I\+N\+S\+ET}, \hyperpage{39}
-    \subitem {Paddle}, \hyperpage{37}
-    \subitem {positionX}, \hyperpage{39}
-    \subitem {positionY}, \hyperpage{39}
-    \subitem {set\+PositionX}, \hyperpage{38}
-    \subitem {set\+PositionY}, \hyperpage{39}
-    \subitem {speed}, \hyperpage{39}
-    \subitem {W\+I\+D\+TH}, \hyperpage{40}
+    \subitem {get\+Height}, \hyperpage{39}
+    \subitem {get\+Inset}, \hyperpage{39}
+    \subitem {get\+PositionX}, \hyperpage{39}
+    \subitem {get\+PositionY}, \hyperpage{39}
+    \subitem {get\+Width}, \hyperpage{40}
+    \subitem {H\+E\+I\+G\+HT}, \hyperpage{41}
+    \subitem {I\+N\+S\+ET}, \hyperpage{41}
+    \subitem {Paddle}, \hyperpage{39}
+    \subitem {positionX}, \hyperpage{41}
+    \subitem {positionY}, \hyperpage{41}
+    \subitem {set\+PositionX}, \hyperpage{40}
+    \subitem {set\+PositionY}, \hyperpage{40}
+    \subitem {speed}, \hyperpage{41}
+    \subitem {W\+I\+D\+TH}, \hyperpage{41}
   \item {model\+::\+Player}
-    \subitem {check\+Loss}, \hyperpage{41}
-    \subitem {decrement\+Life}, \hyperpage{41}
-    \subitem {get\+Score}, \hyperpage{41}
-    \subitem {L\+I\+FE}, \hyperpage{41}
-    \subitem {N\+O\+L\+I\+FE}, \hyperpage{41}
-    \subitem {Player}, \hyperpage{40}
-    \subitem {reset\+Score}, \hyperpage{41}
-    \subitem {score}, \hyperpage{42}
-    \subitem {set\+Score}, \hyperpage{41}
+    \subitem {check\+Loss}, \hyperpage{42}
+    \subitem {decrement\+Life}, \hyperpage{42}
+    \subitem {get\+Score}, \hyperpage{43}
+    \subitem {L\+I\+FE}, \hyperpage{43}
+    \subitem {N\+O\+L\+I\+FE}, \hyperpage{44}
+    \subitem {Player}, \hyperpage{42}
+    \subitem {reset\+Score}, \hyperpage{43}
+    \subitem {score}, \hyperpage{44}
+    \subitem {set\+Score}, \hyperpage{43}
 
   \indexspace
 
   \item {N\+O\+L\+I\+FE}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{44}
   \item {no\+Bomb}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{45}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
   \item {no\+File\+Avail\+Message}
     \subitem {view\+::\+Game\+View}, \hyperpage{31}
 
@@ -304,40 +317,40 @@
   \item {pad\+Width}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
   \item {Paddle}
-    \subitem {model\+::\+Paddle}, \hyperpage{37}
+    \subitem {model\+::\+Paddle}, \hyperpage{39}
   \item {paddle\+\_\+player}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
   \item {padW}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{55}
   \item {paint\+Component}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{45}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
   \item {pause}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
     \subitem {view\+::\+Game\+View}, \hyperpage{32}
   \item {Player}
-    \subitem {model\+::\+Player}, \hyperpage{40}
+    \subitem {model\+::\+Player}, \hyperpage{42}
   \item {player}
-    \subitem {model\+::\+Game\+Model}, \hyperpage{26}
+    \subitem {model\+::\+Game\+Model}, \hyperpage{27}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
   \item {Pong\+Game\+Display}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{44}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
   \item {ponggame}
     \subitem {view\+::\+Game\+View}, \hyperpage{32}
   \item {positionX}
     \subitem {model\+::\+Ball}, \hyperpage{15}
-    \subitem {model\+::\+Paddle}, \hyperpage{39}
+    \subitem {model\+::\+Paddle}, \hyperpage{41}
   \item {positionY}
     \subitem {model\+::\+Ball}, \hyperpage{15}
-    \subitem {model\+::\+Paddle}, \hyperpage{39}
+    \subitem {model\+::\+Paddle}, \hyperpage{41}
 
   \indexspace
 
   \item {read\+From}
-    \subitem {view\+::\+High\+Score}, \hyperpage{34}
+    \subitem {view\+::\+High\+Score}, \hyperpage{35}
   \item {reset\+Game}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{19}
   \item {reset\+Score}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{43}
   \item {resume}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
     \subitem {view\+::\+Game\+View}, \hyperpage{32}
@@ -346,81 +359,80 @@
 
   \item {S\+I\+N\+G\+LE}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{55}
   \item {S\+I\+ZE}
     \subitem {model\+::\+Ball}, \hyperpage{15}
   \item {s\+Obstacle}
-    \subitem {view\+::\+Mode}, \hyperpage{36}
+    \subitem {view\+::\+Mode}, \hyperpage{38}
   \item {save}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
     \subitem {view\+::\+Game\+View}, \hyperpage{33}
   \item {score}
-    \subitem {model\+::\+Player}, \hyperpage{42}
+    \subitem {model\+::\+Player}, \hyperpage{44}
   \item {score\+Top}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{55}
   \item {set\+Advance}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{45}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
   \item {set\+Ball}
     \subitem {model\+::\+Game\+Model}, \hyperpage{26}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{46}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{49}
   \item {set\+Ball\+Size}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{46}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
   \item {set\+Bomb}
     \subitem {model\+::\+Game\+Model}, \hyperpage{26}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{46}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
   \item {set\+Bottom}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{46}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
   \item {set\+Bottom\+Paddle}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{51}
   \item {set\+Bottom\+Score}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{51}
   \item {set\+Inset}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{51}
   \item {set\+Paddle\+Height}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{47}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{52}
   \item {set\+Paddle\+Width}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{52}
   \item {set\+PositionX}
     \subitem {model\+::\+Ball}, \hyperpage{14}
-    \subitem {model\+::\+Paddle}, \hyperpage{38}
+    \subitem {model\+::\+Paddle}, \hyperpage{40}
   \item {set\+PositionY}
-    \subitem {model\+::\+Ball}, \hyperpage{14}
-    \subitem {model\+::\+Paddle}, \hyperpage{39}
+    \subitem {model\+::\+Ball}, \hyperpage{15}
+    \subitem {model\+::\+Paddle}, \hyperpage{40}
   \item {set\+Score}
-    \subitem {model\+::\+Player}, \hyperpage{41}
+    \subitem {model\+::\+Player}, \hyperpage{43}
   \item {set\+Speed}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{19}
   \item {set\+Top}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{52}
   \item {set\+Top\+Paddle}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{53}
   \item {set\+Top\+Score}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{53}
   \item {single}
-    \subitem {view\+::\+Mode}, \hyperpage{36}
+    \subitem {view\+::\+Mode}, \hyperpage{38}
   \item {speed}
-    \subitem {model\+::\+Ball}, \hyperpage{15}
-    \subitem {model\+::\+Paddle}, \hyperpage{39}
-  \item {src/model/\+Ball.\+java}, \hyperpage{57}
-  \item {src/model/\+Game\+Model.\+java}, \hyperpage{57}
-  \item {src/model/\+Paddle.\+java}, \hyperpage{58}
-  \item {src/model/\+Player.\+java}, \hyperpage{59}
-  \item {src/start\+Game/\+Game\+Controller.\+java}, \hyperpage{59}
-  \item {src/start\+Game/\+Pong\+Game.\+java}, \hyperpage{60}
-  \item {src/view/\+Game\+View.\+java}, \hyperpage{61}
-  \item {src/view/\+High\+Score.\+java}, \hyperpage{61}
-  \item {src/view/\+Mode.\+java}, \hyperpage{61}
-  \item {src/view/\+Pong\+Game\+Display.\+java}, \hyperpage{62}
-  \item {src/view/\+Tutorial.\+java}, \hyperpage{63}
-  \item {src/view/\+Welcome.\+java}, \hyperpage{63}
+    \subitem {model\+::\+Paddle}, \hyperpage{41}
+  \item {src/model/\+Ball.\+java}, \hyperpage{61}
+  \item {src/model/\+Game\+Model.\+java}, \hyperpage{61}
+  \item {src/model/\+Paddle.\+java}, \hyperpage{62}
+  \item {src/model/\+Player.\+java}, \hyperpage{63}
+  \item {src/start\+Game/\+Game\+Controller.\+java}, \hyperpage{63}
+  \item {src/start\+Game/\+Pong\+Game.\+java}, \hyperpage{64}
+  \item {src/view/\+Game\+View.\+java}, \hyperpage{65}
+  \item {src/view/\+High\+Score.\+java}, \hyperpage{65}
+  \item {src/view/\+Mode.\+java}, \hyperpage{66}
+  \item {src/view/\+Pong\+Game\+Display.\+java}, \hyperpage{67}
+  \item {src/view/\+Tutorial.\+java}, \hyperpage{67}
+  \item {src/view/\+Welcome.\+java}, \hyperpage{68}
   \item {start}
-    \subitem {view\+::\+Welcome}, \hyperpage{55}
+    \subitem {view\+::\+Welcome}, \hyperpage{60}
   \item {start\+Bomb}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{55}
   \item {start\+Game}, \hyperpage{11}
   \item {start\+Game.\+Game\+Controller}, \hyperpage{15}
-  \item {start\+Game.\+Pong\+Game}, \hyperpage{42}
+  \item {start\+Game.\+Pong\+Game}, \hyperpage{44}
   \item {start\+Game\+::\+Game\+Controller}
     \subitem {A\+D\+V\+A\+N\+CE}, \hyperpage{20}
     \subitem {ai}, \hyperpage{20}
@@ -433,22 +445,22 @@
     \subitem {check\+Game\+Over}, \hyperpage{18}
     \subitem {display}, \hyperpage{18}
     \subitem {display\+Score}, \hyperpage{20}
-    \subitem {end\+Time}, \hyperpage{20}
-    \subitem {exit}, \hyperpage{20}
+    \subitem {end\+Time}, \hyperpage{21}
+    \subitem {exit}, \hyperpage{21}
     \subitem {frame\+Width}, \hyperpage{21}
     \subitem {Game\+Controller}, \hyperpage{17}
     \subitem {game\+Display}, \hyperpage{21}
     \subitem {game\+Frame}, \hyperpage{21}
     \subitem {game\+Mode}, \hyperpage{21}
-    \subitem {get\+Elapsed\+Time}, \hyperpage{18}
-    \subitem {get\+VelX}, \hyperpage{18}
+    \subitem {get\+Elapsed\+Time}, \hyperpage{19}
+    \subitem {get\+VelX}, \hyperpage{19}
     \subitem {get\+VelY}, \hyperpage{19}
     \subitem {getbomb\+VelX}, \hyperpage{18}
     \subitem {getbomb\+VelY}, \hyperpage{18}
     \subitem {inset}, \hyperpage{21}
     \subitem {keys}, \hyperpage{21}
-    \subitem {m}, \hyperpage{21}
-    \subitem {mode}, \hyperpage{21}
+    \subitem {m}, \hyperpage{22}
+    \subitem {mode}, \hyperpage{22}
     \subitem {pad\+Width}, \hyperpage{22}
     \subitem {paddle\+\_\+player}, \hyperpage{22}
     \subitem {pause}, \hyperpage{22}
@@ -459,35 +471,35 @@
     \subitem {save}, \hyperpage{22}
     \subitem {score\+Top}, \hyperpage{22}
     \subitem {set\+Speed}, \hyperpage{19}
-    \subitem {start\+Time}, \hyperpage{22}
-    \subitem {t}, \hyperpage{22}
+    \subitem {start\+Time}, \hyperpage{23}
+    \subitem {t}, \hyperpage{23}
     \subitem {time\+Elapsed}, \hyperpage{23}
     \subitem {tut}, \hyperpage{23}
     \subitem {v}, \hyperpage{23}
     \subitem {velX}, \hyperpage{23}
     \subitem {w}, \hyperpage{23}
   \item {start\+Game\+::\+Pong\+Game}
-    \subitem {main}, \hyperpage{42}
+    \subitem {main}, \hyperpage{44}
   \item {start\+Time}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{23}
 
   \indexspace
 
   \item {t}
-    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{22}
+    \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{23}
   \item {time\+Elapsed}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{23}
   \item {time\+For\+Bomb}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{48}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{53}
   \item {top\+PadX}
-    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{50}
+    \subitem {view\+::\+Pong\+Game\+Display}, \hyperpage{55}
   \item {tut}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{23}
   \item {Tutorial}
-    \subitem {view\+::\+Tutorial}, \hyperpage{51}
+    \subitem {view\+::\+Tutorial}, \hyperpage{56}
   \item {tutorial}
     \subitem {view\+::\+Game\+View}, \hyperpage{33}
-    \subitem {view\+::\+Welcome}, \hyperpage{54, 55}
+    \subitem {view\+::\+Welcome}, \hyperpage{59, 60}
   \item {tutorial\+Page}
     \subitem {view\+::\+Game\+View}, \hyperpage{31}
 
@@ -500,10 +512,10 @@
   \item {view}, \hyperpage{11}
   \item {view.\+Game\+View}, \hyperpage{27}
   \item {view.\+High\+Score}, \hyperpage{33}
-  \item {view.\+Mode}, \hyperpage{35}
-  \item {view.\+Pong\+Game\+Display}, \hyperpage{43}
-  \item {view.\+Tutorial}, \hyperpage{51}
-  \item {view.\+Welcome}, \hyperpage{52}
+  \item {view.\+Mode}, \hyperpage{36}
+  \item {view.\+Pong\+Game\+Display}, \hyperpage{45}
+  \item {view.\+Tutorial}, \hyperpage{55}
+  \item {view.\+Welcome}, \hyperpage{57}
   \item {view\+::\+Game\+View}
     \subitem {add\+Button}, \hyperpage{28}
     \subitem {cannot\+Load\+Message}, \hyperpage{28}
@@ -541,84 +553,91 @@
     \subitem {check\+High\+Score}, \hyperpage{34}
     \subitem {find\+Rank}, \hyperpage{34}
     \subitem {High\+Score}, \hyperpage{34}
-    \subitem {high\+Score\+Page}, \hyperpage{34}
-    \subitem {is\+High}, \hyperpage{34}
-    \subitem {read\+From}, \hyperpage{34}
-    \subitem {write\+To}, \hyperpage{34}
+    \subitem {high\+Score\+Page}, \hyperpage{35}
+    \subitem {is\+High}, \hyperpage{35}
+    \subitem {read\+From}, \hyperpage{35}
+    \subitem {write\+To}, \hyperpage{36}
   \item {view\+::\+Mode}
-    \subitem {add\+Button}, \hyperpage{35}
-    \subitem {add\+Listener}, \hyperpage{35}
-    \subitem {button\+Panel}, \hyperpage{36}
-    \subitem {get\+Advance}, \hyperpage{36}
-    \subitem {get\+Single}, \hyperpage{36}
-    \subitem {Mode}, \hyperpage{35}
-    \subitem {s\+Obstacle}, \hyperpage{36}
-    \subitem {single}, \hyperpage{36}
+    \subitem {add\+Button}, \hyperpage{37}
+    \subitem {add\+Listener}, \hyperpage{37}
+    \subitem {button\+Panel}, \hyperpage{38}
+    \subitem {get\+Advance}, \hyperpage{37}
+    \subitem {get\+Single}, \hyperpage{37}
+    \subitem {Mode}, \hyperpage{37}
+    \subitem {s\+Obstacle}, \hyperpage{38}
+    \subitem {single}, \hyperpage{38}
   \item {view\+::\+Pong\+Game\+Display}
-    \subitem {A\+D\+V\+A\+N\+CE}, \hyperpage{49}
-    \subitem {ball\+Size}, \hyperpage{49}
-    \subitem {ballX}, \hyperpage{49}
-    \subitem {bombX}, \hyperpage{49}
-    \subitem {bottom\+PadX}, \hyperpage{49}
-    \subitem {first}, \hyperpage{49}
-    \subitem {frame\+Height}, \hyperpage{49}
-    \subitem {frame\+Width}, \hyperpage{49}
-    \subitem {game\+Mode}, \hyperpage{50}
-    \subitem {get\+BallX}, \hyperpage{44}
-    \subitem {get\+BallY}, \hyperpage{44}
-    \subitem {get\+BottomX}, \hyperpage{45}
-    \subitem {get\+BottomY}, \hyperpage{45}
-    \subitem {inset}, \hyperpage{50}
-    \subitem {no\+Bomb}, \hyperpage{45}
-    \subitem {padW}, \hyperpage{50}
-    \subitem {paint\+Component}, \hyperpage{45}
-    \subitem {Pong\+Game\+Display}, \hyperpage{44}
-    \subitem {S\+I\+N\+G\+LE}, \hyperpage{50}
-    \subitem {score\+Top}, \hyperpage{50}
-    \subitem {set\+Advance}, \hyperpage{45}
-    \subitem {set\+Ball}, \hyperpage{46}
-    \subitem {set\+Ball\+Size}, \hyperpage{46}
-    \subitem {set\+Bomb}, \hyperpage{46}
-    \subitem {set\+Bottom}, \hyperpage{46}
-    \subitem {set\+Bottom\+Paddle}, \hyperpage{47}
-    \subitem {set\+Bottom\+Score}, \hyperpage{47}
-    \subitem {set\+Inset}, \hyperpage{47}
-    \subitem {set\+Paddle\+Height}, \hyperpage{47}
-    \subitem {set\+Paddle\+Width}, \hyperpage{48}
-    \subitem {set\+Top}, \hyperpage{48}
-    \subitem {set\+Top\+Paddle}, \hyperpage{48}
-    \subitem {set\+Top\+Score}, \hyperpage{48}
-    \subitem {start\+Bomb}, \hyperpage{50}
-    \subitem {time\+For\+Bomb}, \hyperpage{48}
-    \subitem {top\+PadX}, \hyperpage{50}
+    \subitem {A\+D\+V\+A\+N\+CE}, \hyperpage{54}
+    \subitem {ball\+Size}, \hyperpage{54}
+    \subitem {ballX}, \hyperpage{54}
+    \subitem {bomb\+Time}, \hyperpage{47}
+    \subitem {bombX}, \hyperpage{54}
+    \subitem {bottom\+PadX}, \hyperpage{54}
+    \subitem {first}, \hyperpage{54}
+    \subitem {frame\+Height}, \hyperpage{54}
+    \subitem {frame\+Width}, \hyperpage{54}
+    \subitem {game\+Mode}, \hyperpage{54}
+    \subitem {get\+Ball\+Size}, \hyperpage{47}
+    \subitem {get\+BallX}, \hyperpage{47}
+    \subitem {get\+BallY}, \hyperpage{47}
+    \subitem {get\+BombX}, \hyperpage{47}
+    \subitem {get\+BombY}, \hyperpage{48}
+    \subitem {get\+Bottom\+Score}, \hyperpage{48}
+    \subitem {get\+BottomX}, \hyperpage{48}
+    \subitem {get\+BottomY}, \hyperpage{48}
+    \subitem {get\+Mode}, \hyperpage{48}
+    \subitem {get\+Top\+Score}, \hyperpage{49}
+    \subitem {inset}, \hyperpage{55}
+    \subitem {no\+Bomb}, \hyperpage{49}
+    \subitem {padW}, \hyperpage{55}
+    \subitem {paint\+Component}, \hyperpage{49}
+    \subitem {Pong\+Game\+Display}, \hyperpage{47}
+    \subitem {S\+I\+N\+G\+LE}, \hyperpage{55}
+    \subitem {score\+Top}, \hyperpage{55}
+    \subitem {set\+Advance}, \hyperpage{49}
+    \subitem {set\+Ball}, \hyperpage{49}
+    \subitem {set\+Ball\+Size}, \hyperpage{50}
+    \subitem {set\+Bomb}, \hyperpage{50}
+    \subitem {set\+Bottom}, \hyperpage{50}
+    \subitem {set\+Bottom\+Paddle}, \hyperpage{51}
+    \subitem {set\+Bottom\+Score}, \hyperpage{51}
+    \subitem {set\+Inset}, \hyperpage{51}
+    \subitem {set\+Paddle\+Height}, \hyperpage{52}
+    \subitem {set\+Paddle\+Width}, \hyperpage{52}
+    \subitem {set\+Top}, \hyperpage{52}
+    \subitem {set\+Top\+Paddle}, \hyperpage{53}
+    \subitem {set\+Top\+Score}, \hyperpage{53}
+    \subitem {start\+Bomb}, \hyperpage{55}
+    \subitem {time\+For\+Bomb}, \hyperpage{53}
+    \subitem {top\+PadX}, \hyperpage{55}
   \item {view\+::\+Tutorial}
-    \subitem {add\+Listener}, \hyperpage{51}
-    \subitem {back}, \hyperpage{52}
-    \subitem {get\+Back}, \hyperpage{52}
-    \subitem {Tutorial}, \hyperpage{51}
+    \subitem {add\+Listener}, \hyperpage{56}
+    \subitem {back}, \hyperpage{57}
+    \subitem {get\+Back}, \hyperpage{56}
+    \subitem {Tutorial}, \hyperpage{56}
   \item {view\+::\+Welcome}
-    \subitem {add\+Button}, \hyperpage{53}
-    \subitem {add\+Listener}, \hyperpage{53}
-    \subitem {button\+Panel}, \hyperpage{55}
-    \subitem {exit}, \hyperpage{53}, \hyperpage{55}
-    \subitem {get\+Start}, \hyperpage{54}
-    \subitem {high\+Scores}, \hyperpage{54, 55}
-    \subitem {load}, \hyperpage{54, 55}
-    \subitem {start}, \hyperpage{55}
-    \subitem {tutorial}, \hyperpage{54, 55}
-    \subitem {Welcome}, \hyperpage{53}
+    \subitem {add\+Button}, \hyperpage{58}
+    \subitem {add\+Listener}, \hyperpage{58}
+    \subitem {button\+Panel}, \hyperpage{60}
+    \subitem {exit}, \hyperpage{58}, \hyperpage{60}
+    \subitem {get\+Start}, \hyperpage{59}
+    \subitem {high\+Scores}, \hyperpage{59, 60}
+    \subitem {load}, \hyperpage{59, 60}
+    \subitem {start}, \hyperpage{60}
+    \subitem {tutorial}, \hyperpage{59, 60}
+    \subitem {Welcome}, \hyperpage{58}
 
   \indexspace
 
   \item {w}
     \subitem {start\+Game\+::\+Game\+Controller}, \hyperpage{23}
   \item {W\+I\+D\+TH}
-    \subitem {model\+::\+Paddle}, \hyperpage{40}
+    \subitem {model\+::\+Paddle}, \hyperpage{41}
   \item {Welcome}
-    \subitem {view\+::\+Welcome}, \hyperpage{53}
+    \subitem {view\+::\+Welcome}, \hyperpage{58}
   \item {welcome}
     \subitem {view\+::\+Game\+View}, \hyperpage{33}
   \item {write\+To}
-    \subitem {view\+::\+High\+Score}, \hyperpage{34}
+    \subitem {view\+::\+High\+Score}, \hyperpage{36}
 
 \end{theindex}

@@ -22,9 +22,6 @@ public class Ball {
 	 */
 	private final int SIZE = 20;
 
-	// TODO
-	private int speed;
-
 	/**
 	 * @brief Constructor for Ball
 	 * @details Constructor accepts the x and y position of the ball
@@ -38,17 +35,22 @@ public class Ball {
 	 * @brief sets the x position of the ball
 	 * @param x-position
 	 *            of the ball
+	 * @throws ArithmeticException ball x-position could not be set out of the game frame.
 	 */
-	public void setPositionX(int x) {
-		positionX = x;
+	public void setPositionX(int x) throws ArithmeticException {
+		if(x<0) throw new ArithmeticException("You cannot set negative position.");
+		else positionX = x;
+		
 	}
 
 	/**
 	 * @brief sets the y position of the ball
 	 * @param y-position
 	 *            of the ball
+	 * @throws ArithmeticException ball y-position could not be set out of the game frame.
 	 */
-	public void setPositionY(int y) {
+	public void setPositionY(int y) throws ArithmeticException {
+		if(y<0) throw new ArithmeticException("You cannot set negative position.");
 		positionY = y;
 	}
 

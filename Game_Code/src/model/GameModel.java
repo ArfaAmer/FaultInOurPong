@@ -24,11 +24,6 @@ public class GameModel {
 	 * The two players in the game, one for the user and the other for the computer
 	 */
 	private Player player, computer;
-/*	
-	private int ballX, ballY;
-	private int playerX, playerY;
-	private int compX, compY;
-*/	
 	
 	/**
 	 * @brief Constructor for the game Model
@@ -57,8 +52,10 @@ public class GameModel {
 	 * @brief sets the x and y positions of a ball
 	 * @param x is the x position of the ball
 	 * @param y is the y position of the ball
+	 * @throws ArithmeticException ball position could not be set out of the game frame.
 	 */
 	public void setBall(int x, int y){
+		if (x<0 || y<0) throw new ArithmeticException("Invalid ball size.");
 		b.setPositionX(x);
 		b.setPositionY(y);
 	}

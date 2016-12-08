@@ -1,10 +1,17 @@
 var classview_1_1_pong_game_display =
 [
     [ "PongGameDisplay", "classview_1_1_pong_game_display.html#a1d578a032b81c4025ba91e6366672e07", null ],
+    [ "bombTime", "classview_1_1_pong_game_display.html#a655e0b247af65aa672e233c321488750", null ],
+    [ "getBallSize", "classview_1_1_pong_game_display.html#a877f192e2651263a9f6ffec587dd8e80", null ],
     [ "getBallX", "classview_1_1_pong_game_display.html#a83584a112f5bd8877e1bbb1d74dfa080", null ],
     [ "getBallY", "classview_1_1_pong_game_display.html#a940198a68c987548b182d18069ba5885", null ],
+    [ "getBombX", "classview_1_1_pong_game_display.html#a58685c652c4f3a3d7aa0c20c19ed4b11", null ],
+    [ "getBombY", "classview_1_1_pong_game_display.html#a6a8f4aa57bd1601d8a1d51eb767f0b2a", null ],
+    [ "getBottomScore", "classview_1_1_pong_game_display.html#a11b19810a46fa40aa6913ccaf7a8e2ff", null ],
     [ "getBottomX", "classview_1_1_pong_game_display.html#ab5d2d9429f7d666fea097c2ea3118893", null ],
     [ "getBottomY", "classview_1_1_pong_game_display.html#afa4d22c9959dc02057a1b56fef3f33cd", null ],
+    [ "getMode", "classview_1_1_pong_game_display.html#aca0afcedba1c0868113edcf0caa63263", null ],
+    [ "getTopScore", "classview_1_1_pong_game_display.html#a4a5b6bbbf9156076f5e683954b315603", null ],
     [ "noBomb", "classview_1_1_pong_game_display.html#a51b69bc0f6f840b4c736049115e0f449", null ],
     [ "paintComponent", "classview_1_1_pong_game_display.html#a0e3a18dfc9bbd76c97439a618a3330ac", null ],
     [ "setAdvance", "classview_1_1_pong_game_display.html#a0fedbf41897932915b12f67542cb7695", null ],

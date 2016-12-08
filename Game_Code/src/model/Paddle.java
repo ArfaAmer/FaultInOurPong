@@ -43,16 +43,20 @@ public class Paddle {
 	/**
 	 * @brief sets the x-position of the paddle.
 	 * @param x is the x position of the paddle.
+	 * @throws ArithmeticException x-position could not be set out of the game frame.
 	 */
 	public void setPositionX(int x){
+		if (x<0) throw new ArithmeticException("Cannot set paddle position out of frame.");
 		positionX = x;
 	}
 	
 	/**
 	 * @brief sets the y-position of the paddle.
 	 * @param y is the y position of the paddle.
+	 * @throws ArithmeticException y-position could not be set out of the game frame.
 	 */
 	public void setPositionY(int y){
+		if (y<0) throw new ArithmeticException("Cannot set paddle position out of frame");
 		positionY = y;
 	}
 

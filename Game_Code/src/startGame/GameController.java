@@ -13,6 +13,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.Timer;
+
+
 import model.*;
 import view.*;
 /**
@@ -67,7 +69,6 @@ public class GameController{
 
 	private Ball bomb;
 	private int bombX, bombY, bombSize;
-//	private int bombVelX=1, bombVelY=1;
 	private int bombVelX, bombVelY;
 	
 	private Player player;
@@ -83,9 +84,14 @@ public class GameController{
 	private JButton save;
 	private JButton exit;
 
-
-
-	public GameController(GameView v, GameModel m){
+/**
+ * @brief this is the constructor for the controller
+ * @details contains methods for detecting environment variables and passing variables between model and view.
+ * @param v is the view framework
+ * @param m is the model framework
+ * @throws ArithmeticException object position could not be out of the game frame 
+ */
+	public GameController(GameView v, GameModel m) throws ArithmeticException{
 		this.v = v;
 		this.m = m;
 		
@@ -230,6 +236,7 @@ public class GameController{
 	 * @date 13/11/2016
 	 * @brief action listener for the welcome page
 	 * @details detects which button is pressed by the user and do the corresponding actions
+	 * @throws IOException cannot find and read the highScore.txt
 	 */
 	class WelcomepageListener implements ActionListener{
 		/** 
@@ -240,6 +247,7 @@ public class GameController{
 		 * 			- redirect to view tutorial
 		 * 			- exit the program
 		 * @param e is the action performed on the button
+		 * @throws Exception cannot read saved record in the UserData.txt
 		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -272,9 +280,6 @@ public class GameController{
 					scoreBottom = player.getScore();
 					gameDisplay.setBottomScore(scoreBottom);
 					timeElapsed = Double.valueOf((br.readLine()));	//read second line to be time
-					/*ballX = Integer.valueOf(br.readLine());
-					ballY = Integer.valueOf(br.readLine());
-					gameDisplay.setBall(ballX, ballY);*/
 
 					w.setVisible(false);
 					gameFrame.setVisible(true);
@@ -498,8 +503,16 @@ public class GameController{
 			 * Update the view and model
 			 */
 			gameDisplay.setBall(ballX,ballY);
-			b.setPositionX(ballX);
-			b.setPositionY(ballY);
+			try {
+				b.setPositionX(ballX);
+			} catch (ArithmeticException e1) {
+				e1.printStackTrace();
+			}
+			try {
+				b.setPositionY(ballY);
+			} catch (ArithmeticException e1) {
+				e1.printStackTrace();
+			}
 
 			/**
 			 * Advance mode actions
@@ -582,8 +595,11 @@ public class GameController{
 					 * Update the view and model
 					 */
 					gameDisplay.setBomb(bombX,bombY);
-					bomb.setPositionX(bombX);
-					bomb.setPositionY(bombY);
+					try {
+						bomb.setPositionY(bombY);
+					} catch (ArithmeticException e1) {
+						e1.printStackTrace();
+					}
 
 				}
 			}
@@ -722,7 +738,8 @@ public class GameController{
 	}
 	/** 
 	 * @brief checks whether the game ends
-	 * @details check the number of life for both the player and the ai is 0.
+	 * @details if the score of one side is 0, redirect to the ending state (stop the game and display message).
+	 * @throws IOException cannot find and read the highScore.txt
 	 */
 	private void checkGameOver(){
 

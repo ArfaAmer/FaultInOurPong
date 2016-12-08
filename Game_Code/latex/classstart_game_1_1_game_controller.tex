@@ -14,8 +14,8 @@ class {\bfseries Welcomepage\+Listener}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classstart_game_1_1_game_controller_aecc647e49ed23b571160d7d7c68b04d7}{Game\+Controller} (\hyperlink{classview_1_1_game_view}{Game\+View} \hyperlink{classstart_game_1_1_game_controller_a86e3c6ba6e8d0ecb0946da48fa55e7ee}{v}, \hyperlink{classmodel_1_1_game_model}{Game\+Model} \hyperlink{classstart_game_1_1_game_controller_a2c79234f85f979b8f1efe5a48893560d}{m})
-\item 
+\hyperlink{classstart_game_1_1_game_controller_aecc647e49ed23b571160d7d7c68b04d7}{Game\+Controller} (\hyperlink{classview_1_1_game_view}{Game\+View} \hyperlink{classstart_game_1_1_game_controller_a86e3c6ba6e8d0ecb0946da48fa55e7ee}{v}, \hyperlink{classmodel_1_1_game_model}{Game\+Model} \hyperlink{classstart_game_1_1_game_controller_a2c79234f85f979b8f1efe5a48893560d}{m})  throws Arithmetic\+Exception
+\begin{DoxyCompactList}\small\item\em this is the constructor for the controller \end{DoxyCompactList}\item 
 void \hyperlink{classstart_game_1_1_game_controller_abe07c8d60c3adbb0993e637b8c725884}{display} ()
 \begin{DoxyCompactList}\small\item\em sets the display \end{DoxyCompactList}\item 
 int \hyperlink{classstart_game_1_1_game_controller_a2170345005b5f2f453951dd7b4691e0f}{get\+VelX} ()
@@ -26,11 +26,6 @@ int \hyperlink{classstart_game_1_1_game_controller_a1b902c1d6b489b6499c340b1db67
 \begin{DoxyCompactList}\small\item\em returns the velocity of bomb in the x direction. \end{DoxyCompactList}\item 
 int \hyperlink{classstart_game_1_1_game_controller_a8996d95affa45808c489767da11b6622}{getbomb\+VelY} ()
 \begin{DoxyCompactList}\small\item\em returns the velocity of bomb in the y direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Hash\+Set$<$ String $>$ \hyperlink{classstart_game_1_1_game_controller_afed267a642ca7f3ec1c1074fec2996dd}{keys} = new Hash\+Set$<$String$>$()
-\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +49,8 @@ void \hyperlink{classstart_game_1_1_game_controller_a115fe144ac38f1b8d7e6be4d5bb
 \hyperlink{classview_1_1_mode}{Mode} \hyperlink{classstart_game_1_1_game_controller_ad46f15cbc3846c80495ca340b3b1dedc}{mode}
 \item 
 \hyperlink{classview_1_1_tutorial}{Tutorial} \hyperlink{classstart_game_1_1_game_controller_ae807267b0bf97687ef3c7d57e815414e}{tut}
+\item 
+Hash\+Set$<$ String $>$ \hyperlink{classstart_game_1_1_game_controller_afed267a642ca7f3ec1c1074fec2996dd}{keys} = new Hash\+Set$<$String$>$()
 \item 
 J\+Frame \hyperlink{classstart_game_1_1_game_controller_adc48b19833b682baaa2e189362db5456}{game\+Frame}
 \item 
@@ -118,8 +115,24 @@ J\+Button \hyperlink{classstart_game_1_1_game_controller_a188e95237557694a640940
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!Game\+Controller@{Game\+Controller}}
 \index{Game\+Controller@{Game\+Controller}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{Game\+Controller()}{GameController()}}
-{\footnotesize\ttfamily start\+Game.\+Game\+Controller.\+Game\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{classview_1_1_game_view}{Game\+View}}]{v,  }\item[{\hyperlink{classmodel_1_1_game_model}{Game\+Model}}]{m }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily start\+Game.\+Game\+Controller.\+Game\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{classview_1_1_game_view}{Game\+View}}]{v,  }\item[{\hyperlink{classmodel_1_1_game_model}{Game\+Model}}]{m }\end{DoxyParamCaption}) throws Arithmetic\+Exception}
 
+
+
+this is the constructor for the controller 
+
+contains methods for detecting environment variables and passing variables between model and view. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the view framework \\
+\hline
+{\em m} & is the model framework \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & object position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 Set default game mode to be single
 
 Set up velocities
@@ -161,7 +174,12 @@ Initialize the start time and end time for a player
 
 checks whether the game ends 
 
-check the number of life for both the player and the ai is 0. 
+if the score of one side is 0, redirect to the ending state (stop the game and display message). 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & cannot find and read the high\+Score.\+txt \\
+\hline
+\end{DoxyExceptions}
+
 \begin{DoxyItemize}
 \item If the number of life for the ai is 0, the player wins
 \item If the number of life for the player is 0, the ai wins.
@@ -378,7 +396,7 @@ Variable declarations for the game
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!keys@{keys}}
 \index{keys@{keys}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{keys}{keys}}
-{\footnotesize\ttfamily Hash\+Set$<$String$>$ start\+Game.\+Game\+Controller.\+keys = new Hash\+Set$<$String$>$()}
+{\footnotesize\ttfamily Hash\+Set$<$String$>$ start\+Game.\+Game\+Controller.\+keys = new Hash\+Set$<$String$>$()\hspace{0.3cm}{\ttfamily [private]}}
 
 Declare a variable for storing the key pressed records \hypertarget{classstart_game_1_1_game_controller_a2c79234f85f979b8f1efe5a48893560d}{}\label{classstart_game_1_1_game_controller_a2c79234f85f979b8f1efe5a48893560d} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!m@{m}}

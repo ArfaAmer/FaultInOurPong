@@ -94,10 +94,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a525ba73a7ce62c810a501d6194402cfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#a525ba73a7ce62c810a501d6194402cfc">Ball</a> ()</td></tr>
 <tr class="memdesc:a525ba73a7ce62c810a501d6194402cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classmodel_1_1_ball.html">Ball</a>.  <a href="#a525ba73a7ce62c810a501d6194402cfc">More...</a><br /></td></tr>
 <tr class="separator:a525ba73a7ce62c810a501d6194402cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14854352d44495abed0928ba16a0ac39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#a14854352d44495abed0928ba16a0ac39">setPositionX</a> (int x)</td></tr>
+<tr class="memitem:a14854352d44495abed0928ba16a0ac39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#a14854352d44495abed0928ba16a0ac39">setPositionX</a> (int x)  throws ArithmeticException </td></tr>
 <tr class="memdesc:a14854352d44495abed0928ba16a0ac39"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the x position of the ball  <a href="#a14854352d44495abed0928ba16a0ac39">More...</a><br /></td></tr>
 <tr class="separator:a14854352d44495abed0928ba16a0ac39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8902ffdc71a7845ec246fedf586649c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#a8902ffdc71a7845ec246fedf586649c7">setPositionY</a> (int y)</td></tr>
+<tr class="memitem:a8902ffdc71a7845ec246fedf586649c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#a8902ffdc71a7845ec246fedf586649c7">setPositionY</a> (int y)  throws ArithmeticException </td></tr>
 <tr class="memdesc:a8902ffdc71a7845ec246fedf586649c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the y position of the ball  <a href="#a8902ffdc71a7845ec246fedf586649c7">More...</a><br /></td></tr>
 <tr class="separator:a8902ffdc71a7845ec246fedf586649c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a8f2229d4bdb3dd755443000eeacdf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#ad6a8f2229d4bdb3dd755443000eeacdf">getPositionX</a> ()</td></tr>
@@ -118,8 +118,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aac5d95f10dd849f8cea43c34300d9649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a73bce4f016c2bd11fb037bac835c7"><td class="memItemLeft" align="right" valign="top">final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#ad9a73bce4f016c2bd11fb037bac835c7">SIZE</a> = 20</td></tr>
 <tr class="separator:ad9a73bce4f016c2bd11fb037bac835c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6952fd152ab74c481570678ba240e471"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_ball.html#a6952fd152ab74c481570678ba240e471">speed</a></td></tr>
-<tr class="separator:a6952fd152ab74c481570678ba240e471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a525ba73a7ce62c810a501d6194402cfc"></a>
@@ -214,7 +212,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
+          <td> throws ArithmeticException</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -223,6 +221,12 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x-position</td><td>of the ball </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArithmeticException</td><td>ball x-position could not be set out of the game frame. </td></tr>
   </table>
   </dd>
 </dl>
@@ -240,7 +244,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>y</em></td><td>)</td>
-          <td></td>
+          <td> throws ArithmeticException</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -249,6 +253,12 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">y-position</td><td>of the ball </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArithmeticException</td><td>ball y-position could not be set out of the game frame. </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,28 +331,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The size of a ball </p>
-
-</div>
-</div>
-<a id="a6952fd152ab74c481570678ba240e471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6952fd152ab74c481570678ba240e471">&sect;&nbsp;</a></span>speed</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int model.Ball.speed</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

@@ -98,9 +98,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5551dad23bcab60638b37c8f54dd6796"><td class="mdescLeft">&#160;</td><td class="mdescRight">loses score if the ball touches his/her border.  <a href="#a5551dad23bcab60638b37c8f54dd6796">More...</a><br /></td></tr>
 <tr class="separator:a5551dad23bcab60638b37c8f54dd6796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e027a7ee08d451cde3e6743e2ef1d6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_player.html#a9e027a7ee08d451cde3e6743e2ef1d6d">getScore</a> ()</td></tr>
-<tr class="memdesc:a9e027a7ee08d451cde3e6743e2ef1d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the score of a player  <a href="#a9e027a7ee08d451cde3e6743e2ef1d6d">More...</a><br /></td></tr>
+<tr class="memdesc:a9e027a7ee08d451cde3e6743e2ef1d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the score of a player.  <a href="#a9e027a7ee08d451cde3e6743e2ef1d6d">More...</a><br /></td></tr>
 <tr class="separator:a9e027a7ee08d451cde3e6743e2ef1d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5f4cdd639aa3e68a5003ec81bdd47c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_player.html#acb5f4cdd639aa3e68a5003ec81bdd47c">setScore</a> (int x)</td></tr>
+<tr class="memdesc:acb5f4cdd639aa3e68a5003ec81bdd47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the score of the player.  <a href="#acb5f4cdd639aa3e68a5003ec81bdd47c">More...</a><br /></td></tr>
 <tr class="separator:acb5f4cdd639aa3e68a5003ec81bdd47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1027595469ab5de940ba2f6cbb29e5ef"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel_1_1_player.html#a1027595469ab5de940ba2f6cbb29e5ef">checkLoss</a> ()</td></tr>
 <tr class="memdesc:a1027595469ab5de940ba2f6cbb29e5ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether the player loses the game or not  <a href="#a1027595469ab5de940ba2f6cbb29e5ef">More...</a><br /></td></tr>
@@ -155,7 +156,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>checks whether the player loses the game or not </p>
-<dl class="section return"><dt>Returns</dt><dd>a boolean that is used to indicate whether the player is losing or not </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>if a player's score is 0 (NOLIFE), return the true to indicate the player loses. </dd></dl>
 
 </div>
 </div>
@@ -194,8 +195,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>gets the score of a player </p>
-<dl class="section return"><dt>Returns</dt><dd>playerScore returns the score of the player . </dd></dl>
+<p>gets the score of a player. </p>
+<dl class="section return"><dt>Returns</dt><dd>playerScore returns the score of the player. </dd></dl>
 
 </div>
 </div>
@@ -231,6 +232,20 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>sets the score of the player. </p>
+<p>changes the score to the input value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>is the input score </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArithmeticException</td><td>score could not be set less than zero </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

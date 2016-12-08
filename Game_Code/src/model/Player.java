@@ -41,20 +41,27 @@ public class Player {
 	}
 	
 	/**
-	 * @brief gets the score of a player
-	 * @return playerScore returns the score of the player .
+	 * @brief gets the score of a player.
+	 * @return playerScore returns the score of the player.
 	 */
 	public int getScore(){
 		return score;
 	}
 	
+	/**
+	 * @brief sets the score of the player.
+	 * @details changes the score to the input value.
+	 * @param x is the input score
+	 * @throws ArithmeticException score could not be set less than zero
+	 */
 	public void setScore(int x){
+		if (x<0) throw new ArithmeticException("Invalid score.");
 		score = x;
 	}
 	
 	/**
 	 * @brief checks whether the player loses the game or not
-	 * @return a boolean that is used to indicate whether the player is losing or not
+	 * @return if a player's score is 0 (NOLIFE), return the true to indicate the player loses.
 	 */
 	public boolean checkLoss(){
 		if(score==NOLIFE){ return true;}

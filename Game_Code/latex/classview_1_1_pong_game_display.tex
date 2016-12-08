@@ -14,17 +14,21 @@ Inheritance diagram for view.\+Pong\+Game\+Display\+:\begin{figure}[H]
 void \hyperlink{classview_1_1_pong_game_display_ac6afa3842b0a26be46dd0b7d202d887d}{set\+Ball} (int x, int y)
 \begin{DoxyCompactList}\small\item\em sets the positions of the ball \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_aa2f0ba3a3f8bc84bd079302904a57133}{set\+Bottom\+Paddle} (int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em sets the positions of the player paddle \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a175282d960f6beec7819bd373f09f170}{set\+Top\+Paddle} (int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em sets the positions of the AI paddle \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_adb358611d0a270aaf5954141ec8d35c0}{set\+Bomb} (int x, int y)
 \begin{DoxyCompactList}\small\item\em sets the positions of the bomb \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a67b7b51feffc6573e92ac9c979ade0e2}{time\+For\+Bomb} ()
 \begin{DoxyCompactList}\small\item\em defines the game mode contains a bomb \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a51b69bc0f6f840b4c736049115e0f449}{no\+Bomb} ()
 \begin{DoxyCompactList}\small\item\em defines the game mode does not contain a bomb \end{DoxyCompactList}\item 
+boolean \hyperlink{classview_1_1_pong_game_display_a655e0b247af65aa672e233c321488750}{bomb\+Time} ()
+\begin{DoxyCompactList}\small\item\em checks if it should start displaying the bomb \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a295d4a14e718454eb223a5bb06141d53}{set\+Ball\+Size} (int s)
 \begin{DoxyCompactList}\small\item\em sets the size of the ball \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a877f192e2651263a9f6ffec587dd8e80}{get\+Ball\+Size} ()
+\begin{DoxyCompactList}\small\item\em gets the size of the ball \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_aeaaff1c8033efd2d7f3242ab3b6c7e9e}{set\+Bottom} (int x)
 \begin{DoxyCompactList}\small\item\em sets x-\/position for the player paddle \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a8b9caa56b471453556b7380ee6d37340}{set\+Top} (int x)
@@ -35,12 +39,20 @@ int \hyperlink{classview_1_1_pong_game_display_afa4d22c9959dc02057a1b56fef3f33cd
 \begin{DoxyCompactList}\small\item\em gets the y-\/position of the player paddle \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a04bcc8b60d85f38178d2cd817e3fbd39}{set\+Top\+Score} (int s)
 \begin{DoxyCompactList}\small\item\em sets the score for ai \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a4a5b6bbbf9156076f5e683954b315603}{get\+Top\+Score} ()
+\begin{DoxyCompactList}\small\item\em gets the score of AI \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_aa1ef677f1bae92a51750732099b1609a}{set\+Bottom\+Score} (int s)
 \begin{DoxyCompactList}\small\item\em sets the score for player \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a11b19810a46fa40aa6913ccaf7a8e2ff}{get\+Bottom\+Score} ()
+\begin{DoxyCompactList}\small\item\em gets the player score \end{DoxyCompactList}\item 
 int \hyperlink{classview_1_1_pong_game_display_a83584a112f5bd8877e1bbb1d74dfa080}{get\+BallX} ()
 \begin{DoxyCompactList}\small\item\em gets the x-\/position of the ball \end{DoxyCompactList}\item 
 int \hyperlink{classview_1_1_pong_game_display_a940198a68c987548b182d18069ba5885}{get\+BallY} ()
 \begin{DoxyCompactList}\small\item\em gets the y-\/position of the ball \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a58685c652c4f3a3d7aa0c20c19ed4b11}{get\+BombX} ()
+\begin{DoxyCompactList}\small\item\em gets the x-\/position of the bomb \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_a6a8f4aa57bd1601d8a1d51eb767f0b2a}{get\+BombY} ()
+\begin{DoxyCompactList}\small\item\em gets the y-\/position of the bomb \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_ac42d38f9ed29e2ab2bec6c7da46f1c0e}{set\+Paddle\+Width} (int w)
 \begin{DoxyCompactList}\small\item\em sets the width of the paddle \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc5}{set\+Paddle\+Height} (int h)
@@ -48,7 +60,9 @@ void \hyperlink{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc
 void \hyperlink{classview_1_1_pong_game_display_ac40ce3811b6118c530980d38aa48ec64}{set\+Inset} (int i)
 \begin{DoxyCompactList}\small\item\em sets the distance between frame and the paddle \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_pong_game_display_a0fedbf41897932915b12f67542cb7695}{set\+Advance} ()
-\begin{DoxyCompactList}\small\item\em sets the game mode to be advanced \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em sets the game mode to be advanced \end{DoxyCompactList}\item 
+int \hyperlink{classview_1_1_pong_game_display_aca0afcedba1c0868113edcf0caa63263}{get\+Mode} ()
+\begin{DoxyCompactList}\small\item\em gets the mode of the game \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,6 +117,32 @@ Constructor for \hyperlink{classview_1_1_pong_game_display}{Pong\+Game\+Display}
 Constructor by default set the game to single mode 
 
 \subsection{Member Function Documentation}
+\hypertarget{classview_1_1_pong_game_display_a655e0b247af65aa672e233c321488750}{}\label{classview_1_1_pong_game_display_a655e0b247af65aa672e233c321488750} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!bomb\+Time@{bomb\+Time}}
+\index{bomb\+Time@{bomb\+Time}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{bomb\+Time()}{bombTime()}}
+{\footnotesize\ttfamily boolean view.\+Pong\+Game\+Display.\+bomb\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if it should start displaying the bomb 
+
+\begin{DoxyReturn}{Returns}
+start\+Bomb 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a877f192e2651263a9f6ffec587dd8e80}{}\label{classview_1_1_pong_game_display_a877f192e2651263a9f6ffec587dd8e80} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+Ball\+Size@{get\+Ball\+Size}}
+\index{get\+Ball\+Size@{get\+Ball\+Size}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Ball\+Size()}{getBallSize()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+Ball\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the size of the ball 
+
+\begin{DoxyReturn}{Returns}
+ball\+Size 
+\end{DoxyReturn}
 \hypertarget{classview_1_1_pong_game_display_a83584a112f5bd8877e1bbb1d74dfa080}{}\label{classview_1_1_pong_game_display_a83584a112f5bd8877e1bbb1d74dfa080} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BallX@{get\+BallX}}
 \index{get\+BallX@{get\+BallX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -129,6 +169,45 @@ gets the y-\/position of the ball
 \begin{DoxyReturn}{Returns}
 ballY 
 \end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a58685c652c4f3a3d7aa0c20c19ed4b11}{}\label{classview_1_1_pong_game_display_a58685c652c4f3a3d7aa0c20c19ed4b11} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BombX@{get\+BombX}}
+\index{get\+BombX@{get\+BombX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Bomb\+X()}{getBombX()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+BombX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the x-\/position of the bomb 
+
+\begin{DoxyReturn}{Returns}
+bombX 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a6a8f4aa57bd1601d8a1d51eb767f0b2a}{}\label{classview_1_1_pong_game_display_a6a8f4aa57bd1601d8a1d51eb767f0b2a} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BombY@{get\+BombY}}
+\index{get\+BombY@{get\+BombY}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Bomb\+Y()}{getBombY()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+BombY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the y-\/position of the bomb 
+
+\begin{DoxyReturn}{Returns}
+bombY 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a11b19810a46fa40aa6913ccaf7a8e2ff}{}\label{classview_1_1_pong_game_display_a11b19810a46fa40aa6913ccaf7a8e2ff} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+Bottom\+Score@{get\+Bottom\+Score}}
+\index{get\+Bottom\+Score@{get\+Bottom\+Score}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Bottom\+Score()}{getBottomScore()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+Bottom\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the player score 
+
+\begin{DoxyReturn}{Returns}
+score\+Bottom 
+\end{DoxyReturn}
 \hypertarget{classview_1_1_pong_game_display_ab5d2d9429f7d666fea097c2ea3118893}{}\label{classview_1_1_pong_game_display_ab5d2d9429f7d666fea097c2ea3118893} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+BottomX@{get\+BottomX}}
 \index{get\+BottomX@{get\+BottomX}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -154,6 +233,32 @@ gets the y-\/position of the player paddle
 
 \begin{DoxyReturn}{Returns}
 bottom\+PadY 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_aca0afcedba1c0868113edcf0caa63263}{}\label{classview_1_1_pong_game_display_aca0afcedba1c0868113edcf0caa63263} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Mode()}{getMode()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the mode of the game 
+
+\begin{DoxyReturn}{Returns}
+game\+Mode 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_pong_game_display_a4a5b6bbbf9156076f5e683954b315603}{}\label{classview_1_1_pong_game_display_a4a5b6bbbf9156076f5e683954b315603} 
+\index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!get\+Top\+Score@{get\+Top\+Score}}
+\index{get\+Top\+Score@{get\+Top\+Score}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
+\subsubsection{\texorpdfstring{get\+Top\+Score()}{getTopScore()}}
+{\footnotesize\ttfamily int view.\+Pong\+Game\+Display.\+get\+Top\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the score of AI 
+
+\begin{DoxyReturn}{Returns}
+score\+Top 
 \end{DoxyReturn}
 \hypertarget{classview_1_1_pong_game_display_a51b69bc0f6f840b4c736049115e0f449}{}\label{classview_1_1_pong_game_display_a51b69bc0f6f840b4c736049115e0f449} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!no\+Bomb@{no\+Bomb}}
@@ -214,6 +319,11 @@ sets the positions of the ball
 {\em y} & is the y-\/position of the ball \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & ball position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_a295d4a14e718454eb223a5bb06141d53}{}\label{classview_1_1_pong_game_display_a295d4a14e718454eb223a5bb06141d53} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Ball\+Size@{set\+Ball\+Size}}
 \index{set\+Ball\+Size@{set\+Ball\+Size}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -229,6 +339,11 @@ sets the size of the ball
 {\em s} & is the ball size \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & ball size should not be less than zero \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_adb358611d0a270aaf5954141ec8d35c0}{}\label{classview_1_1_pong_game_display_adb358611d0a270aaf5954141ec8d35c0} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Bomb@{set\+Bomb}}
 \index{set\+Bomb@{set\+Bomb}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -246,6 +361,11 @@ sets the positions of the bomb
 {\em y} & is the y-\/position of the bomb \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & bomb position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_aeaaff1c8033efd2d7f3242ab3b6c7e9e}{}\label{classview_1_1_pong_game_display_aeaaff1c8033efd2d7f3242ab3b6c7e9e} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Bottom@{set\+Bottom}}
 \index{set\+Bottom@{set\+Bottom}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -261,12 +381,33 @@ sets x-\/position for the player paddle
 {\em s} & is the x-\/position \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & paddle x-\/position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_aa2f0ba3a3f8bc84bd079302904a57133}{}\label{classview_1_1_pong_game_display_aa2f0ba3a3f8bc84bd079302904a57133} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Bottom\+Paddle@{set\+Bottom\+Paddle}}
 \index{set\+Bottom\+Paddle@{set\+Bottom\+Paddle}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
 \subsubsection{\texorpdfstring{set\+Bottom\+Paddle()}{setBottomPaddle()}}
 {\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Bottom\+Paddle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
+
+
+sets the positions of the player paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the x-\/position of the player paddle \\
+\hline
+{\em y} & is the y-\/position of the player paddle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & player paddle position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_aa1ef677f1bae92a51750732099b1609a}{}\label{classview_1_1_pong_game_display_aa1ef677f1bae92a51750732099b1609a} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Bottom\+Score@{set\+Bottom\+Score}}
 \index{set\+Bottom\+Score@{set\+Bottom\+Score}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -282,6 +423,11 @@ sets the score for player
 {\em s} & is the score \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & player score could not be less than zero \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_ac40ce3811b6118c530980d38aa48ec64}{}\label{classview_1_1_pong_game_display_ac40ce3811b6118c530980d38aa48ec64} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Inset@{set\+Inset}}
 \index{set\+Inset@{set\+Inset}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -297,6 +443,11 @@ sets the distance between frame and the paddle
 {\em i} & is the inset \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & distance between paddle and frame could not be set out of the frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc5}{}\label{classview_1_1_pong_game_display_a5c855e1e459838b82e976cd957da5cc5} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Paddle\+Height@{set\+Paddle\+Height}}
 \index{set\+Paddle\+Height@{set\+Paddle\+Height}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -312,6 +463,11 @@ sets the height of the paddle
 {\em h} & is the height \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & paddle height could not be less than zero \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_ac42d38f9ed29e2ab2bec6c7da46f1c0e}{}\label{classview_1_1_pong_game_display_ac42d38f9ed29e2ab2bec6c7da46f1c0e} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Paddle\+Width@{set\+Paddle\+Width}}
 \index{set\+Paddle\+Width@{set\+Paddle\+Width}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -327,6 +483,11 @@ sets the width of the paddle
 {\em w} & is the width \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & paddle width could not be less than zero \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_a8b9caa56b471453556b7380ee6d37340}{}\label{classview_1_1_pong_game_display_a8b9caa56b471453556b7380ee6d37340} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Top@{set\+Top}}
 \index{set\+Top@{set\+Top}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -342,12 +503,33 @@ sets x-\/position for the ai paddle
 {\em s} & is the x-\/position \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & paddle y-\/position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_a175282d960f6beec7819bd373f09f170}{}\label{classview_1_1_pong_game_display_a175282d960f6beec7819bd373f09f170} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Top\+Paddle@{set\+Top\+Paddle}}
 \index{set\+Top\+Paddle@{set\+Top\+Paddle}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
 \subsubsection{\texorpdfstring{set\+Top\+Paddle()}{setTopPaddle()}}
 {\footnotesize\ttfamily void view.\+Pong\+Game\+Display.\+set\+Top\+Paddle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
+
+
+sets the positions of the AI paddle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the x-\/position of the AI paddle \\
+\hline
+{\em y} & is the y-\/position of the AI paddle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & ai paddle position could not be out of the game frame \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_a04bcc8b60d85f38178d2cd817e3fbd39}{}\label{classview_1_1_pong_game_display_a04bcc8b60d85f38178d2cd817e3fbd39} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!set\+Top\+Score@{set\+Top\+Score}}
 \index{set\+Top\+Score@{set\+Top\+Score}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}
@@ -363,6 +545,11 @@ sets the score for ai
 {\em s} & is the score \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & ai score could not be less than zero \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classview_1_1_pong_game_display_a67b7b51feffc6573e92ac9c979ade0e2}{}\label{classview_1_1_pong_game_display_a67b7b51feffc6573e92ac9c979ade0e2} 
 \index{view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}!time\+For\+Bomb@{time\+For\+Bomb}}
 \index{time\+For\+Bomb@{time\+For\+Bomb}!view\+::\+Pong\+Game\+Display@{view\+::\+Pong\+Game\+Display}}

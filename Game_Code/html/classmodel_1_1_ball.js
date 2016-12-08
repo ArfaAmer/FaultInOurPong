@@ -8,6 +8,5 @@ var classmodel_1_1_ball =
     [ "setPositionY", "classmodel_1_1_ball.html#a8902ffdc71a7845ec246fedf586649c7", null ],
     [ "positionX", "classmodel_1_1_ball.html#a706c12dfbaabd03b8423ff2bdde0f5c9", null ],
     [ "positionY", "classmodel_1_1_ball.html#aac5d95f10dd849f8cea43c34300d9649", null ],
-    [ "SIZE", "classmodel_1_1_ball.html#ad9a73bce4f016c2bd11fb037bac835c7", null ],
-    [ "speed", "classmodel_1_1_ball.html#a6952fd152ab74c481570678ba240e471", null ]
+    [ "SIZE", "classmodel_1_1_ball.html#ad9a73bce4f016c2bd11fb037bac835c7", null ]
 ];

@@ -8,9 +8,9 @@
 void \hyperlink{classmodel_1_1_player_a5551dad23bcab60638b37c8f54dd6796}{decrement\+Life} ()
 \begin{DoxyCompactList}\small\item\em loses score if the ball touches his/her border. \end{DoxyCompactList}\item 
 int \hyperlink{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d}{get\+Score} ()
-\begin{DoxyCompactList}\small\item\em gets the score of a player \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em gets the score of a player. \end{DoxyCompactList}\item 
 void \hyperlink{classmodel_1_1_player_acb5f4cdd639aa3e68a5003ec81bdd47c}{set\+Score} (int x)
-\item 
+\begin{DoxyCompactList}\small\item\em sets the score of the player. \end{DoxyCompactList}\item 
 boolean \hyperlink{classmodel_1_1_player_a1027595469ab5de940ba2f6cbb29e5ef}{check\+Loss} ()
 \begin{DoxyCompactList}\small\item\em checks whether the player loses the game or not \end{DoxyCompactList}\item 
 void \hyperlink{classmodel_1_1_player_a1ce780b4bc3a1564934975b18e68df8c}{reset\+Score} ()
@@ -51,7 +51,7 @@ sets the current life is the full life (3).
 checks whether the player loses the game or not 
 
 \begin{DoxyReturn}{Returns}
-a boolean that is used to indicate whether the player is losing or not 
+if a player\textquotesingle{}s score is 0 (N\+O\+L\+I\+FE), return the true to indicate the player loses. 
 \end{DoxyReturn}
 \hypertarget{classmodel_1_1_player_a5551dad23bcab60638b37c8f54dd6796}{}\label{classmodel_1_1_player_a5551dad23bcab60638b37c8f54dd6796} 
 \index{model\+::\+Player@{model\+::\+Player}!decrement\+Life@{decrement\+Life}}
@@ -71,10 +71,10 @@ decreases the number of life by 1. \hypertarget{classmodel_1_1_player_a9e027a7ee
 
 
 
-gets the score of a player 
+gets the score of a player. 
 
 \begin{DoxyReturn}{Returns}
-player\+Score returns the score of the player . 
+player\+Score returns the score of the player. 
 \end{DoxyReturn}
 \hypertarget{classmodel_1_1_player_a1ce780b4bc3a1564934975b18e68df8c}{}\label{classmodel_1_1_player_a1ce780b4bc3a1564934975b18e68df8c} 
 \index{model\+::\+Player@{model\+::\+Player}!reset\+Score@{reset\+Score}}
@@ -88,6 +88,20 @@ player\+Score returns the score of the player .
 \subsubsection{\texorpdfstring{set\+Score()}{setScore()}}
 {\footnotesize\ttfamily void model.\+Player.\+set\+Score (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
 
+
+
+sets the score of the player. 
+
+changes the score to the input value. 
+\begin{DoxyParams}{Parameters}
+{\em x} & is the input score \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & score could not be set less than zero \\
+\hline
+\end{DoxyExceptions}
 
 
 \subsection{Member Data Documentation}

@@ -50,6 +50,7 @@ public class HighScore {
 	/**
 	 * @brief reads score data.
 	 * @details reads from file "highScore.txt" and store them into an array.
+	 * @throws IOException cannot find and read the highScore.txt
 	 */
 	public static void readFrom() throws IOException {
 
@@ -84,6 +85,7 @@ public class HighScore {
 	/**
 	 * @brief writes the score onto the file
 	 * @details opens the file "highScore.txt" and updates scores
+	 * @throws IOException cannot find and write the highScore.txt
 	 */
 	public static void writeTo() {
 		try {
@@ -125,6 +127,7 @@ public class HighScore {
 	/**
 	 * @brief determines the rank of a score
 	 * @return a rank of the score
+	 * @throws IOException cannot find and read the highScore.txt
 	 */
 	public static int findRank() throws IOException {
 
@@ -164,6 +167,7 @@ public class HighScore {
 	/**
 	 * @brief displays the high score
 	 * @details creates a frame for the display after reading the score file
+	 * @throws IOException cannot find and read the highScore.txt
 	 */
 	public static void highScorePage(JFrame main) throws IOException {
 
@@ -216,6 +220,7 @@ public class HighScore {
 	/**
 	 * @brief checks the high score and update the score file
 	 * @details finds the rank for each score and lists them for display
+	 * @throws IOException cannot find and read the highScore.txt
 	 */
 	public void checkHighScore(double nameScore, JFrame main) throws IOException {
 

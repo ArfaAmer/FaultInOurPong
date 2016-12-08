@@ -120,8 +120,10 @@ public class PongGameDisplay extends JPanel{
 	 * @brief sets the positions of the ball
 	 * @param x is the x-position of the ball
 	 * @param y is the y-position of the ball
+	 * @throws ArithmeticException ball position could not be out of the game frame 
 	 */
 	public void setBall(int x, int y){
+		if (x<0 || y<0) throw new ArithmeticException("Invalid ball position.");
 		ballX = x;
 		ballY = y;
 	}
@@ -130,8 +132,10 @@ public class PongGameDisplay extends JPanel{
 	 * @brief sets the positions of the player paddle
 	 * @param x is the x-position of the player paddle
 	 * @param y is the y-position of the player paddle
+	 * @throws ArithmeticException  player paddle position could not be out of the game frame 
 	 */
 	public void setBottomPaddle(int x, int y) {
+		if (x<0 || y<0) throw new ArithmeticException("Cannot set paddle position out of game frame.");
 		bottomPadX = x;
 		bottomPadY = y;
 	}
@@ -140,8 +144,10 @@ public class PongGameDisplay extends JPanel{
 	 * @brief sets the positions of the AI paddle
 	 * @param x is the x-position of the AI paddle
 	 * @param y is the y-position of the AI paddle
+	 * @throws ArithmeticException  ai paddle position could not be out of the game frame 
 	 */
 	public void setTopPaddle(int x, int y) {
+		if (x<0 || y<0) throw new ArithmeticException("Cannot set paddle position out of game frame.");
 		topPadX = x;
 		topPadY = y;
 	}
@@ -150,8 +156,10 @@ public class PongGameDisplay extends JPanel{
 	 * @brief sets the positions of the bomb
 	 * @param x is the x-position of the bomb
 	 * @param y is the y-position of the bomb
+	 * @throws ArithmeticException bomb position could not be out of the game frame 
 	 */
 	public void setBomb(int x, int y){
+		if (x<0 || y<0) throw new ArithmeticException("Cannot set bomb position out of game frame.");
 		bombX = x;
 		bombY = y;
 	}
@@ -184,8 +192,10 @@ public class PongGameDisplay extends JPanel{
 	/**
 	 * @brief sets the size of the ball
 	 * @param s is the ball size
+	 * @throws ArithmeticException ball size should not be less than zero
 	 */
 	public void setBallSize(int s){
+		if (s<0) throw new ArithmeticException("Invalid ball size.");
 		ballSize = s;
 	}
 	
@@ -200,16 +210,20 @@ public class PongGameDisplay extends JPanel{
 	/**
 	 * @brief sets x-position for the player paddle
 	 * @param s is the x-position
+	 * @throws ArithmeticException paddle x-position could not be out of the game frame 
 	 */
 	public void setBottom(int x){
+		if (x<0) throw new ArithmeticException("Cannot set paddle position out of game frame.");
 		bottomPadX = x;
 	}
 	
 	/**
 	 * @brief sets x-position for the ai paddle
 	 * @param s is the x-position
+	 * @throws ArithmeticException paddle y-position could not be out of the game frame 
 	 */
 	public void setTop(int x){
+		if (x<0) throw new ArithmeticException("Cannot set paddle position out of game frame.");
 		topPadX = x;
 	}
 	
@@ -232,14 +246,16 @@ public class PongGameDisplay extends JPanel{
 	/**
 	 * @brief sets the score for ai
 	 * @param s is the score
+	 * @throws ArithmeticException ai score could not be less than zero 
 	 */
 	public void setTopScore(int s){
+		if (s<0) throw new ArithmeticException("Invalid score.");
 		scoreTop=s;
 	}
 	
 	/**
 	 * @brief gets the score of AI
-	 * @return scoreTop
+	 * @return scoreTop 
 	 */
 	public int getTopScore(){
 		return scoreTop;
@@ -249,11 +265,17 @@ public class PongGameDisplay extends JPanel{
 	/**
 	 * @brief sets the score for player
 	 * @param s is the score
+	 * @throws ArithmeticException player score could not be less than zero
 	 */
 	public void setBottomScore(int s){
+		if (s<0) throw new ArithmeticException("Invalid score.");
 		scoreBottom = s;
 	}
 	
+	/**
+	 * @brief gets the player score
+	 * @return scoreBottom
+	 */
 	public int getBottomScore(){
 		return scoreBottom;
 	}
@@ -293,24 +315,30 @@ public class PongGameDisplay extends JPanel{
 	/**
 	 * @brief sets the width of the paddle
 	 * @param w is the width
+	 * @throws ArithmeticException paddle width could not be less than zero
 	 */
 	public void setPaddleWidth(int w){
+		if (w<0) throw new ArithmeticException("Invalid width.");
 		padW = w;
 	}
 	
 	/**
 	 * @brief sets the height of the paddle
 	 * @param h is the height
+	 * @throws ArithmeticException paddle height could not be less than zero
 	 */
 	public void setPaddleHeight(int h){
+		if (h<0) throw new ArithmeticException("Invalid height.");
 		padH = h;
 	}
 	
 	/**
 	 * @brief sets the distance between frame and the paddle
 	 * @param i is the inset
+	 * @throws ArithmeticException distance between paddle and frame could not be set out of the frame
 	 */
 	public void setInset(int i){
+		if (i<0) throw new ArithmeticException("Invalid inset.");
 		inset = i;
 	}
 	

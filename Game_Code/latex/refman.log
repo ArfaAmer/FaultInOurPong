@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.22)  7 DEC 2016 21:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.22)  8 DEC 2016 12:38
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -1265,46 +1265,50 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 35.
+(Font)              scaled to size 8.99994pt on input line 33.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 36.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 36.
+(Font)              scaled to size 7.19995pt on input line 34.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 34.
  (D:\ASUS\Latex\tex\latex\psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [13]
-Underfull \hbox (badness 10000) detected at line 55
+Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 68
+Underfull \hbox (badness 10000) detected at line 66
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 81
+Underfull \hbox (badness 10000) detected at line 79
 [][][]
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 88.
-[14]) (classstart_game_1_1_game_controller.tex [15] [16] [17]
-Underfull \hbox (badness 10000) detected at line 189
-[][][]
- []
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 86.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) detected at line 202
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 225
+ [14])
+(classstart_game_1_1_game_controller.tex [15] [16] [17]
+Underfull \hbox (badness 10000) detected at line 207
 [][][]
  []
 
 [18]
-Underfull \hbox (badness 10000) detected at line 238
+Underfull \hbox (badness 10000) detected at line 220
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 243
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 256
 [][][]
  []
 
@@ -1373,27 +1377,37 @@ Underfull \hbox (badness 10000) detected at line 266
 [][][]
  []
 
-[31] [32]) (classview_1_1_high_score.tex
+[31] [32]) (classview_1_1_high_score.tex [33]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 39.
- [33]) (classview_1_1_mode.tex
-<classview_1_1_mode.pdf, id=1974, 501.875pt x 489.83pt>
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 48.
+
+Underfull \hbox (badness 10000) detected at line 83
+[][][]
+ []
+
+[34]
+Underfull \hbox (badness 10000) detected at line 127
+[][][]
+ []
+
+[35]) (classview_1_1_mode.tex
+<classview_1_1_mode.pdf, id=2026, 501.875pt x 489.83pt>
 File: classview_1_1_mode.pdf Graphic file (type pdf)
 
 <use classview_1_1_mode.pdf>
 Package pdftex.def Info: classview_1_1_mode.pdf used on input line 6.
 (pdftex.def)             Requested size: 58.30023pt x 56.9055pt.
- [34] [35 <./classview_1_1_mode.pdf>]
+ [36 <./classview_1_1_mode.pdf>] [37]
 Underfull \hbox (badness 10000) detected at line 92
 [][][]
  []
 
-) (classmodel_1_1_paddle.tex [36]
+) (classmodel_1_1_paddle.tex [38]
 Underfull \hbox (badness 10000) detected at line 63
 [][][]
  []
 
-[37]
+
 Underfull \hbox (badness 10000) detected at line 76
 [][][]
  []
@@ -1408,22 +1422,22 @@ Underfull \hbox (badness 10000) detected at line 102
 [][][]
  []
 
-
+[39]
 Underfull \hbox (badness 10000) detected at line 115
 [][][]
  []
 
-[38] [39]) (classmodel_1_1_player.tex
+[40]) (classmodel_1_1_player.tex [41]
 Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
 
-[40]
+[42]
 Underfull \hbox (badness 10000) detected at line 76
 [][][]
  []
 
-[41]) (classstart_game_1_1_pong_game.tex
+[43]) (classstart_game_1_1_pong_game.tex
 Underfull \hbox (badness 10000) detected at line 21
 [][][]
  []
@@ -1433,62 +1447,89 @@ Underfull \hbox (badness 10000) detected at line 29
 [][][]
  []
 
-) (classview_1_1_pong_game_display.tex [42]
-<classview_1_1_pong_game_display.pdf, id=2103, 501.875pt x 262.9825pt>
+[44]) (classview_1_1_pong_game_display.tex
+<classview_1_1_pong_game_display.pdf, id=2162, 501.875pt x 262.9825pt>
 File: classview_1_1_pong_game_display.pdf Graphic file (type pdf)
 
 <use classview_1_1_pong_game_display.pdf>
 Package pdftex.def Info: classview_1_1_pong_game_display.pdf used on input line
  6.
 (pdftex.def)             Requested size: 108.59789pt x 56.9055pt.
- [43 <./classview_1_1_pong_game_display.pdf>]
-Underfull \hbox (badness 10000) detected at line 116
+ [45 <./classview_1_1_pong_game_display.pdf>] [46]
+Underfull \hbox (badness 10000) detected at line 130
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 129
-[][][]
- []
-
-[44]
-Underfull \hbox (badness 10000) detected at line 142
+Underfull \hbox (badness 10000) detected at line 143
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 155
+Underfull \hbox (badness 10000) detected at line 156
 [][][]
  []
 
-[45]
-Underfull \vbox (badness 2376) has occurred while \output is active []
 
- [46]
+Underfull \hbox (badness 10000) detected at line 169
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 182
+[][][]
+ []
+
 [47]
-Underfull \vbox (badness 2359) has occurred while \output is active []
+Underfull \hbox (badness 10000) detected at line 195
+[][][]
+ []
 
- [48]
-[49]) (classview_1_1_tutorial.tex
-<classview_1_1_tutorial.pdf, id=2226, 501.875pt x 436.63126pt>
+
+Underfull \hbox (badness 10000) detected at line 208
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 221
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 234
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 247
+[][][]
+ []
+
+[48]
+Underfull \hbox (badness 10000) detected at line 260
+[][][]
+ []
+
+[49] [50] [51] [52] [53] [54]) (classview_1_1_tutorial.tex
+<classview_1_1_tutorial.pdf, id=2324, 501.875pt x 436.63126pt>
 File: classview_1_1_tutorial.pdf Graphic file (type pdf)
 
 <use classview_1_1_tutorial.pdf>
 Package pdftex.def Info: classview_1_1_tutorial.pdf used on input line 6.
 (pdftex.def)             Requested size: 65.40685pt x 56.9055pt.
- [50] [51 <./classview_1_1_tutorial.pdf>]
+ [55 <./classview_1_1_tutorial.pdf>] [56]
 Underfull \hbox (badness 10000) detected at line 71
 [][][]
  []
 
 ) (classview_1_1_welcome.tex
-<classview_1_1_welcome.pdf, id=2251, 501.875pt x 398.48875pt>
+<classview_1_1_welcome.pdf, id=2351, 501.875pt x 398.48875pt>
 File: classview_1_1_welcome.pdf Graphic file (type pdf)
 
 <use classview_1_1_welcome.pdf>
 Package pdftex.def Info: classview_1_1_welcome.pdf used on input line 6.
 (pdftex.def)             Requested size: 71.66342pt x 56.9055pt.
- [52 <./classview_1_1_welcome.pdf>] [53]
+ [57 <./classview_1_1_welcome.pdf>] [58]
 Underfull \hbox (badness 10000) detected at line 100
 [][][]
  []
@@ -1513,9 +1554,7 @@ Underfull \hbox (badness 10000) detected at line 152
 [][][]
  []
 
-[54]) [55] [56
-
-]
+[59]) [60]
 Chapter 8.
 (_ball_8java.tex
 Underfull \hbox (badness 10000) detected at line 23
@@ -1527,7 +1566,9 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_game_model_8java.tex [57]
+) (_game_model_8java.tex [61
+
+]
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1547,7 +1588,7 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_player_8java.tex [58]
+) (_player_8java.tex [62]
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1562,7 +1603,7 @@ Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
 
-[59]
+[63]
 Underfull \hbox (badness 10000) detected at line 34
 [][][]
  []
@@ -1577,7 +1618,7 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_game_view_8java.tex [60]
+) (_game_view_8java.tex [64]
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1587,7 +1628,7 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_high_score_8java.tex) (_mode_8java.tex [61]
+) (_high_score_8java.tex
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1597,7 +1638,7 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_pong_game_display_8java.tex
+) (_mode_8java.tex [65]
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1607,7 +1648,7 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_tutorial_8java.tex [62]
+) (_pong_game_display_8java.tex [66]
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1617,7 +1658,7 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) (_welcome_8java.tex
+) (_tutorial_8java.tex
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
@@ -1627,12 +1668,21 @@ Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
-) [63] [64
+) (_welcome_8java.tex [67]
+Underfull \hbox (badness 10000) detected at line 23
+[][][]
+ []
 
-] (refman.ind [65
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+) [68] (refman.ind [69
 
 
-] [66] [67] [68] [69] [70
+
+] [70] [71] [72] [73] [74
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
@@ -1641,14 +1691,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: E8EA4F3CAC9C4FE57568A3D4F86ADA4A;51928.
+(rerunfilecheck)             Checksum: AB5BACA4D936FB9D543213AA199F4268;53343.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  ) 
 Here is how much of TeX's memory you used:
- 16031 strings out of 493334
- 244847 string characters out of 3145299
- 331001 words of memory out of 3000000
- 18598 multiletter control sequences out of 15000+200000
+ 16121 strings out of 493334
+ 246540 string characters out of 3145299
+ 332427 words of memory out of 3000000
+ 18642 multiletter control sequences out of 15000+200000
  65400 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,16n,92p,1162b,630s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1658,9 +1708,9 @@ pfb><D:/ASUS/Latex/fonts/type1/urw/courier/ucrr8a.pfb><D:/ASUS/Latex/fonts/type
 1/urw/courier/ucrro8a.pfb><D:/ASUS/Latex/fonts/type1/urw/helvetic/uhvb8a.pfb><D
 :/ASUS/Latex/fonts/type1/urw/helvetic/uhvb8ac.pfb><D:/ASUS/Latex/fonts/type1/ur
 w/helvetic/uhvr8a.pfb><D:/ASUS/Latex/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (82 pages, 592325 bytes).
+Output written on refman.pdf (86 pages, 617994 bytes).
 PDF statistics:
- 2989 PDF objects out of 3580 (max. 8388607)
- 647 named destinations out of 1000 (max. 500000)
- 2221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3107 PDF objects out of 3580 (max. 8388607)
+ 693 named destinations out of 1000 (max. 500000)
+ 2277 words of extra memory for PDF output out of 10000 (max. 10000000)
 
