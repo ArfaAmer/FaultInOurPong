@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nofileavailmessage',['noFileAvailMessage',['../classview_1_1_game_view.html#a7320789eb48e8b661a1f3a522ef592fb',1,'view::GameView']]]
+  ['load',['load',['../classview_1_1_welcome.html#a4a6c30be81cc7a3b081d3e97a4c84356',1,'view::Welcome']]]
 ];

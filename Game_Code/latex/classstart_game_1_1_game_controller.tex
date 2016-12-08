@@ -18,8 +18,30 @@ class {\bfseries Welcomepage\+Listener}
 \item 
 void \hyperlink{classstart_game_1_1_game_controller_abe07c8d60c3adbb0993e637b8c725884}{display} ()
 \begin{DoxyCompactList}\small\item\em sets the display \end{DoxyCompactList}\item 
+int \hyperlink{classstart_game_1_1_game_controller_a2170345005b5f2f453951dd7b4691e0f}{get\+VelX} ()
+\begin{DoxyCompactList}\small\item\em returns the velocity of ball in the x direction. \end{DoxyCompactList}\item 
+int \hyperlink{classstart_game_1_1_game_controller_a03bc4dfd9bc501924f18e7f9f49361db}{get\+VelY} ()
+\begin{DoxyCompactList}\small\item\em returns the velocity of ball in the y direction. \end{DoxyCompactList}\item 
+int \hyperlink{classstart_game_1_1_game_controller_a1b902c1d6b489b6499c340b1db67e868}{getbomb\+VelX} ()
+\begin{DoxyCompactList}\small\item\em returns the velocity of bomb in the x direction. \end{DoxyCompactList}\item 
+int \hyperlink{classstart_game_1_1_game_controller_a8996d95affa45808c489767da11b6622}{getbomb\+VelY} ()
+\begin{DoxyCompactList}\small\item\em returns the velocity of bomb in the y direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Hash\+Set$<$ String $>$ \hyperlink{classstart_game_1_1_game_controller_afed267a642ca7f3ec1c1074fec2996dd}{keys} = new Hash\+Set$<$String$>$()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
 void \hyperlink{classstart_game_1_1_game_controller_a3e2fb04603f5a7482672b3b5d1afe568}{check\+Game\+Over} ()
-\begin{DoxyCompactList}\small\item\em checks whether the game ends \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em checks whether the game ends \end{DoxyCompactList}\item 
+void \hyperlink{classstart_game_1_1_game_controller_a8b653d5dc322ed45691f1b50dcb16b05}{get\+Elapsed\+Time} ()
+\begin{DoxyCompactList}\small\item\em obtains the time the user plays. \end{DoxyCompactList}\item 
+void \hyperlink{classstart_game_1_1_game_controller_a2248f03e8a73083a57b10d4faec5797c}{reset\+Game} ()
+\begin{DoxyCompactList}\small\item\em resets to initial when the player exits a game. \end{DoxyCompactList}\item 
+void \hyperlink{classstart_game_1_1_game_controller_a115fe144ac38f1b8d7e6be4d5bbb23f4}{set\+Speed} ()
+\begin{DoxyCompactList}\small\item\em resets speed to ball and bomb \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,8 +54,6 @@ void \hyperlink{classstart_game_1_1_game_controller_a3e2fb04603f5a7482672b3b5d1a
 \hyperlink{classview_1_1_mode}{Mode} \hyperlink{classstart_game_1_1_game_controller_ad46f15cbc3846c80495ca340b3b1dedc}{mode}
 \item 
 \hyperlink{classview_1_1_tutorial}{Tutorial} \hyperlink{classstart_game_1_1_game_controller_ae807267b0bf97687ef3c7d57e815414e}{tut}
-\item 
-Hash\+Set$<$ String $>$ \hyperlink{classstart_game_1_1_game_controller_afed267a642ca7f3ec1c1074fec2996dd}{keys} = new Hash\+Set$<$String$>$()
 \item 
 J\+Frame \hyperlink{classstart_game_1_1_game_controller_adc48b19833b682baaa2e189362db5456}{game\+Frame}
 \item 
@@ -67,13 +87,29 @@ int \hyperlink{classstart_game_1_1_game_controller_af029ba3e799fe940deb010e57528
 \item 
 int \hyperlink{classstart_game_1_1_game_controller_a9cb60b2c3c52a0c65fcb2480cf52f4e5}{bombX}
 \item 
+int \hyperlink{classstart_game_1_1_game_controller_a131f6061e92a4e5d4f44d6cfb698dfed}{bomb\+VelX}
+\item 
 \hyperlink{classmodel_1_1_player}{Player} \hyperlink{classstart_game_1_1_game_controller_ad110380b2d709650ead4b69885fe920e}{player}
 \item 
 \hyperlink{classmodel_1_1_player}{Player} \hyperlink{classstart_game_1_1_game_controller_a21dfca701ec83511ac399a184530fc63}{ai}
 \item 
 Timer \hyperlink{classstart_game_1_1_game_controller_af1da0eb8171f6098d28786c5c957fcfd}{t}
 \item 
-Timer \hyperlink{classstart_game_1_1_game_controller_a43406d2f3c186834a759743c4c775d14}{record}
+\hyperlink{classview_1_1_high_score}{High\+Score} \hyperlink{classstart_game_1_1_game_controller_a645a34e4b5c875e7fe0dcedc18e8df8a}{display\+Score}
+\item 
+long \hyperlink{classstart_game_1_1_game_controller_ae22325815bc07ca189abe8e41c94995d}{start\+Time}
+\item 
+long \hyperlink{classstart_game_1_1_game_controller_a397d65cfee71b4063e05deb55611771f}{end\+Time}
+\item 
+double \hyperlink{classstart_game_1_1_game_controller_aa63c2f38740966c67d19de8cd4a2a9d0}{time\+Elapsed}
+\item 
+J\+Button \hyperlink{classstart_game_1_1_game_controller_a4e3d3be632fb6b997c987cb5f516d447}{pause}
+\item 
+J\+Button \hyperlink{classstart_game_1_1_game_controller_ac9d9ab5f3250992c17d93614754dc0d4}{resume}
+\item 
+J\+Button \hyperlink{classstart_game_1_1_game_controller_a2a8cdec30f5a04777d2e90d354bb4dd4}{save}
+\item 
+J\+Button \hyperlink{classstart_game_1_1_game_controller_a188e95237557694a640940111e794c5a}{exit}
 \end{DoxyCompactItemize}
 
 
@@ -83,6 +119,10 @@ Timer \hyperlink{classstart_game_1_1_game_controller_a43406d2f3c186834a759743c4c
 \index{Game\+Controller@{Game\+Controller}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{Game\+Controller()}{GameController()}}
 {\footnotesize\ttfamily start\+Game.\+Game\+Controller.\+Game\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{classview_1_1_game_view}{Game\+View}}]{v,  }\item[{\hyperlink{classmodel_1_1_game_model}{Game\+Model}}]{m }\end{DoxyParamCaption})}
+
+Set default game mode to be single
+
+Set up velocities
 
 Obtain the window frame dimentions
 
@@ -108,12 +148,14 @@ Setups for the View
 \item add action listener for different windows
 \end{DoxyItemize}
 
+Initialize the start time and end time for a player
+
 \subsection{Member Function Documentation}
 \hypertarget{classstart_game_1_1_game_controller_a3e2fb04603f5a7482672b3b5d1afe568}{}\label{classstart_game_1_1_game_controller_a3e2fb04603f5a7482672b3b5d1afe568} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!check\+Game\+Over@{check\+Game\+Over}}
 \index{check\+Game\+Over@{check\+Game\+Over}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{check\+Game\+Over()}{checkGameOver()}}
-{\footnotesize\ttfamily void start\+Game.\+Game\+Controller.\+check\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void start\+Game.\+Game\+Controller.\+check\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -123,6 +165,7 @@ check the number of life for both the player and the ai is 0.
 \begin{DoxyItemize}
 \item If the number of life for the ai is 0, the player wins
 \item If the number of life for the player is 0, the ai wins.
+\item Calculate the time a player has played, if breaks the record, save the record.
 \end{DoxyItemize}\hypertarget{classstart_game_1_1_game_controller_abe07c8d60c3adbb0993e637b8c725884}{}\label{classstart_game_1_1_game_controller_abe07c8d60c3adbb0993e637b8c725884} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!display@{display}}
 \index{display@{display}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
@@ -133,7 +176,99 @@ check the number of life for both the player and the ai is 0.
 
 sets the display 
 
-opens a window 
+opens a window \hypertarget{classstart_game_1_1_game_controller_a1b902c1d6b489b6499c340b1db67e868}{}\label{classstart_game_1_1_game_controller_a1b902c1d6b489b6499c340b1db67e868} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!getbomb\+VelX@{getbomb\+VelX}}
+\index{getbomb\+VelX@{getbomb\+VelX}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{getbomb\+Vel\+X()}{getbombVelX()}}
+{\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+getbomb\+VelX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the velocity of bomb in the x direction. 
+
+\begin{DoxyReturn}{Returns}
+bomb\+VelX 
+\end{DoxyReturn}
+\hypertarget{classstart_game_1_1_game_controller_a8996d95affa45808c489767da11b6622}{}\label{classstart_game_1_1_game_controller_a8996d95affa45808c489767da11b6622} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!getbomb\+VelY@{getbomb\+VelY}}
+\index{getbomb\+VelY@{getbomb\+VelY}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{getbomb\+Vel\+Y()}{getbombVelY()}}
+{\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+getbomb\+VelY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the velocity of bomb in the y direction. 
+
+\begin{DoxyReturn}{Returns}
+bomb\+VelY 
+\end{DoxyReturn}
+\hypertarget{classstart_game_1_1_game_controller_a8b653d5dc322ed45691f1b50dcb16b05}{}\label{classstart_game_1_1_game_controller_a8b653d5dc322ed45691f1b50dcb16b05} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!get\+Elapsed\+Time@{get\+Elapsed\+Time}}
+\index{get\+Elapsed\+Time@{get\+Elapsed\+Time}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{get\+Elapsed\+Time()}{getElapsedTime()}}
+{\footnotesize\ttfamily void start\+Game.\+Game\+Controller.\+get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+obtains the time the user plays. 
+
+calculates the time elapsed and save it into a variable. \hypertarget{classstart_game_1_1_game_controller_a2170345005b5f2f453951dd7b4691e0f}{}\label{classstart_game_1_1_game_controller_a2170345005b5f2f453951dd7b4691e0f} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!get\+VelX@{get\+VelX}}
+\index{get\+VelX@{get\+VelX}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{get\+Vel\+X()}{getVelX()}}
+{\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+get\+VelX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the velocity of ball in the x direction. 
+
+\begin{DoxyReturn}{Returns}
+velX 
+\end{DoxyReturn}
+\hypertarget{classstart_game_1_1_game_controller_a03bc4dfd9bc501924f18e7f9f49361db}{}\label{classstart_game_1_1_game_controller_a03bc4dfd9bc501924f18e7f9f49361db} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!get\+VelY@{get\+VelY}}
+\index{get\+VelY@{get\+VelY}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{get\+Vel\+Y()}{getVelY()}}
+{\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+get\+VelY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the velocity of ball in the y direction. 
+
+\begin{DoxyReturn}{Returns}
+velY 
+\end{DoxyReturn}
+\hypertarget{classstart_game_1_1_game_controller_a2248f03e8a73083a57b10d4faec5797c}{}\label{classstart_game_1_1_game_controller_a2248f03e8a73083a57b10d4faec5797c} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!reset\+Game@{reset\+Game}}
+\index{reset\+Game@{reset\+Game}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{reset\+Game()}{resetGame()}}
+{\footnotesize\ttfamily void start\+Game.\+Game\+Controller.\+reset\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+resets to initial when the player exits a game. 
+
+re-\/initializes the variables in the game model and update the variables in view and model. Reset player scores/lives in the model.
+
+Reset the game mode
+
+Reset ball and bomb position
+
+Reset the ball and bomb speed
+
+Re-\/obtain scores/lives from the model
+
+Reset scores in the view\hypertarget{classstart_game_1_1_game_controller_a115fe144ac38f1b8d7e6be4d5bbb23f4}{}\label{classstart_game_1_1_game_controller_a115fe144ac38f1b8d7e6be4d5bbb23f4} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{set\+Speed()}{setSpeed()}}
+{\footnotesize\ttfamily void start\+Game.\+Game\+Controller.\+set\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+resets speed to ball and bomb 
+
+re-\/initialize by randomized values Randomize the velocity for bomb
 
 \subsection{Member Data Documentation}
 \hypertarget{classstart_game_1_1_game_controller_a36c6fcecafa6f7176733248a5cfb2c87}{}\label{classstart_game_1_1_game_controller_a36c6fcecafa6f7176733248a5cfb2c87} 
@@ -166,6 +301,12 @@ opens a window
 \subsubsection{\texorpdfstring{bomb}{bomb}}
 {\footnotesize\ttfamily \hyperlink{classmodel_1_1_ball}{Ball} start\+Game.\+Game\+Controller.\+bomb\hspace{0.3cm}{\ttfamily [private]}}
 
+\hypertarget{classstart_game_1_1_game_controller_a131f6061e92a4e5d4f44d6cfb698dfed}{}\label{classstart_game_1_1_game_controller_a131f6061e92a4e5d4f44d6cfb698dfed} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!bomb\+VelX@{bomb\+VelX}}
+\index{bomb\+VelX@{bomb\+VelX}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{bomb\+VelX}{bombVelX}}
+{\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+bomb\+VelX\hspace{0.3cm}{\ttfamily [private]}}
+
 \hypertarget{classstart_game_1_1_game_controller_a9cb60b2c3c52a0c65fcb2480cf52f4e5}{}\label{classstart_game_1_1_game_controller_a9cb60b2c3c52a0c65fcb2480cf52f4e5} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!bombX@{bombX}}
 \index{bombX@{bombX}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
@@ -177,6 +318,24 @@ opens a window
 \index{bottom\+PadX@{bottom\+PadX}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{bottom\+PadX}{bottomPadX}}
 {\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+bottom\+PadX\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classstart_game_1_1_game_controller_a645a34e4b5c875e7fe0dcedc18e8df8a}{}\label{classstart_game_1_1_game_controller_a645a34e4b5c875e7fe0dcedc18e8df8a} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!display\+Score@{display\+Score}}
+\index{display\+Score@{display\+Score}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{display\+Score}{displayScore}}
+{\footnotesize\ttfamily \hyperlink{classview_1_1_high_score}{High\+Score} start\+Game.\+Game\+Controller.\+display\+Score\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classstart_game_1_1_game_controller_a397d65cfee71b4063e05deb55611771f}{}\label{classstart_game_1_1_game_controller_a397d65cfee71b4063e05deb55611771f} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!end\+Time@{end\+Time}}
+\index{end\+Time@{end\+Time}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{end\+Time}{endTime}}
+{\footnotesize\ttfamily long start\+Game.\+Game\+Controller.\+end\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classstart_game_1_1_game_controller_a188e95237557694a640940111e794c5a}{}\label{classstart_game_1_1_game_controller_a188e95237557694a640940111e794c5a} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!exit@{exit}}
+\index{exit@{exit}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{exit}{exit}}
+{\footnotesize\ttfamily J\+Button start\+Game.\+Game\+Controller.\+exit\hspace{0.3cm}{\ttfamily [private]}}
 
 \hypertarget{classstart_game_1_1_game_controller_a1f16d94b3e5246eb723f9ca04aad4735}{}\label{classstart_game_1_1_game_controller_a1f16d94b3e5246eb723f9ca04aad4735} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!frame\+Width@{frame\+Width}}
@@ -219,7 +378,7 @@ Variable declarations for the game
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!keys@{keys}}
 \index{keys@{keys}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{keys}{keys}}
-{\footnotesize\ttfamily Hash\+Set$<$String$>$ start\+Game.\+Game\+Controller.\+keys = new Hash\+Set$<$String$>$()\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Hash\+Set$<$String$>$ start\+Game.\+Game\+Controller.\+keys = new Hash\+Set$<$String$>$()}
 
 Declare a variable for storing the key pressed records \hypertarget{classstart_game_1_1_game_controller_a2c79234f85f979b8f1efe5a48893560d}{}\label{classstart_game_1_1_game_controller_a2c79234f85f979b8f1efe5a48893560d} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!m@{m}}
@@ -245,17 +404,29 @@ Declare a variable for storing the key pressed records \hypertarget{classstart_g
 \subsubsection{\texorpdfstring{pad\+Width}{padWidth}}
 {\footnotesize\ttfamily int start\+Game.\+Game\+Controller.\+pad\+Width\hspace{0.3cm}{\ttfamily [private]}}
 
+\hypertarget{classstart_game_1_1_game_controller_a4e3d3be632fb6b997c987cb5f516d447}{}\label{classstart_game_1_1_game_controller_a4e3d3be632fb6b997c987cb5f516d447} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!pause@{pause}}
+\index{pause@{pause}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{pause}{pause}}
+{\footnotesize\ttfamily J\+Button start\+Game.\+Game\+Controller.\+pause\hspace{0.3cm}{\ttfamily [private]}}
+
 \hypertarget{classstart_game_1_1_game_controller_ad110380b2d709650ead4b69885fe920e}{}\label{classstart_game_1_1_game_controller_ad110380b2d709650ead4b69885fe920e} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!player@{player}}
 \index{player@{player}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{player}{player}}
 {\footnotesize\ttfamily \hyperlink{classmodel_1_1_player}{Player} start\+Game.\+Game\+Controller.\+player\hspace{0.3cm}{\ttfamily [private]}}
 
-\hypertarget{classstart_game_1_1_game_controller_a43406d2f3c186834a759743c4c775d14}{}\label{classstart_game_1_1_game_controller_a43406d2f3c186834a759743c4c775d14} 
-\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!record@{record}}
-\index{record@{record}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
-\subsubsection{\texorpdfstring{record}{record}}
-{\footnotesize\ttfamily Timer start\+Game.\+Game\+Controller.\+record\hspace{0.3cm}{\ttfamily [private]}}
+\hypertarget{classstart_game_1_1_game_controller_ac9d9ab5f3250992c17d93614754dc0d4}{}\label{classstart_game_1_1_game_controller_ac9d9ab5f3250992c17d93614754dc0d4} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!resume@{resume}}
+\index{resume@{resume}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{resume}{resume}}
+{\footnotesize\ttfamily J\+Button start\+Game.\+Game\+Controller.\+resume\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classstart_game_1_1_game_controller_a2a8cdec30f5a04777d2e90d354bb4dd4}{}\label{classstart_game_1_1_game_controller_a2a8cdec30f5a04777d2e90d354bb4dd4} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!save@{save}}
+\index{save@{save}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily J\+Button start\+Game.\+Game\+Controller.\+save\hspace{0.3cm}{\ttfamily [private]}}
 
 \hypertarget{classstart_game_1_1_game_controller_af55ee2997cc74f6aee8720fec11f4063}{}\label{classstart_game_1_1_game_controller_af55ee2997cc74f6aee8720fec11f4063} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!score\+Top@{score\+Top}}
@@ -269,11 +440,23 @@ Declare a variable for storing the key pressed records \hypertarget{classstart_g
 \subsubsection{\texorpdfstring{S\+I\+N\+G\+LE}{SINGLE}}
 {\footnotesize\ttfamily final int start\+Game.\+Game\+Controller.\+S\+I\+N\+G\+LE = 0\hspace{0.3cm}{\ttfamily [private]}}
 
+\hypertarget{classstart_game_1_1_game_controller_ae22325815bc07ca189abe8e41c94995d}{}\label{classstart_game_1_1_game_controller_ae22325815bc07ca189abe8e41c94995d} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!start\+Time@{start\+Time}}
+\index{start\+Time@{start\+Time}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{start\+Time}{startTime}}
+{\footnotesize\ttfamily long start\+Game.\+Game\+Controller.\+start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
 \hypertarget{classstart_game_1_1_game_controller_af1da0eb8171f6098d28786c5c957fcfd}{}\label{classstart_game_1_1_game_controller_af1da0eb8171f6098d28786c5c957fcfd} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!t@{t}}
 \index{t@{t}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
 \subsubsection{\texorpdfstring{t}{t}}
 {\footnotesize\ttfamily Timer start\+Game.\+Game\+Controller.\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classstart_game_1_1_game_controller_aa63c2f38740966c67d19de8cd4a2a9d0}{}\label{classstart_game_1_1_game_controller_aa63c2f38740966c67d19de8cd4a2a9d0} 
+\index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!time\+Elapsed@{time\+Elapsed}}
+\index{time\+Elapsed@{time\+Elapsed}!start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}}
+\subsubsection{\texorpdfstring{time\+Elapsed}{timeElapsed}}
+{\footnotesize\ttfamily double start\+Game.\+Game\+Controller.\+time\+Elapsed\hspace{0.3cm}{\ttfamily [private]}}
 
 \hypertarget{classstart_game_1_1_game_controller_ae807267b0bf97687ef3c7d57e815414e}{}\label{classstart_game_1_1_game_controller_ae807267b0bf97687ef3c7d57e815414e} 
 \index{start\+Game\+::\+Game\+Controller@{start\+Game\+::\+Game\+Controller}!tut@{tut}}

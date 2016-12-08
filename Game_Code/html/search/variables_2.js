@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exit',['exit',['../classview_1_1_welcome.html#a5a1ae16f7fb3b7f271353133e58bda15',1,'view::Welcome']]]
+  ['displayscore',['displayScore',['../classstart_game_1_1_game_controller.html#a645a34e4b5c875e7fe0dcedc18e8df8a',1,'startGame::GameController']]]
 ];

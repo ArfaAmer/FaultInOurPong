@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode',['Mode',['../classview_1_1_mode.html',1,'view']]]
+  ['highscore',['HighScore',['../classview_1_1_high_score.html',1,'view']]]
 ];

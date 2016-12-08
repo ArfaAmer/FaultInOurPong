@@ -12,7 +12,6 @@ import java.util.HashSet;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.Timer;
 import model.*;
 import view.*;
@@ -42,7 +41,7 @@ public class GameController{
 	/**
 	 * Declare a variable for storing the key pressed records
 	 */
-	private HashSet<String> keys = new HashSet<String>();
+	public HashSet<String> keys = new HashSet<String>();
 	/**
 	 * Variable declarations for the game
 	 * - frame dimension
@@ -251,7 +250,6 @@ public class GameController{
 			try {
 				displayScore = new HighScore();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 
@@ -292,7 +290,7 @@ public class GameController{
 
 				try{									// Open and display the record
 					
-					displayScore.highScorePage(w);
+					HighScore.highScorePage(w);
 					w.setVisible(false);
 
 				}catch(Exception exp){
@@ -600,8 +598,8 @@ public class GameController{
 					 * - update the position of the user paddle
 					 * - display the change on the screen
 					 */
-					if(bottomPadX>0) {
-						bottomPadX-=2;
+					if(bottomPadX>0) {						
+						bottomPadX-=2;					
 						/**
 						 * Update the view and model
 						 */
@@ -679,7 +677,7 @@ public class GameController{
 			 * - Save the action into a hashString
 			 */
 			switch (code) {					// LEFT is pressed
-			case KeyEvent.VK_LEFT:
+			case KeyEvent.VK_LEFT:				
 				keys.add("LEFT");
 				break;
 			case KeyEvent.VK_RIGHT:			// RIGHT is pressed
@@ -737,7 +735,7 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(0, timeElapsed);
 			try {
-				if (displayScore.isHigh(timeElapsed)) {
+				if (HighScore.isHigh(timeElapsed)) {
 					displayScore.checkHighScore(timeElapsed, w);
 					w.setVisible(false);
 				}
@@ -750,7 +748,7 @@ public class GameController{
 			getElapsedTime();
 			v.gameOver(1, timeElapsed);
 			try {
-				if (displayScore.isHigh(timeElapsed)) {
+				if (HighScore.isHigh(timeElapsed)) {
 					displayScore.checkHighScore(timeElapsed, w);
 					w.setVisible(false);
 				}
@@ -845,6 +843,33 @@ public class GameController{
 		else bombVelY = -1;
 	}
 
-
-
+	/**
+	 * @brief returns the velocity of ball in the x direction.
+	 * @return velX
+	 */
+	public int getVelX(){
+		return velX;
+	}
+	/**
+	 * @brief returns the velocity of ball in the y direction.
+	 * @return velY
+	 */
+	public int getVelY(){
+		return velY;
+	}
+	/**
+	 * @brief returns the velocity of bomb in the x direction.
+	 * @return bombVelX
+	 */
+	public int getbombVelX(){
+		return bombVelX;
+	}
+	/**
+	 * @brief returns the velocity of bomb in the y direction.
+	 * @return bombVelY
+	 */
+	public int getbombVelY(){
+		return bombVelY;
+	}
+	
 }

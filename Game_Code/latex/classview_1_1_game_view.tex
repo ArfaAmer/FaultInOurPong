@@ -17,13 +17,25 @@ void \hyperlink{classview_1_1_game_view_a47f32011f21917818ac92ebecba5dc5b}{displ
 \begin{DoxyCompactList}\small\item\em gets tutorial page window \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_game_view_aabb001fdf15e7c066c9dbc588f720cd6}{create\+Game} ()
 \begin{DoxyCompactList}\small\item\em create the game for display \end{DoxyCompactList}\item 
+J\+Button \hyperlink{classview_1_1_game_view_aaab8ca9baf7dce65a6a523a4b5c73feb}{get\+Pause} ()
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_aafa4556cc05c088d2ac204f4b78955ca}{get\+Resume} ()
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_a0da97c49ae783ad3d07bb71c80d3ed81}{get\+Save} ()
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_ae143f3589b520f0db09dd77e88a73c06}{get\+Exit} ()
+\item 
+J\+Panel \hyperlink{classview_1_1_game_view_ab86ae5b0ca06d2ed673f43888d5547e5}{get\+Game\+Option\+Panel} ()
+\item 
+void \hyperlink{classview_1_1_game_view_aebcb9f8b30adbfe48e8ef77754b74b89}{add\+Button} (J\+Panel panel, J\+Button button, J\+Button prefer)
+\item 
 J\+Frame \hyperlink{classview_1_1_game_view_a35853d75ec07ee29d9257c1785508f02}{get\+Game\+Frame} ()
 \begin{DoxyCompactList}\small\item\em gets game object \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_game_view_a7320789eb48e8b661a1f3a522ef592fb}{no\+File\+Avail\+Message} ()
 \begin{DoxyCompactList}\small\item\em display message for error loading game record \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_game_view_aba828f9bc44d416b7b7c03f71a927dbb}{cannot\+Load\+Message} ()
 \begin{DoxyCompactList}\small\item\em display message for error loading game \end{DoxyCompactList}\item 
-void \hyperlink{classview_1_1_game_view_ae91ec8b4d72ed56783b2f5c84a9ff869}{game\+Over} (int whichplayer)
+void \hyperlink{classview_1_1_game_view_aed2c0f38680b0e4ff2ea31c1618416d9}{game\+Over} (int whichplayer, double time)
 \begin{DoxyCompactList}\small\item\em display message for game over \end{DoxyCompactList}\item 
 void \hyperlink{classview_1_1_game_view_a67fd4999f1be51ce360b8bba68e87d9c}{tutorial\+Page} (Image\+Icon img)
 \begin{DoxyCompactList}\small\item\em create tutorial page \end{DoxyCompactList}\item 
@@ -47,6 +59,16 @@ J\+Frame \hyperlink{classview_1_1_game_view_a7e90e32a71e4cbc5356dd2960290917c}{g
 final int \hyperlink{classview_1_1_game_view_a2ab92f79dc374ff6708c7798697b623a}{F\+R\+A\+M\+E\+W\+I\+D\+TH} = 700
 \item 
 final int \hyperlink{classview_1_1_game_view_a4883525ad5307e9ac642854eb6db66d1}{F\+R\+A\+M\+E\+H\+E\+I\+G\+HT} = 500
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_aca05d6a7d46254d509c48b09945b7053}{pause}
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_a51484e496307a01d4f261b3ab8517171}{resume}
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_a0c0efd73b4ba0635f2d21d7980407cd0}{save}
+\item 
+J\+Button \hyperlink{classview_1_1_game_view_a3bf74babf6e5deb5f2c80a8d7b56ad77}{exit}
+\item 
+J\+Panel \hyperlink{classview_1_1_game_view_aba201c4e7e254be3254ddffba23f563e}{game\+Options}
 \end{DoxyCompactItemize}
 
 
@@ -68,6 +90,12 @@ declares all other windows
 \end{DoxyItemize}
 
 \subsection{Member Function Documentation}
+\hypertarget{classview_1_1_game_view_aebcb9f8b30adbfe48e8ef77754b74b89}{}\label{classview_1_1_game_view_aebcb9f8b30adbfe48e8ef77754b74b89} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!add\+Button@{add\+Button}}
+\index{add\+Button@{add\+Button}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{add\+Button()}{addButton()}}
+{\footnotesize\ttfamily void view.\+Game\+View.\+add\+Button (\begin{DoxyParamCaption}\item[{J\+Panel}]{panel,  }\item[{J\+Button}]{button,  }\item[{J\+Button}]{prefer }\end{DoxyParamCaption})}
+
 \hypertarget{classview_1_1_game_view_aba828f9bc44d416b7b7c03f71a927dbb}{}\label{classview_1_1_game_view_aba828f9bc44d416b7b7c03f71a927dbb} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!cannot\+Load\+Message@{cannot\+Load\+Message}}
 \index{cannot\+Load\+Message@{cannot\+Load\+Message}!view\+::\+Game\+View@{view\+::\+Game\+View}}
@@ -98,11 +126,11 @@ create a frame under set dimension for the game \hypertarget{classview_1_1_game_
 
 displays the welcome page. 
 
-sets the visibility of the window to be true. \hypertarget{classview_1_1_game_view_ae91ec8b4d72ed56783b2f5c84a9ff869}{}\label{classview_1_1_game_view_ae91ec8b4d72ed56783b2f5c84a9ff869} 
+sets the visibility of the window to be true. \hypertarget{classview_1_1_game_view_aed2c0f38680b0e4ff2ea31c1618416d9}{}\label{classview_1_1_game_view_aed2c0f38680b0e4ff2ea31c1618416d9} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!game\+Over@{game\+Over}}
 \index{game\+Over@{game\+Over}!view\+::\+Game\+View@{view\+::\+Game\+View}}
 \subsubsection{\texorpdfstring{game\+Over()}{gameOver()}}
-{\footnotesize\ttfamily void view.\+Game\+View.\+game\+Over (\begin{DoxyParamCaption}\item[{int}]{whichplayer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void view.\+Game\+View.\+game\+Over (\begin{DoxyParamCaption}\item[{int}]{whichplayer,  }\item[{double}]{time }\end{DoxyParamCaption})}
 
 
 
@@ -117,7 +145,13 @@ display message for game over
 \begin{DoxyItemize}
 \item If the computer wins, display winning message for the computer
 \item If the player wins, display winning message for the player
-\end{DoxyItemize}\hypertarget{classview_1_1_game_view_a741912e646a65f33e3c571002ed0cf22}{}\label{classview_1_1_game_view_a741912e646a65f33e3c571002ed0cf22} 
+\end{DoxyItemize}\hypertarget{classview_1_1_game_view_ae143f3589b520f0db09dd77e88a73c06}{}\label{classview_1_1_game_view_ae143f3589b520f0db09dd77e88a73c06} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Exit@{get\+Exit}}
+\index{get\+Exit@{get\+Exit}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{get\+Exit()}{getExit()}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+get\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{classview_1_1_game_view_a741912e646a65f33e3c571002ed0cf22}{}\label{classview_1_1_game_view_a741912e646a65f33e3c571002ed0cf22} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Frame\+Height@{get\+Frame\+Height}}
 \index{get\+Frame\+Height@{get\+Frame\+Height}!view\+::\+Game\+View@{view\+::\+Game\+View}}
 \subsubsection{\texorpdfstring{get\+Frame\+Height()}{getFrameHeight()}}
@@ -169,6 +203,12 @@ gets game object
 \begin{DoxyReturn}{Returns}
 game object 
 \end{DoxyReturn}
+\hypertarget{classview_1_1_game_view_ab86ae5b0ca06d2ed673f43888d5547e5}{}\label{classview_1_1_game_view_ab86ae5b0ca06d2ed673f43888d5547e5} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Game\+Option\+Panel@{get\+Game\+Option\+Panel}}
+\index{get\+Game\+Option\+Panel@{get\+Game\+Option\+Panel}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{get\+Game\+Option\+Panel()}{getGameOptionPanel()}}
+{\footnotesize\ttfamily J\+Panel view.\+Game\+View.\+get\+Game\+Option\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \hypertarget{classview_1_1_game_view_a427afb80cd453fd611670936793fb556}{}\label{classview_1_1_game_view_a427afb80cd453fd611670936793fb556} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!getmode@{getmode}}
 \index{getmode@{getmode}!view\+::\+Game\+View@{view\+::\+Game\+View}}
@@ -182,6 +222,24 @@ gets game mode page window
 \begin{DoxyReturn}{Returns}
 game mode page object 
 \end{DoxyReturn}
+\hypertarget{classview_1_1_game_view_aaab8ca9baf7dce65a6a523a4b5c73feb}{}\label{classview_1_1_game_view_aaab8ca9baf7dce65a6a523a4b5c73feb} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Pause@{get\+Pause}}
+\index{get\+Pause@{get\+Pause}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{get\+Pause()}{getPause()}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+get\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{classview_1_1_game_view_aafa4556cc05c088d2ac204f4b78955ca}{}\label{classview_1_1_game_view_aafa4556cc05c088d2ac204f4b78955ca} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Resume@{get\+Resume}}
+\index{get\+Resume@{get\+Resume}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{get\+Resume()}{getResume()}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+get\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{classview_1_1_game_view_a0da97c49ae783ad3d07bb71c80d3ed81}{}\label{classview_1_1_game_view_a0da97c49ae783ad3d07bb71c80d3ed81} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Save@{get\+Save}}
+\index{get\+Save@{get\+Save}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{get\+Save()}{getSave()}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+get\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \hypertarget{classview_1_1_game_view_af2d07759d1cde26a4a4d8176baeb0739}{}\label{classview_1_1_game_view_af2d07759d1cde26a4a4d8176baeb0739} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!get\+Tutorial@{get\+Tutorial}}
 \index{get\+Tutorial@{get\+Tutorial}!view\+::\+Game\+View@{view\+::\+Game\+View}}
@@ -236,6 +294,12 @@ create tutorial page
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classview_1_1_game_view_a3bf74babf6e5deb5f2c80a8d7b56ad77}{}\label{classview_1_1_game_view_a3bf74babf6e5deb5f2c80a8d7b56ad77} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!exit@{exit}}
+\index{exit@{exit}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{exit}{exit}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+exit\hspace{0.3cm}{\ttfamily [private]}}
+
 \hypertarget{classview_1_1_game_view_a4883525ad5307e9ac642854eb6db66d1}{}\label{classview_1_1_game_view_a4883525ad5307e9ac642854eb6db66d1} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!F\+R\+A\+M\+E\+H\+E\+I\+G\+HT@{F\+R\+A\+M\+E\+H\+E\+I\+G\+HT}}
 \index{F\+R\+A\+M\+E\+H\+E\+I\+G\+HT@{F\+R\+A\+M\+E\+H\+E\+I\+G\+HT}!view\+::\+Game\+View@{view\+::\+Game\+View}}
@@ -254,17 +318,41 @@ Constant declarations for the view \hypertarget{classview_1_1_game_view_a7e90e32
 \subsubsection{\texorpdfstring{game\+Frame}{gameFrame}}
 {\footnotesize\ttfamily J\+Frame view.\+Game\+View.\+game\+Frame\hspace{0.3cm}{\ttfamily [private]}}
 
+\hypertarget{classview_1_1_game_view_aba201c4e7e254be3254ddffba23f563e}{}\label{classview_1_1_game_view_aba201c4e7e254be3254ddffba23f563e} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!game\+Options@{game\+Options}}
+\index{game\+Options@{game\+Options}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{game\+Options}{gameOptions}}
+{\footnotesize\ttfamily J\+Panel view.\+Game\+View.\+game\+Options\hspace{0.3cm}{\ttfamily [private]}}
+
 \hypertarget{classview_1_1_game_view_a805dd6b76de78fe934f8c4287b4988ce}{}\label{classview_1_1_game_view_a805dd6b76de78fe934f8c4287b4988ce} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!mode@{mode}}
 \index{mode@{mode}!view\+::\+Game\+View@{view\+::\+Game\+View}}
 \subsubsection{\texorpdfstring{mode}{mode}}
 {\footnotesize\ttfamily \hyperlink{classview_1_1_mode}{Mode} view.\+Game\+View.\+mode\hspace{0.3cm}{\ttfamily [private]}}
 
-\hypertarget{classview_1_1_game_view_a40ab8540fabeed491fc81dce3e801370}{}\label{classview_1_1_game_view_a40ab8540fabeed491fc81dce3e801370} 
+\hypertarget{classview_1_1_game_view_aca05d6a7d46254d509c48b09945b7053}{}\label{classview_1_1_game_view_aca05d6a7d46254d509c48b09945b7053} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!pause@{pause}}
+\index{pause@{pause}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{pause}{pause}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+pause\hspace{0.3cm}{\ttfamily [private]}}
+
+Set up buttons on the game panel \hypertarget{classview_1_1_game_view_a40ab8540fabeed491fc81dce3e801370}{}\label{classview_1_1_game_view_a40ab8540fabeed491fc81dce3e801370} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!ponggame@{ponggame}}
 \index{ponggame@{ponggame}!view\+::\+Game\+View@{view\+::\+Game\+View}}
 \subsubsection{\texorpdfstring{ponggame}{ponggame}}
 {\footnotesize\ttfamily \hyperlink{classview_1_1_pong_game_display}{Pong\+Game\+Display} view.\+Game\+View.\+ponggame\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_game_view_a51484e496307a01d4f261b3ab8517171}{}\label{classview_1_1_game_view_a51484e496307a01d4f261b3ab8517171} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!resume@{resume}}
+\index{resume@{resume}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{resume}{resume}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+resume\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{classview_1_1_game_view_a0c0efd73b4ba0635f2d21d7980407cd0}{}\label{classview_1_1_game_view_a0c0efd73b4ba0635f2d21d7980407cd0} 
+\index{view\+::\+Game\+View@{view\+::\+Game\+View}!save@{save}}
+\index{save@{save}!view\+::\+Game\+View@{view\+::\+Game\+View}}
+\subsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily J\+Button view.\+Game\+View.\+save\hspace{0.3cm}{\ttfamily [private]}}
 
 \hypertarget{classview_1_1_game_view_a6bc586b3b4e3079253f50adb03864264}{}\label{classview_1_1_game_view_a6bc586b3b4e3079253f50adb03864264} 
 \index{view\+::\+Game\+View@{view\+::\+Game\+View}!tutorial@{tutorial}}

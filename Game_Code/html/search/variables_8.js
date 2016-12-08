@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['life',['LIFE',['../classmodel_1_1_player.html#a59153913ee338710aa1a33b68e5d0dbd',1,'model::Player']]],
-  ['load',['load',['../classview_1_1_welcome.html#a91a24fdd828b87e1307d4af30693401e',1,'view::Welcome']]]
+  ['keys',['keys',['../classstart_game_1_1_game_controller.html#afed267a642ca7f3ec1c1074fec2996dd',1,'startGame::GameController']]]
 ];

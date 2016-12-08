@@ -1,9 +1,11 @@
 Omar/144.593
 Spencer Smith/110.967
+hello/108.531
 Kevin/65.277
 adf/54.092
 shapp /50.000
 Amer/46.153
+j/45.962
 Mouse /42.219
 Navya/35.331
 sally /32.880
@@ -16,5 +18,3 @@ Sharma/25.634
 Kevin/25.578
 Liam/25.555
 sfsd/25.508
-Sam /22.781
-French Fries/21.127

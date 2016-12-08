@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_2ejava',['Mode.java',['../_mode_8java.html',1,'']]]
+  ['highscore_2ejava',['HighScore.java',['../_high_score_8java.html',1,'']]]
 ];
