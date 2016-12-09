@@ -1,6 +1,4 @@
-# Module Interface Specification (MIS) #
-
-This folder contains pdfs and webpages for the MIS in both revision 0 and revision 1.
+Here is the list of the files in this folder:
 
 <p><br></br></p>
 | File | Description |
