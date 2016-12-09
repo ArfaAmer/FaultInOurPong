@@ -33,6 +33,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 October 31, 2016 & 1.0 & Created test plan \\
+December 5,2016 & 2.0 & Updated test plan \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -159,22 +160,6 @@ GanttChart.pdf}\\
 
 \begin{reqbox}
 	\begin{itemize}
-	\item \textbf{FS-NG-4: }Multiplayer Mode chosen
-
-	\textbf{Type: }Functional, Dynamic, Manual
-
-	\textbf{Initial State: }New game page
-
-	\textbf{Input: }Button click
-
-	\textbf{Output: }New multiplayer mode game is started
-
-	\textbf{How test will be performed: }Run the program and check if appropriate game mode starts.
-	\end{itemize}
-\end{reqbox}
-
-\begin{reqbox}
-	\begin{itemize}
 	\item \textbf{FS-NG-5: }Back button to go back to the menu page
 
 	\textbf{Type: }Functional, Dynamic, Manual
@@ -222,22 +207,6 @@ GanttChart.pdf}\\
 	\end{itemize}
 \end{reqbox}
 
-	\paragraph{3.1.1.3 Change Speed}
-\begin{reqbox}
-	\begin{itemize}
-	\item \textbf{FS-CS-1: }Open speed change page with fast, normal, and slow options
-
-	\textbf{Type: }Functional, Dynamic, Manual
-
-	\textbf{Initial State:} Menu page
-
-	\textbf{Input: }Button click
-
-	\textbf{Output: }Speed change page
-
-	\textbf{How test will be performed: }Run the program and check if appropriate page opens.
-	\end{itemize}
-\end{reqbox}
 
 \begin{reqbox}
 	\begin{itemize}
@@ -252,54 +221,6 @@ GanttChart.pdf}\\
 	\textbf{Output: }Menu page
 
 	\textbf{How test will be performed: }Choose a speed, and check if appropriate page opens.
-	\end{itemize}
-\end{reqbox}
-
-\begin{reqbox}
-	\begin{itemize}
-	\item \textbf{FS-CS-3: }Check that single player mode has the updated speed
-
-	\textbf{Type: }Functional, Dynamic, Manual
-
-	\textbf{Initial State: }Menu page
-
-	\textbf{Input: }Button clicks	
-
-	\textbf{Output: }Single player mode game starts with the ball having the appropriate speed.
-
-	\textbf{How test will be performed: }Run the program, start a single player mode game and verify the speed.
-	\end{itemize}
-\end{reqbox}
-
-\begin{reqbox}
-	\begin{itemize}
-	\item \textbf{FS-CS-4: }Check that advanced single player mode has the updated speed
-
-	\textbf{Type: }Functional, Dynamic, Manual
-
-	\textbf{Initial State: }Menu page
-
-	\textbf{Input: }Button clicks
-
-	\textbf{Output: }Advanced single player mode game starts with the ball having the appropriate speed.
-
-	\textbf{How test will be performed: }Run the program, start an advanced single player mode game and verify the speed.
-	\end{itemize}
-\end{reqbox}
-
-\begin{reqbox}
-	\begin{itemize}
-	\item \textbf{FS-CS-5: }Check that multiplayer mode has the updated speed
-
-	\textbf{Type: }Functional, Dynamic, Manual
-
-	\textbf{Initial State: }Menu page
-
-	\textbf{Input: }Button clicks
-
-	\textbf{Output: }Multiplayer mode game starts with the ball having the appropriate speed.
-
-	\textbf{How test will be performed: }Run the program, start a multiplayer mode game and verify the speed.
 	\end{itemize}
 \end{reqbox}
 
@@ -543,7 +464,7 @@ GanttChart.pdf}\\
 	\begin{itemize}
 	\item \textbf{PC-1: }Checking to see that the games starts with scores set at 0
 
-	\textbf{Type: }: Functional, Dynamic, Automated
+	\textbf{Type: }: Functional, Dynamic, Manual
 
 	\textbf{Initial State: } New game page
 
@@ -559,7 +480,7 @@ GanttChart.pdf}\\
 	\begin{itemize}
 	\item \textbf{PC-2: }Checking to see that the load game mode starts correctly
 
-	\textbf{Type: }: Functional, Dynamic, Automated
+	\textbf{Type: }: Functional, Dynamic, Manual
 	
 	\textbf{Initial State: } Load game page
 	
@@ -590,7 +511,7 @@ GanttChart.pdf}\\
 	\subsection{Paddle and Ball Movement}
 \begin{reqbox}
 	\begin{itemize}
-	\item \textbf{PC-4: }Checking to see that the direction of the ball changes
+	\item \textbf{PC-4: }Checking to see that the postition of the ball in the start.
 
 	\textbf{Type: }: Functional, Dynamic, Automated
 
@@ -600,13 +521,13 @@ GanttChart.pdf}\\
 
 	\textbf{Output: }the x and y coordinates and speed of the ball
 
-	\textbf{How test will be performed: }A new game state is created and the position of the ball at the beginning of the game is returned and then position and speed of the ball at various stages are returned. If the ball changes direction, then the coordinates should go to negative. If this is happening, then the test function returns true. Otherwise, it returns false.
+	\textbf{How test will be performed: }A new game state is created and the position of the ball at the beginning of the game is returned.
 	\end{itemize}
 \end{reqbox}
 
 \begin{reqbox}
 	\begin{itemize}
-	\item \textbf{PC-5: }Checking to see if the paddle changes direction correctly
+	\item \textbf{PC-5: }Checking to see if the paddle position in the start
 
 	\textbf{Type: }: Functional, Dynamic, Automated
 	
@@ -616,7 +537,7 @@ GanttChart.pdf}\\
 
 	\textbf{Output: }the coordinates of the paddle at various stages of the game.
 
-	\textbf{How test will be performed: }A new game state is created and the initial position of the paddle is returned in the test unit. When the paddle changes direction, the new coordinates of the paddle is returned. If the coordinates change, then the test function would return true.
+	\textbf{How test will be performed: }A new game state is created and the initial position of the paddle is returned in the test unit. 
 	\end{itemize}
 \end{reqbox}
 
