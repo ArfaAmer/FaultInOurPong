@@ -1,0 +1,363 @@
+\documentclass[12pt,letterpaper]{article}
+% Use packages
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[normalem]{ulem}
+\usepackage{mdframed}
+\usepackage{color}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\newmdenv[linecolor=black]{reqbox}
+
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+
+% Make title
+\title{SE 3XA3 Module Guide: Revision 0} 
+\author{Team 03, Pongthusiastics 		
+\\ Adwity Sharma - sharma78 		
+\\ Arfa Butt - buttaa3 	
+	\\ Jie Luo - luoj3 }
+ \date{\today} 
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+
+\listoftables
+\listoffigures
+\begin{table}[h]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3.5cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+November 9, 2016 & 1.0 & Created Module Guide \\
+November 11, 2016 & 2.0 & Divided sections between group members \\
+November 13, 2016 & 3.0 & Created format for Module Guide and added sections 2 and 4 \\
+November 13, 2016 & 4.0 & Sections 1, 3 and 6 added \\
+November 14, 2016 & 5.0 & Final version with all sections added\\
+\textcolor{blue}{December 3, 2016} & \textcolor{blue}{6.0} & \textcolor{blue}{Section 1 to 4 revised for Revision 1}\\
+\textcolor{blue}{December 8, 2016} & \textcolor{blue}{7.0} & \textcolor{blue}{Section 5 to 7 revised for Revision 1}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+	
+	\section{Introduction} \label{intro}
+
+	\subsection{\textcolor{blue}{Project Introduction}}
+	\textcolor{blue}{This project is the redevelopment of a Pong game found on GitHub. The new game FaultInOurPong developed by the PongThusiastics Team would not only fix bugs currently discovered in the previous project, but also add more entertaining features in order to maximize the satisfactions of potential players. Apart from the executable, several formal documents and test cases that are crutial in the process of software development process and management are made for the public and internal developers.}\\
+
+	\subsection{Document Overview}
+
+	\indent This document indicates the Module Guides for the implementation of the “Fault in Our Pong” project. This document is intended to facilitate the design and maintenance of the project. \textcolor{blue}{The main purpose of the Module Guide (MG) is to give an overview of each module in a project after the system decomposition. The Module Guide is formulated after the completion of Software Requirement Specifications (SRS). The Software Requirement Specification describes all the functional and non-functional requirements after project research and interviews with stakeholders.}\\
+
+\textcolor{blue}{The completion of the Module Guide will facilitate the production of Module Interface Specification (MIS). The Module Interface Specification exposes the secrets in each module, and it describes the detailed constructions of the modules in words. Compared to the Module Guide as the black box of modules in a system, the Module Interface Specification serves as a white box for users and developers to understand how the modules are composed. }\\
+
+	The major purpose of this document is to provide a detailed information for the concerned parties about how and why a certain implementation has been carried out. The potential readers of the document are as follows:
+New project members: If new project members are added to the project then this document, along with the document about the MIS implementation, would help the new members understand how and why the functionalities have been implemented. It will also help them understand the features that must be preserved.
+
+	This document provides the designers with a means of communication about the module specifications. It also helps determine if the requirements have been met. It can also show the flexibility and feasibility of various modules. 
+
+	It is important for the people responsible for maintaining the modules to understand the hierarchical structure of the modules. This document helps people responsible for updating this project to understand the way the implementation has been done for the project.
+
+
+	\subsection {Design Decision}
+	The design for this project FaultInOurPong follows the following rules:
+\begin{enumerate}
+	\item MVC model: MVC model has been implemented in rigorously in the project. The design has been separated in model, view and \textcolor{blue}{control frameworks}. The model class is responsible for managing the data, logic and rules of application of the project. The view is responsible for the output representation of the information. The controller is responsible for the implementations of commands from users and manipulates the model.
+	\item Each data structure is implemented in only one model.\textcolor{blue}{And they would be exported to another modules for interactions.}
+	\item The implementations that are likely to change are stored in separate modules.
+	\item \textcolor{blue}{The concepts of separation of concern (SC), information hiding (IH), and abstractions are used to further organize the code.}
+\end{enumerate}
+
+
+	\subsection{Document Structure}	
+	 
+	The rest of the document is arranged as follows: 
+
+	Section \ref{SecChange} provides details about anticipated and unlikely changes of the project. Anticipated changes are listed in Section \ref{SecAchange}, and unlikely changes are listed in Section \ref{SecUchange}.
+
+	Section \ref{SecMH} contains the breakdown of the module hierarchy, per the likely changes. 
+
+	Section \ref{SecConnection} shows the connections between the software requirements and the modules. 
+
+	Section \ref{SecMD} shows a detailed breakdown of the module description. 
+
+	Section \ref{SecTM} includes the tractability matrix. 
+
+	Section \ref{SecUse} describes the use hierarchy between various modules. 
+
+
+
+	\subsection{Acronyms and Definitions}
+        \begin{table}[H]
+            \centering
+            \caption{\bf Acronyms}
+            \label{TableAcronym}
+            \bigskip
+            \def\arraystretch{1.5}
+            \begin{tabularx}{\textwidth}{p{3.7cm}X}
+                \toprule
+                \textbf{Acronym} & \textbf{Definition} \\
+                \midrule
+                AC & Anticipated Change\\
+                DAG & Directed Acyclic Graph\\
+                FR & Functional Requirement\\
+                IH & Information Hiding\\
+                MG & Module Guide\\
+                MIS & Module Interface Specification\\
+                NFR & Non-Functional Requirement\\
+                SRS & Software Requirements Specification\\
+                UC & Unlikely Change\\
+            \bottomrule
+            \end{tabularx}
+        \end{table}
+
+\begin{table}[H]
+            \centering
+            \caption{\bf Definitions}
+            \label{TableDefinitions}
+            \bigskip
+            \def\arraystretch{1.5}
+            \begin{tabularx}{\textwidth}{p{3.7cm}X}
+                \toprule
+                \textbf{Term} & \textbf{Definition}\\
+                \midrule
+%%%
+                \textbf{Welcome page} & The first window shown on the screen when the program starts\\
+
+                \bottomrule
+            \end{tabularx}
+        \end{table}
+
+	
+	\section{Anticipated and Unlikely Changes} \label{SecChange}
+
+	\textcolor{blue}{All the possible changes in listed in the first secion \ref{SecAchange}, and the unlikely changes are listed in the second section \ref{SecUchange}.}	
+
+	\subsection{Anticipated Changes} \label{SecAchange}
+	\begin{description}
+	\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:]	The specific hardware on which the game is running.
+	\item[\refstepcounter{acnum} \actheacnum \label{acInput}:]	The format of the input data. (left and right keys can be changed to different keys inside the GameController class without it affecting the rest of the project)
+	\item[\refstepcounter{acnum} \actheacnum \label{acConstraint}:]	The constraints on the input parameters.
+	\item[\refstepcounter{acnum} \actheacnum \label{acFeatures}:]	Game features. (Number of people added on the highscores list, number of lives given to the user)
+	\item[\refstepcounter{acnum} \actheacnum \label{acMode}:]	Additional features. (Advanced single player mode with obstacles added, different speeds of the ball)
+	\item[\refstepcounter{acnum} \actheacnum \label{acMag}:]	Magnitude of game controls and media (size of the buttons, ball etc.).
+	\end{description}	
+
+	\subsection{Unlikely Changes} \label{SecUchange}
+	\begin{description}
+	\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:]	Input and output devices. (Input: mouse clicks and keyboard presses, Output: screen/console)
+	\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:]	There will always be a source of input data external to the software.
+	\item[\refstepcounter{ucnum} \uctheucnum \label{ucMech}:]	Game mechanics. (Formulas to calculate when ball should change direction) 
+	\item[\refstepcounter{ucnum} \uctheucnum \label{ucEnv}:]	Execution environment. (Must be java-based)
+	\end{description}
+%%%
+	\section{Module Hierarchy} \label{SecMH}
+	This section provides an overview of the module design. Modules are summarized in a hierarchy decomposed by secrets in Table 2. The modules listed below, which are leaves in the hierarchy tree, are the modules that will actually be implemented.
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+{Hardware-Hiding Module} & PongGame \refstepcounter{mnum} \mthemnum \label{mHH} \\ 
+\midrule
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} 
+& Ball \refstepcounter{mnum} \mthemnum \label{mBall} \\
+& GameModel \refstepcounter{mnum} \mthemnum \label{mGM}\\
+& Paddle \refstepcounter{mnum} \mthemnum \label{mPad}\\
+& Player \refstepcounter{mnum} \mthemnum \label{mPlayer}\\
+& GameView \refstepcounter{mnum} \mthemnum \label{mV}\\
+& HighScore \refstepcounter{mnum} \mthemnum \label{mScore}\\
+& Mode \refstepcounter{mnum} \mthemnum \label{mMode}\\
+& PongGameDisplay \refstepcounter{mnum} \mthemnum \label{mDisplay}\\
+& Tutorial \refstepcounter{mnum} \mthemnum \label{mTut}\\
+& Welcome \refstepcounter{mnum} \mthemnum \label{mWel}\\
+\midrule
+\multirow{2}{0.3\textwidth}{Software Decision Module} & GameController \refstepcounter{mnum} \mthemnum \label{mCon}\\
+
+\bottomrule
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+
+
+	\section{Connection Between Requirements and Design} \label{SecConnection}
+	The design of the system is intended to satisfy the requirements developed in the SRS. In this stage, the system is decomposed into modules. The connection between requirements and modules is listed in Table  \ref{TblRT}.
+
+	\section{Module Decomposition} \label{SecMD}
+	\subsection{Hardware Hiding Modules}
+\begin{description}
+	\item[Name: ] PongGame M\ref{mHH}
+	\item[Secrets: ] \textcolor{blue}{This module starts running in Java Development Environment.}
+	\item[Services: ] \textcolor{blue} {This module invokes the computer to display game windows.}
+	\item[Implemented By: ] Windows
+\end{description}
+
+	\subsection{Behavior-Hiding Module}
+	\subsubsection{Ball M\ref{mBall}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This data structure stores all the information of a ball.}
+	\item[Services: ] \textcolor{blue} {This module contains all the operations for a ball, including its postions, and size.}
+	\item[Implemented By: ] Ball.java
+\end{description}
+
+	\subsubsection{GameModel M\ref{mGM}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This model is the interface of the model framework in the MVC design pattern.}
+	\item[Services: ] \textcolor{blue} {It coroperates other data models such that other models can interact with the controller framework.}
+	\item[Implemented By: ] GameModel.java
+\end{description}
+
+	\subsubsection{Paddle M\ref{mPad}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This data structure stores all the information of a paddle.}
+	\item[Services: ] \textcolor{blue} {This module contains all the operations for a paddle, including its postions, height, and width.}
+	\item[Implemented By: ] Paddle.java
+\end{description}
+
+
+	\subsubsection{Player M\ref{mPlayer}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This data structure stores all the information of a player.}
+	\item[Services: ] \textcolor{blue} {This module contains all the operations for a player, including his/her score and methods to increase/decrease score.}
+	\item[Implemented By: ] Player.java
+\end{description}
+
+	\subsubsection{GameView M\ref{mV}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module acts as an interface for all other view modules.}
+	\item[Services: ] \textcolor{blue} {This module cooperates with other view modules such that they can interact with the controller framework.}
+	\item[Implemented By: ] GameView.java
+\end{description}	
+
+	\subsubsection{HighScore M\ref{mScore}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module displays the high scores of a player from a text file.}
+	\item[Services: ] \textcolor{blue} {It sets up a window/frame for display the scores for top 20 players.}
+	\item[Implemented By: ] HighScore.java
+\end{description}
+
+	\subsubsection{Mode M\ref{mMode}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module displays different game modes for the player.}
+	\item[Services: ] \textcolor{blue} {It sets up a window/frame with buttons for the user to choose differet game modes.}
+	\item[Implemented By: ] Mode.java
+\end{description}
+
+	\subsubsection{PongGameDisplay M\ref{mDisplay}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module displays the actual game panel.}
+	\item[Services: ] \textcolor{blue} {It sets up the game panel by drawing objects such as paddles, ball, and current scores on the screen.}
+	\item[Implemented By: ] PongGameDisplay.java
+\end{description}
+
+	\subsubsection{Tutorial M\ref{mTut}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module displays the game instruction.}
+	\item[Services: ] \textcolor{blue} {It sets up the window for the tutorial page by displaying a picture of the instruction}
+	\item[Implemented By: ] Tutorial.java
+\end{description}
+
+	\subsubsection{Welcome M\ref{mWel}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module displays the first window when the program starts.}
+	\item[Services: ] \textcolor{blue} {It creates different buttons for options so that a user can choose an option from it and start the game}
+	\item[Implemented By: ] Welcome.java
+\end{description}
+
+
+	\subsection{Software Decision Module}
+
+	\subsubsection{GameController M\ref{mCon}}
+\begin{description} 
+	\item[Secrets: ] \textcolor{blue}{This module contains part of the logic of the game.}
+	\item[Services: ] \textcolor{blue} {It performs some calculations to determine the winning/losing of a player; it also takes in hardware/environment variables and pass them into model and view framework.}
+	\item[Implemented By: ] Ball.java
+\end{description}
+
+
+	\section{Traceability Matrix} \label{SecTM}
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Requirements} & \textbf{Modules}\\
+\midrule
+{R1} & \mref{mICM}, \mref{mGF}, \mref{mPlayer}\\
+{R2} & \mref{mICM}, \mref{mOCM}, \mref{mGF}, \mref{mPlayer}\\
+{R3} & \mref{mHH}, \mref{mICM}, \mref{mOCM}, \mref{mPlayer}\\
+{R4} & \mref{mHH}, \mref{mICM}, \mref{mOCM}, \mref{mGF} \\
+{R5} & \mref{mICM}, \mref{mOCM}, \mref{mGF} \\
+{R6} & \mref{mICM}, \mref{mGF} \\
+{R7} & \mref{mICM}, \mref{mGF} \\
+{R8} & \mref{mHH}, \mref{mGF}, \mref{mPlayer}\\
+{R9} & \mref{mHH}, \mref{mGF}\\
+{R10} & \mref{mHH}, \mref{mICM}, \mref{mOCM}, \mref{mGF}\\
+{R11} & \mref{mHH}, \mref{mOCM}, \mref{mGF}, \mref{mPlayer}\\
+{R12} & \mref{mICM}, \mref{mOCM}, \mref{mGF}\\
+{R13} & \mref{mICM}, \mref{mOCM}, \mref{mGF}\\
+{R14} & \mref{mICM}, \mref{mOCM}, \mref{mGF}\\
+{R15} & \mref{mHH}, \mref{mGF}, \mref{mPlayer}\\
+{R16} & \mref{mGF}, \mref{mPlayer}\\
+{R17} & \mref{mHH}, \mref{mICM}, \mref{mGF}, \mref{mPlayer}\\
+{R18} & \mref{mGF}\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
+\centering
+%%%
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{AC} & \textbf{Modules}\\
+\midrule
+\acref{acHardware} & \mref{mHH} \\
+\acref{acInput} & \mref{mICM}, \mref{mGF} \\
+\acref{acConstraint} & \mref{mGF}\\
+\acref{acFeatures} & \mref{mGF}\\
+\acref{acMode} & \mref{mICM}, \mref{mOCM}, \mref{mGF} \\
+\acref{acMag} & \mref{mOCM}, \mref{mGF}, \mref{mPlayer} \\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Anticipated Changes and Modules}
+\label{TblACT}
+\end{table}
+\clearpage
+	\section{Use Hierarchy Between Modules} \label{SecUse}
+
+\textcolor{blue}{User hierarchy can be depicted below \hyperref[FigUH]{Figure 1} in the graph. The modules listed in the document form a directed acyclic graph (DAG).} 
+
+    \begin{figure}[H]
+        \label{FigUH}
+        \caption{\bf Use Hierarchy}
+        \centering
+        \bigskip
+        \includegraphics[width=0.95\textwidth]{user.png}
+    \end{figure}
+
+
+
+\end{document}
